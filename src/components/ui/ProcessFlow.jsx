@@ -16,11 +16,12 @@ export default function ProcessFlow() {
         {/* Background paths for static lines */}
         <path d="M 15,20 L 85,20 L 85,80 L 15,80 Z" className="flow-path-bg" />
         
-        {/* Animated flow paths */}
-        <path d="M 15,20 L 85,20" className="flow-path-animated" style={{ animationDelay: '0s' }} />
-        <path d="M 85,20 L 85,80" className="flow-path-animated" style={{ animationDelay: '1s' }} />
-        <path d="M 85,80 L 15,80" className="flow-path-animated" style={{ animationDelay: '2s' }} />
-        <path d="M 15,80 L 15,20" className="flow-path-animated" style={{ animationDelay: '3s' }} />
+        {/* Unified animated flow path with multiple pulses */}
+        <path 
+          d="M 15,20 L 85,20 L 85,80 L 15,80 Z" 
+          className="flow-path-animated" 
+          pathLength="100"
+        />
       </svg>
 
       {/* Symmetric Nodes */}

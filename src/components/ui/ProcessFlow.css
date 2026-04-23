@@ -111,10 +111,11 @@
   stroke: var(--clr-primary-light);
   stroke-width: 2.5;
   fill: none;
-  stroke-dasharray: 20, 80;
+  /* Creates 3 evenly spaced pulses along the line (100 / 3) */
+  stroke-dasharray: 10, 23.33; 
   stroke-linecap: round;
   filter: drop-shadow(0 0 8px var(--clr-primary-light));
-  animation: flowLoop 4s linear infinite;
+  animation: flowLoop 6s linear infinite;
 }
 
 @keyframes flowLoop {
