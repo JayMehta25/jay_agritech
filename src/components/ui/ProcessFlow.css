@@ -1,0 +1,147 @@
+.process-flow-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Background Image ── */
+.hero-visual-img-container {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  z-index: 0;
+}
+
+.hero-visual-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.hero-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 94, 32, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* ── Nodes ── */
+.flow-node {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 180px;
+  box-shadow: var(--shadow-xl);
+  z-index: 2;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.node-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: var(--clr-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.node-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-node:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--clr-primary-light);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.flow-node span {
+  color: white;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body-sm);
+  line-height: 1.2;
+}
+
+.flow-node small {
+  color: var(--clr-primary-lighter);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Positioning Nodes Symmetrically */
+.node-tl { top: 8%; left: 4%; }
+.node-tr { top: 8%; right: 4%; }
+.node-br { bottom: 8%; right: 4%; }
+.node-bl { bottom: 8%; left: 4%; }
+
+/* ── SVG Connection Layer ── */
+.flow-connections {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flow-path-bg {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.flow-path-animated {
+  stroke: var(--clr-primary-light);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-dasharray: 20, 80;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px var(--clr-primary-light));
+  animation: flowLoop 4s linear infinite;
+}
+
+@keyframes flowLoop {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { box-shadow: var(--shadow-lg); }
+  50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); }
+}
+
+.node-pulse {
+  animation: nodePulse 3s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .process-flow-container {
+    height: 600px;
+  }
+  .flow-node {
+    width: 140px;
+    padding: var(--sp-3) var(--sp-4);
+  }
+  .node-tl { top: 5%; left: 2%; }
+  .node-tr { top: 5%; right: 2%; }
+  .node-br { bottom: 5%; right: 2%; }
+  .node-bl { bottom: 5%; left: 2%; }
+}

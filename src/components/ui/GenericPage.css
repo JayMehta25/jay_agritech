@@ -1,0 +1,6 @@
+.generic-page-body {
+  padding: var(--sp-16) 0;
+}
+.generic-page-body .section:first-child {
+  padding-top: 0;
+}

@@ -1,0 +1,199 @@
+/* ============================================
+   Growth System Visual — Scroll-Triggered
+   ============================================ */
+
+.gsv-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Concentric Rings ── */
+.gsv-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed;
+  /* Start collapsed at center */
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.6s ease-out;
+}
+
+.gsv-ring-1 {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(46, 125, 50, 0.12);
+}
+.gsv-ring-2 {
+  width: 75%;
+  height: 75%;
+  border-color: rgba(46, 125, 50, 0.18);
+}
+.gsv-ring-3 {
+  width: 50%;
+  height: 50%;
+  border-color: rgba(46, 125, 50, 0.25);
+}
+
+/* Expand on scroll trigger */
+.gsv-active .gsv-ring-3 {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.gsv-active .gsv-ring-2 {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.gsv-active .gsv-ring-1 {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+  animation: slowSpin 20s linear 1.3s infinite;
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Central Core ── */
+.gsv-core {
+  width: 140px;
+  height: 140px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 5;
+  box-shadow: 0 0 30px rgba(46, 125, 50, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  /* Start hidden */
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.4s ease-out;
+}
+
+.gsv-active .gsv-core {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.gsv-core span {
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* ── Step Nodes ── */
+.gsv-step {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: white;
+  padding: 8px 14px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-border-light);
+  z-index: 4;
+  /* Start hidden at center */
+  opacity: 0;
+  transform: scale(0.5) translate(0, 0);
+  transition: opacity 0.5s ease-out,
+              transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gsv-step-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--clr-primary-surface);
+  color: var(--clr-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gsv-step-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.gsv-step-info strong {
+  font-size: 16px;
+  color: var(--clr-text-primary);
+  line-height: 1.2;
+}
+
+.gsv-step-info small {
+  font-size: 13px;
+  color: var(--clr-text-muted);
+}
+
+/* Final positions for each step (cardinal directions) */
+.gsv-step-1 { top: -20px;  left: 50%; }
+.gsv-step-2 { top: 50%;   right: -120px; }
+.gsv-step-3 { bottom: -20px; left: 50%; }
+.gsv-step-4 { top: 50%;   left: -120px; }
+
+/* Animate TO final positions on scroll */
+.gsv-active .gsv-step-1 {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+  transition-delay: 0.7s;
+}
+.gsv-active .gsv-step-2 {
+  opacity: 1;
+  transform: scale(1) translate(0, -50%);
+  transition-delay: 1.0s;
+}
+.gsv-active .gsv-step-3 {
+  opacity: 1;
+  transform: scale(1) translate(-50%, 50%);
+  transition-delay: 1.3s;
+}
+.gsv-active .gsv-step-4 {
+  opacity: 1;
+  transform: scale(1) translate(0, -50%);
+  transition-delay: 1.6s;
+}
+
+/* Hover on individual steps */
+.gsv-step:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-primary-light);
+}
+.gsv-step:hover .gsv-step-icon {
+  background: var(--clr-primary);
+  color: white;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .gsv-container {
+    width: 320px;
+    height: 320px;
+  }
+  .gsv-step {
+    padding: 6px 10px;
+  }
+  .gsv-step-2 { right: -50px; }
+  .gsv-step-4 { left: -50px; }
+}
