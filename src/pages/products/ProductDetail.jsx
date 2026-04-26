@@ -1,76 +1,179 @@
 import { useParams, Link } from 'react-router-dom';
-import { Check, Package, ArrowLeft, Leaf } from 'lucide-react';
+import { Check, Droplets, Sprout, Package, Leaf, ArrowLeft } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { products } from '../../data/siteData';
 import GenericPage from '../../components/ui/GenericPage';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+
+function AnimatedSection({ children, className = '', delay = 0 }) {
+  const [ref, isVisible] = useScrollAnimation();
+  return (
+    <div
+      ref={ref}
+      className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function ProductDetail() {
+  const { t } = useTranslation();
   const { category, slug } = useParams();
   const cat = products.categories.find(c => c.slug === category);
-  if (!cat) return <GenericPage title="Not Found" breadcrumbs={[{ label: 'Products', path: '/products' }]}><div className="container"><p>Product not found.</p></div></GenericPage>;
-  
+  if (!cat) return <GenericPage title={t('common.not_found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }]}><div className="container"><p>{t('common.not_found')}</p></div></GenericPage>;
+
   const product = cat.products.find(p => p.slug === slug);
-  if (!product) return <GenericPage title="Not Found" breadcrumbs={[{ label: 'Products', path: '/products' }, { label: cat.name, path: `/products/${cat.slug}` }]}><div className="container"><p>Product not found.</p></div></GenericPage>;
-  
+  if (!product) return <GenericPage title={t('common.not_found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }, { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` }]}><div className="container"><p>{t('common.not_found')}</p></div></GenericPage>;
+
+  const pKey = `products.items.${product.id}`;
+
+  const translateValue = (val) => {
+    if (!val) return val;
+    const cleanKey = val.toLowerCase().replace(/[^a-z0-9]/g, '_');
+    const key = `products.common_values.${cleanKey}`;
+    const translated = t(key);
+    return (translated && translated !== key) ? translated : val;
+  };
+
   return (
-    <GenericPage title={product.name} subtitle={product.tagline} breadcrumbs={[{ label: 'Products', path: '/products' }, { label: cat.name, path: `/products/${cat.slug}` }, { label: product.name }]}>
-      <div className="container">
-        <div className="grid-2" style={{ gap: 'var(--sp-12)', alignItems: 'start' }}>
-          {/* Image */}
-          <div>
-            <div style={{ aspectRatio: '4/3', background: 'var(--gradient-warm)', borderRadius: 'var(--radius-xl)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 'var(--sp-3)', marginBottom: 'var(--sp-6)' }}>
-              <span style={{ fontSize: '5rem' }}>{cat.icon}</span>
-              <span style={{ color: 'var(--clr-text-muted)', fontWeight: 'var(--fw-medium)' }}>{product.name}</span>
+    <GenericPage
+      title={t(`${pKey}.name`, product.name)}
+      subtitle={t(`${pKey}.tagline`, product.tagline)}
+      breadcrumbs={[
+        { label: t('nav.products'), path: '/products' },
+        { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` },
+        { label: t(`${pKey}.name`, product.name) }
+      ]}
+      bodyClassName="moving-gradient-bg"
+    >
+      <div className="container" style={{ paddingTop: 'var(--sp-4)', paddingBottom: 'var(--sp-16)' }}>
+
+        <div className="product-detail-grid">
+          {/* Left — Image Showcase */}
+          <AnimatedSection>
+            <div className="product-showcase">
+              {product.image ? (
+                <img src={product.image} alt={product.name} />
+              ) : (
+                <div className="product-showcase__placeholder">
+                  <span className="icon">{cat.icon}</span>
+                  <span className="label">{t(`${pKey}.name`, product.name)}</span>
+                </div>
+              )}
             </div>
-            {product.badge && <span className="badge badge-green" style={{ fontSize: 'var(--fs-body-sm)', padding: 'var(--sp-2) var(--sp-4)' }}>{product.badge}</span>}
-          </div>
-          
-          {/* Details */}
-          <div>
-            <span style={{ fontSize: 'var(--fs-h2)', fontWeight: 'var(--fw-bold)', color: 'var(--clr-primary)', display: 'block', marginBottom: 'var(--sp-4)' }}>{product.price}</span>
-            <p style={{ fontSize: 'var(--fs-body-lg)', lineHeight: 'var(--lh-loose)', marginBottom: 'var(--sp-8)' }}>{product.description}</p>
-            
-            {/* Benefits */}
-            <div style={{ marginBottom: 'var(--sp-8)' }}>
-              <h3 style={{ marginBottom: 'var(--sp-4)' }}>Key Benefits</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
-                {product.benefits.map((b, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--clr-primary-surface)', borderRadius: 'var(--radius-md)' }}>
-                    <Check size={16} style={{ color: 'var(--clr-primary)', flexShrink: 0 }} />
-                    <span style={{ fontWeight: 'var(--fw-medium)' }}>{b}</span>
+          </AnimatedSection>
+
+          {/* Right — Product Info */}
+          <div className="product-info">
+            {/* Header */}
+            <AnimatedSection delay={100}>
+              <div className="product-info__header">
+                <span className="product-info__category">{t(cat.nameKey, cat.name)}</span>
+                <p className="product-info__desc">{t(`${pKey}.description`, product.description)}</p>
+              </div>
+            </AnimatedSection>
+
+            {/* Quick Specs Row */}
+            <AnimatedSection delay={200}>
+              <div className="specs-row">
+                {product.microbes && (
+                  <div className="spec-card">
+                    <div className="spec-card__label">{t('products.fields.microbial_content')}</div>
+                    <div className="spec-card__value">{t(`${pKey}.microbes`, product.microbes)}</div>
                   </div>
-                ))}
+                )}
+                {product.contents && (
+                  <div className="spec-card">
+                    <div className="spec-card__label">{t('products.fields.active_ingredients')}</div>
+                    <div className="spec-card__value">{t(`${pKey}.contents`, product.contents)}</div>
+                  </div>
+                )}
+                {product.specifications && (
+                  <div className="spec-card">
+                    <div className="spec-card__label">{t('products.fields.specifications')}</div>
+                    <div className="spec-card__value">{t(`${pKey}.specifications`, product.specifications)}</div>
+                  </div>
+                )}
+                {product.application && (
+                  <div className="spec-card">
+                    <div className="spec-card__label">{t('products.fields.application')}</div>
+                    <div className="spec-card__value">{t(`${pKey}.application`, translateValue(product.application))}</div>
+                  </div>
+                )}
+                {product.dosage && (
+                  <div className="spec-card">
+                    <div className="spec-card__label">{t('products.fields.dosage')}</div>
+                    <div className="spec-card__value">{t(`${pKey}.dosage`, translateValue(product.dosage))}</div>
+                  </div>
+                )}
+                <div className="spec-card">
+                  <div className="spec-card__label">{t('products.fields.recommended')}</div>
+                  <div className="spec-card__value">{t(`${pKey}.recommended`, translateValue(product.crops[0]))}</div>
+                </div>
               </div>
-            </div>
-            
-            {/* Application */}
-            <div style={{ marginBottom: 'var(--sp-8)' }}>
-              <h3 style={{ marginBottom: 'var(--sp-3)' }}>Application</h3>
-              <p style={{ color: 'var(--clr-text-muted)', padding: 'var(--sp-4)', background: 'var(--clr-off-white)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--clr-primary)' }}>{product.application}</p>
-            </div>
-            
-            {/* Crops */}
-            <div style={{ marginBottom: 'var(--sp-8)' }}>
-              <h3 style={{ marginBottom: 'var(--sp-3)' }}>Recommended Crops</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
-                {product.crops.map((c, i) => <span key={i} className="chip">{c}</span>)}
+            </AnimatedSection>
+
+            {/* Benefits */}
+            <AnimatedSection delay={300}>
+              <div className="benefits-section">
+                <h3 className="benefits-section__title">{t('products.fields.key_benefits')}</h3>
+                <div className="benefits-grid">
+                  {product.benefits.map((b, i) => (
+                    <div key={i} className="benefit-item">
+                      <div className="benefit-item__icon">
+                        <Check size={14} />
+                      </div>
+                      <span className="benefit-item__text">{t(`${pKey}.benefits.${i}`, b)}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            
+            </AnimatedSection>
+
+            {/* Recommended Crops */}
+            <AnimatedSection delay={400}>
+              <div className="detail-section">
+                <h3 className="detail-section__title">{t('products.fields.recommended_crops')}</h3>
+                <div className="crop-tags">
+                  {product.crops.map((c, i) => (
+                    <span key={i} className="crop-tag">
+                      <Leaf size={12} /> {t(`${pKey}.crops.${i}`, translateValue(c))}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+
             {/* Pack Sizes */}
-            <div style={{ marginBottom: 'var(--sp-8)' }}>
-              <h3 style={{ marginBottom: 'var(--sp-3)' }}>Available Pack Sizes</h3>
-              <div style={{ display: 'flex', gap: 'var(--sp-3)' }}>
-                {product.packSizes.map((s, i) => (
-                  <div key={i} style={{ padding: 'var(--sp-3) var(--sp-5)', border: '1.5px solid var(--clr-border)', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textAlign: 'center' }}>{s}</div>
-                ))}
+            <AnimatedSection delay={500}>
+              <div className="detail-section">
+                <h3 className="detail-section__title">{t('products.fields.pack_sizes')}</h3>
+                <div className="pack-sizes">
+                  {product.packSizes.map((s, i) => (
+                    <div key={i} className="pack-size">
+                      <Package size={14} style={{ marginRight: 6, color: 'var(--clr-primary-light)' }} /> {t(`${pKey}.packSizes.${i}`, translateValue(s))}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            
-            {/* CTAs */}
-            <div style={{ display: 'flex', gap: 'var(--sp-4)' }}>
-              <Link to="/contact" className="btn btn-primary btn-lg" style={{ flex: 1 }}>Enquire Now</Link>
-              <a href={`https://wa.me/919876543210?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}`)}`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg" style={{ flex: 1 }}>WhatsApp Order</a>
-            </div>
+            </AnimatedSection>
+
+            {/* CTA Buttons */}
+            <AnimatedSection delay={600}>
+              <div className="product-cta-row">
+                <Link to="/contact" className="btn btn-primary btn-lg">{t('common.enquire_now')}</Link>
+                <a
+                  href={`https://wa.me/919876543210?text=${encodeURIComponent(t('common.whatsapp_message', { name: product.name }))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary btn-lg"
+                >
+                  {t('common.whatsapp_order')}
+                </a>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </div>

@@ -25,9 +25,6 @@ export default function Footer() {
               <Link to="/contact" className="btn btn-gold btn-lg">
                 Get in Touch <ArrowRight size={18} />
               </Link>
-              <Link to="/products" className="btn btn-secondary btn-lg" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
-                View Products
-              </Link>
             </div>
           </div>
         </div>

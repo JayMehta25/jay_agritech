@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import './GenericPage.css';
 
-export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children }) {
+export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children, bodyClassName = '' }) {
   return (
     <div className="generic-page">
       <div className="page-hero">
@@ -23,7 +23,7 @@ export default function GenericPage({ title, subtitle, overline, breadcrumbs = [
           {subtitle && <p>{subtitle}</p>}
         </div>
       </div>
-      <div className="generic-page-body">
+      <div className={`generic-page-body ${bodyClassName}`}>
         {children}
       </div>
     </div>

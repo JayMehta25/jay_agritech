@@ -2,9 +2,10 @@
    Jay Agritech — Global Styles
    ============================================ */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Hind:wght@400;500;600;700&family=Hind+Vadodara:wght@400;500;600;700&display=swap');
 @import './variables.css';
 @import './animations.css';
+@import './products.css';
 
 /* ── Bootstrap overrides to match our design system ── */
 .container, .container-fluid,
@@ -64,6 +65,21 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--lh-tight);
   color: var(--clr-text-primary);
   letter-spacing: var(--ls-tight);
+}
+
+/* ── Multi-Language Font Support ── */
+:lang(hi) {
+  --font-body: 'Hind', sans-serif;
+  --font-heading: 'Hind', sans-serif;
+}
+
+:lang(gu) {
+  --font-body: 'Hind Vadodara', sans-serif;
+  --font-heading: 'Hind Vadodara', sans-serif;
+}
+
+:lang(hi) body, :lang(gu) body {
+  line-height: 1.6; /* Indic scripts often need more line-height */
 }
 
 h1 { font-size: var(--fs-h1); }

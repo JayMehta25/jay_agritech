@@ -1,0 +1,242 @@
+{
+  "nav": {
+    "about": "About",
+    "solutions": "Solutions",
+    "products": "Products",
+    "business": "Business",
+    "research": "Research",
+    "farmer_zone": "Farmer Zone",
+    "contact": "Contact",
+    "become_partner": "Become a Partner",
+    "tagline": "Innovating Agriculture, Nurturing Growth",
+    "sections": {
+      "company": "Company",
+      "operations": "Operations",
+      "crop_solutions": "Crop Solutions",
+      "product_categories": "Product Categories",
+      "b2b_solutions": "B2B Solutions",
+      "resources": "Resources"
+    },
+    "links": {
+      "company_overview": "Company Overview",
+      "our_journey": "Our Journey",
+      "vision_&_mission": "Vision & Mission",
+      "leadership_team": "Leadership Team",
+      "manufacturing": "Manufacturing",
+      "certifications": "Certifications",
+      "sustainability": "Sustainability",
+      "milestones": "Milestones",
+      "solutions_overview": "Solutions Overview",
+      "soil_health": "Soil Health",
+      "nutrient_management": "Nutrient Management",
+      "pest_&_disease": "Pest & Disease",
+      "growth_enhancement": "Growth Enhancement",
+      "all_products": "All Products",
+      "bio_insecticides": "Bio Insecticides",
+      "bio_pesticides": "Bio Pesticides",
+      "biostimulants": "Biostimulants",
+      "organic_nutrients": "Organic Nutrients",
+      "specialty_products": "Specialty Products",
+      "micronutrients": "Micronutrients",
+      "business_overview": "Business Overview",
+      "contract_manufacturing": "Contract Manufacturing",
+      "research_services": "Research Services",
+      "white/private_label": "White/Private Label",
+      "exports_&_franchise": "Exports & Franchise",
+      "crop-wise_solutions": "Crop-wise Solutions",
+      "problem_guide": "Problem Guide",
+      "seasonal_advisory": "Seasonal Advisory"
+    },
+    "desc": {
+      "company_overview": "Our story, vision & mission",
+      "our_journey": "From founding to today",
+      "vision_&_mission": "What drives us",
+      "leadership_team": "Meet our team",
+      "manufacturing": "Our production facilities",
+      "certifications": "Quality standards & approvals",
+      "sustainability": "Our green commitment",
+      "milestones": "Key achievements",
+      "solutions_overview": "Complete solution portfolio",
+      "soil_health": "Restore & maintain soil vitality",
+      "nutrient_management": "Balanced crop nutrition",
+      "pest_&_disease": "Biological crop protection",
+      "growth_enhancement": "Maximize crop potential",
+      "all_products": "Browse our full catalog",
+      "bio_insecticides": "11 products",
+      "biostimulants": "10 products",
+      "organic_nutrients": "3 products",
+      "specialty_products": "2 products",
+      "micronutrients": "6 products",
+      "business_overview": "Partnership opportunities",
+      "contract_manufacturing": "OEM & custom formulations",
+      "research_services": "R&D collaborations",
+      "white/private_label": "Your brand, our quality",
+      "exports_&_franchise": "Global opportunities",
+      "farmer_zone": "Your farming resource hub",
+      "crop-wise_solutions": "Find solutions by crop",
+      "problem_guide": "Diagnose & solve issues",
+      "seasonal_advisory": "Season-specific guidance"
+    }
+  },
+  "hero": {
+    "title_part1": "Innovating",
+    "title_part2": "Agriculture",
+    "title_part3": "Nurturing",
+    "title_part4": "Growth",
+    "subtitle": "Science-backed biological & organic agricultural solutions that enhance crop productivity, improve soil health, and empower every farmer with sustainable technology.",
+    "explore_btn": "Explore Products",
+    "story_btn": "Our Story",
+    "badge": "Established 2026 · Valsad, Gujarat"
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "view_all": "View All",
+    "read_more": "Read More",
+    "get_in_touch": "Get in Touch",
+    "view": "View",
+    "enquire_now": "Enquire Now",
+    "whatsapp_order": "WhatsApp Order",
+    "whatsapp_message": "Hi, I'm interested in {{name}}",
+    "not_found": "Not Found"
+  },
+  "products": {
+    "fields": {
+      "application": "Application",
+      "dosage": "Dosage",
+      "recommended": "Recommended",
+      "key_benefits": "Key Benefits",
+      "recommended_crops": "Recommended Crops",
+      "pack_sizes": "Available Pack Sizes",
+      "microbial_content": "Microbial Content",
+      "active_ingredients": "Active Ingredients",
+      "specifications": "Specifications"
+    },
+    "common_values": {
+      "soil_application": "Soil application",
+      "foliar_application": "Foliar application",
+      "foliar_spray": "Foliar Spray",
+      "foliar_spray_3_5ml_l_water_repeat_every_7_10_days": "Foliar spray: 3-5ml/L water. Repeat every 7-10 days.",
+      "soil_2l_acre_through_drip_flood_foliar_2ml_l": "Soil: 2L/acre through drip/flood. Foliar: 2ml/L.",
+      "seed_treatment_5g_kg_soil_1kg_acre_with_fym": "Seed treatment: 5g/kg. Soil: 1kg/acre with FYM.",
+      "foliar_spray_2g_l_water_at_early_larval_stage": "Foliar spray: 2g/L water at early larval stage.",
+      "apply_5kg_acre_before_sowing_mix_with_organic_manure_for_best_results": "Apply 5kg/acre before sowing. Mix with organic manure for best results.",
+      "all_crops": "All Crops",
+      "1_liter_acre": "1 Liter/Acre",
+      "100_ml_acre": "100 ml/Acre",
+      "400_ml_acre": "400 ml/Acre",
+      "500_ml_acre": "500 ml/Acre",
+      "600_ml_acre": "600 ml/Acre",
+      "4_kg_acre": "4 kg/Acre",
+      "2_liter_acre": "2 Liter/Acre",
+      "4_liter_acre": "4 Liter/Acre",
+      "1_kit_acre": "1 Kit/Acre",
+      "long_duration_crops": "Long Duration Crops",
+      "short_duration_crops": "Short Duration Crops",
+      "cotton": "Cotton",
+      "vegetables": "Vegetables",
+      "fruits": "Fruits",
+      "pulses": "Pulses",
+      "cereals": "Cereals",
+      "tomato": "Tomato",
+      "chilli": "Chilli",
+      "brinjal": "Brinjal",
+      "cucumber": "Cucumber",
+      "maize": "Maize",
+      "rice": "Rice",
+      "flowers": "Flowers",
+      "spices": "Spices",
+      "1_0_lit": "1.0 Liter",
+      "1_0_kg": "1.0 kg",
+      "ideal_for_degraded_soils": "Ideal for degraded soils"
+    },
+    "categories": {
+      "bio_insecticides": {
+        "name": "Bio Insecticides",
+        "desc": "Advanced biological insecticides and fungicides for eco-friendly pest and disease management."
+      },
+      "bio_pesticides": {
+        "name": "Bio Pesticides",
+        "desc": "Eco-friendly pest management solutions derived from natural organisms and botanical extracts."
+      },
+      "biostimulants": {
+        "name": "Biostimulants",
+        "desc": "Natural plant growth simulators and rhizosphere activators derived from organic sources for superior crop performance."
+      },
+      "organic_nutrients": {
+        "name": "Organic Nutrients",
+        "desc": "OMRI-certified organic nutrient solutions for sustainable agriculture and premium produce."
+      },
+      "specialty_products": {
+        "name": "Specialty Products",
+        "desc": "Innovative solutions for specific agricultural challenges — soil health, water management, and post-harvest."
+      },
+      "micronutrients": {
+        "name": "Micronutrients",
+        "desc": "Balanced mixture of essential micronutrients (Fe, Mn, Zn, Cu, B) for optimal plant health and high yields."
+      }
+    },
+    "title": "Our Products",
+    "subtitle": "60+ innovative biological and organic agricultural solutions across 5 categories.",
+    "search_placeholder": "Search categories (e.g. Bio Fertilizers)...",
+    "search_in": "Search in {{category}}...",
+    "showing_count": "Showing {{filtered}} of {{total}} products",
+    "product_count": "{{count}} Products",
+    "no_match": "No products found matching \"{{query}}\"",
+    "no_cat_match": "No categories found matching \"{{query}}\"",
+    "clear_search": "Clear Search",
+    "items": {
+      "bf-001": {
+        "name": "AT ORGO NB",
+        "tagline": "Nitrogen Fixing Bacteria (Azotobacter spp.)",
+        "description": "High-potency Nitrogen Fixing Bacteria (Azotobacter spp.) that provides atmospheric nitrogen directly to plants. Also available with Acetobacter spp., Azospirillum spp. and Rhizobium spp.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Fixes atmospheric nitrogen",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Promotes plant growth",
+          "Reduces nitrogenous fertilizer cost"
+        ],
+        "crops": ["All Crops"],
+        "packSizes": ["250 ml", "1 Liter"]
+      }
+    }
+  },
+  "company": {
+    "vision": "To become India's most trusted agri-biotech company, empowering every farmer with sustainable, science-backed solutions for a food-secure future.",
+    "mission": "We develop and deliver innovative biological and organic agricultural inputs that enhance crop productivity, improve soil health, and promote sustainable farming practices — making advanced agri-technology accessible to every farmer.",
+    "stats": {
+      "products": "Products",
+      "categories": "Product Categories",
+      "states": "States Covered",
+      "dealers": "Dealer Network"
+    }
+  },
+  "home": {
+    "about_title": "About Jay Agritech",
+    "about_h2": "Pioneering Sustainable Agriculture from Gujarat to All of India",
+    "about_lead": "Founded in 2026 in Valsad, Gujarat, Jay Agritech Pvt. Ltd. is on a mission to revolutionize Indian agriculture through innovative biological solutions.",
+    "about_p1": "We combine cutting-edge microbial technology with deep agricultural expertise to create products that work — for the farmer, for the crop, and for the environment.",
+    "solutions_title": "Our Solutions",
+    "solutions_h2": "Comprehensive Crop Solutions",
+    "solutions_subtitle": "From soil to harvest — integrated biological solutions for every stage of crop growth",
+    "why_title": "Why Jay Agritech?",
+    "why_h2": "The Jay Agritech Advantage",
+    "why_subtitle": "What sets us apart in the world of agricultural innovation",
+    "growth_title": "Proprietary Methodology",
+    "growth_h2": "The Jay Agritech Growth System™",
+    "growth_p1": "Our integrated 4-step approach to transforming agriculture — combining soil science, biological nutrition, eco-safe protection, and growth optimization into one cohesive system.",
+    "success_title": "Success Stories",
+    "success_h2": "Real Results, Real Farmers",
+    "success_subtitle": "See how Jay Agritech products are making a measurable difference across Indian farms",
+    "knowledge_title": "Knowledge Hub",
+    "knowledge_h2": "Agricultural Insights & Tips",
+    "knowledge_subtitle": "Expert articles, guides, and seasonal advisories for modern farmers",
+    "partner_title": "Partner With Us",
+    "partner_h2": "Grow Your Business with Jay Agritech",
+    "partner_p1": "Join our expanding network of dealers, distributors, and export partners. Access premium products, marketing support, and competitive margins.",
+    "values_title": "Our Values",
+    "values_h2": "What We Stand For"
+  }
+}

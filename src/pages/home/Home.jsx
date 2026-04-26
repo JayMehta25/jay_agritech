@@ -4,11 +4,14 @@ import {
   Users, Award, MapPin, ChevronRight, Star, Check, Zap,
   Microscope, Beaker, Globe, Target, Heart
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, useScrollAnimationGroup, useCountUp } from '../../hooks/useScrollAnimation';
 import { companyInfo, products, blogPosts, caseStudies } from '../../data/siteData';
-import ProcessFlow from '../../components/ui/ProcessFlow';
 import GrowthSystemVisual from '../../components/ui/GrowthSystemVisual';
 import collageImg from '../../assets/sustainable_farming_collage.png';
+// Assets
+import logoImg from '../../assets/new_title.png';
+import companyVideo from '../../assets/Video_Ad_Request_Farmers_Work.mp4';
 import './Home.css';
 
 // Blog Images
@@ -27,15 +30,29 @@ import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
 import catSpImg from '../../assets/products/specialty.png';
+import catMnImg from '../../assets/products/micronutrients.png';
 
 const blogImages = { 1: blogSoilImg, 2: blogIpmImg, 3: blogBioChemImg };
 const caseImages = { 1: caseCottonImg, 2: caseGroundnutImg, 3: caseMangoImg };
 const catImages = {
-  'bio-fertilizers': catBfImg,
-  'bio-pesticides': catBpImg,
-  'plant-growth-regulators': catPgrImg,
+  'bio-insecticides': catBfImg,
+  'biostimulants': catPgrImg,
   'organic-nutrients': catOnImg,
-  'specialty-products': catSpImg
+  'specialty-products': catSpImg,
+  'micronutrients': catMnImg
+};
+
+// Solution Images
+import solSoilImg from '../../assets/solutions/soil-health.png';
+import solNutrientImg from '../../assets/solutions/nutrient-mgmt.png';
+import solPestImg from '../../assets/solutions/pest-control.png';
+import solGrowthImg from '../../assets/solutions/growth-enhancement.png';
+
+const solImages = {
+  'soil-health': solSoilImg,
+  'nutrient-mgmt': solNutrientImg,
+  'pest-disease': solPestImg,
+  'growth': solGrowthImg
 };
 
 function AnimatedSection({ children, className = '', direction = 'up' }) {
@@ -65,55 +82,47 @@ function StatCounter({ number, suffix, label }) {
   );
 }
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="home-page">
       {/* ══════════ HERO ══════════ */}
       <section className="hero" id="hero">
-        <div className="hero-bg">
-          <div className="hero-gradient"></div>
-          <div className="hero-pattern"></div>
-          <div className="hero-orb hero-orb-1"></div>
-          <div className="hero-orb hero-orb-2"></div>
-          <div className="hero-orb hero-orb-3"></div>
+        <div className="hero-video-bg">
+          <video 
+            src={companyVideo} 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="hero-video-element"
+          />
+          <div className="hero-video-overlay-dark"></div>
         </div>
-        <div className="container hero-content">
-          <div className="hero-text">
-            <div className="hero-badge">
+
+        <div className="container hero-container-centered">
+          <div className="hero-text-centered">
+            <div className="hero-badge centered-badge">
               <Leaf size={14} />
-              <span>Established 2026 · Valsad, Gujarat</span>
+              <span>{t('hero.badge')}</span>
             </div>
-            <h1 className="hero-title">
-              Innovating <span className="text-gradient">Agriculture</span>,<br />
-              Nurturing <span className="text-gradient">Growth</span>
+            <h1 className="hero-title centered-title">
+              {t('hero.title_part1')} <span className="text-gradient">{t('hero.title_part2')}</span>,<br />
+              {t('hero.title_part3')} <span className="text-gradient">{t('hero.title_part4')}</span>
             </h1>
-            <p className="hero-subtitle">
-              Science-backed biological & organic agricultural solutions that enhance crop productivity,
-              improve soil health, and empower every farmer with sustainable technology.
+            <p className="hero-subtitle centered-subtitle">
+              {t('hero.subtitle')}
             </p>
-            <div className="hero-actions">
+            <div className="hero-actions centered-actions">
               <Link to="/products" className="btn btn-gold btn-lg">
-                Explore Products <ArrowRight size={18} />
+                {t('hero.explore_btn')} <ArrowRight size={18} />
               </Link>
               <Link to="/about" className="btn btn-hero-outline btn-lg">
-                Our Story <ChevronRight size={18} />
+                {t('hero.story_btn')} <ChevronRight size={18} />
               </Link>
             </div>
-            <div className="hero-trust">
-              <div className="hero-trust-item">
-                <Check size={16} /> ISO 9001:2015 Certified
-              </div>
-              <div className="hero-trust-item">
-                <Check size={16} /> 60+ Products
-              </div>
-              <div className="hero-trust-item">
-                <Check size={16} /> Made in India
-              </div>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <ProcessFlow />
           </div>
         </div>
+        
         <div className="hero-scroll-indicator">
           <div className="scroll-dot"></div>
         </div>
@@ -124,7 +133,7 @@ export default function Home() {
         <div className="container">
           <div className="stats-grid">
             {companyInfo.stats.map((stat, i) => (
-              <StatCounter key={i} {...stat} />
+              <StatCounter key={i} number={stat.number} suffix={stat.suffix} label={t(`company.stats.${stat.label.toLowerCase().replace(/\s/g, '_')}`, stat.label)} />
             ))}
           </div>
         </div>
@@ -146,41 +155,39 @@ export default function Home() {
               </div>
             </AnimatedSection>
             <AnimatedSection direction="right" className="about-preview-content">
-              <span className="section-overline">About Jay Agritech</span>
-              <h2>Pioneering Sustainable Agriculture from Gujarat to All of India</h2>
+              <span className="section-overline">{t('home.about_title')}</span>
+              <h2>{t('home.about_h2')}</h2>
               <p className="about-lead">
-                Founded in 2026 in Valsad, Gujarat, Jay Agritech Pvt. Ltd. is on a mission to
-                revolutionize Indian agriculture through innovative biological solutions.
+                {t('home.about_lead')}
               </p>
               <p>
-                We combine cutting-edge microbial technology with deep agricultural expertise
-                to create products that work — for the farmer, for the crop, and for the environment.
+                {t('home.about_p1')}
               </p>
               <div className="about-highlights">
                 <div className="highlight-item">
                   <div className="highlight-icon"><Microscope size={20} /></div>
                   <div>
-                    <strong>Advanced R&D Lab</strong>
-                    <span>State-of-the-art microbiology & formulation research</span>
+                    <strong>{t('home.highlights.rd.title', 'Advanced R&D Lab')}</strong>
+                    <span>{t('home.highlights.rd.desc', 'State-of-the-art microbiology & formulation research')}</span>
                   </div>
                 </div>
                 <div className="highlight-item">
                   <div className="highlight-icon"><Target size={20} /></div>
                   <div>
-                    <strong>Farmer-Centric Design</strong>
-                    <span>Every product tested with real farmers in real fields</span>
+                    <strong>{t('home.highlights.farmer.title', 'Farmer-Centric Design')}</strong>
+                    <span>{t('home.highlights.farmer.desc', 'Every product tested with real farmers in real fields')}</span>
                   </div>
                 </div>
                 <div className="highlight-item">
                   <div className="highlight-icon"><Globe size={20} /></div>
                   <div>
-                    <strong>Pan-India Presence</strong>
-                    <span>Growing network across 15+ Indian states</span>
+                    <strong>{t('home.highlights.presence.title', 'Pan-India Presence')}</strong>
+                    <span>{t('home.highlights.presence.desc', 'Growing network across 15+ Indian states')}</span>
                   </div>
                 </div>
               </div>
               <Link to="/about" className="btn btn-primary">
-                Learn More About Us <ArrowRight size={16} />
+                {t('common.learn_more')} <ArrowRight size={16} />
               </Link>
             </AnimatedSection>
           </div>
@@ -192,31 +199,37 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline">Our Solutions</span>
-              <h2 className="section-title">Comprehensive Crop Solutions</h2>
+              <span className="section-overline">{t('home.solutions_title')}</span>
+              <h2 className="section-title">{t('home.solutions_h2')}</h2>
               <p className="section-subtitle">
-                From soil to harvest — integrated biological solutions for every stage of crop growth
+                {t('home.solutions_subtitle')}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="solutions-grid">
             {[
-              { icon: <Leaf size={28} />, title: 'Soil Health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32' },
-              { icon: <Sprout size={28} />, title: 'Nutrient Management', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0' },
-              { icon: <Shield size={28} />, title: 'Pest & Disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828' },
-              { icon: <TrendingUp size={28} />, title: 'Growth Enhancement', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100' },
+              { icon: <Leaf size={24} />, title: 'Soil Health', id: 'soil-health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32' },
+              { icon: <Sprout size={24} />, title: 'Nutrient Management', id: 'nutrient-mgmt', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0' },
+              { icon: <Shield size={24} />, title: 'Pest & Disease', id: 'pest-disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828' },
+              { icon: <TrendingUp size={24} />, title: 'Growth Enhancement', id: 'growth', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100' },
             ].map((sol, i) => (
               <AnimatedSection key={i}>
                 <Link to={sol.link} className="solution-card card">
-                  <div className="solution-icon" style={{ background: `${sol.color}15`, color: sol.color }}>
-                    {sol.icon}
+                  <div className="solution-card-image">
+                    <img src={solImages[sol.id]} alt={sol.title} className="solution-img" />
+                    <div className="solution-card-overlay" style={{ background: `linear-gradient(to bottom, transparent, ${sol.color}40)` }}></div>
+                    <div className="solution-icon-floating" style={{ background: sol.color }}>
+                      {sol.icon}
+                    </div>
                   </div>
-                  <h3>{sol.title}</h3>
-                  <p>{sol.desc}</p>
-                  <span className="solution-link">
-                    Explore <ArrowRight size={14} />
-                  </span>
+                  <div className="solution-card-body">
+                    <h3>{t(`home.solutions.${sol.title.toLowerCase().replace(/\s/g, '_')}.title`, sol.title)}</h3>
+                    <p>{t(`home.solutions.${sol.title.toLowerCase().replace(/\s/g, '_')}.desc`, sol.desc)}</p>
+                    <span className="solution-link" style={{ color: sol.color }}>
+                      Explore <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </Link>
               </AnimatedSection>
             ))}
@@ -225,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ FEATURED PRODUCTS ══════════ */}
-      <section className="section bg-white" id="products-preview">
+      <section className="section moving-gradient-bg" id="products-preview">
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
@@ -245,8 +258,8 @@ export default function Home() {
                     <img src={catImages[cat.id]} alt={cat.name} className="pcc-img" />
                   </div>
                   <div className="pcc-content">
-                    <h3>{cat.name}</h3>
-                    <p>{cat.description}</p>
+                    <h3>{t(cat.nameKey, cat.name)}</h3>
+                    <p>{t(cat.descriptionKey, cat.description)}</p>
                     <div className="pcc-footer">
                       <span className="badge badge-green">{cat.productCount} Products</span>
                       <ArrowRight size={16} />
@@ -270,10 +283,10 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline" style={{ color: 'var(--clr-accent-gold)' }}>Why Jay Agritech?</span>
-              <h2 className="section-title" style={{ color: 'white' }}>The Jay Agritech Advantage</h2>
+              <span className="section-overline" style={{ color: 'var(--clr-accent-gold)' }}>{t('home.why_title')}</span>
+              <h2 className="section-title" style={{ color: 'white' }}>{t('home.why_h2')}</h2>
               <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                What sets us apart in the world of agricultural innovation
+                {t('home.why_subtitle')}
               </p>
             </div>
           </AnimatedSection>
@@ -290,8 +303,8 @@ export default function Home() {
               <AnimatedSection key={i}>
                 <div className="why-card">
                   <div className="why-icon">{item.icon}</div>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
+                  <h4>{t(`home.why_reasons.${item.title.toLowerCase().replace(/\s/g, '_')}.title`, item.title)}</h4>
+                  <p>{t(`home.why_reasons.${item.title.toLowerCase().replace(/\s/g, '_')}.desc`, item.desc)}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -304,11 +317,10 @@ export default function Home() {
         <div className="container-wide">
           <div className="growth-preview-grid">
             <AnimatedSection direction="left" className="growth-preview-content">
-              <span className="section-overline">Proprietary Methodology</span>
-              <h2>The Jay Agritech Growth System™</h2>
+              <span className="section-overline">{t('home.growth_title')}</span>
+              <h2>{t('home.growth_h2')}</h2>
               <p>
-                Our integrated 4-step approach to transforming agriculture — combining soil science,
-                biological nutrition, eco-safe protection, and growth optimization into one cohesive system.
+                {t('home.growth_p1')}
               </p>
               <div className="growth-steps">
                 {[
@@ -327,7 +339,7 @@ export default function Home() {
                 ))}
               </div>
               <Link to="/growth-system" className="btn btn-primary">
-                Learn About Our System <ArrowRight size={16} />
+                {t('home.growth_btn', 'Learn About Our System')} <ArrowRight size={16} />
               </Link>
             </AnimatedSection>
             <div className="growth-preview-visual">
@@ -342,10 +354,10 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline">Success Stories</span>
-              <h2 className="section-title">Real Results, Real Farmers</h2>
+              <span className="section-overline">{t('home.success_title')}</span>
+              <h2 className="section-title">{t('home.success_h2')}</h2>
               <p className="section-subtitle">
-                See how Jay Agritech products are making a measurable difference across Indian farms
+                {t('home.success_subtitle')}
               </p>
             </div>
           </AnimatedSection>
@@ -394,10 +406,10 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline">Knowledge Hub</span>
-              <h2 className="section-title">Agricultural Insights & Tips</h2>
+              <span className="section-overline">{t('home.knowledge_title')}</span>
+              <h2 className="section-title">{t('home.knowledge_h2')}</h2>
               <p className="section-subtitle">
-                Expert articles, guides, and seasonal advisories for modern farmers
+                {t('home.knowledge_subtitle')}
               </p>
             </div>
           </AnimatedSection>
@@ -437,26 +449,25 @@ export default function Home() {
           <AnimatedSection>
             <div className="partners-cta-inner">
               <div className="pcta-content">
-                <span className="section-overline" style={{ color: 'var(--clr-accent-gold)' }}>Partner With Us</span>
-                <h2>Grow Your Business with Jay Agritech</h2>
+                <span className="section-overline" style={{ color: 'var(--clr-accent-gold)' }}>{t('home.partner_title')}</span>
+                <h2>{t('home.partner_h2')}</h2>
                 <p>
-                  Join our expanding network of dealers, distributors, and export partners.
-                  Access premium products, marketing support, and competitive margins.
+                  {t('home.partner_p1')}
                 </p>
                 <div className="pcta-types">
                   <Link to="/partners/dealer" className="pcta-type">
-                    <strong>Become a Dealer</strong>
-                    <span>Retail-level partnership</span>
+                    <strong>{t('nav.links.become_a_dealer', 'Become a Dealer')}</strong>
+                    <span>{t('home.partner_types.dealer', 'Retail-level partnership')}</span>
                     <ArrowRight size={16} />
                   </Link>
                   <Link to="/partners/distributor" className="pcta-type">
-                    <strong>Become a Distributor</strong>
-                    <span>District/region-level partnership</span>
+                    <strong>{t('nav.links.become_a_distributor', 'Become a Distributor')}</strong>
+                    <span>{t('home.partner_types.distributor', 'District/region-level partnership')}</span>
                     <ArrowRight size={16} />
                   </Link>
                   <Link to="/business/exports" className="pcta-type">
-                    <strong>Export Partnership</strong>
-                    <span>International business opportunities</span>
+                    <strong>{t('nav.links.export_partnership', 'Export Partnership')}</strong>
+                    <span>{t('home.partner_types.export', 'International business opportunities')}</span>
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -471,8 +482,8 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline">Our Values</span>
-              <h2 className="section-title">What We Stand For</h2>
+              <span className="section-overline">{t('home.values_title')}</span>
+              <h2 className="section-title">{t('home.values_h2')}</h2>
             </div>
           </AnimatedSection>
 

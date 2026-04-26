@@ -9,11 +9,16 @@ function AnimatedSection({ children, className = '' }) {
   return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
+import solSoilImg from '../../assets/solutions/soil-health.png';
+import solNutrientImg from '../../assets/solutions/nutrient-mgmt.png';
+import solPestImg from '../../assets/solutions/pest-control.png';
+import solGrowthImg from '../../assets/solutions/growth-enhancement.png';
+
 const solutions = [
-  { icon: <Leaf size={32} />, title: 'Soil Health', slug: 'soil-health', color: '#2E7D32', desc: 'Restore and maintain soil vitality with our microbial solutions that rebuild your soil\'s natural fertility and biological activity.', features: ['Soil microbiome restoration', 'Organic matter enhancement', 'pH balancing solutions', 'Soil carbon sequestration'] },
-  { icon: <Sprout size={32} />, title: 'Nutrient Management', slug: 'nutrient-mgmt', color: '#1565C0', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems that optimize crop intake.', features: ['Bio-available NPK delivery', 'Micronutrient chelation', 'Slow-release organic nutrition', 'Foliar nutrition programs'] },
-  { icon: <Shield size={32} />, title: 'Pest & Disease Control', slug: 'pest-disease', color: '#C62828', desc: 'Eco-friendly biological pest management — effective protection without harmful residues on your produce.', features: ['Bio-insecticides', 'Bio-fungicides', 'Neem-based solutions', 'Integrated pest management'] },
-  { icon: <TrendingUp size={32} />, title: 'Growth Enhancement', slug: 'growth', color: '#E65100', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants for every growth stage.', features: ['Seaweed extracts', 'Amino acid complexes', 'Flowering & fruiting aids', 'Stress tolerance boosters'] },
+  { icon: <Leaf size={32} />, title: 'Soil Health', slug: 'soil-health', color: '#2E7D32', image: solSoilImg, desc: 'Restore and maintain soil vitality with our microbial solutions that rebuild your soil\'s natural fertility and biological activity.', features: ['Soil microbiome restoration', 'Organic matter enhancement', 'pH balancing solutions', 'Soil carbon sequestration'] },
+  { icon: <Sprout size={32} />, title: 'Nutrient Management', slug: 'nutrient-mgmt', color: '#1565C0', image: solNutrientImg, desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems that optimize crop intake.', features: ['Bio-available NPK delivery', 'Micronutrient chelation', 'Slow-release organic nutrition', 'Foliar nutrition programs'] },
+  { icon: <Shield size={32} />, title: 'Pest & Disease Control', slug: 'pest-disease', color: '#C62828', image: solPestImg, desc: 'Eco-friendly biological pest management — effective protection without harmful residues on your produce.', features: ['Bio-insecticides', 'Bio-fungicides', 'Neem-based solutions', 'Integrated pest management'] },
+  { icon: <TrendingUp size={32} />, title: 'Growth Enhancement', slug: 'growth', color: '#E65100', image: solGrowthImg, desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants for every growth stage.', features: ['Seaweed extracts', 'Amino acid complexes', 'Flowering & fruiting aids', 'Stress tolerance boosters'] },
 ];
 
 export default function Solutions() {
@@ -38,8 +43,8 @@ export default function Solutions() {
                 <Link to="/products" className="btn btn-primary">View Related Products <ArrowRight size={16} /></Link>
               </div>
               <div style={{ order: i % 2 === 0 ? 1 : 0 }}>
-                <div style={{ aspectRatio: '4/3', background: `linear-gradient(135deg, ${sol.color}10, ${sol.color}05)`, borderRadius: 'var(--radius-xl)', border: `1px solid ${sol.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ color: sol.color, opacity: 0.3 }}>{React.cloneElement(sol.icon, { size: 80 })}</div>
+                <div style={{ aspectRatio: '4/3', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-xl)', border: `1px solid var(--clr-border-light)` }}>
+                  <img src={sol.image} alt={sol.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               </div>
             </section>

@@ -5,7 +5,7 @@
 /* ── Top Bar ── */
 .topbar {
   background: var(--clr-primary-dark);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: var(--fs-caption);
   padding: var(--sp-2) 0;
   position: relative;
@@ -13,16 +13,18 @@
 }
 
 .topbar-content {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 var(--sp-4);
 }
 
 .topbar-left {
-  /* empty spacer for centering */
+  flex: 1;
 }
 
 .topbar-center {
+  flex: 2;
   text-align: center;
 }
 
@@ -33,17 +35,18 @@
 }
 
 .topbar-right {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: var(--sp-5);
-  justify-self: end;
+  justify-content: flex-end;
 }
 
 .topbar-right a {
   display: flex;
   align-items: center;
   gap: var(--sp-1);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 11px;
   transition: color var(--duration-fast);
 }
@@ -52,10 +55,106 @@
   color: white;
 }
 
+/* ── Language Switcher ── */
+.lang-switcher-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lang-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid var(--clr-border);
+  color: var(--clr-text-primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+  transition: all var(--duration-fast);
+  cursor: pointer;
+}
+
+.navbar-transparent .lang-switcher-btn {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-switcher-btn:hover {
+  background: var(--clr-primary-surface);
+  border-color: var(--clr-primary-lighter);
+  color: var(--clr-primary);
+}
+
+.navbar-transparent .lang-switcher-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  color: white;
+}
+
+.lang-switcher-btn .rotate-180 {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--clr-border-light);
+  min-width: 130px;
+  overflow: hidden;
+  z-index: calc(var(--z-fixed) + 50);
+  animation: megaMenuFadeIn var(--duration-fast) var(--ease-out);
+}
+
+.lang-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--clr-border-light);
+  font-size: var(--fs-body-sm);
+  color: var(--clr-text-body);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.lang-option:last-child {
+  border-bottom: none;
+}
+
+.lang-option:hover {
+  background: var(--clr-primary-surface);
+  color: var(--clr-primary);
+}
+
+.lang-option.active {
+  background: var(--clr-primary);
+  color: white;
+}
+
+.lang-flag {
+  font-size: 14px;
+}
+
+.lang-label {
+  font-weight: var(--fw-medium);
+}
+
 /* ── Main Navbar ── */
 .navbar {
   position: fixed;
-  top: 32px; /* Height of topbar */
+  top: 32px;
+  /* Height of topbar */
   left: 0;
   right: 0;
   height: var(--navbar-height);
@@ -64,7 +163,9 @@
 }
 
 @media (max-width: 480px) {
-  .navbar { top: 0; }
+  .navbar {
+    top: 0;
+  }
 }
 
 .navbar-transparent {
@@ -72,7 +173,7 @@
 }
 
 .navbar-solid {
-  background: rgba(255,255,255,0.97);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
@@ -81,9 +182,8 @@
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
-  gap: var(--sp-6);
+  padding: 0 var(--sp-4);
 }
 
 /* ── Logo ── */
@@ -124,6 +224,7 @@
   display: flex;
   align-items: center;
   gap: var(--sp-1);
+  margin-left: var(--sp-10);
 }
 
 .nav-item {
@@ -147,7 +248,7 @@
 }
 
 .navbar-transparent .nav-link {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-link:hover,
@@ -159,7 +260,7 @@
 .navbar-transparent .nav-link:hover,
 .navbar-transparent .nav-item.active .nav-link {
   color: white;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-chevron {
@@ -176,6 +277,7 @@
     opacity: 0;
     transform: translate(-50%, -10px);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, 0);
@@ -184,7 +286,8 @@
 
 .mega-menu {
   position: absolute;
-  top: 90%; /* Slightly overlap to prevent gap */
+  top: 90%;
+  /* Slightly overlap to prevent gap */
   left: 50%;
   transform: translateX(-50%);
   padding-top: var(--sp-3);
@@ -251,6 +354,7 @@
   align-items: center;
   gap: var(--sp-3);
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* ── Mobile Toggle ── */
@@ -268,7 +372,7 @@
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: var(--z-modal);
   animation: fadeIn var(--duration-normal);
 }
@@ -287,8 +391,13 @@
 }
 
 @keyframes slideInFromRight {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .mobile-menu-header {
@@ -370,24 +479,28 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+
   .navbar-links,
   .navbar-actions {
     display: none;
   }
-  
+
   .navbar-toggle {
     display: block;
   }
 }
 
 @media (max-width: 768px) {
+
   .topbar-left,
   .topbar-center {
     display: none;
   }
-  
+
   .topbar-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .topbar-right {
@@ -401,7 +514,33 @@
   .topbar {
     display: none;
   }
-  
+
+  .navbar {
+    margin-top: 0;
+  }
+}
+
+.topbar-left,
+.topbar-center {
+  display: none;
+}
+
+.topbar-content {
+  grid-template-columns: 1fr;
+}
+
+.topbar-right {
+  width: 100%;
+  justify-content: center;
+  justify-self: center;
+}
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    display: none;
+  }
+
   .navbar {
     margin-top: 0;
   }
