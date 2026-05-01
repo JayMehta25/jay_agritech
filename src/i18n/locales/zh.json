@@ -1,0 +1,373 @@
+{
+  "nav": {
+    "about": "关于我们",
+    "solutions": "解决方案",
+    "products": "产品",
+    "business": "商务",
+    "research": "研发",
+    "farmer_zone": "农民区",
+    "contact": "联系我们",
+    "become_partner": "成为合作伙伴",
+    "tagline": "创新农业，培育增长",
+    "sections": {
+      "company": "公司",
+      "operations": "运营",
+      "crop_solutions": "作物解决方案",
+      "product_categories": "产品类别",
+      "b2b_solutions": "B2B 解决方案",
+      "resources": "资源"
+    },
+    "links": {
+      "company_overview": "公司概况",
+      "our_journey": "我们的历程",
+      "vision_&_mission": "愿景与使命",
+      "leadership_team": "领导团队",
+      "manufacturing": "生产制造",
+      "certifications": "认证",
+      "sustainability": "可持续发展",
+      "milestones": "里程碑",
+      "solutions_overview": "解决方案概览",
+      "soil_health": "土壤健康",
+      "nutrient_management": "营养管理",
+      "pest_&_disease": "病虫害",
+      "growth_enhancement": "增长增强",
+      "all_products": "所有产品",
+      "bio_fertilizers": "生物肥料",
+      "bio_pesticides": "生物农药",
+      "bio_insecticides": "生物杀虫剂",
+      "biostimulants": "生物刺激素",
+      "organic_nutrients": "有机营养物",
+      "specialty_products": "特种产品",
+      "micronutrients": "微量元素",
+      "business_overview": "业务概览",
+      "contract_manufacturing": "合同制造",
+      "research_services": "研发服务",
+      "white/private_label": "白标/私人标签",
+      "exports_&_franchise": "出口与加盟"
+    }
+  },
+  "products": {
+    "categories": {
+      "bio_insecticides": {
+        "name": "生物杀虫剂",
+        "desc": "先进的生物杀虫剂和杀真菌剂，用于环保的病虫害管理。"
+      },
+      "biostimulants": {
+        "name": "生物刺激素",
+        "desc": "源自有机来源的天然植物生长模拟器和根际活化剂，可提高作物性能。"
+      },
+      "organic_nutrients": {
+        "name": "有机营养物",
+        "desc": "经 OMRI 认证的有机营养解决方案，适用于可持续农业和优质农产品。"
+      },
+      "micronutrients": {
+        "name": "微量元素",
+        "desc": "必需微量元素（铁、锰、锌、铜、硼）的平衡混合物，可确保植物健康和高产。"
+      }
+    }
+  },
+  "common": {
+    "chat_with_us": "与我们聊天",
+    "chat_on_whatsapp": "在 WhatsApp 上聊天",
+    "learn_more": "了解更多",
+    "explore": "探索",
+    "view_all_products": "查看所有产品",
+    "view_all_case_studies": "查看所有案例研究",
+    "read_more": "阅读更多"
+  },
+  "hero": {
+    "badge": "100% 有机 & 生物",
+    "title_part1": "创新",
+    "title_part2": "农业",
+    "title_part3": "培育",
+    "title_part4": "增长",
+    "subtitle": "科学驱动的生物和有机农业解决方案，可提高作物产量、改善土壤健康，并为每位农民提供可持续技术。",
+    "explore_btn": "探索产品",
+    "story_btn": "我们的故事"
+  },
+  "company": {
+    "stats": {
+      "products": "产品",
+      "product_categories": "产品类别",
+      "states_covered": "覆盖州份",
+      "dealer_network": "经销商网络"
+    },
+    "values": {
+      "innovation_first": {
+        "title": "创新第一",
+        "desc": "持续投资尖端生物技术的研发。"
+      },
+      "farmer-centric": {
+        "title": "以农民为中心",
+        "desc": "每件产品都是根据农民的真实需求设计的。"
+      },
+      "sustainability": {
+        "title": "可持续性",
+        "desc": "致力于保护地球的环保解决方案。"
+      },
+      "scientific_rigor": {
+        "title": "科学严谨",
+        "desc": "每一项声明都有田间试验和实验室验证的支持。"
+      },
+      "integrity": {
+        "title": "诚信",
+        "desc": "透明的实践，诚实的沟通，不折不扣的质量。"
+      },
+      "accessibility": {
+        "title": "可及性",
+        "desc": "优质解决方案，价格合理，全印度供应。"
+      }
+    }
+  },
+  "home": {
+    "whatsapp_message": "您好！我对 Jay Agritech 的产品很感兴趣。请分享更多详情。",
+    "about_image_alt": "可持续农业",
+    "established": "成立于 2026 年",
+    "about_title": "关于我们",
+    "about_h2": "从古吉拉特邦到全印度的可持续农业先驱",
+    "about_lead": "Jay Agritech 致力于通过科学驱动的生物解决方案为印度农民赋能。",
+    "about_p1": "我们将尖端的微生物技术与深厚的农业专业知识相结合，创造出对农民、作物和环境都有效的产品。",
+    "highlights": {
+      "rd": {
+        "title": "先进研发实验室",
+        "desc": "最先进的微生物和配方研究"
+      },
+      "farmer": {
+        "title": "以农民为中心的设计",
+        "desc": "每件产品都在真实田间与真实农民共同测试"
+      },
+      "presence": {
+        "title": "全印度覆盖",
+        "desc": "遍布印度 15 个以上州份的不断壮大的网络"
+      }
+    },
+    "solutions_title": "我们的解决方案",
+    "solutions_h2": "全面的作物解决方案",
+    "solutions_subtitle": "从土壤到收获 — 作物生长每个阶段的综合生物解决方案",
+    "solutions": {
+      "soil_health": {
+        "title": "土壤健康",
+        "desc": "通过重建土壤自然肥力的微生物解决方案恢复并维持土壤活力。"
+      },
+      "nutrient_management": {
+        "title": "营养管理",
+        "desc": "通过有机和微生物营养输送系统实现平衡的生物可利用营养。"
+      },
+      "pest_disease": {
+        "title": "病虫害",
+        "desc": "环保的生物病虫害管理 — 有效防护且无有害残留。"
+      },
+      "growth_enhancement": {
+        "title": "增长增强",
+        "desc": "利用科学支撑的生长调节剂和生物刺激素最大限度地发挥作物潜力。"
+      }
+    },
+    "products_overline": "产品组合",
+    "products_h2": "60+ 创新产品",
+    "products_subtitle": "跨越 5 个类别 — 生物肥料、生物农药、生长调节剂、有机营养物和特种产品。",
+    "products_count": "{{count}} 个产品",
+    "why_title": "为什么选择 Jay Agritech？",
+    "why_h2": "Jay Agritech 的优势",
+    "why_subtitle": "我们在农业创新领域的独特之处",
+    "why_reasons": {
+      "research_driven": {
+        "title": "研究驱动",
+        "desc": "每件产品都经过严格的研发和田间试验 — 无需猜测，只有科学。"
+      },
+      "quality_assured": {
+        "title": "质量保证",
+        "desc": "ISO 9001:2015 认证流程。每批产品都经过效力和纯度测试。"
+      },
+      "farmer_first": {
+        "title": "农民优先",
+        "desc": "根据真实农民的反馈设计产品。实惠、易得、有效。"
+      },
+      "eco_safe": {
+        "title": "100% 生态安全",
+        "desc": "零有害化学物质。对环境安全，对消费者安全。"
+      },
+      "proven_results": {
+        "title": "经证实的成果",
+        "desc": "在多种作物和地区记录了 15-40% 的产量提高。"
+      },
+      "made_in_india": {
+        "title": "印度制造",
+        "desc": "自豪地在古吉拉特邦开发和制造，适合印度的土壤条件。"
+      }
+    },
+    "growth_title": "专有方法论",
+    "growth_h2": "Jay Agritech 增长系统™",
+    "growth_p1": "我们将土壤科学、生物营养、生态安全保护和生长优化整合为一个衔接系统的 4 步农业转型方案。",
+    "growth_steps": {
+      "soil_foundation": {
+        "title": "土壤基础",
+        "desc": "重建土壤生物学和健康"
+      },
+      "bio_nutrition": {
+        "title": "生物营养",
+        "desc": "天然营养输送系统"
+      },
+      "eco_protection": {
+        "title": "生态保护",
+        "desc": "生物病虫害防治"
+      },
+      "growth_boost": {
+        "title": "增长提升",
+        "desc": "最大限度提高产量和品质"
+      }
+    },
+    "growth_btn": "了解我们的系统",
+    "success_title": "成功案例",
+    "success_h2": "真实的结果，真实的农民",
+    "success_subtitle": "了解 Jay Agritech 产品如何为印度各地的农场带来可衡量的变化",
+    "knowledge_title": "知识中心",
+    "knowledge_h2": "农业洞察与技巧",
+    "knowledge_subtitle": "为现代农民提供的专家文章、指南和季节性建议",
+    "visit_knowledge_hub": "访问知识中心",
+    "partner_title": "与我们合作",
+    "partner_h2": "与 Jay Agritech 共同发展业务",
+    "partner_p1": "加入我们不断扩大的经销商、分销商和出口合作伙伴网络。获得优质产品、营销支持和竞争优势。",
+    "partner_types": {
+      "dealer_title": "成为经销商",
+      "dealer": "零售级合作伙伴",
+      "distributor_title": "成为分销商",
+      "distributor": "地区级合作伙伴",
+      "export_title": "出口合作伙伴关系",
+      "export": "国际业务机会"
+    },
+    "values_title": "我们的价值观",
+    "values_h2": "我们的核心原则",
+    "case_studies": {
+      "cotton-yield-boost": {
+        "title": "巴鲁奇县棉花产量提高 32%",
+        "crop": "棉花",
+        "location": "古吉拉特邦巴鲁奇",
+        "farmer": "Rameshbhai Patel",
+        "challenge": "由于连续几个季节的土壤退化和严重的棉铃虫侵扰，棉花产量下降。",
+        "results": ["产量增加 32%", "虫害减少 40%"],
+        "testimonial": "Jay Agritech 的产品改变了我的棉花种植方式。组合方法给了我 5 年来最好的产量。"
+      },
+      "groundnut-quality-improvement": {
+        "title": "朱纳格特县优质花生生产",
+        "crop": "花生",
+        "location": "古吉拉特邦朱纳格特",
+        "farmer": "Kantibhai Solanki",
+        "challenge": "根瘤发育不良且品质不一，影响了市场价格的实现。",
+        "results": ["根瘤发育提高 45%", "产量提高 20%"],
+        "testimonial": "根瘤菌培养效果惊人。我的花生植株拥有我见过的最好的根瘤。"
+      },
+      "mango-flowering-success": {
+        "title": "瓦尔萨德果园创纪录的芒果开花",
+        "crop": "芒果",
+        "location": "古吉拉特邦瓦尔萨德",
+        "farmer": "Dineshbhai Desai",
+        "challenge": "由于开花不规律和落果严重，连续两年芒果歉收。",
+        "results": ["开花均匀度提高 60%", "落果减少 35%"],
+        "testimonial": "这个季节非常出色。开花是我见过的最均匀的一次，果实品质也很出众。"
+      }
+    },
+    "blog_posts": {
+      "understanding-soil-health": {
+        "title": "了解土壤健康：丰收的基础",
+        "category": "土壤健康",
+        "excerpt": "健康的土壤是成功农业的基石。了解生物投入品如何让贫瘠的土壤焕发生机。"
+      },
+      "integrated-pest-management": {
+        "title": "IPM 策略：平衡病虫害防治与环境安全",
+        "category": "病虫害管理",
+        "excerpt": "探索综合病虫害管理如何结合生物、文化和化学方法实现可持续作物保护。"
+      },
+      "bio-vs-chemical-fertilizers": {
+        "title": "生物肥料与化学肥料：全面对比",
+        "category": "知识库",
+        "excerpt": "对生物和化学肥料的循证分析 — 了解何时以及如何使用每种肥料以获得最佳效果。"
+      }
+    }
+  },
+  "pages": {
+    "careers": {
+      "title": "职业生涯",
+      "subtitle": "加入我们的使命，创新农业，促进全印度的增长。",
+      "overline": "加入我们的团队",
+      "current_openings": "当前职位空缺",
+      "apply": "立即申请",
+      "email_resume": "发送简历"
+    }
+  },
+  "pages_details": {
+    "careers": {
+      "why_join": {
+        "mission_driven": {
+          "title": "使命驱动",
+          "desc": "加入一家致力于为印度农民解决关键农业挑战的公司。"
+        },
+        "growth": {
+          "title": "职业成长",
+          "desc": "在快节奏的环境中扩展您的技能，并获得行业专家的指导。"
+        },
+        "culture": {
+          "title": "包容文化",
+          "desc": "一个协作的工作场所，每个人的声音都很重要，科学的好奇心受到推崇。"
+        },
+        "impact": {
+          "title": "现实影响",
+          "desc": "在田间和农民社区的生活中看到您工作的直接成果。"
+        }
+      },
+      "jobs": {
+        "field_sales": {
+          "department": "销售与市场营销",
+          "type": "全职",
+          "title": "技术销售专员",
+          "location": "古吉拉特邦（多个地区）",
+          "description": "通过进行田间演示并建立强大的经销商-农民网络来推动产品的采用。"
+        },
+        "research_microbiologist": {
+          "department": "研发",
+          "type": "全职",
+          "title": "初级研究微生物学家",
+          "location": "瓦尔萨德，古吉拉特邦",
+          "description": "在我们先进的实验室中专注于菌株分离、发酵优化和新配方开发。"
+        },
+        "digital_marketing": {
+          "department": "市场营销",
+          "type": "全职",
+          "title": "数字营销专员",
+          "location": "瓦尔萨德，古吉拉特邦",
+          "description": "通过社交媒体管理、SEO 和农民参与活动提升我们的数字化存在。"
+        },
+        "qa_analyst": {
+          "department": "质量控制",
+          "type": "全职",
+          "title": "质量控制分析师",
+          "location": "瓦尔萨德，古吉拉特邦",
+          "description": "确保每一批生物投入品都符合效力和纯度的最高标准。"
+        }
+      },
+      "no_role_text": "没看到合适的职位？我们一直在寻找优秀的人才。"
+    }
+  },
+  "footer": {
+    "cta_title": "准备好转型您的农业了吗？",
+    "cta_desc": "加入 500 多家与 Jay Agritech 创新生物解决方案共同成长的合作伙伴。",
+    "get_in_touch": "联系我们",
+    "description": "开创可持续农业的生物和有机农业解决方案。受全印度农民信赖的科学支撑产品。",
+    "company": "公司",
+    "products": "产品",
+    "resources": "资源",
+    "knowledge_hub": "知识中心",
+    "case_studies": "案例研究",
+    "growth_system": "增长系统",
+    "contact_us": "联系我们",
+    "contact_address": "印度古吉拉特邦瓦尔萨德 396001",
+    "newsletter_title": "订阅更新",
+    "newsletter_placeholder": "您的电子邮件",
+    "subscribe": "订阅",
+    "copyright": "© 2026 Jay Agritech。版权所有。",
+    "privacy_policy": "隐私政策",
+    "terms_conditions": "条款和条件",
+    "made_with_care": "精心为印度农业打造",
+    "rd_center": "研发中心",
+    "careers": "职业生涯"
+  }
+}

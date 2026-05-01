@@ -18,8 +18,9 @@ export default function Navbar() {
   const location = useLocation();
 
   const languages = [
-    { code: 'en', label: 'English', flag: '🇺🇸' },
-    { code: 'hi', label: 'Hindi', flag: '🇮🇳' }
+    { code: 'en', label: 'English', nativeChar: 'A' },
+    { code: 'hi', label: 'Hindi', nativeChar: 'अ' },
+    { code: 'zh', label: 'Mandarin', nativeChar: '文' }
   ];
 
   const currentLanguage = languages.find(l => l.code === i18n.language) || languages[0];
@@ -147,7 +148,7 @@ export default function Navbar() {
                       className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
                       onClick={() => changeLanguage(lang.code)}
                     >
-                      <span className="lang-flag">{lang.flag}</span>
+                      <span className="lang-native-char">{lang.nativeChar}</span>
                       <span className="lang-label">{lang.label}</span>
                     </button>
                   ))}

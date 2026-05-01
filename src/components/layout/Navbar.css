@@ -142,8 +142,22 @@
   color: white;
 }
 
-.lang-flag {
+.lang-native-char {
   font-size: 14px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-primary-surface);
+  border-radius: 4px;
+  height: 20px;
+}
+
+.lang-option.active .lang-native-char {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .lang-label {
