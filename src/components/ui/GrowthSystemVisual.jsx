@@ -1,8 +1,10 @@
 import { Sprout, Leaf, TrendingUp, Shield, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './GrowthSystemVisual.css';
 
 export default function GrowthSystemVisual() {
+  const { t } = useTranslation();
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.3 });
 
   return (
@@ -15,39 +17,39 @@ export default function GrowthSystemVisual() {
       {/* Central Core */}
       <div className="gsv-core">
         <Sprout size={56} />
-        <span>4-Step<br/>System</span>
+        <span>{t('home.growth_visual.core', '4-Step')}<br/>{t('home.growth_visual.system', 'System')}</span>
       </div>
 
       {/* Step Nodes — appear sequentially */}
       <div className="gsv-step gsv-step-1">
         <div className="gsv-step-icon"><Leaf size={32} /></div>
         <div className="gsv-step-info">
-          <strong>Soil Foundation</strong>
-          <small>Rebuild biology</small>
+          <strong>{t('home.growth_visual.step1.title', 'Soil Foundation')}</strong>
+          <small>{t('home.growth_visual.step1.desc', 'Rebuild biology')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-2">
         <div className="gsv-step-icon"><TrendingUp size={32} /></div>
         <div className="gsv-step-info">
-          <strong>Bio Nutrition</strong>
-          <small>Natural delivery</small>
+          <strong>{t('home.growth_visual.step2.title', 'Bio Nutrition')}</strong>
+          <small>{t('home.growth_visual.step2.desc', 'Natural delivery')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-3">
         <div className="gsv-step-icon"><Shield size={32} /></div>
         <div className="gsv-step-info">
-          <strong>Eco Protection</strong>
-          <small>Safe pest control</small>
+          <strong>{t('home.growth_visual.step3.title', 'Eco Protection')}</strong>
+          <small>{t('home.growth_visual.step3.desc', 'Safe pest control')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-4">
         <div className="gsv-step-icon"><Zap size={32} /></div>
         <div className="gsv-step-info">
-          <strong>Growth Boost</strong>
-          <small>Maximize yield</small>
+          <strong>{t('home.growth_visual.step4.title', 'Growth Boost')}</strong>
+          <small>{t('home.growth_visual.step4.desc', 'Maximize yield')}</small>
         </div>
       </div>
     </div>

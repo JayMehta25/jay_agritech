@@ -29,7 +29,6 @@ import catBfImg from '../../assets/products/bio-fertilizers.png';
 import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
-import catSpImg from '../../assets/products/specialty.png';
 import catMnImg from '../../assets/products/micronutrients.png';
 
 const blogImages = { 1: blogSoilImg, 2: blogIpmImg, 3: blogBioChemImg };
@@ -38,7 +37,6 @@ const catImages = {
   'bio-insecticides': catBfImg,
   'biostimulants': catPgrImg,
   'organic-nutrients': catOnImg,
-  'specialty-products': catSpImg,
   'micronutrients': catMnImg
 };
 
@@ -81,6 +79,9 @@ function StatCounter({ number, suffix, label }) {
     </div>
   );
 }
+
+const toKey = (text) => text.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+
 export default function Home() {
   const { t } = useTranslation();
   return (
@@ -146,11 +147,11 @@ export default function Home() {
             <AnimatedSection direction="left" className="about-preview-visual">
               <div className="about-image-collage">
                 <div className="collage-main">
-                  <img src={collageImg} alt="Sustainable Farming" className="collage-img" />
+                  <img src={collageImg} alt={t('home.about_image_alt', 'Sustainable Farming')} className="collage-img" />
                 </div>
                 <div className="collage-badge">
                   <Award size={20} />
-                  <span>Est. 2026</span>
+                  <span>{t('home.established', 'Est. 2026')}</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -209,10 +210,10 @@ export default function Home() {
 
           <div className="solutions-grid">
             {[
-              { icon: <Leaf size={24} />, title: 'Soil Health', id: 'soil-health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32' },
-              { icon: <Sprout size={24} />, title: 'Nutrient Management', id: 'nutrient-mgmt', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0' },
-              { icon: <Shield size={24} />, title: 'Pest & Disease', id: 'pest-disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828' },
-              { icon: <TrendingUp size={24} />, title: 'Growth Enhancement', id: 'growth', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100' },
+              { icon: <Leaf size={24} />, titleKey: 'home.solutions.soil_health.title', descKey: 'home.solutions.soil_health.desc', title: 'Soil Health', id: 'soil-health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32' },
+              { icon: <Sprout size={24} />, titleKey: 'home.solutions.nutrient_management.title', descKey: 'home.solutions.nutrient_management.desc', title: 'Nutrient Management', id: 'nutrient-mgmt', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0' },
+              { icon: <Shield size={24} />, titleKey: 'home.solutions.pest_disease.title', descKey: 'home.solutions.pest_disease.desc', title: 'Pest & Disease', id: 'pest-disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828' },
+              { icon: <TrendingUp size={24} />, titleKey: 'home.solutions.growth_enhancement.title', descKey: 'home.solutions.growth_enhancement.desc', title: 'Growth Enhancement', id: 'growth', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100' },
             ].map((sol, i) => (
               <AnimatedSection key={i}>
                 <Link to={sol.link} className="solution-card card">
@@ -224,10 +225,10 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="solution-card-body">
-                    <h3>{t(`home.solutions.${sol.title.toLowerCase().replace(/\s/g, '_')}.title`, sol.title)}</h3>
-                    <p>{t(`home.solutions.${sol.title.toLowerCase().replace(/\s/g, '_')}.desc`, sol.desc)}</p>
+                    <h3>{t(sol.titleKey, sol.title)}</h3>
+                    <p>{t(sol.descKey, sol.desc)}</p>
                     <span className="solution-link" style={{ color: sol.color }}>
-                      Explore <ArrowRight size={14} />
+                      {t('common.explore', 'Explore')} <ArrowRight size={14} />
                     </span>
                   </div>
                 </Link>
@@ -242,10 +243,10 @@ export default function Home() {
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
-              <span className="section-overline">Product Portfolio</span>
-              <h2 className="section-title">60+ Innovative Products</h2>
+              <span className="section-overline">{t('home.products_overline', 'Product Portfolio')}</span>
+              <h2 className="section-title">{t('home.products_h2', '60+ Innovative Products')}</h2>
               <p className="section-subtitle">
-                Across 5 categories — bio fertilizers, bio pesticides, growth regulators, organic nutrients, and specialty products
+                {t('home.products_subtitle', 'Across 5 categories — bio fertilizers, bio pesticides, growth regulators, organic nutrients, and specialty products')}
               </p>
             </div>
           </AnimatedSection>
@@ -261,7 +262,7 @@ export default function Home() {
                     <h3>{t(cat.nameKey, cat.name)}</h3>
                     <p>{t(cat.descriptionKey, cat.description)}</p>
                     <div className="pcc-footer">
-                      <span className="badge badge-green">{cat.productCount} Products</span>
+                      <span className="badge badge-green">{t('home.products_count', { count: cat.productCount, defaultValue: `${cat.productCount} Products` })}</span>
                       <ArrowRight size={16} />
                     </div>
                   </div>
@@ -272,7 +273,7 @@ export default function Home() {
 
           <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-10)' }}>
             <Link to="/products" className="btn btn-primary btn-lg">
-              View All Products <ArrowRight size={18} />
+              {t('common.view_all_products', 'View All Products')} <ArrowRight size={18} />
             </Link>
           </AnimatedSection>
         </div>
@@ -293,18 +294,18 @@ export default function Home() {
 
           <div className="why-grid">
             {[
-              { icon: <FlaskConical size={24} />, title: 'Research-Driven', desc: 'Every product backed by rigorous R&D and field trials — no guesswork, only science.' },
-              { icon: <Award size={24} />, title: 'Quality Assured', desc: 'ISO 9001:2015 certified processes. Every batch tested for potency and purity.' },
-              { icon: <Users size={24} />, title: 'Farmer-First', desc: 'Products designed with real farmer feedback. Affordable, accessible, effective.' },
-              { icon: <Leaf size={24} />, title: '100% Eco-Safe', desc: 'Zero harmful chemicals. Safe for the environment, safe for consumers.' },
-              { icon: <Zap size={24} />, title: 'Proven Results', desc: '15-40% yield improvement documented across multiple crops and geographies.' },
-              { icon: <Heart size={24} />, title: 'Made in India', desc: 'Proudly developed and manufactured in Gujarat, for Indian soil conditions.' },
+              { icon: <FlaskConical size={24} />, titleKey: 'home.why_reasons.research_driven.title', descKey: 'home.why_reasons.research_driven.desc', title: 'Research-Driven', desc: 'Every product backed by rigorous R&D and field trials — no guesswork, only science.' },
+              { icon: <Award size={24} />, titleKey: 'home.why_reasons.quality_assured.title', descKey: 'home.why_reasons.quality_assured.desc', title: 'Quality Assured', desc: 'ISO 9001:2015 certified processes. Every batch tested for potency and purity.' },
+              { icon: <Users size={24} />, titleKey: 'home.why_reasons.farmer_first.title', descKey: 'home.why_reasons.farmer_first.desc', title: 'Farmer-First', desc: 'Products designed with real farmer feedback. Affordable, accessible, effective.' },
+              { icon: <Leaf size={24} />, titleKey: 'home.why_reasons.eco_safe.title', descKey: 'home.why_reasons.eco_safe.desc', title: '100% Eco-Safe', desc: 'Zero harmful chemicals. Safe for the environment, safe for consumers.' },
+              { icon: <Zap size={24} />, titleKey: 'home.why_reasons.proven_results.title', descKey: 'home.why_reasons.proven_results.desc', title: 'Proven Results', desc: '15-40% yield improvement documented across multiple crops and geographies.' },
+              { icon: <Heart size={24} />, titleKey: 'home.why_reasons.made_in_india.title', descKey: 'home.why_reasons.made_in_india.desc', title: 'Made in India', desc: 'Proudly developed and manufactured in Gujarat, for Indian soil conditions.' },
             ].map((item, i) => (
               <AnimatedSection key={i}>
                 <div className="why-card">
                   <div className="why-icon">{item.icon}</div>
-                  <h4>{t(`home.why_reasons.${item.title.toLowerCase().replace(/\s/g, '_')}.title`, item.title)}</h4>
-                  <p>{t(`home.why_reasons.${item.title.toLowerCase().replace(/\s/g, '_')}.desc`, item.desc)}</p>
+                  <h4>{t(item.titleKey, item.title)}</h4>
+                  <p>{t(item.descKey, item.desc)}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -324,16 +325,16 @@ export default function Home() {
               </p>
               <div className="growth-steps">
                 {[
-                  { step: '01', title: 'Soil Foundation', desc: 'Rebuild soil biology & health' },
-                  { step: '02', title: 'Bio Nutrition', desc: 'Natural nutrient delivery systems' },
-                  { step: '03', title: 'Eco Protection', desc: 'Biological pest & disease control' },
-                  { step: '04', title: 'Growth Boost', desc: 'Maximize yield & quality' },
+                  { step: '01', titleKey: 'home.growth_steps.soil_foundation.title', descKey: 'home.growth_steps.soil_foundation.desc', title: 'Soil Foundation', desc: 'Rebuild soil biology & health' },
+                  { step: '02', titleKey: 'home.growth_steps.bio_nutrition.title', descKey: 'home.growth_steps.bio_nutrition.desc', title: 'Bio Nutrition', desc: 'Natural nutrient delivery systems' },
+                  { step: '03', titleKey: 'home.growth_steps.eco_protection.title', descKey: 'home.growth_steps.eco_protection.desc', title: 'Eco Protection', desc: 'Biological pest & disease control' },
+                  { step: '04', titleKey: 'home.growth_steps.growth_boost.title', descKey: 'home.growth_steps.growth_boost.desc', title: 'Growth Boost', desc: 'Maximize yield & quality' },
                 ].map((s) => (
                   <div key={s.step} className="growth-step">
                     <span className="step-number">{s.step}</span>
                     <div>
-                      <strong>{s.title}</strong>
-                      <span>{s.desc}</span>
+                      <strong>{t(s.titleKey, s.title)}</strong>
+                      <span>{t(s.descKey, s.desc)}</span>
                     </div>
                   </div>
                 ))}
@@ -371,21 +372,21 @@ export default function Home() {
                   </div>
                   <div className="card-body">
                     <div className="case-meta">
-                      <span className="badge badge-green">{study.crop}</span>
-                      <span className="case-location"><MapPin size={12} /> {study.location}</span>
+                      <span className="badge badge-green">{t(`home.case_studies.${study.slug}.crop`, study.crop)}</span>
+                      <span className="case-location"><MapPin size={12} /> {t(`home.case_studies.${study.slug}.location`, study.location)}</span>
                     </div>
-                    <h3>{study.title}</h3>
-                    <p>{study.challenge}</p>
+                    <h3>{t(`home.case_studies.${study.slug}.title`, study.title)}</h3>
+                    <p>{t(`home.case_studies.${study.slug}.challenge`, study.challenge)}</p>
                     <div className="case-results">
                       {study.results.slice(0, 2).map((r, i) => (
                         <div key={i} className="case-result">
-                          <Check size={14} /> {r}
+                          <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
                         </div>
                       ))}
                     </div>
                     <blockquote className="case-quote">
-                      "{study.testimonial.slice(0, 100)}..."
-                      <cite>— {study.farmer}</cite>
+                      "{t(`home.case_studies.${study.slug}.testimonial`, study.testimonial).slice(0, 100)}..."
+                      <cite>— {t(`home.case_studies.${study.slug}.farmer`, study.farmer)}</cite>
                     </blockquote>
                   </div>
                 </Link>
@@ -395,7 +396,7 @@ export default function Home() {
 
           <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-8)' }}>
             <Link to="/case-studies" className="btn btn-secondary">
-              View All Case Studies <ArrowRight size={16} />
+              {t('common.view_all_case_studies', 'View All Case Studies')} <ArrowRight size={16} />
             </Link>
           </AnimatedSection>
         </div>
@@ -423,12 +424,12 @@ export default function Home() {
                   </div>
                   <div className="card-body">
                     <div className="blog-meta">
-                      <span className="badge badge-green">{post.category}</span>
+                      <span className="badge badge-green">{t(`home.blog_posts.${post.slug}.category`, post.category)}</span>
                       <span className="blog-date">{post.readTime}</span>
                     </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
-                    <span className="blog-read-more">Read More <ArrowRight size={14} /></span>
+                    <h3>{t(`home.blog_posts.${post.slug}.title`, post.title)}</h3>
+                    <p>{t(`home.blog_posts.${post.slug}.excerpt`, post.excerpt)}</p>
+                    <span className="blog-read-more">{t('common.read_more')} <ArrowRight size={14} /></span>
                   </div>
                 </Link>
               </AnimatedSection>
@@ -437,7 +438,7 @@ export default function Home() {
 
           <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-8)' }}>
             <Link to="/blog" className="btn btn-secondary">
-              Visit Knowledge Hub <ArrowRight size={16} />
+              {t('home.visit_knowledge_hub', 'Visit Knowledge Hub')} <ArrowRight size={16} />
             </Link>
           </AnimatedSection>
         </div>
@@ -456,17 +457,17 @@ export default function Home() {
                 </p>
                 <div className="pcta-types">
                   <Link to="/partners/dealer" className="pcta-type">
-                    <strong>{t('nav.links.become_a_dealer', 'Become a Dealer')}</strong>
+                    <strong>{t('home.partner_types.dealer_title', 'Become a Dealer')}</strong>
                     <span>{t('home.partner_types.dealer', 'Retail-level partnership')}</span>
                     <ArrowRight size={16} />
                   </Link>
                   <Link to="/partners/distributor" className="pcta-type">
-                    <strong>{t('nav.links.become_a_distributor', 'Become a Distributor')}</strong>
+                    <strong>{t('home.partner_types.distributor_title', 'Become a Distributor')}</strong>
                     <span>{t('home.partner_types.distributor', 'District/region-level partnership')}</span>
                     <ArrowRight size={16} />
                   </Link>
                   <Link to="/business/exports" className="pcta-type">
-                    <strong>{t('nav.links.export_partnership', 'Export Partnership')}</strong>
+                    <strong>{t('home.partner_types.export_title', 'Export Partnership')}</strong>
                     <span>{t('home.partner_types.export', 'International business opportunities')}</span>
                     <ArrowRight size={16} />
                   </Link>
@@ -492,8 +493,8 @@ export default function Home() {
               <AnimatedSection key={i}>
                 <div className="value-card">
                   <div className="value-number">{String(i + 1).padStart(2, '0')}</div>
-                  <h4>{val.title}</h4>
-                  <p>{val.description}</p>
+                  <h4>{t(`company.values.${toKey(val.title)}.title`, val.title)}</h4>
+                  <p>{t(`company.values.${toKey(val.title)}.desc`, val.description)}</p>
                 </div>
               </AnimatedSection>
             ))}

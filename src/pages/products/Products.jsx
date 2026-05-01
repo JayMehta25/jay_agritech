@@ -11,14 +11,12 @@ import catBfImg from '../../assets/products/bio-fertilizers.png';
 import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
-import catSpImg from '../../assets/products/specialty.png';
 import catMnImg from '../../assets/products/micronutrients.png';
 
 const catImages = {
   'bio-insecticides': catBfImg,
   'biostimulants': catPgrImg,
   'organic-nutrients': catOnImg,
-  'specialty-products': catSpImg,
   'micronutrients': catMnImg
 };
 

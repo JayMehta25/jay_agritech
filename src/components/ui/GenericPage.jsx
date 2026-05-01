@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './GenericPage.css';
 
 export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children, bodyClassName = '' }) {
+  const { t } = useTranslation();
   return (
     <div className="generic-page">
       <div className="page-hero">
         <div className="container">
           {breadcrumbs.length > 0 && (
             <div className="breadcrumbs">
-              <Link to="/">Home</Link>
+              <Link to="/">{t('common.home', 'Home')}</Link>
               {breadcrumbs.map((bc, i) => (
                 <span key={i}>
                   <ChevronRight size={14} />

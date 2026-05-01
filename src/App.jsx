@@ -26,8 +26,7 @@ export default function App() {
     // Update document title for SEO if needed
     const titles = {
       en: 'Jay Agritech | Innovating Agriculture',
-      hi: 'जय एग्रीटेक | कृषि नवाचार',
-      gu: 'જય એગ્રીટેક | કૃષિ નવીનતા'
+      hi: 'जय एग्रीटेक | कृषि नवाचार'
     };
     document.title = titles[i18n.language] || titles.en;
   }, [i18n.language]);
@@ -79,14 +78,6 @@ export default function App() {
           <Route path="partners/dealer" element={<Partners />} />
           <Route path="partners/distributor" element={<Partners />} />
           <Route path="partners/export" element={<Partners />} />
-
-          {/* Farmer Zone */}
-          <Route path="farmer-zone" element={<FarmerZone />} />
-          <Route path="farmer-zone/crop-solutions" element={<FarmerZone />} />
-          <Route path="farmer-zone/problem-guide" element={<FarmerZone />} />
-          <Route path="farmer-zone/seasonal" element={<FarmerZone />} />
-          <Route path="farmer-zone/videos" element={<FarmerZone />} />
-          <Route path="farmer-zone/guides" element={<FarmerZone />} />
 
           {/* Blog */}
           <Route path="blog" element={<Blog />} />

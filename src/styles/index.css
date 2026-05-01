@@ -11,8 +11,8 @@
 .container, .container-fluid,
 .container-sm, .container-md,
 .container-lg, .container-xl, .container-xxl {
-  padding-left: var(--sp-6);
-  padding-right: var(--sp-6);
+  padding-left: var(--sp-4);
+  padding-right: var(--sp-4);
 }
 
 /* Prevent Bootstrap from overriding our custom .btn styles */
@@ -73,12 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   --font-heading: 'Hind', sans-serif;
 }
 
-:lang(gu) {
-  --font-body: 'Hind Vadodara', sans-serif;
-  --font-heading: 'Hind Vadodara', sans-serif;
-}
-
-:lang(hi) body, :lang(gu) body {
+:lang(hi) body {
   line-height: 1.6; /* Indic scripts often need more line-height */
 }
 

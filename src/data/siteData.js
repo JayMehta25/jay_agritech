@@ -405,52 +405,11 @@ export const products = {
       ]
     },
     {
-      id: 'specialty-products',
-      name: 'Specialty Products',
-      nameKey: 'products.categories.specialty_products.name',
-      slug: 'specialty-products',
-      description: 'Innovative solutions for specific agricultural challenges — soil health, water management, and post-harvest.',
-      descriptionKey: 'products.categories.specialty_products.desc',
-      icon: '⚡',
-      color: '#7B1FA2',
-      productCount: 2,
-      products: [
-        {
-          id: 'sp-001',
-          name: 'JaySoil Revive',
-          slug: 'jaysoil-revive',
-          tagline: 'Complete Soil Rejuvenation Kit',
-          description: 'Comprehensive soil health restoration system combining beneficial microorganisms, organic matter, and enzymes to rejuvenate degraded soils.',
-          benefits: ['Restores soil biology', 'Breaks down crop residue', 'Improves soil structure', 'Reduces salinity impact'],
-          application: 'Apply 5kg/acre before sowing. Mix with organic manure for best results.',
-          crops: ['All Crops', 'Ideal for degraded soils'],
-          packSizes: ['5kg', '10kg', '25kg'],
-          price: '₹850',
-          badge: 'Innovation Award',
-          image: null
-        },
-        {
-          id: 'sp-002',
-          name: 'JayWet Spreader',
-          slug: 'jaywet-spreader',
-          tagline: 'Silicon-Based Spreading Agent',
-          description: 'Non-ionic organosilicone surfactant that improves spray coverage, absorption, and rain-fastness of agricultural inputs.',
-          benefits: ['Improves spray coverage 3x', 'Enhances product absorption', 'Rain-fast in 30 minutes', 'Compatible with all inputs'],
-          application: 'Add 0.5ml/L to spray solution.',
-          crops: ['All Crops'],
-          packSizes: ['100ml', '250ml', '500ml', '1L'],
-          price: '₹220',
-          badge: null,
-          image: null
-        }
-      ]
-    },
-    {
       id: 'micronutrients',
       name: 'Micronutrients',
       nameKey: 'products.categories.micronutrients.name',
       slug: 'micronutrients',
-      description: 'A complete range of essential micronutrient mixtures (Gujarat Grades) for balanced plant nutrition.',
+      description: 'Balanced mixture of essential micronutrients (Fe, Mn, Zn, Cu, B) for optimal plant health and high yields.',
       descriptionKey: 'products.categories.micronutrients.desc',
       icon: '💎',
       color: '#00838F',
@@ -551,21 +510,21 @@ export const companyInfo = {
   tagline: 'Innovating Agriculture, Nurturing Growth',
   founded: 2026,
   location: 'Valsad, Gujarat, India',
-  phone: '+91 98765 43210',
+  phone: '+91 98251 42359',
   email: 'info@jayagritech.com',
   website: 'www.jayagritech.com',
-  whatsapp: '+919876543210',
-  
+  whatsapp: '+919825142359',
+
   stats: [
     { number: 60, suffix: '+', label: 'Products' },
     { number: 5, suffix: '', label: 'Product Categories' },
     { number: 15, suffix: '+', label: 'States Covered' },
     { number: 500, suffix: '+', label: 'Dealer Network' },
   ],
-  
+
   vision: 'To become India\'s most trusted agri-biotech company, empowering every farmer with sustainable, science-backed solutions for a food-secure future.',
   mission: 'We develop and deliver innovative biological and organic agricultural inputs that enhance crop productivity, improve soil health, and promote sustainable farming practices — making advanced agri-technology accessible to every farmer.',
-  
+
   values: [
     { title: 'Innovation First', description: 'Continuous R&D investment in cutting-edge biological technologies.', icon: 'Lightbulb' },
     { title: 'Farmer-Centric', description: 'Every product designed with the farmer\'s real-world needs in mind.', icon: 'Users' },
@@ -574,7 +533,7 @@ export const companyInfo = {
     { title: 'Integrity', description: 'Transparent practices, honest communication, quality without compromise.', icon: 'Shield' },
     { title: 'Accessibility', description: 'Premium solutions at fair prices, available across India.', icon: 'Globe' },
   ],
-  
+
   leadership: [
     {
       name: 'Jayesh Patel',
@@ -601,7 +560,7 @@ export const companyInfo = {
       image: null
     }
   ],
-  
+
   certifications: [
     'ISO 9001:2015 Certified',
     'FCO Approved Formulations',
@@ -610,7 +569,7 @@ export const companyInfo = {
     'BIS Standard Compliant',
     'GLP Compliant Testing'
   ],
-  
+
   milestones: [
     { year: '2026 Q1', title: 'Company Founded', description: 'Jay Agritech Pvt. Ltd. established in Valsad, Gujarat with a vision to revolutionize Indian agriculture.' },
     { year: '2026 Q2', title: 'R&D Lab Setup', description: 'State-of-the-art microbiology and formulation laboratory established with advanced testing equipment.' },
@@ -797,7 +756,6 @@ export const navLinks = [
           { label: 'Bio Insecticides', path: '/products/bio-insecticides', description: '11 products' },
           { label: 'Biostimulants', path: '/products/biostimulants', description: '10 products' },
           { label: 'Organic Nutrients', path: '/products/organic-nutrients', description: '3 products' },
-          { label: 'Specialty Products', path: '/products/specialty-products', description: '2 products' },
           { label: 'Micronutrients', path: '/products/micronutrients', description: '6 products' },
         ]
       }
@@ -816,22 +774,6 @@ export const navLinks = [
           { label: 'Research Services', path: '/business/research', description: 'R&D collaborations' },
           { label: 'White/Private Label', path: '/business/white-label', description: 'Your brand, our quality' },
           { label: 'Exports & Franchise', path: '/business/exports', description: 'Global opportunities' },
-        ]
-      }
-    ]
-  },
-  {
-    label: 'Farmer Zone',
-    path: '/farmer-zone',
-    megaMenu: true,
-    sections: [
-      {
-        title: 'Resources',
-        links: [
-          { label: 'Farmer Zone', path: '/farmer-zone', description: 'Your farming resource hub' },
-          { label: 'Crop-wise Solutions', path: '/farmer-zone/crop-solutions', description: 'Find solutions by crop' },
-          { label: 'Problem Guide', path: '/farmer-zone/problem-guide', description: 'Diagnose & solve issues' },
-          { label: 'Seasonal Advisory', path: '/farmer-zone/seasonal', description: 'Season-specific guidance' },
         ]
       }
     ]

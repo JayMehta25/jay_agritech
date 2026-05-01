@@ -1,19 +1,21 @@
 import GenericPage from '../../components/ui/GenericPage';
+import { useTranslation } from 'react-i18next';
 
 export function PrivacyPolicy() {
+  const { t } = useTranslation();
   return (
-    <GenericPage title="Privacy Policy" subtitle="How we collect, use, and protect your information." breadcrumbs={[{ label: 'Privacy Policy' }]}>
+    <GenericPage title={t('pages.legal.privacy_title')} subtitle={t('pages.legal.privacy_subtitle')} breadcrumbs={[{ label: t('pages.legal.privacy_title') }]}>
       <div className="container-narrow" style={{ paddingBottom: 'var(--sp-16)' }}>
         <div style={{ lineHeight: 'var(--lh-loose)', color: 'var(--clr-text-body)' }}>
-          <p style={{ marginBottom: 'var(--sp-6)', color: 'var(--clr-text-muted)' }}>Last updated: April 2026</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Information We Collect</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>Jay Agritech Pvt. Ltd. collects information you provide directly, such as contact details when you fill out forms, make inquiries, or apply for partnerships. We may also collect usage data through cookies and analytics tools to improve our website experience.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>How We Use Your Information</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>We use collected information to respond to your inquiries, process partnership applications, send relevant product updates (with consent), improve our website, and comply with legal obligations.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Data Protection</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>We implement appropriate security measures to protect your personal information. We do not sell or share your data with third parties for marketing purposes without your explicit consent.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Contact Us</h2>
-          <p>For any privacy-related questions, contact us at <a href="mailto:privacy@jayagritech.com" style={{ color: 'var(--clr-primary)' }}>privacy@jayagritech.com</a>.</p>
+            <p style={{ marginBottom: 'var(--sp-6)', color: 'var(--clr-text-muted)' }}>{t('pages.legal.updated')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.privacy.sections.collect.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.privacy.sections.collect.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.privacy.sections.use.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.privacy.sections.use.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.privacy.sections.protect.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.privacy.sections.protect.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.privacy.sections.contact.title')}</h2>
+          <p>{t('pages_details.legal.privacy.sections.contact.body')}</p>
         </div>
       </div>
     </GenericPage>
@@ -21,19 +23,20 @@ export function PrivacyPolicy() {
 }
 
 export function Terms() {
+  const { t } = useTranslation();
   return (
-    <GenericPage title="Terms & Conditions" subtitle="Terms governing the use of our website and services." breadcrumbs={[{ label: 'Terms & Conditions' }]}>
+    <GenericPage title={t('pages.legal.terms_title')} subtitle={t('pages.legal.terms_subtitle')} breadcrumbs={[{ label: t('pages.legal.terms_title') }]}>
       <div className="container-narrow" style={{ paddingBottom: 'var(--sp-16)' }}>
         <div style={{ lineHeight: 'var(--lh-loose)', color: 'var(--clr-text-body)' }}>
-          <p style={{ marginBottom: 'var(--sp-6)', color: 'var(--clr-text-muted)' }}>Last updated: April 2026</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Acceptance of Terms</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>By accessing the Jay Agritech website, you agree to these terms and conditions. If you do not agree, please do not use our website.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Product Information</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>While we strive for accuracy, product descriptions and specifications are subject to change. Actual product performance may vary based on local conditions, application methods, and environmental factors.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Intellectual Property</h2>
-          <p style={{ marginBottom: 'var(--sp-6)' }}>All content on this website — including text, images, logos, and design — is the property of Jay Agritech Pvt. Ltd. Unauthorized reproduction is prohibited.</p>
-          <h2 style={{ marginBottom: 'var(--sp-4)' }}>Limitation of Liability</h2>
-          <p>Jay Agritech Pvt. Ltd. provides this website "as is" and makes no warranties regarding completeness, accuracy, or availability. We shall not be liable for any damages arising from the use of this website.</p>
+          <p style={{ marginBottom: 'var(--sp-6)', color: 'var(--clr-text-muted)' }}>{t('pages.legal.terms_updated')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.terms.sections.acceptance.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.terms.sections.acceptance.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.terms.sections.product_info.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.terms.sections.product_info.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.terms.sections.ip.title')}</h2>
+          <p style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.legal.terms.sections.ip.body')}</p>
+          <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages_details.legal.terms.sections.liability.title')}</h2>
+          <p>{t('pages_details.legal.terms.sections.liability.body')}</p>
         </div>
       </div>
     </GenericPage>

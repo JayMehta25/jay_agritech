@@ -19,8 +19,7 @@ export default function Navbar() {
 
   const languages = [
     { code: 'en', label: 'English', flag: '🇺🇸' },
-    { code: 'hi', label: 'Hindi', flag: '🇮🇳' },
-    { code: 'gu', label: 'Gujarati', flag: '🇮🇳' }
+    { code: 'hi', label: 'Hindi', flag: '🇮🇳' }
   ];
 
   const currentLanguage = languages.find(l => l.code === i18n.language) || languages[0];
@@ -74,7 +73,7 @@ export default function Navbar() {
             <span>🌱 {t('nav.tagline', 'Innovating Agriculture, Nurturing Growth')}</span>
           </div>
           <div className="topbar-right">
-            <a href="tel:+919876543210"><Phone size={12} /> +91 98765 43210</a>
+            <a href="tel:+919825142359"><Phone size={12} /> +91 98251 42359</a>
             <a href="mailto:info@jayagritech.com"><Mail size={12} /> info@jayagritech.com</a>
           </div>
         </div>
@@ -133,7 +132,7 @@ export default function Navbar() {
               <button 
                 className="lang-switcher-btn" 
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                aria-label="Change Language"
+                aria-label={t('nav.change_language', 'Change Language')}
               >
                 <Globe size={14} />
                 <span>{currentLanguage.label}</span>
@@ -161,7 +160,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Toggle */}
-          <button className="navbar-toggle" onClick={() => setMobileOpen(!mobileOpen)} id="nav-mobile-toggle" aria-label="Toggle menu">
+          <button className="navbar-toggle" onClick={() => setMobileOpen(!mobileOpen)} id="nav-mobile-toggle" aria-label={t('nav.toggle_menu', 'Toggle menu')}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -176,7 +175,7 @@ export default function Navbar() {
                 <img src={logoImg} alt="Jay Agritech Logo" className="logo-icon-img" />
                 <img src={titleImg} alt="Jay Agritech" className="logo-title-img" />
               </Link>
-              <button onClick={() => setMobileOpen(false)} aria-label="Close menu"><X size={24} /></button>
+              <button onClick={() => setMobileOpen(false)} aria-label={t('nav.close_menu', 'Close menu')}><X size={24} /></button>
             </div>
 
             <div className="mobile-menu-body">
@@ -203,7 +202,7 @@ export default function Navbar() {
                 {t('nav.become_partner')}
               </Link>
               <div className="mobile-contact">
-                <a href="tel:+919876543210"><Phone size={16} /> +91 98765 43210</a>
+                <a href="tel:+919825142359"><Phone size={16} /> +91 98251 42359</a>
                 <a href="mailto:info@jayagritech.com"><Mail size={16} /> info@jayagritech.com</a>
               </div>
             </div>
