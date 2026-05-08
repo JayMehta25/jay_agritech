@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { products } from '../../data/siteData';
 import GenericPage from '../../components/ui/GenericPage';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import Bottle3D from '../../components/ui/Bottle3D';
 
 function AnimatedSection({ children, className = '', delay = 0 }) {
   const [ref, isVisible] = useScrollAnimation();
@@ -54,7 +55,12 @@ export default function ProductDetail() {
           {/* Left — Image Showcase */}
           <AnimatedSection>
             <div className="product-showcase">
-              {product.image ? (
+              {product.slug === 'at-orgo-rescue-pro' ? (
+                <Bottle3D 
+                  imageUrl={product.image} 
+                  modelUrl="/models/rescue_pro.glb" 
+                />
+              ) : product.image ? (
                 <img src={product.image} alt={product.name} />
               ) : (
                 <div className="product-showcase__placeholder">

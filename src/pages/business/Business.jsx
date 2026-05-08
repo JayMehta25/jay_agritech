@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
 
-function AnimatedSection({ children, className = '' }) {
+function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
-  return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
+  return <div ref={ref} id={id} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
 export default function Business() {
@@ -20,9 +20,9 @@ export default function Business() {
   
   return (
     <GenericPage title={t('pages.business.title')} overline={t('pages.business.overline', 'B2B Services')} subtitle={t('pages.business.subtitle')} breadcrumbs={[{ label: t('nav.business') }]}>
-      <div className="container">
+      <div className="container" id="overview">
         {services.map((svc, i) => (
-          <AnimatedSection key={i}>
+          <AnimatedSection key={i} id={svc.link.split('/').pop()}>
             <div className="card" style={{ marginBottom: 'var(--sp-6)', padding: 'var(--sp-8)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--sp-8)', alignItems: 'center' }}>
               <div>
                 <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-lg)', background: `${svc.color}15`, color: svc.color, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 'var(--sp-4)' }}>{svc.icon}</div>

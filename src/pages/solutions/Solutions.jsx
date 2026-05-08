@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
 
-function AnimatedSection({ children, className = '' }) {
+function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
-  return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
+  return <div ref={ref} id={id} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
 import solSoilImg from '../../assets/solutions/soil-health.png';
@@ -18,16 +18,16 @@ import solGrowthImg from '../../assets/solutions/growth-enhancement.png';
 export default function Solutions() {
   const { t } = useTranslation();
   const solutions = [
-    { key: 'soil_health', icon: <Leaf size={32} />, color: '#2E7D32', image: solSoilImg },
-    { key: 'nutrient_management', icon: <Sprout size={32} />, color: '#1565C0', image: solNutrientImg },
-    { key: 'pest_disease', icon: <Shield size={32} />, color: '#C62828', image: solPestImg },
-    { key: 'growth_enhancement', icon: <TrendingUp size={32} />, color: '#E65100', image: solGrowthImg },
+    { key: 'soil_health', id: 'soil-health', icon: <Leaf size={32} />, color: '#2E7D32', image: solSoilImg },
+    { key: 'nutrient_management', id: 'nutrient-mgmt', icon: <Sprout size={32} />, color: '#1565C0', image: solNutrientImg },
+    { key: 'pest_disease', id: 'pest-disease', icon: <Shield size={32} />, color: '#C62828', image: solPestImg },
+    { key: 'growth_enhancement', id: 'growth', icon: <TrendingUp size={32} />, color: '#E65100', image: solGrowthImg },
   ];
   return (
     <GenericPage title={t('pages.solutions.title')} subtitle={t('pages.solutions.subtitle')} breadcrumbs={[{ label: t('nav.solutions') }]}>
-      <div className="container">
+      <div className="container" id="overview">
         {solutions.map((sol, i) => (
-          <AnimatedSection key={sol.key}>
+          <AnimatedSection key={sol.key} id={sol.id}>
             <section style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '1fr 1fr' : '1fr 1fr', gap: 'var(--sp-12)', alignItems: 'center', padding: 'var(--sp-12) 0', borderBottom: i < solutions.length - 1 ? '1px solid var(--clr-border-light)' : 'none' }}>
               <div style={{ order: i % 2 === 0 ? 0 : 1 }}>
                 <div style={{ width: 64, height: 64, borderRadius: 'var(--radius-lg)', background: `${sol.color}15`, color: sol.color, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 'var(--sp-5)' }}>{sol.icon}</div>

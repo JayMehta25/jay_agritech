@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Lightbulb, Users, Leaf, FlaskConical, Shield, Globe, Award, Calendar, MapPin, Building, CheckCircle } from 'lucide-react';
+import { ArrowRight, Lightbulb, Users, Leaf, FlaskConical, Shield, Globe, Award, Calendar, MapPin, Building, CheckCircle, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { companyInfo } from '../../data/siteData';
 import GenericPage from '../../components/ui/GenericPage';
+import sustainableImg from '../../assets/sustainable_farming_collage.png';
+import innovationImg from '../../assets/modern_agriculture_innovation.png';
+import './About.css';
 
-function AnimatedSection({ children, className = '' }) {
+function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
-  return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
+  return <div ref={ref} id={id} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
 import valInnovationImg from '../../assets/values/innovation.png';
@@ -16,13 +19,15 @@ import valSustainabilityImg from '../../assets/values/sustainability.png';
 import valScienceImg from '../../assets/values/science.png';
 import valIntegrityImg from '../../assets/values/integrity.png';
 import valAccessibilityImg from '../../assets/values/accessibility.png';
+import valManufacturingImg from '../../assets/values/manufacturing.png';
 
 const valueImages = {
+  'Award': valManufacturingImg,
   'Lightbulb': valInnovationImg,
   'Users': valFarmerImg,
+  'Shield': valIntegrityImg,
   'Leaf': valSustainabilityImg,
   'FlaskConical': valScienceImg,
-  'Shield': valIntegrityImg,
   'Globe': valAccessibilityImg,
 };
 
@@ -32,8 +37,60 @@ export default function About() {
   return (
     <GenericPage title={t('nav.links.company_overview')} subtitle={t('home.about_lead')} breadcrumbs={[{ label: t('nav.about') }]}>
       <div className="container">
-        {/* Vision & Mission */}
-        <AnimatedSection>
+        {/* ─── About Us — Hero Split ─── */}
+        <AnimatedSection id="overview">
+          <section className="about-split">
+            <div className="about-split__image">
+              <img src={sustainableImg} alt="Jay Agritech Agriculture" />
+              <div className="about-split__overlay" />
+              <div className="about-split__stats">
+                <div className="about-stat">
+                  <span className="about-stat__num">50+</span>
+                  <span className="about-stat__label">Years Experience</span>
+                </div>
+                <div className="about-stat">
+                  <span className="about-stat__num">15-30</span>
+                  <span className="about-stat__label">Expert Team</span>
+                </div>
+                <div className="about-stat">
+                  <span className="about-stat__num">60+</span>
+                  <span className="about-stat__label">Products</span>
+                </div>
+              </div>
+            </div>
+            <div className="about-split__text">
+              <span className="section-overline">Our Legacy & Future</span>
+              <h2 className="about-split__title">Innovating Agriculture for Generations</h2>
+              <div className="about-split__lead">
+                At <strong>Jay Agritech Pvt. Ltd.</strong>, we deliver innovative, sustainable, and high-quality agricultural solutions for modern farming and crop productivity.
+              </div>
+              <p className="about-split__body">
+                Our promoters bring <strong>45–50 years</strong> of rich experience in the chemical and allied industries — backed by deep technical knowledge, strong business ethics, and a culture built on quality, innovation, and reliability.
+              </p>
+              <p className="about-split__body">
+                Our dynamic young team, with <strong>15–30 years</strong> of hands-on expertise, continuously develops effective agricultural inputs to meet the evolving needs of farmers, distributors, and partners across markets.
+              </p>
+              <p className="about-split__body" style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--clr-primary)', marginTop: 'var(--sp-4)' }}>
+                Our strength lies in combining technical expertise, operational excellence, and market understanding to create products that drive sustainable agriculture and long-term growth.
+              </p>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* ─── Closing Banner — Immersive ─── */}
+        <AnimatedSection id="sustainability">
+          <div className="about-closing-banner">
+            <img src={innovationImg} alt="" className="about-closing-banner__bg" />
+            <div className="about-closing-banner__content">
+              <p>
+                "With a vision to become a trusted name in the agriculture industry, we continue to expand our capabilities while maintaining our commitment to excellence and value creation for all stakeholders."
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* ─── Vision & Mission ─── */}
+        <AnimatedSection id="vision-mission">
           <section className="section">
             <div className="grid-2" style={{ gap: 'var(--sp-10)', alignItems: 'start' }}>
               <div className="card" style={{ padding: 'var(--sp-8)', borderLeft: '4px solid var(--clr-primary)' }}>
@@ -48,11 +105,10 @@ export default function About() {
           </section>
         </AnimatedSection>
 
-        {/* Values */}
-        <AnimatedSection>
+        {/* ─── Values ─── */}
+        <AnimatedSection id="values">
           <section className="section">
-            <div className="section-header"><span className="section-overline">{t('home.values_title')}</span><h2 className="section-title">{t('home.values_h2')}</h2></div>
-            <div className="grid-3">
+            <div className="grid-4">
               {companyInfo.values.map((val, i) => {
                 const Icon = iconMap[val.icon] || Leaf;
                 const valImage = valueImages[val.icon];
@@ -76,30 +132,34 @@ export default function About() {
           </section>
         </AnimatedSection>
 
-        {/* Leadership */}
-        <AnimatedSection>
+        {/* ─── Leadership ─── */}
+        <AnimatedSection id="leadership">
           <section className="section">
             <div className="section-header">
               <span className="section-overline">{t('nav.links.leadership_team')}</span>
               <h2 className="section-title">{t('company.leadership.subtitle')}</h2>
             </div>
             <div className="grid-4">
-              {['jayesh_patel', 'priya_sharma', 'rajesh_mehta', 'anil_kumar'].map((key, i) => (
+              {companyInfo.leadership.map((person, i) => (
                 <div key={i} className="card hover-lift" style={{ textAlign: 'center', padding: 'var(--sp-6)' }}>
-                  <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--gradient-primary)', margin: '0 auto var(--sp-4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>
-                    {t(`company.leadership.people.${key}.name`).split(' ').map(n => n[0]).join('')}
+                  <div style={{ width: 160, height: 160, borderRadius: '50%', background: 'var(--gradient-primary)', margin: '0 auto var(--sp-6)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', overflow: 'hidden', border: '4px solid white', boxShadow: 'var(--shadow-lg)', transition: 'transform 0.4s var(--ease-spring)' }} className="leadership-avatar">
+                    {person.image ? (
+                      <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} />
+                    ) : (
+                      <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>{person.name.split(' ').map(n => n[0]).join('')}</span>
+                    )}
                   </div>
-                  <h4 style={{ fontSize: 'var(--fs-body)' }}>{t(`company.leadership.people.${key}.name`)}</h4>
-                  <p style={{ fontSize: 'var(--fs-caption)', color: 'var(--clr-primary)', fontWeight: 600, marginBottom: 'var(--sp-3)' }}>{t(`company.leadership.people.${key}.role`)}</p>
-                  <p style={{ fontSize: 'var(--fs-body-sm)', color: 'var(--clr-text-muted)' }}>{t(`company.leadership.people.${key}.bio`)}</p>
+                  <h4 style={{ fontSize: 'var(--fs-body)' }}>{t(`company.leadership.people.${person.id || person.name.toLowerCase().replace(/\s/g, '_')}.name`, person.name)}</h4>
+                  <p style={{ fontSize: 'var(--fs-caption)', color: 'var(--clr-primary)', fontWeight: 600, marginBottom: 'var(--sp-3)' }}>{t(`company.leadership.people.${person.id || person.name.toLowerCase().replace(/\s/g, '_')}.role`, person.role)}</p>
+                  <p style={{ fontSize: 'var(--fs-body-sm)', color: 'var(--clr-text-muted)', lineHeight: '1.6' }}>{t(`company.leadership.people.${person.id || person.name.toLowerCase().replace(/\s/g, '_')}.bio`, person.bio)}</p>
                 </div>
               ))}
             </div>
           </section>
         </AnimatedSection>
 
-        {/* Milestones */}
-        <AnimatedSection>
+        {/* ─── Milestones ─── */}
+        <AnimatedSection id="journey">
           <section className="section">
             <div className="section-header"><span className="section-overline">{t('nav.links.our_journey')}</span><h2 className="section-title">{t('nav.links.milestones')}</h2></div>
             <div style={{ maxWidth: 700, margin: '0 auto' }}>
@@ -117,8 +177,8 @@ export default function About() {
           </section>
         </AnimatedSection>
 
-        {/* Certifications */}
-        <AnimatedSection>
+        {/* ─── Certifications ─── */}
+        <AnimatedSection id="certifications">
           <section className="section" style={{ background: 'var(--clr-off-white)', borderRadius: 'var(--radius-xl)', padding: 'var(--sp-12)' }}>
             <div className="section-header"><span className="section-overline">{t('nav.links.certifications')}</span><h2 className="section-title">{t('company.certifications.title', 'Our Certifications')}</h2></div>
             <div className="grid-3">

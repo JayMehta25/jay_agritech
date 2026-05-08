@@ -30,6 +30,7 @@ import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
 import catMnImg from '../../assets/products/micronutrients.png';
+import productsImg from '../../data/products.png';
 
 const blogImages = { 1: blogSoilImg, 2: blogIpmImg, 3: blogBioChemImg };
 const caseImages = { 1: caseCottonImg, 2: caseGroundnutImg, 3: caseMangoImg };
@@ -246,36 +247,57 @@ export default function Home() {
               <span className="section-overline">{t('home.products_overline', 'Product Portfolio')}</span>
               <h2 className="section-title">{t('home.products_h2', '60+ Innovative Products')}</h2>
               <p className="section-subtitle">
-                {t('home.products_subtitle', 'Across 5 categories — bio fertilizers, bio pesticides, growth regulators, organic nutrients, and specialty products')}
+                {t('home.products_subtitle', 'Across 4 core categories — Bio Insecticides, Biostimulants, Organic Nutrients, and Micronutrients')}
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="product-categories-grid">
-            {products.categories.map((cat, i) => (
-              <AnimatedSection key={cat.id}>
-                <Link to={`/products/${cat.slug}`} className="product-category-card card">
-                  <div className="pcc-image">
-                    <img src={catImages[cat.id]} alt={cat.name} className="pcc-img" />
-                  </div>
-                  <div className="pcc-content">
-                    <h3>{t(cat.nameKey, cat.name)}</h3>
-                    <p>{t(cat.descriptionKey, cat.description)}</p>
-                    <div className="pcc-footer">
-                      <span className="badge badge-green">{t('home.products_count', { count: cat.productCount, defaultValue: `${cat.productCount} Products` })}</span>
-                      <ArrowRight size={16} />
+          <div className="products-showcase-split">
+            <AnimatedSection direction="left" className="products-visual-frame">
+              <div className="products-main-image">
+                <img src={productsImg} alt="Jay Agritech Product Range" className="products-composite-img" />
+                <div className="products-image-overlay"></div>
+              </div>
+              <div className="products-stats-overlay">
+                <div className="pso-item">
+                  <span className="pso-number">60+</span>
+                  <span className="pso-label">Formulations</span>
+                </div>
+                <div className="pso-divider"></div>
+                <div className="pso-item">
+                  <span className="pso-number">15+</span>
+                  <span className="pso-label">Indian States</span>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <div className="products-category-list">
+              {products.categories.map((cat, i) => (
+                <AnimatedSection key={cat.id} direction="right">
+                  <Link to={`/products/${cat.slug}`} className="product-list-item">
+                    <div className="pli-icon" style={{ backgroundColor: `${cat.color}15`, color: cat.color }}>
+                      {cat.id === 'bio-insecticides' && <Shield size={24} />}
+                      {cat.id === 'biostimulants' && <Zap size={24} />}
+                      {cat.id === 'organic-nutrients' && <Leaf size={24} />}
+                      {cat.id === 'micronutrients' && <FlaskConical size={24} />}
                     </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
+                    <div className="pli-content">
+                      <div className="pli-header">
+                        <h3>{t(cat.nameKey, cat.name)}</h3>
+                        <span className="pli-count">{t('home.products_count', { count: cat.productCount, defaultValue: `${cat.productCount} Products` })}</span>
+                      </div>
+                      <p>{t(cat.descriptionKey, cat.description)}</p>
+                      <div className="pli-action">
+                        <span>{t('common.explore', 'Explore Category')}</span>
+                        <ChevronRight size={16} />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
 
-          <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-10)' }}>
-            <Link to="/products" className="btn btn-primary btn-lg">
-              {t('common.view_all_products', 'View All Products')} <ArrowRight size={18} />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 

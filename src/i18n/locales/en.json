@@ -215,8 +215,22 @@
     }
   },
   "company": {
-    "vision": "To become India's most trusted agri-biotech company, empowering every farmer with sustainable, science-backed solutions for a food-secure future.",
-    "mission": "We develop and deliver innovative biological and organic agricultural inputs that enhance crop productivity, improve soil health, and promote sustainable farming practices — making advanced agri-technology accessible to every farmer.",
+    "about_us_title": "About Us",
+    "about_us_p1": "At Jay Agritech Pvt. Ltd., we deliver innovative, sustainable, and high-quality agricultural solutions for modern farming.",
+    "about_us_p2": "Our promoters bring 45–50 years of experience in the chemical and allied industries — backed by deep technical knowledge, strong ethics, and a culture of quality, innovation, and reliability.",
+    "about_us_p3": "Our dynamic young team, with 15–30 years of hands-on expertise, continuously develops effective agricultural inputs that meet the evolving needs of farmers, distributors, and partners.",
+    "about_us_p4": "Our strength: combining technical expertise, operational excellence, and market understanding to drive sustainable agriculture and long-term growth.",
+    "about_us_beliefs_title": "At Jay Agritech, we believe in:",
+    "about_us_beliefs": [
+      "Quality-driven manufacturing",
+      "Innovation and research-focused development",
+      "Strong customer relationships",
+      "Ethical and transparent business practices",
+      "Sustainable agricultural growth"
+    ],
+    "about_us_closing": "With a vision to become a trusted name in agriculture, we expand our capabilities while staying committed to excellence and value creation for all stakeholders.",
+    "vision": "To become a trusted name in the agriculture industry — expanding capabilities while maintaining commitment to excellence and value creation for all stakeholders.",
+    "mission": "To become a trusted partner in modern agriculture by providing scientifically advanced, high-quality bio-agriculture and chemical solutions that create value for farmers, strengthen sustainability, and contribute to global food security.",
     "stats": {
       "products": "Products",
       "categories": "Product Categories",

@@ -26,6 +26,8 @@ import nutriNutriva from '../assets/prod_imgs/biostimulants/micronutrients/nutri
 import orgoBhumirich from '../assets/prod_imgs/biostimulants/organicNutri/ARGO BHUMIRICH.png';
 import orgoCropcharge from '../assets/prod_imgs/biostimulants/organicNutri/cropcharge.png';
 import orgoFarmphos from '../assets/prod_imgs/biostimulants/organicNutri/farmphos.png';
+import director1 from '../assets/partners/director_1.png';
+import director2 from '../assets/partners/director_2.png';
 
 export const products = {
   categories: [
@@ -346,6 +348,20 @@ export const products = {
           crops: ['All Crops'],
           packSizes: ['1 Liter', '5 Liter'],
           image: carbplus
+        },
+        {
+          id: 'bs-011',
+          name: 'AT ORGO RESCUE PRO',
+          slug: 'at-orgo-rescue-pro',
+          tagline: 'Emergency Plant Recovery System',
+          description: 'A specialized bio-fertilizer designed for rapid recovery of crops under stress. It provides immediate nutritional support and activates the plant\'s internal defense mechanisms.',
+          benefits: ['Rapid stress recovery', 'Immediate nutritional support', 'Activates defense mechanisms', 'Improves root resilience'],
+          contents: 'Specialized Bio-extracts, Micro-nutrients, etc.',
+          application: 'Foliar and Soil application',
+          dosage: '1 Liter/Acre',
+          crops: ['All Crops'],
+          packSizes: ['500 ml', '1.0 Lit'],
+          image: orgoRescuePro
         }
       ]
     },
@@ -526,37 +542,39 @@ export const companyInfo = {
   mission: 'We develop and deliver innovative biological and organic agricultural inputs that enhance crop productivity, improve soil health, and promote sustainable farming practices — making advanced agri-technology accessible to every farmer.',
 
   values: [
-    { title: 'Innovation First', description: 'Continuous R&D investment in cutting-edge biological technologies.', icon: 'Lightbulb' },
-    { title: 'Farmer-Centric', description: 'Every product designed with the farmer\'s real-world needs in mind.', icon: 'Users' },
-    { title: 'Sustainability', description: 'Committed to eco-friendly solutions that protect our planet.', icon: 'Leaf' },
-    { title: 'Scientific Rigor', description: 'Every claim backed by field trials and laboratory validation.', icon: 'FlaskConical' },
-    { title: 'Integrity', description: 'Transparent practices, honest communication, quality without compromise.', icon: 'Shield' },
-    { title: 'Accessibility', description: 'Premium solutions at fair prices, available across India.', icon: 'Globe' },
+    { title: 'Quality-driven manufacturing', description: 'Ensuring consistent performance and crop safety in every formulation we produce.', icon: 'Award' },
+    { title: 'Innovation and research-focused development', description: 'Pushing the boundaries of agri-science with advanced biological R&D.', icon: 'Lightbulb' },
+    { title: 'Strong customer relationships', description: 'Growing together with our farmers and partners through trust and shared success.', icon: 'Users' },
+    { title: 'Ethical and transparent business practices', description: 'Maintaining integrity and honesty in every transaction and product claim.', icon: 'Shield' },
   ],
 
   leadership: [
     {
+      id: 'director_1',
+      name: 'Babulal Mehta',
+      role: 'Managing Director',
+      bio: 'With over 45 years of distinguished experience in the Asha Group and chemical industries, our Managing Director provides the visionary leadership and strategic wisdom that drives Jay Agritech\'s commitment to innovation and ethical growth.',
+      image: director1
+    },
+    {
+      id: 'jinesh_mehta',
+      name: 'Jinesh Mehta',
+      role: 'Director',
+      bio: 'Bringing over 20 years of extensive experience in leadership and operational management within the Asha Group. Jinesh oversees strategic expansion and ensures the highest standards of excellence across all business verticals.',
+      image: director2
+    },
+    {
+      id: 'jayesh_patel',
       name: 'Jayesh Patel',
-      role: 'Founder & Managing Director',
+      role: 'Founder & CEO',
       bio: 'A visionary entrepreneur with deep roots in Gujarat\'s agricultural community. Jayesh founded Jay Agritech with a mission to bridge the gap between advanced biotechnology and practical farming solutions.',
       image: null
     },
     {
+      id: 'priya_sharma',
       name: 'Dr. Priya Sharma',
-      role: 'Head of Research & Development',
+      role: 'Head of R&D',
       bio: 'PhD in Agricultural Microbiology from IARI. Over 12 years of experience in developing biological crop protection and nutrition products.',
-      image: null
-    },
-    {
-      name: 'Rajesh Mehta',
-      role: 'Chief Operating Officer',
-      bio: 'MBA with 15 years of experience in agri-input supply chain management. Expert in building efficient distribution networks across rural India.',
-      image: null
-    },
-    {
-      name: 'Dr. Anil Kumar',
-      role: 'Quality Assurance Director',
-      bio: 'MSc in Biochemistry. Specialist in quality control protocols for biological products. Ensures every batch meets the highest standards.',
       image: null
     }
   ],
@@ -710,19 +728,17 @@ export const navLinks = [
       {
         title: 'Company',
         links: [
-          { label: 'Company Overview', path: '/about', description: 'Our story, vision & mission' },
-          { label: 'Our Journey', path: '/about/journey', description: 'From founding to today' },
-          { label: 'Vision & Mission', path: '/about/vision-mission', description: 'What drives us' },
-          { label: 'Leadership Team', path: '/about/leadership', description: 'Meet our team' },
+          { label: 'Company Overview', path: '/about#overview', description: 'Our story, vision & mission' },
+          { label: 'Our Journey', path: '/about#journey', description: 'From founding to today' },
+          { label: 'Vision & Mission', path: '/about#vision-mission', description: 'What drives us' },
+          { label: 'Leadership Team', path: '/about#leadership', description: 'Meet our team' },
         ]
       },
       {
         title: 'Operations',
         links: [
-          { label: 'Manufacturing', path: '/about/manufacturing', description: 'Our production facilities' },
-          { label: 'Certifications', path: '/about/certifications', description: 'Quality standards & approvals' },
-          { label: 'Sustainability', path: '/about/sustainability', description: 'Our green commitment' },
-          { label: 'Milestones', path: '/about/milestones', description: 'Key achievements' },
+          { label: 'Certifications', path: '/about#certifications', description: 'Quality standards & approvals' },
+          { label: 'Milestones', path: '/about#journey', description: 'Key achievements' },
         ]
       }
     ]
@@ -735,11 +751,11 @@ export const navLinks = [
       {
         title: 'Crop Solutions',
         links: [
-          { label: 'Solutions Overview', path: '/solutions', description: 'Complete solution portfolio' },
-          { label: 'Soil Health', path: '/solutions/soil-health', description: 'Restore & maintain soil vitality' },
-          { label: 'Nutrient Management', path: '/solutions/nutrient-mgmt', description: 'Balanced crop nutrition' },
-          { label: 'Pest & Disease', path: '/solutions/pest-disease', description: 'Biological crop protection' },
-          { label: 'Growth Enhancement', path: '/solutions/growth', description: 'Maximize crop potential' },
+          { label: 'Solutions Overview', path: '/solutions#overview', description: 'Complete solution portfolio' },
+          { label: 'Soil Health', path: '/solutions#soil-health', description: 'Restore & maintain soil vitality' },
+          { label: 'Nutrient Management', path: '/solutions#nutrient-mgmt', description: 'Balanced crop nutrition' },
+          { label: 'Pest & Disease', path: '/solutions#pest-disease', description: 'Biological crop protection' },
+          { label: 'Growth Enhancement', path: '/solutions#growth', description: 'Maximize crop potential' },
         ]
       }
     ]
@@ -769,11 +785,11 @@ export const navLinks = [
       {
         title: 'B2B Solutions',
         links: [
-          { label: 'Business Overview', path: '/business', description: 'Partnership opportunities' },
-          { label: 'Contract Manufacturing', path: '/business/contract-mfg', description: 'OEM & custom formulations' },
-          { label: 'Research Services', path: '/business/research', description: 'R&D collaborations' },
-          { label: 'White/Private Label', path: '/business/white-label', description: 'Your brand, our quality' },
-          { label: 'Exports & Franchise', path: '/business/exports', description: 'Global opportunities' },
+          { label: 'Business Overview', path: '/business#overview', description: 'Partnership opportunities' },
+          { label: 'Contract Manufacturing', path: '/business#contract-mfg', description: 'OEM & custom formulations' },
+          { label: 'Research Services', path: '/business#research', description: 'R&D collaborations' },
+          { label: 'White/Private Label', path: '/business#white-label', description: 'Your brand, our quality' },
+          { label: 'Exports & Franchise', path: '/business#exports', description: 'Global opportunities' },
         ]
       }
     ]

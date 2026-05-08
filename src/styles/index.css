@@ -394,6 +394,7 @@ ul, ol {
 .page-hero .container {
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .page-hero h1 {
@@ -405,12 +406,15 @@ ul, ol {
   color: rgba(255,255,255,0.85);
   font-size: var(--fs-body-lg);
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Breadcrumbs ── */
 .breadcrumbs {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--sp-2);
   font-size: var(--fs-body-sm);
   margin-bottom: var(--sp-6);

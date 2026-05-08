@@ -209,15 +209,29 @@
   flex-shrink: 0;
 }
 
+@keyframes yellowGlowPulse {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(255, 214, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 214, 0, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 214, 0, 0.2));
+  }
+}
+
 .logo-icon-img {
   width: 60px;
   height: 60px;
   object-fit: contain;
   transition: transform var(--duration-normal) var(--ease-spring);
+  animation: yellowGlowPulse 2s infinite ease-in-out;
 }
 
 .navbar-logo:hover .logo-icon-img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  animation-duration: 1s; /* Very fast pulse on hover */
 }
 
 .logo-title-img {
