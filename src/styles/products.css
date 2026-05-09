@@ -33,7 +33,7 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: 
+  transition:
     transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     border-color 0.4s ease;
@@ -54,7 +54,7 @@
 
 .product-card:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(46, 125, 50, 0.1),
     0 8px 16px rgba(0, 0, 0, 0.06);
   border-color: rgba(46, 125, 50, 0.15);
@@ -129,9 +129,23 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.product-card__image .particle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
-.product-card__image .particle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.5s; }
-.product-card__image .particle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 1s; }
+.product-card__image .particle:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.product-card__image .particle:nth-child(2) {
+  top: 25%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.product-card__image .particle:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 1s;
+}
 
 /* ── Product Card Body ── */
 .product-card__body {
@@ -228,7 +242,7 @@
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition: 
+  transition:
     transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.5s ease,
     border-color 0.4s ease;
@@ -237,7 +251,7 @@
 
 .category-card:hover {
   transform: translateY(-8px);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(46, 125, 50, 0.12),
     0 8px 16px rgba(0, 0, 0, 0.06);
   border-color: rgba(46, 125, 50, 0.2);
@@ -245,7 +259,7 @@
 
 .category-card__image-container {
   position: relative;
-  height: 180px;
+  height: 260px;
   overflow: hidden;
 }
 
@@ -283,7 +297,7 @@
 }
 
 .category-card__body {
-  padding: var(--sp-10) var(--sp-6) var(--sp-6);
+  padding: var(--sp-8) var(--sp-6) var(--sp-6);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -341,11 +355,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 30% 40%,
-    rgba(46, 125, 50, 0.06) 0%,
-    transparent 60%
-  );
+  background: radial-gradient(circle at 30% 40%,
+      rgba(46, 125, 50, 0.06) 0%,
+      transparent 60%);
   pointer-events: none;
 }
 
@@ -685,9 +697,17 @@
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ── Detail Layout ── */

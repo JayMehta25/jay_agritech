@@ -1,112 +1,126 @@
 /* About Page Creative Styling */
 
-.about-split {
+/* New Overview Layout */
+.about-overview-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 320px;
   gap: var(--sp-12);
-  align-items: center;
-  margin-bottom: var(--sp-20);
-  background: white;
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  align-items: start;
+  margin-bottom: var(--sp-16);
 }
 
-.about-split__image {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
+.about-overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
 }
 
-.about-split__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+.about-overview-content p {
+  line-height: 1.8;
+  color: var(--clr-text-body);
 }
 
-.about-split:hover .about-split__image img {
-  transform: scale(1.05);
-}
-
-.about-split__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
-}
-
-.about-split__stats {
-  position: absolute;
-  bottom: var(--sp-8);
-  left: var(--sp-8);
-  right: var(--sp-8);
+.about-highlights-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-6);
+}
+
+.about-highlight-box {
+  display: flex;
   gap: var(--sp-4);
-  z-index: 2;
-}
-
-.about-stat {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: var(--sp-4);
+  padding: var(--sp-5);
+  background: var(--clr-off-white);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--clr-border-light);
+  transition: all 0.3s ease;
+}
+
+.about-highlight-box:hover {
+  background: white;
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary-lighter);
+  transform: translateY(-2px);
+}
+
+.hb-icon {
+  color: var(--clr-primary);
+  flex-shrink: 0;
+}
+
+.hb-info strong {
+  display: block;
+  font-size: var(--fs-body);
+  margin-bottom: 2px;
+}
+
+.hb-info span {
+  font-size: var(--fs-caption);
+  color: var(--clr-text-muted);
+}
+
+.about-overview-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--sp-8));
+}
+
+.about-stat-card {
+  padding: var(--sp-8) var(--sp-6);
+  background: white;
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius-xl);
   text-align: center;
-  color: white;
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
 }
 
-.about-stat:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.25);
+.about-stat-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-primary-lighter);
 }
 
-.about-stat__num {
+.asc-num {
   display: block;
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.75rem;
   font-weight: 800;
-  line-height: 1;
+  color: var(--clr-primary);
   margin-bottom: var(--sp-1);
 }
 
-.about-stat__label {
+.asc-label {
   font-size: var(--fs-caption);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.9;
-}
-
-.about-split__text {
-  padding: var(--sp-12);
-}
-
-.about-split__title {
-  font-size: var(--fs-h2);
-  margin-bottom: var(--sp-6);
-  line-height: 1.1;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.about-split__lead {
-  font-size: var(--fs-body-lg);
-  font-weight: 500;
-  line-height: 1.6;
-  color: var(--clr-text-primary);
-  margin-bottom: var(--sp-6);
-  border-left: 4px solid var(--clr-primary);
-  padding-left: var(--sp-4);
-}
-
-.about-split__body {
+  font-weight: 700;
   color: var(--clr-text-muted);
-  line-height: 1.7;
-  margin-bottom: var(--sp-4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .about-overview-layout {
+    grid-template-columns: 1fr;
+  }
+  .about-overview-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+  }
+  .about-stat-card {
+    flex: 1 1 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-highlights-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Beliefs Section */

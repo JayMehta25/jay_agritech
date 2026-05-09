@@ -179,6 +179,10 @@
       "micronutrients": {
         "name": "Micronutrients",
         "desc": "Balanced mixture of essential micronutrients (Fe, Mn, Zn, Cu, B) for optimal plant health and high yields."
+      },
+      "bio_fertilizers": {
+        "name": "Bio Fertilizers",
+        "desc": "High-potency microbial formulations for natural nitrogen fixation, phosphate solubilization, and potash mobilization."
       }
     },
     "title": "Our Products",
@@ -203,6 +207,237 @@
           "CFU minimum 2 x 10¹¹ cells/ml",
           "Promotes plant growth",
           "Reduces nitrogenous fertilizer cost"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "250 ml",
+          "1 Liter"
+        ]
+      },
+      "bf-002": {
+        "name": "AT ORGO PB",
+        "tagline": "Phosphate Solubilizing Bacteria (Bacillus megaterium)",
+        "description": "Contains Bacillus megaterium which solubilizes insoluble phosphate in the soil and makes it available to the plant.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Solubilizes fixed phosphorus",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Enhances root development",
+          "Improves crop yield"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "250 ml",
+          "1 Liter"
+        ]
+      },
+      "bf-003": {
+        "name": "AT ORGO KB",
+        "tagline": "Potash Mobilizing Bacteria (Frateuria aurena)",
+        "description": "Contains Frateuria aurena which mobilizes potash from the soil and provides it to the plant, improving fruit quality and stress resistance.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Mobilizes potash for better uptake",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Improves fruit size and quality",
+          "Increases drought resistance"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "250 ml",
+          "1 Liter"
+        ]
+      },
+      "bf-004": {
+        "name": "AT ORGO ZB",
+        "tagline": "Zinc Solubilising Bacteria (Pseudomonas Spp.)",
+        "description": "Contains Pseudomonas Spp. which solubilizes zinc from the soil and makes it available to the plant, correcting zinc deficiency.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Solubilizes fixed zinc in soil",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Corrects zinc deficiency",
+          "Enhances enzymatic activities"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "250 ml",
+          "1 Liter"
+        ]
+      },
+      "bf-005": {
+        "name": "AT ORGO MYCOROOT E (VAM)",
+        "tagline": "Vesicular Arbuscular Mycorrhiza",
+        "description": "A symbiotic fungus that colonizes the root system, helping in nutrient transfer (especially phosphorus) and improving water absorption.",
+        "application": "Soil application",
+        "dosage": "250 gram/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Improves phosphorus & nutrient uptake",
+          "Minimum 1000 Spores per gram",
+          "Enhances root surface area",
+          "Better water absorption"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "100 gram",
+          "250 gram"
+        ]
+      },
+      "bf-006": {
+        "name": "AT ORGO PRO MAX",
+        "tagline": "NPK Bio-Fertilizer Consortium",
+        "description": "A powerful combination of Nitrogen Fixing (Azotobacter), Phosphate Solubilizing, and Potash Mobilizing bacteria for complete nutrition.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Complete NPK bio-solution",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Reduces chemical fertilizer dependency",
+          "Balanced microbial nutrition"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "1 Liter",
+          "5 Liter"
+        ]
+      },
+      "bf-007": {
+        "name": "AT ORGO ROBUSTA PRO-LDC KIT",
+        "tagline": "Nutritional Kit for Long Duration Crops",
+        "description": "A comprehensive nutritional kit designed for long duration crops, containing a balanced mix of NB, PB, KB, ZB, and Mycorrhiza.",
+        "application": "Soil application",
+        "dosage": "1 Kit/Acre",
+        "recommended": "Long Duration Crops",
+        "benefits": [
+          "Full nutritional support",
+          "High microbial potency",
+          "Sustained growth for long-cycle crops",
+          "Contains 6L liquid + 500g powder"
+        ],
+        "crops": [
+          "Sugarcane",
+          "Fruit Crops",
+          "Cotton"
+        ],
+        "packSizes": [
+          "1 Kit (6.5 kg)"
+        ]
+      },
+      "bf-008": {
+        "name": "AT ORGO ROBUSTA PRO-SDC KIT",
+        "tagline": "Nutritional Kit for Short Duration Crops",
+        "description": "Specially formulated for short duration crops to ensure rapid growth and high productivity within a shorter crop cycle.",
+        "application": "Soil application",
+        "dosage": "1 Kit/Acre",
+        "recommended": "Short Duration Crops",
+        "benefits": [
+          "Rapid nutrient availability",
+          "Optimized for short cycles",
+          "Complete microbial coverage",
+          "Contains 1.5L liquid + 500g powder"
+        ],
+        "crops": [
+          "Vegetables",
+          "Pulses",
+          "Cereals"
+        ],
+        "packSizes": [
+          "1 Kit (2.0 kg)"
+        ]
+      },
+      "bf-009": {
+        "name": "AT ORGO ROBUSTA PRO-AC KIT",
+        "tagline": "Universal Nutritional Kit for All Crops",
+        "description": "A versatile kit providing essential NP, PK, ZB, and Mycorrhiza for all types of agricultural and horticultural crops.",
+        "application": "Soil application",
+        "dosage": "1 Kit/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Balanced nutrient profile",
+          "Universal application",
+          "Improves soil biology",
+          "Contains 1.5L liquid + 200g powder"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "1 Kit (1.7 kg)"
+        ]
+      },
+      "bf-010": {
+        "name": "AT ORGO ROBUSTA PRO-NC KIT",
+        "tagline": "Water Soluble Carrier Based Kit",
+        "description": "100% water soluble carrier based nutritional kit containing Orgo Pro Max and Mycorrhiza for easy application and rapid absorption.",
+        "application": "Soil application / Fertigation",
+        "dosage": "500 gm/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "100% water soluble",
+          "Carrier based formulation",
+          "High bioavailability",
+          "Easy to apply through drip"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "500 gram"
+        ]
+      },
+      "bf-011": {
+        "name": "AT ORGO SHIELDER PRO",
+        "tagline": "Zinc Solubilising Bacteria (Premium)",
+        "description": "Premium Pseudomonas Spp. formulation with high cell count for effective zinc solubilization and plant defense.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Premium zinc solubilizer",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Improves plant immunity",
+          "Robust growth support"
+        ],
+        "crops": [
+          "All Crops"
+        ],
+        "packSizes": [
+          "250 ml",
+          "1 Liter"
+        ]
+      },
+      "bf-012": {
+        "name": "AT ORGO RESCUE PRO",
+        "tagline": "Phosphate Solubilizing Bacteria (Premium)",
+        "description": "High-performance Bacillus Spp. that rapidly solubilizes phosphate, helping crops recover from stress and nutrient deficiency.",
+        "application": "Soil application",
+        "dosage": "1 Liter/Acre",
+        "recommended": "All Crops",
+        "benefits": [
+          "Rapid phosphate solubilization",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Stress recovery support",
+          "Improves nutritional status"
         ],
         "crops": [
           "All Crops"

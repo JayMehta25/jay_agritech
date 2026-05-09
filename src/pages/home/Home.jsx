@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import {
   ArrowRight, Leaf, FlaskConical, Shield, Sprout, TrendingUp,
   Users, Award, MapPin, ChevronRight, Star, Check, Zap,
@@ -11,7 +12,8 @@ import GrowthSystemVisual from '../../components/ui/GrowthSystemVisual';
 import collageImg from '../../assets/sustainable_farming_collage.png';
 // Assets
 import logoImg from '../../assets/new_title.png';
-import companyVideo from '../../assets/Video_Ad_Request_Farmers_Work.mp4';
+import companyVideo from '../../assets/blog/e_d_mp_.mp4';
+import farmersWorkImg from '../../assets/blog/farmers_work.png';
 import './Home.css';
 
 // Blog Images
@@ -28,6 +30,8 @@ import caseMangoImg from '../../assets/case-studies/mango.png';
 import catBfImg from '../../assets/products/bio-fertilizers.png';
 import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
+import catBioImg from '../../assets/products/biostimulants.png';
+import catInsectImg from '../../assets/products/bio-insecticides.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
 import catMnImg from '../../assets/products/micronutrients.png';
 import productsImg from '../../data/products.png';
@@ -35,8 +39,9 @@ import productsImg from '../../data/products.png';
 const blogImages = { 1: blogSoilImg, 2: blogIpmImg, 3: blogBioChemImg };
 const caseImages = { 1: caseCottonImg, 2: caseGroundnutImg, 3: caseMangoImg };
 const catImages = {
-  'bio-insecticides': catBfImg,
-  'biostimulants': catPgrImg,
+  'bio-insecticides': catInsectImg,
+  'biostimulants': catBioImg,
+  'bio-fertilizers': catBfImg,
   'organic-nutrients': catOnImg,
   'micronutrients': catMnImg
 };
@@ -85,28 +90,35 @@ const toKey = (text) => text.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-
 
 export default function Home() {
   const { t } = useTranslation();
+  const [videoEnded, setVideoEnded] = useState(false);
+
   return (
     <div className="home-page">
       {/* ══════════ HERO ══════════ */}
       <section className="hero" id="hero">
         <div className="hero-video-bg">
-          <video 
-            src={companyVideo} 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            className="hero-video-element"
-          />
-          <div className="hero-video-overlay-dark"></div>
+          {!videoEnded ? (
+            <video 
+              src={companyVideo} 
+              autoPlay 
+              muted 
+              onEnded={() => setVideoEnded(true)}
+              playsInline 
+              className="hero-video-element"
+            />
+          ) : (
+            <img 
+              src={farmersWorkImg} 
+              alt="Farmers at work" 
+              className="hero-video-element hero-image-fade-in" 
+            />
+          )}
+          <div className={`hero-video-overlay-dark ${videoEnded ? 'image-overlay' : ''}`}></div>
         </div>
 
         <div className="container hero-container-centered">
           <div className="hero-text-centered">
-            <div className="hero-badge centered-badge">
-              <Leaf size={14} />
-              <span>{t('hero.badge')}</span>
-            </div>
+
             <h1 className="hero-title centered-title">
               {t('hero.title_part1')} <span className="text-gradient">{t('hero.title_part2')}</span>,<br />
               {t('hero.title_part3')} <span className="text-gradient">{t('hero.title_part4')}</span>
@@ -150,10 +162,7 @@ export default function Home() {
                 <div className="collage-main">
                   <img src={collageImg} alt={t('home.about_image_alt', 'Sustainable Farming')} className="collage-img" />
                 </div>
-                <div className="collage-badge">
-                  <Award size={20} />
-                  <span>{t('home.established', 'Est. 2026')}</span>
-                </div>
+
               </div>
             </AnimatedSection>
             <AnimatedSection direction="right" className="about-preview-content">
@@ -180,13 +189,7 @@ export default function Home() {
                     <span>{t('home.highlights.farmer.desc', 'Every product tested with real farmers in real fields')}</span>
                   </div>
                 </div>
-                <div className="highlight-item">
-                  <div className="highlight-icon"><Globe size={20} /></div>
-                  <div>
-                    <strong>{t('home.highlights.presence.title', 'Pan-India Presence')}</strong>
-                    <span>{t('home.highlights.presence.desc', 'Growing network across 15+ Indian states')}</span>
-                  </div>
-                </div>
+
               </div>
               <Link to="/about" className="btn btn-primary">
                 {t('common.learn_more')} <ArrowRight size={16} />
@@ -247,7 +250,7 @@ export default function Home() {
               <span className="section-overline">{t('home.products_overline', 'Product Portfolio')}</span>
               <h2 className="section-title">{t('home.products_h2', '60+ Innovative Products')}</h2>
               <p className="section-subtitle">
-                {t('home.products_subtitle', 'Across 4 core categories — Bio Insecticides, Biostimulants, Organic Nutrients, and Micronutrients')}
+                {t('home.products_subtitle', 'Across 5 core categories — Bio Insecticides, Biostimulants, Bio Fertilizers, Organic Nutrients, and Micronutrients')}
               </p>
             </div>
           </AnimatedSection>
@@ -261,13 +264,14 @@ export default function Home() {
               <div className="products-stats-overlay">
                 <div className="pso-item">
                   <span className="pso-number">60+</span>
-                  <span className="pso-label">Formulations</span>
+                  <span className="pso-label">Products</span>
                 </div>
                 <div className="pso-divider"></div>
                 <div className="pso-item">
-                  <span className="pso-number">15+</span>
-                  <span className="pso-label">Indian States</span>
+                  <span className="pso-number">5</span>
+                  <span className="pso-label">Categories</span>
                 </div>
+
               </div>
             </AnimatedSection>
 
@@ -278,6 +282,7 @@ export default function Home() {
                     <div className="pli-icon" style={{ backgroundColor: `${cat.color}15`, color: cat.color }}>
                       {cat.id === 'bio-insecticides' && <Shield size={24} />}
                       {cat.id === 'biostimulants' && <Zap size={24} />}
+                      {cat.id === 'bio-fertilizers' && <Microscope size={24} />}
                       {cat.id === 'organic-nutrients' && <Leaf size={24} />}
                       {cat.id === 'micronutrients' && <FlaskConical size={24} />}
                     </div>
@@ -402,7 +407,7 @@ export default function Home() {
                     <div className="case-results">
                       {study.results.slice(0, 2).map((r, i) => (
                         <div key={i} className="case-result">
-                          <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
+                           <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
                         </div>
                       ))}
                     </div>

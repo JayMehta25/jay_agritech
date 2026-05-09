@@ -3,11 +3,17 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './GenericPage.css';
 
-export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children, bodyClassName = '' }) {
+export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children, bodyClassName = '', heroImage }) {
   const { t } = useTranslation();
+  const heroStyle = heroImage ? { 
+    backgroundImage: `linear-gradient(rgba(10, 45, 10, 0.7), rgba(10, 45, 10, 0.8)), url(${heroImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  } : {};
+
   return (
     <div className="generic-page">
-      <div className="page-hero">
+      <div className="page-hero" style={heroStyle}>
         <div className="container">
           {breadcrumbs.length > 0 && (
             <div className="breadcrumbs">

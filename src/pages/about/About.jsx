@@ -35,46 +35,58 @@ export default function About() {
   const { t } = useTranslation();
   const iconMap = { Lightbulb, Users, Leaf, FlaskConical, Shield, Globe };
   return (
-    <GenericPage title={t('nav.links.company_overview')} subtitle={t('home.about_lead')} breadcrumbs={[{ label: t('nav.about') }]}>
+    <GenericPage 
+      title={t('nav.links.company_overview')} 
+      subtitle={t('home.about_lead')} 
+      heroImage={sustainableImg}
+      breadcrumbs={[{ label: t('nav.about') }]}
+    >
       <div className="container">
-        {/* ─── About Us — Hero Split ─── */}
-        <AnimatedSection id="overview">
-          <section className="about-split">
-            <div className="about-split__image">
-              <img src={sustainableImg} alt="Jay Agritech Agriculture" />
-              <div className="about-split__overlay" />
-              <div className="about-split__stats">
-                <div className="about-stat">
-                  <span className="about-stat__num">50+</span>
-                  <span className="about-stat__label">Years Experience</span>
-                </div>
-                <div className="about-stat">
-                  <span className="about-stat__num">15-30</span>
-                  <span className="about-stat__label">Expert Team</span>
-                </div>
-                <div className="about-stat">
-                  <span className="about-stat__num">60+</span>
-                  <span className="about-stat__label">Products</span>
+        {/* ─── About Us — Overview ─── */}
+        <AnimatedSection id="overview" className="section">
+          <div className="about-overview-layout-simple">
+            <div className="about-overview-main">
+              <span className="section-overline">Our Journey</span>
+              <h2 className="section-title">Pioneering Agricultural Innovation Since 2026</h2>
+              
+              <div className="about-overview-content">
+                <p>
+                  At <strong>Jay Agritech Pvt. Ltd.</strong>, we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint.
+                </p>
+                
+                <div className="about-highlights-grid">
+                  <div className="about-highlight-box">
+                    <div className="hb-icon"><Building size={24} /></div>
+                    <div className="hb-info">
+                      <strong>Legacy of Trust</strong>
+                      <span>Rooted in decades of industrial excellence, we maintain unwavering commitment to ethical business practices and transparency with our global partners.</span>
+                    </div>
+                  </div>
+                  <div className="about-highlight-box">
+                    <div className="hb-icon"><FlaskConical size={24} /></div>
+                    <div className="hb-info">
+                      <strong>Scientific Innovation</strong>
+                      <span>Our dedicated R&D lab focuses on isolating high-potency microbial strains and developing cutting-edge biological inputs for modern agriculture.</span>
+                    </div>
+                  </div>
+                  <div className="about-highlight-box">
+                    <div className="hb-icon"><Award size={24} /></div>
+                    <div className="hb-info">
+                      <strong>Quality Assurance</strong>
+                      <span>Every batch undergoes rigorous quality control and field trials to ensure consistent performance, crop safety, and zero chemical residue.</span>
+                    </div>
+                  </div>
+                  <div className="about-highlight-box">
+                    <div className="hb-icon"><Zap size={24} /></div>
+                    <div className="hb-info">
+                      <strong>Farmer Impact</strong>
+                      <span>Our solutions are designed to deliver measurable yield improvements, helping farmers across India achieve sustainable growth and better profitability.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="about-split__text">
-              <span className="section-overline">Our Legacy & Future</span>
-              <h2 className="about-split__title">Innovating Agriculture for Generations</h2>
-              <div className="about-split__lead">
-                At <strong>Jay Agritech Pvt. Ltd.</strong>, we deliver innovative, sustainable, and high-quality agricultural solutions for modern farming and crop productivity.
-              </div>
-              <p className="about-split__body">
-                Our promoters bring <strong>45–50 years</strong> of rich experience in the chemical and allied industries — backed by deep technical knowledge, strong business ethics, and a culture built on quality, innovation, and reliability.
-              </p>
-              <p className="about-split__body">
-                Our dynamic young team, with <strong>15–30 years</strong> of hands-on expertise, continuously develops effective agricultural inputs to meet the evolving needs of farmers, distributors, and partners across markets.
-              </p>
-              <p className="about-split__body" style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--clr-primary)', marginTop: 'var(--sp-4)' }}>
-                Our strength lies in combining technical expertise, operational excellence, and market understanding to create products that drive sustainable agriculture and long-term growth.
-              </p>
-            </div>
-          </section>
+          </div>
         </AnimatedSection>
 
         {/* ─── Closing Banner — Immersive ─── */}

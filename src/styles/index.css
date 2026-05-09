@@ -375,7 +375,7 @@ ul, ol {
 .page-hero {
   background: var(--gradient-hero);
   color: var(--clr-text-inverse);
-  padding: calc(var(--navbar-height) + var(--sp-16)) 0 var(--sp-16);
+  padding: calc(var(--navbar-height) + var(--sp-8)) 0 var(--sp-8);
   position: relative;
   overflow: hidden;
 }

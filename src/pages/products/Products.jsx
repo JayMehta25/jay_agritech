@@ -10,14 +10,20 @@ import GenericPage from '../../components/ui/GenericPage';
 import catBfImg from '../../assets/products/bio-fertilizers.png';
 import catBpImg from '../../assets/products/bio-pesticides.png';
 import catPgrImg from '../../assets/products/pgr.png';
+import catInsectImg from '../../assets/products/bio-insecticides.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
 import catMnImg from '../../assets/products/micronutrients.png';
+import biofertCategoryImg from '../../assets/products/bio-fertilizers.png';
+import biostimsCategoryImg from '../../assets/products/biostimulants.png';
+import micronutCategoryImg from '../../assets/products/micronutrients.png';
+import organicnutriCategoryImg from '../../assets/products/organic-nutrients.png';
 
 const catImages = {
-  'bio-insecticides': catBfImg,
-  'biostimulants': catPgrImg,
+  'bio-insecticides': catInsectImg,
+  'biostimulants': biostimsCategoryImg,
   'organic-nutrients': catOnImg,
-  'micronutrients': catMnImg
+  'micronutrients': catMnImg,
+  'bio-fertilizers': catBfImg
 };
 
 function AnimatedSection({ children, className = '', delay = 0 }) {

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Send, X, Bot, User } from 'lucide-react';
+import logoImg from '../../assets/new_title.png';
 import './ChatBot.css';
 
 export default function ChatBot() {
@@ -96,7 +97,7 @@ export default function ChatBot() {
         onClick={handleToggle}
         aria-label="Toggle Chatbot"
       >
-        {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
+        {isOpen ? <X size={32} /> : <img src={logoImg} alt="Chat" className="chatbot-toggle-img" />}
         {!isOpen && messages.length > 0 && !showGreetingPopup && <span className="chatbot-notification">1</span>}
       </button>
 
@@ -107,7 +108,7 @@ export default function ChatBot() {
           <div className="chatbot-header">
             <div className="chatbot-header-info">
               <div className="chatbot-avatar">
-                <Bot size={20} />
+                <img src={logoImg} alt="Jay Assistant" className="chatbot-avatar-img" />
               </div>
               <div>
                 <h4>Jay Assistant</h4>
@@ -122,7 +123,11 @@ export default function ChatBot() {
             {messages.map((msg) => (
               <div key={msg.id} className={`chatbot-message ${msg.sender}`}>
                 <div className="chatbot-message-avatar">
-                  {msg.sender === 'bot' ? <Bot size={14} /> : <User size={14} />}
+                  {msg.sender === 'bot' ? (
+                    <img src={logoImg} alt="Bot" className="chatbot-avatar-img" />
+                  ) : (
+                    <User size={14} />
+                  )}
                 </div>
                 <div className="chatbot-message-bubble">
                   <p>{msg.text}</p>

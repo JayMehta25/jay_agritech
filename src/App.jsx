@@ -42,7 +42,13 @@ function ScrollToTopAndHash() {
 
 export default function App() {
   const { i18n } = useTranslation();
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(() => {
+    // Only show splash if it hasn't been played in this session
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('splash_played');
+    }
+    return true;
+  });
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -57,7 +63,14 @@ export default function App() {
 
   return (
     <>
-      {showSplash && <VideoSplashScreen onComplete={() => setShowSplash(false)} />}
+      {showSplash && (
+        <VideoSplashScreen 
+          onComplete={() => {
+            setShowSplash(false);
+            sessionStorage.setItem('splash_played', 'true');
+          }} 
+        />
+      )}
       <BrowserRouter>
         <ScrollToTopAndHash />
         <Routes>
