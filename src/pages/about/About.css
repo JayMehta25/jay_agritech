@@ -296,3 +296,204 @@
     font-size: var(--fs-h4);
   }
 }
+
+/* Redesigned Leadership Grid - Rectangular Horizontal Profile Cards */
+.about-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-8);
+  margin-top: var(--sp-8);
+}
+
+.about-leadership-card {
+  display: flex;
+  background: white;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--clr-border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+}
+
+.about-leadership-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--clr-primary-lighter);
+}
+
+.alc-image-wrapper {
+  width: 200px;
+  height: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--gradient-primary);
+}
+
+.alc-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-spring);
+}
+
+.about-leadership-card:hover .alc-image-wrapper img {
+  transform: scale(1.08);
+}
+
+.alc-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-heading);
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dark) 100%);
+}
+
+.alc-avatar-fallback span {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  opacity: 0.95;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.alc-content {
+  padding: var(--sp-6) var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.alc-content h3 {
+  font-size: var(--fs-h4);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-1);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.alc-role {
+  font-size: var(--fs-caption);
+  color: var(--clr-accent-gold-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-4);
+  display: inline-block;
+}
+
+.alc-bio {
+  font-size: var(--fs-body-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Vision & Mission Grid Layout */
+.about-vision-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-10);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .about-leadership-card {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+  .about-vision-mission-grid {
+    gap: var(--sp-6);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Keep Vision & Mission side-by-side even on mobile */
+  .about-vision-mission-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--sp-4) !important;
+  }
+  .about-vision-mission-grid .card {
+    padding: var(--sp-4) !important;
+  }
+  .about-vision-mission-grid h3 {
+    font-size: var(--fs-body) !important;
+    margin-bottom: var(--sp-2) !important;
+  }
+  .about-vision-mission-grid p {
+    font-size: var(--fs-body-sm) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Keep Leadership cards horizontal on mobile */
+  .about-leadership-card {
+    flex-direction: row !important;
+    align-items: stretch;
+  }
+  .alc-image-wrapper {
+    width: 130px !important;
+    height: auto !important;
+    min-height: 100%;
+  }
+  .alc-avatar-fallback span {
+    font-size: 1.75rem !important;
+  }
+  .alc-content {
+    padding: var(--sp-4) var(--sp-5) !important;
+  }
+  .alc-content h3 {
+    font-size: var(--fs-body) !important;
+  }
+  .alc-role {
+    font-size: 10px !important;
+    margin-bottom: var(--sp-2) !important;
+  }
+  .alc-bio {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Vision & Mission super compact on small screens */
+  .about-vision-mission-grid {
+    gap: var(--sp-3) !important;
+  }
+  .about-vision-mission-grid .card {
+    padding: var(--sp-3) !important;
+    border-left-width: 3px !important;
+  }
+  .about-vision-mission-grid h3 {
+    font-size: var(--fs-body-sm) !important;
+  }
+  .about-vision-mission-grid p {
+    font-size: var(--fs-caption) !important;
+  }
+
+  /* Leadership card super compact on small screens */
+  .alc-image-wrapper {
+    width: 100px !important;
+  }
+  .alc-content {
+    padding: var(--sp-3) var(--sp-4) !important;
+  }
+  .alc-content h3 {
+    font-size: var(--fs-body-sm) !important;
+  }
+  .alc-bio {
+    font-size: 10px !important;
+  }
+}
+
+

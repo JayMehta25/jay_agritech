@@ -130,8 +130,8 @@ export default function Navbar() {
           {/* CTA */}
           <div className="navbar-actions">
             <div className="lang-switcher-wrapper" ref={langMenuRef}>
-              <button 
-                className="lang-switcher-btn" 
+              <button
+                className="lang-switcher-btn"
                 onClick={() => setShowLangMenu(!showLangMenu)}
                 aria-label={t('nav.change_language', 'Change Language')}
               >
@@ -139,11 +139,11 @@ export default function Navbar() {
                 <span>{currentLanguage.label}</span>
                 <ChevronDown size={12} className={showLangMenu ? 'rotate-180' : ''} />
               </button>
-              
+
               {showLangMenu && (
                 <div className="lang-dropdown">
                   {languages.map(lang => (
-                    <button 
+                    <button
                       key={lang.code}
                       className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
                       onClick={() => changeLanguage(lang.code)}

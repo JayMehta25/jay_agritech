@@ -81,12 +81,13 @@
   "hero": {
     "title_part1": "Innovating",
     "title_part2": "Agriculture",
-    "title_part3": "Nurturing",
-    "title_part4": "Growth",
-    "subtitle": "Science-backed biological & organic agricultural solutions that enhance crop productivity, improve soil health, and empower every farmer with sustainable technology.",
+    "title_part3": "",
+    "title_part4": "",
+    "subtitle": "Bridging 50 years of industrial legacy with the future of sustainable bio-technology. Based in Valsad, Gujarat.",
     "explore_btn": "Explore Products",
     "story_btn": "Our Story",
-    "badge": "Established 2026 · Valsad, Gujarat"
+    "view_catalogue": "View Catalogue",
+    "badge": "50+ Years of Industrial Legacy"
   },
   "common": {
     "learn_more": "Learn More",
@@ -464,8 +465,8 @@
       "Sustainable agricultural growth"
     ],
     "about_us_closing": "With a vision to become a trusted name in agriculture, we expand our capabilities while staying committed to excellence and value creation for all stakeholders.",
-    "vision": "To become a trusted name in the agriculture industry — expanding capabilities while maintaining commitment to excellence and value creation for all stakeholders.",
-    "mission": "To become a trusted partner in modern agriculture by providing scientifically advanced, high-quality bio-agriculture and chemical solutions that create value for farmers, strengthen sustainability, and contribute to global food security.",
+    "vision": "To lead the global transition toward biological agriculture, restoring soil vitality and ensuring a chemical-free, food-secure future for generations to come.",
+    "mission": "To empower farmers with state-of-the-art biological inputs and R&D-driven solutions that maximize crop yield, enhance profitability, and cultivate environmental harmony.",
     "stats": {
       "products": "Products",
       "categories": "Product Categories",

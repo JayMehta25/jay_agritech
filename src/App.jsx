@@ -68,6 +68,7 @@ export default function App() {
           onComplete={() => {
             setShowSplash(false);
             sessionStorage.setItem('splash_played', 'true');
+            window.dispatchEvent(new Event('splashComplete'));
           }} 
         />
       )}

@@ -76,14 +76,15 @@
     "read_more": "阅读更多"
   },
   "hero": {
-    "badge": "100% 有机 & 生物",
+    "badge": "50 多年的工业遗产",
     "title_part1": "创新",
     "title_part2": "农业",
-    "title_part3": "培育",
-    "title_part4": "增长",
-    "subtitle": "科学驱动的生物和有机农业解决方案，可提高作物产量、改善土壤健康，并为每位农民提供可持续技术。",
+    "title_part3": "",
+    "title_part4": "",
+    "subtitle": "将 50 年的工业遗产与可持续生物技术的未来相结合。总部位于古吉拉特邦瓦尔萨德。",
     "explore_btn": "探索产品",
-    "story_btn": "我们的故事"
+    "story_btn": "我们的故事",
+    "view_catalogue": "查看产品目录"
   },
   "company": {
     "stats": {
@@ -244,7 +245,10 @@
         "location": "古吉拉特邦巴鲁奇",
         "farmer": "Rameshbhai Patel",
         "challenge": "由于连续几个季节的土壤退化和严重的棉铃虫侵扰，棉花产量下降。",
-        "results": ["产量增加 32%", "虫害减少 40%"],
+        "results": [
+          "产量增加 32%",
+          "虫害减少 40%"
+        ],
         "testimonial": "Jay Agritech 的产品改变了我的棉花种植方式。组合方法给了我 5 年来最好的产量。"
       },
       "groundnut-quality-improvement": {
@@ -253,7 +257,10 @@
         "location": "古吉拉特邦朱纳格特",
         "farmer": "Kantibhai Solanki",
         "challenge": "根瘤发育不良且品质不一，影响了市场价格的实现。",
-        "results": ["根瘤发育提高 45%", "产量提高 20%"],
+        "results": [
+          "根瘤发育提高 45%",
+          "产量提高 20%"
+        ],
         "testimonial": "根瘤菌培养效果惊人。我的花生植株拥有我见过的最好的根瘤。"
       },
       "mango-flowering-success": {
@@ -262,7 +269,10 @@
         "location": "古吉拉特邦瓦尔萨德",
         "farmer": "Dineshbhai Desai",
         "challenge": "由于开花不规律和落果严重，连续两年芒果歉收。",
-        "results": ["开花均匀度提高 60%", "落果减少 35%"],
+        "results": [
+          "开花均匀度提高 60%",
+          "落果减少 35%"
+        ],
         "testimonial": "这个季节非常出色。开花是我见过的最均匀的一次，果实品质也很出众。"
       }
     },

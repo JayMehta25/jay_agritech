@@ -333,10 +333,59 @@
   50% { transform: translateY(-4px); }
 }
 
-@media (max-width: 480px) {
-  .chatbot-window {
-    width: calc(100vw - 40px);
-    right: 0;
-    bottom: calc(100% + 10px);
+/* Responsive adjustments for chatbot elements */
+@media (max-width: 768px) {
+  .chatbot-wrapper {
+    bottom: 24px;
+    right: 24px;
+  }
+  .chatbot-toggle {
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.25);
+  }
+  .chatbot-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+  .chatbot-toggle-img {
+    padding: 8px;
+  }
+  .chatbot-greeting-popup {
+    right: calc(100% + 12px);
+    width: 200px;
+    padding: var(--sp-3);
+  }
+  .chatbot-greeting-popup p {
+    font-size: var(--fs-caption);
   }
 }
+
+@media (max-width: 480px) {
+  .chatbot-wrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+  .chatbot-toggle {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+  }
+  .chatbot-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+  .chatbot-toggle-img {
+    padding: 6px;
+  }
+  .chatbot-window {
+    width: calc(100vw - 32px);
+    right: 0;
+    bottom: calc(100% + 12px);
+    max-height: 500px;
+  }
+  .chatbot-greeting-popup {
+    display: none; /* Hide greeting on very small devices to maintain clean UI */
+  }
+}
+

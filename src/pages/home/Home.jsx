@@ -1,25 +1,19 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   ArrowRight, Leaf, FlaskConical, Shield, Sprout, TrendingUp,
   Users, Award, MapPin, ChevronRight, Star, Check, Zap,
-  Microscope, Beaker, Globe, Target, Heart
+  Microscope, Beaker, Globe, Target, Heart, FileText, X
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, useScrollAnimationGroup, useCountUp } from '../../hooks/useScrollAnimation';
-import { companyInfo, products, blogPosts, caseStudies } from '../../data/siteData';
-import GrowthSystemVisual from '../../components/ui/GrowthSystemVisual';
+import { companyInfo, products, caseStudies } from '../../data/siteData';
 import collageImg from '../../assets/sustainable_farming_collage.png';
 // Assets
 import logoImg from '../../assets/new_title.png';
 import companyVideo from '../../assets/blog/e_d_mp_.mp4';
 import farmersWorkImg from '../../assets/blog/farmers_work.png';
 import './Home.css';
-
-// Blog Images
-import blogSoilImg from '../../assets/blog/soil_health.png';
-import blogIpmImg from '../../assets/blog/ipm_strategies.png';
-import blogBioChemImg from '../../assets/blog/bio_vs_chemical.png';
 
 // Case Study Images
 import caseCottonImg from '../../assets/case-studies/cotton.png';
@@ -36,7 +30,6 @@ import catOnImg from '../../assets/products/organic-nutrients.png';
 import catMnImg from '../../assets/products/micronutrients.png';
 import productsImg from '../../data/products.png';
 
-const blogImages = { 1: blogSoilImg, 2: blogIpmImg, 3: blogBioChemImg };
 const caseImages = { 1: caseCottonImg, 2: caseGroundnutImg, 3: caseMangoImg };
 const catImages = {
   'bio-insecticides': catInsectImg,
@@ -88,9 +81,63 @@ function StatCounter({ number, suffix, label }) {
 
 const toKey = (text) => text.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 
+const PDFModal = ({ isOpen, onClose, pdfUrl }) => {
+  if (!isOpen) return null;
+  return (
+    <div className="pdf-modal-overlay" onClick={onClose}>
+      <div className="pdf-modal-container" onClick={e => e.stopPropagation()}>
+        <button className="pdf-modal-close" onClick={onClose} aria-label="Close">
+          <X size={24} />
+        </button>
+        <iframe 
+          src={pdfUrl} 
+          title="Product Catalogue" 
+          className="pdf-iframe"
+        />
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const { t } = useTranslation();
   const [videoEnded, setVideoEnded] = useState(false);
+  const [isCatalogueOpen, setIsCatalogueOpen] = useState(false);
+  const [canPlay, setCanPlay] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !!sessionStorage.getItem('splash_played');
+    }
+    return true;
+  });
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleSplashComplete = () => {
+      setCanPlay(true);
+    };
+    
+    window.addEventListener('splashComplete', handleSplashComplete);
+    return () => window.removeEventListener('splashComplete', handleSplashComplete);
+  }, []);
+
+  useEffect(() => {
+    if (canPlay && videoRef.current) {
+      // Add a small delay to align with the splash screen fade-out animation
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.play().catch(e => console.log('Auto-play prevented:', e));
+        }
+      }, 500); 
+    }
+  }, [canPlay]);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.duration) {
+      if (videoRef.current.currentTime >= videoRef.current.duration - 1) {
+        setVideoEnded(true);
+      }
+    }
+  };
 
   return (
     <div className="home-page">
@@ -98,19 +145,20 @@ export default function Home() {
       <section className="hero" id="hero">
         <div className="hero-video-bg">
           {!videoEnded ? (
-            <video 
-              src={companyVideo} 
-              autoPlay 
-              muted 
+            <video
+              ref={videoRef}
+              src={companyVideo}
+              muted
+              onTimeUpdate={handleTimeUpdate}
               onEnded={() => setVideoEnded(true)}
-              playsInline 
+              playsInline
               className="hero-video-element"
             />
           ) : (
-            <img 
-              src={farmersWorkImg} 
-              alt="Farmers at work" 
-              className="hero-video-element hero-image-fade-in" 
+            <img
+              src={farmersWorkImg}
+              alt="Farmers at work"
+              className="hero-video-element hero-image-fade-in"
             />
           )}
           <div className={`hero-video-overlay-dark ${videoEnded ? 'image-overlay' : ''}`}></div>
@@ -119,9 +167,11 @@ export default function Home() {
         <div className="container hero-container-centered">
           <div className="hero-text-centered">
 
+            <div className="centered-badge">
+              <span className="badge badge-premium">{t('hero.badge')}</span>
+            </div>
             <h1 className="hero-title centered-title">
-              {t('hero.title_part1')} <span className="text-gradient">{t('hero.title_part2')}</span>,<br />
-              {t('hero.title_part3')} <span className="text-gradient">{t('hero.title_part4')}</span>
+              {t('hero.title_part1')} <span className="text-gradient">{t('hero.title_part2')}</span>
             </h1>
             <p className="hero-subtitle centered-subtitle">
               {t('hero.subtitle')}
@@ -130,13 +180,19 @@ export default function Home() {
               <Link to="/products" className="btn btn-gold btn-lg">
                 {t('hero.explore_btn')} <ArrowRight size={18} />
               </Link>
+              <button 
+                onClick={() => setIsCatalogueOpen(true)}
+                className="btn btn-hero-outline btn-lg"
+              >
+                {t('hero.view_catalogue')} <FileText size={18} />
+              </button>
               <Link to="/about" className="btn btn-hero-outline btn-lg">
                 {t('hero.story_btn')} <ChevronRight size={18} />
               </Link>
             </div>
           </div>
         </div>
-        
+
         <div className="hero-scroll-indicator">
           <div className="scroll-dot"></div>
         </div>
@@ -149,52 +205,6 @@ export default function Home() {
             {companyInfo.stats.map((stat, i) => (
               <StatCounter key={i} number={stat.number} suffix={stat.suffix} label={t(`company.stats.${stat.label.toLowerCase().replace(/\s/g, '_')}`, stat.label)} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════ ABOUT PREVIEW ══════════ */}
-      <section className="section bg-white" id="about-preview">
-        <div className="container">
-          <div className="about-preview-grid">
-            <AnimatedSection direction="left" className="about-preview-visual">
-              <div className="about-image-collage">
-                <div className="collage-main">
-                  <img src={collageImg} alt={t('home.about_image_alt', 'Sustainable Farming')} className="collage-img" />
-                </div>
-
-              </div>
-            </AnimatedSection>
-            <AnimatedSection direction="right" className="about-preview-content">
-              <span className="section-overline">{t('home.about_title')}</span>
-              <h2>{t('home.about_h2')}</h2>
-              <p className="about-lead">
-                {t('home.about_lead')}
-              </p>
-              <p>
-                {t('home.about_p1')}
-              </p>
-              <div className="about-highlights">
-                <div className="highlight-item">
-                  <div className="highlight-icon"><Microscope size={20} /></div>
-                  <div>
-                    <strong>{t('home.highlights.rd.title', 'Advanced R&D Lab')}</strong>
-                    <span>{t('home.highlights.rd.desc', 'State-of-the-art microbiology & formulation research')}</span>
-                  </div>
-                </div>
-                <div className="highlight-item">
-                  <div className="highlight-icon"><Target size={20} /></div>
-                  <div>
-                    <strong>{t('home.highlights.farmer.title', 'Farmer-Centric Design')}</strong>
-                    <span>{t('home.highlights.farmer.desc', 'Every product tested with real farmers in real fields')}</span>
-                  </div>
-                </div>
-
-              </div>
-              <Link to="/about" className="btn btn-primary">
-                {t('common.learn_more')} <ArrowRight size={16} />
-              </Link>
-            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -306,77 +316,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════ WHY CHOOSE US ══════════ */}
-      <section className="section why-section" id="why-choose">
-        <div className="container">
-          <AnimatedSection>
-            <div className="section-header">
-              <span className="section-overline" style={{ color: 'var(--clr-accent-gold)' }}>{t('home.why_title')}</span>
-              <h2 className="section-title" style={{ color: 'white' }}>{t('home.why_h2')}</h2>
-              <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                {t('home.why_subtitle')}
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="why-grid">
-            {[
-              { icon: <FlaskConical size={24} />, titleKey: 'home.why_reasons.research_driven.title', descKey: 'home.why_reasons.research_driven.desc', title: 'Research-Driven', desc: 'Every product backed by rigorous R&D and field trials — no guesswork, only science.' },
-              { icon: <Award size={24} />, titleKey: 'home.why_reasons.quality_assured.title', descKey: 'home.why_reasons.quality_assured.desc', title: 'Quality Assured', desc: 'ISO 9001:2015 certified processes. Every batch tested for potency and purity.' },
-              { icon: <Users size={24} />, titleKey: 'home.why_reasons.farmer_first.title', descKey: 'home.why_reasons.farmer_first.desc', title: 'Farmer-First', desc: 'Products designed with real farmer feedback. Affordable, accessible, effective.' },
-              { icon: <Leaf size={24} />, titleKey: 'home.why_reasons.eco_safe.title', descKey: 'home.why_reasons.eco_safe.desc', title: '100% Eco-Safe', desc: 'Zero harmful chemicals. Safe for the environment, safe for consumers.' },
-              { icon: <Zap size={24} />, titleKey: 'home.why_reasons.proven_results.title', descKey: 'home.why_reasons.proven_results.desc', title: 'Proven Results', desc: '15-40% yield improvement documented across multiple crops and geographies.' },
-              { icon: <Heart size={24} />, titleKey: 'home.why_reasons.made_in_india.title', descKey: 'home.why_reasons.made_in_india.desc', title: 'Made in India', desc: 'Proudly developed and manufactured in Gujarat, for Indian soil conditions.' },
-            ].map((item, i) => (
-              <AnimatedSection key={i}>
-                <div className="why-card">
-                  <div className="why-icon">{item.icon}</div>
-                  <h4>{t(item.titleKey, item.title)}</h4>
-                  <p>{t(item.descKey, item.desc)}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════ GROWTH SYSTEM ══════════ */}
-      <section className="section bg-white" id="growth-system-preview">
-        <div className="container-wide">
-          <div className="growth-preview-grid">
-            <AnimatedSection direction="left" className="growth-preview-content">
-              <span className="section-overline">{t('home.growth_title')}</span>
-              <h2>{t('home.growth_h2')}</h2>
-              <p>
-                {t('home.growth_p1')}
-              </p>
-              <div className="growth-steps">
-                {[
-                  { step: '01', titleKey: 'home.growth_steps.soil_foundation.title', descKey: 'home.growth_steps.soil_foundation.desc', title: 'Soil Foundation', desc: 'Rebuild soil biology & health' },
-                  { step: '02', titleKey: 'home.growth_steps.bio_nutrition.title', descKey: 'home.growth_steps.bio_nutrition.desc', title: 'Bio Nutrition', desc: 'Natural nutrient delivery systems' },
-                  { step: '03', titleKey: 'home.growth_steps.eco_protection.title', descKey: 'home.growth_steps.eco_protection.desc', title: 'Eco Protection', desc: 'Biological pest & disease control' },
-                  { step: '04', titleKey: 'home.growth_steps.growth_boost.title', descKey: 'home.growth_steps.growth_boost.desc', title: 'Growth Boost', desc: 'Maximize yield & quality' },
-                ].map((s) => (
-                  <div key={s.step} className="growth-step">
-                    <span className="step-number">{s.step}</span>
-                    <div>
-                      <strong>{t(s.titleKey, s.title)}</strong>
-                      <span>{t(s.descKey, s.desc)}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link to="/growth-system" className="btn btn-primary">
-                {t('home.growth_btn', 'Learn About Our System')} <ArrowRight size={16} />
-              </Link>
-            </AnimatedSection>
-            <div className="growth-preview-visual">
-              <GrowthSystemVisual />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══════════ CASE STUDIES ══════════ */}
       <section className="section bg-off-white" id="case-studies-preview">
         <div className="container">
@@ -407,7 +346,7 @@ export default function Home() {
                     <div className="case-results">
                       {study.results.slice(0, 2).map((r, i) => (
                         <div key={i} className="case-result">
-                           <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
+                          <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
                         </div>
                       ))}
                     </div>
@@ -424,48 +363,6 @@ export default function Home() {
           <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-8)' }}>
             <Link to="/case-studies" className="btn btn-secondary">
               {t('common.view_all_case_studies', 'View All Case Studies')} <ArrowRight size={16} />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ══════════ BLOG PREVIEW ══════════ */}
-      <section className="section bg-white" id="blog-preview">
-        <div className="container">
-          <AnimatedSection>
-            <div className="section-header">
-              <span className="section-overline">{t('home.knowledge_title')}</span>
-              <h2 className="section-title">{t('home.knowledge_h2')}</h2>
-              <p className="section-subtitle">
-                {t('home.knowledge_subtitle')}
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="blog-preview-grid">
-            {blogPosts.slice(0, 3).map((post) => (
-              <AnimatedSection key={post.id}>
-                <Link to={`/blog/${post.slug}`} className="blog-card card">
-                  <div className="blog-card-image">
-                    <img src={blogImages[post.id]} alt={post.title} className="blog-img" />
-                  </div>
-                  <div className="card-body">
-                    <div className="blog-meta">
-                      <span className="badge badge-green">{t(`home.blog_posts.${post.slug}.category`, post.category)}</span>
-                      <span className="blog-date">{post.readTime}</span>
-                    </div>
-                    <h3>{t(`home.blog_posts.${post.slug}.title`, post.title)}</h3>
-                    <p>{t(`home.blog_posts.${post.slug}.excerpt`, post.excerpt)}</p>
-                    <span className="blog-read-more">{t('common.read_more')} <ArrowRight size={14} /></span>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-8)' }}>
-            <Link to="/blog" className="btn btn-secondary">
-              {t('home.visit_knowledge_hub', 'Visit Knowledge Hub')} <ArrowRight size={16} />
             </Link>
           </AnimatedSection>
         </div>
@@ -528,6 +425,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PDFModal 
+        isOpen={isCatalogueOpen} 
+        onClose={() => setIsCatalogueOpen(false)} 
+        pdfUrl="/07_Products Catelogue_Jay Agritech.pdf" 
+      />
     </div>
   );
 }
