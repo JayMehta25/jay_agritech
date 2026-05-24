@@ -723,7 +723,7 @@ export const companyInfo = {
   name: 'Jay Agritech Pvt. Ltd.',
   shortName: 'Jay Agritech',
   tagline: 'Innovating Agriculture, Nurturing Growth',
-  founded: 2026,
+  founded: 2025,
   location: 'Valsad, Gujarat, India',
   phone: '+91 98251 42359',
   email: 'info@jayagritech.com',
@@ -761,17 +761,17 @@ export const companyInfo = {
       image: director2
     },
     {
-      id: 'jayesh_patel',
-      name: 'Jayesh Patel',
-      role: 'Founder & CEO',
-      bio: 'A visionary entrepreneur with deep roots in Gujarat\'s agricultural community. Jayesh founded Jay Agritech with a mission to bridge the gap between advanced biotechnology and practical farming solutions.',
+      id: 'kaushal_doshi',
+      name: 'Kaushal Doshi',
+      role: 'CMO',
+      bio: 'A dynamic marketing strategist with extensive experience in the agri-input sector. Kaushal leads our marketing initiatives, brand strategy, and dealer network expansion across India.',
       image: null
     },
     {
-      id: 'priya_sharma',
-      name: 'Dr. Priya Sharma',
+      id: 'kishor_gavde',
+      name: 'Kishor Gavde',
       role: 'Head of R&D',
-      bio: 'PhD in Agricultural Microbiology from IARI. Over 12 years of experience in developing biological crop protection and nutrition products.',
+      bio: 'An accomplished agricultural scientist with deep expertise in microbiology and bio-formulations. Kishor drives our scientific research, product innovation, and quality standard controls.',
       image: null
     }
   ],
@@ -786,10 +786,10 @@ export const companyInfo = {
   ],
 
   milestones: [
-    { year: '2026 Q1', title: 'Company Founded', description: 'Jay Agritech Pvt. Ltd. established in Valsad, Gujarat with a vision to revolutionize Indian agriculture.' },
-    { year: '2026 Q2', title: 'R&D Lab Setup', description: 'State-of-the-art microbiology and formulation laboratory established with advanced testing equipment.' },
-    { year: '2026 Q3', title: 'First Product Launch', description: 'Launch of initial product line — 15 bio-fertilizer and bio-pesticide formulations.' },
-    { year: '2026 Q4', title: 'Dealer Network', description: 'Established partnerships with 100+ dealers across Gujarat and Maharashtra.' },
+    { year: 'July 2025', title: 'Company Founded', description: 'Jay Agritech Pvt. Ltd. established in Valsad, Gujarat with a vision to revolutionize Indian agriculture.' },
+    { year: '2026 Q1', title: 'R&D Lab Setup', description: 'State-of-the-art microbiology and formulation laboratory established with advanced testing equipment.' },
+    { year: 'August 2026', title: 'Commercial Production Launch', description: 'Commencing operations at our advanced eco-friendly manufacturing facility to produce bio-fertilizers and organic inputs.' },
+    { year: '2026 Q4', title: 'Dealer Network Expansion', description: 'Expanding our dealer network to 100+ partnerships across Gujarat and Maharashtra to reach the farming community.' },
   ]
 };
 

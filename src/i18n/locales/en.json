@@ -476,15 +476,15 @@
     "leadership": {
       "subtitle": "Meet the minds behind our mission.",
       "people": {
-        "jayesh_patel": {
-          "name": "Jayesh Patel",
-          "role": "Founder & Managing Director",
-          "bio": "A visionary entrepreneur with deep roots in Gujarat's agricultural community. Jayesh founded Jay Agritech with a mission to bridge the gap between advanced biotechnology and practical farming solutions."
+        "kaushal_doshi": {
+          "name": "Kaushal Doshi",
+          "role": "CMO",
+          "bio": "A dynamic marketing strategist with extensive experience in the agri-input sector. Kaushal leads our marketing initiatives, brand strategy, and dealer network expansion across India."
         },
-        "priya_sharma": {
-          "name": "Dr. Priya Sharma",
+        "kishor_gavde": {
+          "name": "Kishor Gavde",
           "role": "Head of Research & Development",
-          "bio": "PhD in Agricultural Microbiology from IARI. Over 12 years of experience in developing biological crop protection and nutrition products."
+          "bio": "An accomplished agricultural scientist with deep expertise in microbiology and bio-formulations. Kishor drives our scientific research, product innovation, and quality standard controls."
         },
         "rajesh_mehta": {
           "name": "Rajesh Mehta",
@@ -500,7 +500,7 @@
     },
     "milestones_list": {
       "q1_2026": {
-        "year": "2026 Q1",
+        "year": "July 2025",
         "title": "Company Founded",
         "description": "Jay Agritech Pvt. Ltd. established in Valsad, Gujarat with a vision to revolutionize Indian agriculture."
       },
@@ -510,14 +510,14 @@
         "description": "State-of-the-art microbiology and formulation laboratory established with advanced testing equipment."
       },
       "q3_2026": {
-        "year": "2026 Q3",
-        "title": "First Product Launch",
-        "description": "Launch of initial product line — 15 bio-fertilizer and bio-pesticide formulations."
+        "year": "August 2026",
+        "title": "Commercial Production Launch",
+        "description": "Commencing operations at our advanced eco-friendly manufacturing facility to produce bio-fertilizers and organic inputs."
       },
       "q4_2026": {
         "year": "2026 Q4",
-        "title": "Dealer Network",
-        "description": "Established partnerships with 100+ dealers across Gujarat and Maharashtra."
+        "title": "Dealer Network Expansion",
+        "description": "Expanding our dealer network to 100+ partnerships across Gujarat and Maharashtra to reach the farming community."
       }
     },
     "certifications_list": {
@@ -550,7 +550,7 @@
   "home": {
     "about_title": "About Jay Agritech",
     "about_h2": "Pioneering Sustainable Agriculture from Gujarat to All of India",
-    "about_lead": "Founded in 2026 in Valsad, Gujarat, Jay Agritech Pvt. Ltd. is on a mission to revolutionize Indian agriculture through innovative biological solutions.",
+    "about_lead": "Founded in July 2025 in Valsad, Gujarat, Jay Agritech Pvt. Ltd. is on a mission to revolutionize Indian agriculture through innovative biological solutions.",
     "about_p1": "We combine cutting-edge microbial technology with deep agricultural expertise to create products that work — for the farmer, for the crop, and for the environment.",
     "solutions_title": "Our Solutions",
     "solutions_h2": "Comprehensive Crop Solutions",
@@ -880,7 +880,7 @@
   },
   "about": {
     "journey_overline": "Our Journey",
-    "journey_title": "Pioneering Agricultural Innovation Since 2026",
+    "journey_title": "Pioneering Agricultural Innovation Since 2025",
     "company_name": "Jay Agritech Pvt. Ltd.",
     "journey_text_prefix": "At ",
     "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint."

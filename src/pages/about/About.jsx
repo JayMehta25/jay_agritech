@@ -124,13 +124,16 @@ export default function About() {
 
         {/* ─── Certifications ─── */}
         <AnimatedSection id="certifications">
-          <section className="section" style={{ background: 'var(--clr-off-white)', borderRadius: 'var(--radius-xl)', padding: 'var(--sp-12)' }}>
-            <div className="section-header"><span className="section-overline">{t('nav.links.certifications')}</span><h2 className="section-title">{t('company.certifications.title', 'Our Certifications')}</h2></div>
-            <div className="grid-3">
+          <section className="about-certifications-section">
+            <div className="section-header">
+              <span className="section-overline">{t('nav.links.certifications')}</span>
+              <h2 className="section-title">{t('company.certifications.title', 'Our Certifications')}</h2>
+            </div>
+            <div className="about-certifications-grid">
               {['iso_9001', 'fco_approved', 'cib_rc', 'npop', 'bis', 'glp'].map((key, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', padding: 'var(--sp-4)', background: 'white', borderRadius: 'var(--radius-md)', border: '1px solid var(--clr-border-light)' }}>
+                <div key={i} className="about-certification-card">
                   <CheckCircle size={20} style={{ color: 'var(--clr-primary)', flexShrink: 0 }} />
-                  <span style={{ fontWeight: 'var(--fw-medium)' }}>{t(`company.certifications_list.${key}`)}</span>
+                  <span>{t(`company.certifications_list.${key}`)}</span>
                 </div>
               ))}
             </div>

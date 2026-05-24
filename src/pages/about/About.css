@@ -499,4 +499,70 @@
   }
 }
 
+/* ── Certifications Section styling ── */
+.about-certifications-section {
+  background: var(--clr-off-white);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-12);
+  margin-bottom: var(--sp-12);
+}
+
+.about-certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.about-certification-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5) var(--sp-6);
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.about-certification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary-lighter);
+}
+
+.about-certification-card span {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body-sm);
+  color: var(--clr-text-primary);
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .about-certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-certifications-section {
+    padding: var(--sp-8) var(--sp-6);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-certifications-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--sp-3) !important;
+  }
+  .about-certification-card {
+    padding: var(--sp-3) !important;
+    gap: var(--sp-2) !important;
+  }
+  .about-certification-card span {
+    font-size: 0.75rem !important;
+  }
+}
+
 
