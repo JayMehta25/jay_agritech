@@ -821,11 +821,28 @@
 .robusta-bottom-cta {
   display: flex;
   justify-content: center;
+  gap: var(--sp-4);
   padding-top: var(--sp-4);
 }
 
 .robusta-bottom-cta__button {
   min-width: 220px;
+}
+
+@media (max-width: 576px) {
+  .robusta-bottom-cta {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    gap: var(--sp-3);
+  }
+
+  .robusta-bottom-cta__button {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .robusta-detail-facts {
