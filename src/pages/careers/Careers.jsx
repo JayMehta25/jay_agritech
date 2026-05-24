@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { Briefcase, MapPin, Clock, ArrowRight, Heart, Sprout, Users, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';

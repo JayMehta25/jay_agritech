@@ -665,6 +665,8 @@
 /* ── Search Bar ── */
 .search-container {
   margin-bottom: var(--sp-8);
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   max-width: 500px;
 }
@@ -722,6 +724,396 @@
   .product-detail-grid {
     grid-template-columns: 1fr;
     gap: var(--sp-8);
+  }
+}
+
+/* ── Product Detail Prototype Layout ── */
+.robusta-detail-shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+}
+
+.robusta-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--sp-10);
+  align-items: center;
+  padding: var(--sp-8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(241, 248, 233, 0.9));
+  border: 1px solid rgba(46, 125, 50, 0.08);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+}
+
+.robusta-detail-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.robusta-detail-visual-frame {
+  position: relative;
+  min-height: 360px;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 20%, rgba(46, 125, 50, 0.16), transparent 45%),
+    linear-gradient(165deg, #f8faf8 0%, #ecf4ed 40%, #dcebdd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8);
+}
+
+.robusta-detail-visual-frame::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.robusta-detail-visual-frame img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 38px rgba(0, 0, 0, 0.12));
+}
+
+/* Layout for the detail grid: side-by-side panels with equal height */
+.robusta-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  align-items: stretch;
+}
+
+.robusta-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-6);
+  background: var(--clr-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.robusta-panel--main {
+  width: 100%;
+}
+
+.robusta-panel--full {
+  width: 100%;
+}
+
+.robusta-spec-bullets {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: var(--clr-text-body);
+}
+
+.robusta-spec-bullets li {
+  margin: var(--sp-2) 0;
+  line-height: 1.5;
+}
+
+.robusta-bottom-cta {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--sp-4);
+}
+
+.robusta-bottom-cta__button {
+  min-width: 220px;
+}
+
+.robusta-detail-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.robusta-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-pill);
+  background: rgba(46, 125, 50, 0.08);
+  color: var(--clr-primary-dark);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.robusta-detail-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* Quick specs cards and hero overlay */
+.robusta-spec-circles {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.robusta-spec-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border-light);
+  box-shadow: 0 6px 18px rgba(18, 52, 26, 0.04);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  text-align: center;
+  padding: var(--sp-3);
+  cursor: pointer;
+}
+
+.robusta-spec-circle__value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+}
+
+.robusta-spec-circle__label {
+  font-size: var(--fs-caption);
+  color: var(--clr-text-muted);
+  margin-top: 6px;
+}
+
+.robusta-spec-circle.active {
+  transform: translateY(-8px) scale(1.06);
+  border-color: var(--clr-primary-lighter);
+  box-shadow: 0 18px 40px rgba(46, 125, 50, 0.12);
+}
+
+@media (max-width: 600px) {
+  .robusta-spec-circle { width: 92px; height: 92px; }
+}
+
+.robusta-detail-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-pill);
+  background: var(--clr-primary-surface);
+  color: var(--clr-primary);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.robusta-detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 0.98;
+  color: var(--clr-text-primary);
+  margin: 0;
+}
+
+.robusta-detail-tagline {
+  font-size: var(--fs-body-xl);
+  color: var(--clr-primary-dark);
+  font-weight: var(--fw-semibold);
+  margin: 0;
+}
+
+.robusta-detail-description {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-loose);
+  color: var(--clr-text-body);
+  max-width: 60ch;
+}
+
+.robusta-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.robusta-detail-badge {
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-body);
+}
+
+.robusta-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.robusta-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: var(--sp-8);
+}
+
+.robusta-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-8);
+}
+
+.robusta-panel--side {
+  position: sticky;
+  top: calc(var(--navbar-height) + 64px);
+}
+
+.robusta-panel__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.robusta-panel__header h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--clr-text-primary);
+  margin: 0;
+}
+
+.robusta-panel__header p {
+  color: var(--clr-text-muted);
+  margin: 0;
+}
+
+.robusta-benefit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.robusta-benefit-card {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.65), rgba(241, 248, 233, 0.4));
+  border: 1px solid rgba(46, 125, 50, 0.08);
+}
+
+.robusta-benefit-card__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-circle);
+  background: var(--gradient-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.robusta-benefit-card h4 {
+  margin: 0 0 var(--sp-1);
+  font-size: var(--fs-body);
+  color: var(--clr-text-primary);
+}
+
+.robusta-benefit-card p {
+  margin: 0;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--clr-text-muted);
+}
+
+.robusta-spec-list {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.robusta-spec-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-4);
+  border-radius: var(--radius-lg);
+  background: var(--clr-off-white);
+  border: 1px solid var(--clr-border-light);
+}
+
+.robusta-spec-row__label {
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-muted);
+  font-weight: var(--fw-semibold);
+}
+
+.robusta-spec-row__value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body-lg);
+  color: var(--clr-text-primary);
+  font-weight: var(--fw-bold);
+}
+
+.robusta-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-6);
+}
+
+.robusta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-pill);
+  background: var(--clr-primary);
+  color: white;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.robusta-chip--soft {
+  background: var(--clr-primary-surface);
+  color: var(--clr-primary);
+}
+
+@media (max-width: 1024px) {
+  .robusta-detail-hero,
+  .robusta-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .robusta-panel--side {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .robusta-detail-hero,
+  .robusta-panel {
+    padding: var(--sp-5);
+  }
+
+  .robusta-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .robusta-detail-visual-frame {
+    min-height: 280px;
   }
 }
 

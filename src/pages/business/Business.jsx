@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { ArrowRight, Factory, FlaskConical, Tag, Globe, Handshake, CheckCircle, FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
@@ -23,7 +23,7 @@ export default function Business() {
       <div className="container" id="overview">
         {services.map((svc, i) => (
           <AnimatedSection key={i} id={svc.link.split('/').pop()}>
-            <div className="card" style={{ marginBottom: 'var(--sp-6)', padding: 'var(--sp-8)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--sp-8)', alignItems: 'center' }}>
+            <div className="business-svc-card card">
               <div>
                 <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-lg)', background: `${svc.color}15`, color: svc.color, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 'var(--sp-4)' }}>{svc.icon}</div>
                 <h2 style={{ fontSize: 'var(--fs-h3)', marginBottom: 'var(--sp-3)' }}>{t(`pages_details.business.services.${svc.key}.title`)}</h2>
@@ -31,7 +31,7 @@ export default function Business() {
                 <Link to="/contact" className="btn btn-primary">{t('pages.business.inquire_now', 'Inquire Now')} <ArrowRight size={16} /></Link>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
-                {t(`pages_details.business.services.${svc.key}.features`, { returnObjects: true }).map((f, j) => (
+                {(Array.isArray(t(`pages_details.business.services.${svc.key}.features`, { returnObjects: true })) ? t(`pages_details.business.services.${svc.key}.features`, { returnObjects: true }) : []).map((f, j) => (
                   <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--clr-off-white)', borderRadius: 'var(--radius-md)' }}>
                     <CheckCircle size={16} style={{ color: svc.color, flexShrink: 0 }} /> <span style={{ fontWeight: 'var(--fw-medium)' }}>{f}</span>
                   </div>

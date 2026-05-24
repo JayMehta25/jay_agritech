@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Send, X, Bot, User } from 'lucide-react';
-import logoImg from '../../assets/new_title.png';
-import './ChatBot.css';
+import { assetSrc } from '../../utils/assetSrc';
+import logoImgAsset from '../../assets/new_title.png';
+
+const logoImg = assetSrc(logoImgAsset);
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);

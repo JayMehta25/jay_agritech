@@ -1,19 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { Leaf, Sprout, Shield, TrendingUp, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
+import { assetSrc } from '../../utils/assetSrc';
 
 function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
   return <div ref={ref} id={id} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
-import solSoilImg from '../../assets/solutions/soil-health.png';
-import solNutrientImg from '../../assets/solutions/nutrient-mgmt.png';
-import solPestImg from '../../assets/solutions/pest-control.png';
-import solGrowthImg from '../../assets/solutions/growth-enhancement.png';
+const solSoilImg = '/soil health.jpg';
+const solNutrientImg = '/nutrientMgm.jpg';
+const solPestImg = '/pnd.jpg';
+const solGrowthImg = '/growth.jpg';
 
 export default function Solutions() {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ export default function Solutions() {
                 <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t(`pages_details.solutions.items.${sol.key}.title`)}</h2>
                 <p style={{ color: 'var(--clr-text-muted)', fontSize: 'var(--fs-body-lg)', lineHeight: 'var(--lh-loose)', marginBottom: 'var(--sp-6)' }}>{t(`pages_details.solutions.items.${sol.key}.desc`)}</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', marginBottom: 'var(--sp-6)' }}>
-                  {t(`pages_details.solutions.items.${sol.key}.features`, { returnObjects: true }).map((f, j) => (
+                  {(Array.isArray(t(`pages_details.solutions.items.${sol.key}.features`, { returnObjects: true })) ? t(`pages_details.solutions.items.${sol.key}.features`, { returnObjects: true }) : []).map((f, j) => (
                     <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
                       <div style={{ width: 8, height: 8, borderRadius: '50%', background: sol.color, flexShrink: 0 }}></div>
                       <span style={{ fontWeight: 'var(--fw-medium)' }}>{f}</span>

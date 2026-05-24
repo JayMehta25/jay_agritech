@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { companyInfo } from '../../data/siteData';
 import GenericPage from '../../components/ui/GenericPage';
-import sustainableImg from '../../assets/sustainable_farming_collage.png';
-import innovationImg from '../../assets/modern_agriculture_innovation.png';
-import './About.css';
+import { assetSrc } from '../../utils/assetSrc';
+import sustainableImgAsset from '../../assets/sustainable_farming_collage.png';
+import innovationImgAsset from '../../assets/modern_agriculture_innovation.png';
+
+const sustainableImg = assetSrc(sustainableImgAsset);
+const innovationImg = assetSrc(innovationImgAsset);
 
 function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
@@ -26,12 +29,14 @@ export default function About() {
         <AnimatedSection id="overview" className="section">
           <div className="about-overview-layout-simple">
             <div className="about-overview-main">
-              <span className="section-overline">Our Journey</span>
-              <h2 className="section-title">Pioneering Agricultural Innovation Since 2026</h2>
+              <span className="section-overline">{t('about.journey_overline', 'Our Journey')}</span>
+              <h2 className="section-title">{t('about.journey_title', 'Pioneering Agricultural Innovation Since 2026')}</h2>
               
               <div className="about-overview-content">
                 <p>
-                  At <strong>Jay Agritech Pvt. Ltd.</strong>, we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint.
+                  {t('about.journey_text_prefix', 'At ')}
+                  <strong>{t('about.company_name', 'Jay Agritech Pvt. Ltd.')}</strong>
+                  {t('about.journey_text_body', ', we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint.')}
                 </p>
               </div>
             </div>

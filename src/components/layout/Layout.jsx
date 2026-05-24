@@ -1,10 +1,10 @@
-import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useLocation } from '../RouterBridge';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ChatBot from '../ui/ChatBot';
 
-export default function Layout() {
+export default function Layout({ children }) {
   const { pathname } = useLocation();
   
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Layout() {
     <>
       <Navbar />
       <main>
-        <Outlet />
+        {children}
       </main>
       <Footer />
       <ChatBot />

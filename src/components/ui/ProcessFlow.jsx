@@ -1,7 +1,9 @@
 import { Microscope, Leaf, TrendingUp, Shield } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import heroVisualImg from '../../assets/modern_agriculture_innovation.png';
-import './ProcessFlow.css';
+import { assetSrc } from '../../utils/assetSrc';
+import heroVisualImgAsset from '../../assets/modern_agriculture_innovation.png';
+
+const heroVisualImg = assetSrc(heroVisualImgAsset);
 
 export default function ProcessFlow() {
   const { t } = useTranslation();

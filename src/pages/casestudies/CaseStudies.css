@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Case Studies Page Styles
+   ========================================================================== */
+
+.casestudies-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  padding: var(--sp-4) 0 var(--sp-12);
+}
+
+.casestudy-card {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+.casestudy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.casestudy-grid {
+  display: grid;
+  grid-template-columns: 320px 1.1fr 0.9fr; /* 3-column premium layout */
+  gap: 0;
+}
+
+.cs-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--clr-off-white);
+}
+
+.cs-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.casestudy-card:hover .cs-img {
+  transform: scale(1.05);
+}
+
+.cs-info-wrapper {
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  border-right: 1px solid var(--clr-border-light);
+  justify-content: center;
+}
+
+.cs-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.cs-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-caption);
+  color: var(--clr-text-muted);
+}
+
+.cs-info-wrapper h2 {
+  font-size: var(--fs-h3);
+  color: var(--clr-text-primary);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.cs-section h4 {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cs-section p {
+  font-size: var(--fs-body-sm);
+  color: var(--clr-text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cs-results-wrapper {
+  background: var(--clr-off-white);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-5);
+}
+
+.cs-results-wrapper h4 {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--clr-text-primary);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cs-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2.5);
+}
+
+.cs-result-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: var(--shadow-sm);
+}
+
+.cs-result-item span {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-primary);
+}
+
+.cs-quote {
+  padding: var(--sp-4);
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--clr-accent-gold);
+  font-style: italic;
+  color: var(--clr-text-muted);
+  box-shadow: var(--shadow-sm);
+  margin: 0;
+}
+
+.cs-quote cite {
+  display: block;
+  font-style: normal;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-primary);
+  margin-top: var(--sp-2);
+  font-size: var(--fs-caption);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .casestudy-grid {
+    grid-template-columns: 260px 1.1fr 0.9fr;
+  }
+  .cs-info-wrapper,
+  .cs-results-wrapper {
+    padding: var(--sp-6);
+  }
+}
+
+@media (max-width: 900px) {
+  .casestudy-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cs-image-wrapper {
+    grid-column: span 2;
+    height: 300px;
+    min-height: auto;
+  }
+  .cs-info-wrapper {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border-light);
+  }
+}
+
+@media (max-width: 600px) {
+  .casestudy-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-image-wrapper {
+    grid-column: span 1;
+    height: 240px;
+  }
+  .cs-info-wrapper,
+  .cs-results-wrapper {
+    padding: var(--sp-5);
+  }
+}

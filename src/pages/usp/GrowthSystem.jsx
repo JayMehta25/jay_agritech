@@ -1,19 +1,25 @@
 import React from 'react';
 import { Sprout, Leaf, Shield, TrendingUp, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
+import { assetSrc } from '../../utils/assetSrc';
 
 function AnimatedSection({ children, className = '' }) {
   const [ref, isVisible] = useScrollAnimation();
   return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
-import imgSoil from '../../assets/usp/soil.png';
-import imgNutrition from '../../assets/usp/nutrition.png';
-import imgProtection from '../../assets/usp/protection.png';
-import imgGrowth from '../../assets/usp/growth.png';
+import imgSoilAsset from '../../assets/usp/soil.png';
+import imgNutritionAsset from '../../assets/usp/nutrition.png';
+import imgProtectionAsset from '../../assets/usp/protection.png';
+import imgGrowthAsset from '../../assets/usp/growth.png';
+
+const imgSoil = assetSrc(imgSoilAsset);
+const imgNutrition = assetSrc(imgNutritionAsset);
+const imgProtection = assetSrc(imgProtectionAsset);
+const imgGrowth = assetSrc(imgGrowthAsset);
 
 export default function GrowthSystem() {
   const { t } = useTranslation();

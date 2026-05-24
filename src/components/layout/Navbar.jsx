@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '../RouterBridge';
 import { Menu, X, ChevronDown, Phone, Mail, Search, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/siteData';
-import logoImg from '../../assets/new_title.png';
-import titleImg from '../../assets/title_bg.png';
-import './Navbar.css';
+import { assetSrc } from '../../utils/assetSrc';
+import logoImgAsset from '../../assets/new_title.png';
+import titleImgAsset from '../../assets/title_bg.png';
+
+const logoImg = assetSrc(logoImgAsset);
+const titleImg = assetSrc(titleImgAsset);
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -16,6 +19,7 @@ export default function Navbar() {
   const menuTimeoutRef = useRef(null);
   const langMenuRef = useRef(null);
   const location = useLocation();
+  const { pathname, search, hash } = location;
 
   const languages = [
     { code: 'en', label: 'English', nativeChar: 'A' },
@@ -38,10 +42,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const lastPathRef = useRef({ pathname, search, hash });
+
   useEffect(() => {
-    setMobileOpen(false);
-    setActiveMenu(null);
-  }, [location]);
+    const last = lastPathRef.current;
+    if (last.pathname !== pathname || last.search !== search || last.hash !== hash) {
+      setMobileOpen(false);
+      setActiveMenu(null);
+      lastPathRef.current = { pathname, search, hash };
+    }
+  }, [pathname, search, hash]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -51,6 +61,16 @@ export default function Navbar() {
     }
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target)) {
+        setShowLangMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleMenuEnter = (label) => {
     if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
@@ -98,21 +118,42 @@ export default function Navbar() {
                 onMouseEnter={() => item.megaMenu && handleMenuEnter(item.label)}
                 onMouseLeave={handleMenuLeave}
               >
-                <Link to={item.path} className="nav-link" id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}>
-                  {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}
-                  {item.megaMenu && <ChevronDown size={14} className="nav-chevron" />}
-                </Link>
+                {item.megaMenu ? (
+                  <button
+                    type="button"
+                    className="nav-link nav-link-button"
+                    id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}
+                    onClick={() => setActiveMenu(activeMenu === item.label ? null : item.label)}
+                    aria-haspopup="menu"
+                    aria-expanded={activeMenu === item.label}
+                  >
+                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}
+                    <ChevronDown size={14} className="nav-chevron" />
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="nav-link"
+                    id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}
+                  >
+                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}
+                  </Link>
+                )}
 
                 {/* Mega Menu Dropdown */}
                 {item.megaMenu && item.sections && activeMenu === item.label && (
-                  <div className="mega-menu">
+                  <div
+                    className={`mega-menu ${item.label === 'Solutions' ? 'mega-menu-solutions' : ''} ${item.label === 'Products' ? 'mega-menu-products' : ''}`}
+                    onMouseEnter={() => handleMenuEnter(item.label)}
+                    onMouseLeave={handleMenuLeave}
+                  >
                     <div className="mega-menu-inner">
                       {item.sections.map((section) => (
                         <div key={section.title} className="mega-section">
                           <h4 className="mega-section-title">{t(`nav.sections.${section.title.toLowerCase().replace(/\s/g, '_')}`, section.title)}</h4>
                           <div className="mega-links">
                             {section.links.map((link) => (
-                              <Link key={link.path} to={link.path} className="mega-link">
+                              <Link key={link.path} to={link.path} className="mega-link" onClick={() => setActiveMenu(null)}>
                                 <span className="mega-link-label">{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.label)}</span>
                                 <span className="mega-link-desc">{t(`nav.desc.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.description)}</span>
                               </Link>
@@ -180,6 +221,29 @@ export default function Navbar() {
             </div>
 
             <div className="mobile-menu-body">
+              {/* Mobile Language Switcher (Repositioned to the top) */}
+              <div className="mobile-lang-switcher">
+                <div className="mobile-lang-title">
+                  <Globe size={16} />
+                  <span>{t('nav.select_language', 'Select Language')}</span>
+                </div>
+                <div className="mobile-lang-grid">
+                  {languages.map(lang => (
+                    <button
+                      key={lang.code}
+                      className={`mobile-lang-btn ${i18n.language === lang.code ? 'active' : ''}`}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setMobileOpen(false); // Close sidebar on selection
+                      }}
+                    >
+                      <span className="mobile-lang-char">{lang.nativeChar}</span>
+                      <span className="mobile-lang-name">{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {navLinks.map((item) => (
                 <div key={item.label} className="mobile-nav-group">
                   <Link to={item.path} className="mobile-nav-link">{t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}</Link>

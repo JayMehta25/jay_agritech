@@ -1,33 +1,65 @@
-import orgoNb from '../assets/prod_imgs/biostimulants/biofertilizers/orgo nb.png';
-import orgoPb from '../assets/prod_imgs/biostimulants/biofertilizers/orgo pb.png';
-import orgoProMax from '../assets/prod_imgs/biostimulants/biofertilizers/orgo pro max.png';
-import orgoRescuePro from '../assets/prod_imgs/biostimulants/biofertilizers/orgo rescue pro.png';
-import orgoRobustaProAc from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro ac kit.png';
-import orgoRobustaProLdc from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro ldc kit.png';
-import orgoRobustaProNc from '../assets/prod_imgs/biostimulants/biofertilizers/pro nc kit.png';
-import orgoRobustaProSdc from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro sdc kit.png';
-import orgoZb from '../assets/prod_imgs/biostimulants/biofertilizers/orgo zb.png';
-import shielderPro from '../assets/prod_imgs/biostimulants/biofertilizers/shielder pro.png';
-import dharaMax from '../assets/prod_imgs/biostimulants/Biostimulants/dhara max.png';
-import dharaLite from '../assets/prod_imgs/biostimulants/Biostimulants/dhara lite.png';
-import orgoFloral from '../assets/prod_imgs/biostimulants/Biostimulants/orgo floral.png';
-import orgoFruitage from '../assets/prod_imgs/biostimulants/Biostimulants/orgo fruitage.png';
-import orgoMrudamrit from '../assets/prod_imgs/biostimulants/Biostimulants/orgo mrudamrit.png';
-import orgoOrchaboost from '../assets/prod_imgs/biostimulants/Biostimulants/orgo orchaboost.png';
-import orgoOrchagrow from '../assets/prod_imgs/biostimulants/Biostimulants/orgo orchagrow.png';
-import orgoSeavita from '../assets/prod_imgs/biostimulants/Biostimulants/orgo seavita.png';
-import humivita from '../assets/prod_imgs/biostimulants/Biostimulants/humivita.png';
-import carbplus from '../assets/prod_imgs/biostimulants/Biostimulants/carbplus.png';
-import nutriMicrozest from '../assets/prod_imgs/biostimulants/micronutrients/nutri microzest.png';
-import nutriMicrozen from '../assets/prod_imgs/biostimulants/micronutrients/nutri microzen.png';
-import nutriMicroforce from '../assets/prod_imgs/biostimulants/micronutrients/nutri microforce-sp.png';
-import nutriMicroboost from '../assets/prod_imgs/biostimulants/micronutrients/nutri microboost.png';
-import nutriNutriva from '../assets/prod_imgs/biostimulants/micronutrients/nutri nutriva.png';
-import orgoBhumirich from '../assets/prod_imgs/biostimulants/organicNutri/ARGO BHUMIRICH.png';
-import orgoCropcharge from '../assets/prod_imgs/biostimulants/organicNutri/cropcharge.png';
-import orgoFarmphos from '../assets/prod_imgs/biostimulants/organicNutri/farmphos.png';
-import director1 from '../assets/partners/director_1.png';
-import director2 from '../assets/partners/director_2.png';
+import { assetSrc } from '../utils/assetSrc';
+import orgoNbAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo nb.png';
+import orgoPbAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo pb.png';
+import orgoProMaxAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo pro max.png';
+import orgoRescueProAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo rescue pro.png';
+import orgoRobustaProAcAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro ac kit.png';
+import orgoRobustaProLdcAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro ldc kit.png';
+import orgoRobustaProNcAsset from '../assets/prod_imgs/biostimulants/biofertilizers/pro nc kit.png';
+import orgoRobustaProSdcAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo robusta pro sdc kit.png';
+import orgoZbAsset from '../assets/prod_imgs/biostimulants/biofertilizers/orgo zb.png';
+import shielderProAsset from '../assets/prod_imgs/biostimulants/biofertilizers/shielder pro.png';
+import dharaMaxAsset from '../assets/prod_imgs/biostimulants/Biostimulants/dhara max.png';
+import dharaLiteAsset from '../assets/prod_imgs/biostimulants/Biostimulants/dhara lite.png';
+import orgoFloralAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo floral.png';
+import orgoFruitageAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo fruitage.png';
+import orgoMrudamritAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo mrudamrit.png';
+import orgoOrchaboostAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo orchaboost.png';
+import orgoOrchagrowAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo orchagrow.png';
+import orgoSeavitaAsset from '../assets/prod_imgs/biostimulants/Biostimulants/orgo seavita.png';
+import humivitaAsset from '../assets/prod_imgs/biostimulants/Biostimulants/humivita.png';
+import carbplusAsset from '../assets/prod_imgs/biostimulants/Biostimulants/carbplus.png';
+import nutriMicrozestAsset from '../assets/prod_imgs/biostimulants/micronutrients/nutri microzest.png';
+import nutriMicrozenAsset from '../assets/prod_imgs/biostimulants/micronutrients/nutri microzen.png';
+import nutriMicroforceAsset from '../assets/prod_imgs/biostimulants/micronutrients/nutri microforce-sp.png';
+import nutriMicroboostAsset from '../assets/prod_imgs/biostimulants/micronutrients/nutri microboost.png';
+import nutriNutrivaAsset from '../assets/prod_imgs/biostimulants/micronutrients/nutri nutriva.png';
+import orgoBhumirichAsset from '../assets/prod_imgs/biostimulants/organicNutri/ARGO BHUMIRICH.png';
+import orgoCropchargeAsset from '../assets/prod_imgs/biostimulants/organicNutri/cropcharge.png';
+import orgoFarmphosAsset from '../assets/prod_imgs/biostimulants/organicNutri/farmphos.png';
+import director1Asset from '../assets/partners/director_1.png';
+import director2Asset from '../assets/partners/director_2.png';
+
+const orgoNb = assetSrc(orgoNbAsset);
+const orgoPb = assetSrc(orgoPbAsset);
+const orgoProMax = assetSrc(orgoProMaxAsset);
+const orgoRescuePro = assetSrc(orgoRescueProAsset);
+const orgoRobustaProAc = assetSrc(orgoRobustaProAcAsset);
+const orgoRobustaProLdc = assetSrc(orgoRobustaProLdcAsset);
+const orgoRobustaProNc = assetSrc(orgoRobustaProNcAsset);
+const orgoRobustaProSdc = assetSrc(orgoRobustaProSdcAsset);
+const orgoZb = assetSrc(orgoZbAsset);
+const shielderPro = assetSrc(shielderProAsset);
+const dharaMax = assetSrc(dharaMaxAsset);
+const dharaLite = assetSrc(dharaLiteAsset);
+const orgoFloral = assetSrc(orgoFloralAsset);
+const orgoFruitage = assetSrc(orgoFruitageAsset);
+const orgoMrudamrit = assetSrc(orgoMrudamritAsset);
+const orgoOrchaboost = assetSrc(orgoOrchaboostAsset);
+const orgoOrchagrow = assetSrc(orgoOrchagrowAsset);
+const orgoSeavita = assetSrc(orgoSeavitaAsset);
+const humivita = assetSrc(humivitaAsset);
+const carbplus = assetSrc(carbplusAsset);
+const nutriMicrozest = assetSrc(nutriMicrozestAsset);
+const nutriMicrozen = assetSrc(nutriMicrozenAsset);
+const nutriMicroforce = assetSrc(nutriMicroforceAsset);
+const nutriMicroboost = assetSrc(nutriMicroboostAsset);
+const nutriNutriva = assetSrc(nutriNutrivaAsset);
+const orgoBhumirich = assetSrc(orgoBhumirichAsset);
+const orgoCropcharge = assetSrc(orgoCropchargeAsset);
+const orgoFarmphos = assetSrc(orgoFarmphosAsset);
+const director1 = assetSrc(director1Asset);
+const director2 = assetSrc(director2Asset);
 
 export const products = {
   categories: [
@@ -839,48 +871,6 @@ export const blogPosts = [
     featured: false,
     image: null,
     content: 'Micronutrient deficiencies can severely impact crop yield...'
-  }
-];
-
-export const caseStudies = [
-  {
-    id: 1,
-    slug: 'cotton-yield-boost',
-    title: 'Cotton Yield Increased by 32% in Bharuch District',
-    crop: 'Cotton',
-    location: 'Bharuch, Gujarat',
-    farmer: 'Rameshbhai Patel',
-    challenge: 'Declining cotton yields due to soil degradation and heavy bollworm infestation over consecutive seasons.',
-    solution: 'Integrated application of JaySoil Revive + JayNeem Shield + JayGrow Supreme across the crop cycle.',
-    results: ['32% increase in yield', '40% reduction in pest damage', '₹15,000 savings per acre on inputs', 'Improved soil health indicators'],
-    testimonial: 'Jay Agritech\'s products have transformed my cotton farming. The combination approach gave me the best yield in 5 years.',
-    image: null
-  },
-  {
-    id: 2,
-    slug: 'groundnut-quality-improvement',
-    title: 'Premium Quality Groundnut Production in Junagadh',
-    crop: 'Groundnut',
-    location: 'Junagadh, Gujarat',
-    farmer: 'Kantibhai Solanki',
-    challenge: 'Poor root nodulation and inconsistent quality affecting market price realization.',
-    solution: 'JayRhizo Plus seed treatment + JayPhos Gold soil application + JayHumic Pro for soil conditioning.',
-    results: ['45% better nodulation', '20% yield improvement', '₹800/quintal premium on quality', 'Healthier soil biology'],
-    testimonial: 'The rhizobium culture worked wonders. My groundnut plants had the best root nodules I\'ve ever seen.',
-    image: null
-  },
-  {
-    id: 3,
-    slug: 'mango-flowering-success',
-    title: 'Record Mango Flowering in Valsad Orchards',
-    crop: 'Mango',
-    location: 'Valsad, Gujarat',
-    farmer: 'Dineshbhai Desai',
-    challenge: 'Erratic flowering and heavy fruit drop leading to poor mango harvests for two consecutive years.',
-    solution: 'JayFlora Boost at pre-flowering + JaySeaweed Extract during fruit development + JayTricho Guard for disease prevention.',
-    results: ['60% more uniform flowering', '35% reduction in fruit drop', '25% increase in fruit size', 'Better shelf life'],
-    testimonial: 'This season was exceptional. The flowering was the most uniform I\'ve seen, and the fruit quality was outstanding.',
-    image: null
   }
 ];
 

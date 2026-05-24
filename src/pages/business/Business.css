@@ -1,0 +1,28 @@
+/* ── Business Solutions B2B Services Styles ── */
+.business-svc-card {
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-8);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .business-svc-card {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+    padding: var(--sp-5);
+  }
+
+  .business-svc-card h2 {
+    font-size: var(--fs-body-lg) !important;
+    margin-bottom: var(--sp-2) !important;
+  }
+
+  .business-svc-card p {
+    font-size: var(--fs-body-sm) !important;
+    line-height: var(--lh-relaxed) !important;
+    margin-bottom: var(--sp-4) !important;
+  }
+}

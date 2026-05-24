@@ -253,6 +253,7 @@
   align-items: center;
   gap: var(--sp-1);
   margin-left: var(--sp-10);
+  height: 100%;
 }
 
 .nav-item {
@@ -273,6 +274,13 @@
   border-radius: var(--radius-md);
   transition: all var(--duration-fast) var(--ease-out);
   white-space: nowrap;
+}
+
+.nav-link-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 .navbar-transparent .nav-link {
@@ -314,13 +322,52 @@
 
 .mega-menu {
   position: absolute;
-  top: 90%;
-  /* Slightly overlap to prevent gap */
+  top: calc(100% + 2px);
+  /* place immediately below the nav item */
   left: 50%;
   transform: translateX(-50%);
-  padding-top: var(--sp-3);
-  z-index: var(--z-dropdown);
+  padding-top: 0;
+  /* make sure the menu appears above the navbar and other overlays */
+  z-index: calc(var(--z-fixed) + 10);
+  pointer-events: auto;
   animation: megaMenuFadeIn var(--duration-normal) var(--ease-out);
+}
+
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--sp-2));
+  left: 0;
+  right: 0;
+  height: var(--sp-2);
+}
+
+.mega-menu-solutions {
+  top: calc(100% + 2px);
+  padding-top: 0;
+}
+
+.mega-menu-products {
+  top: calc(100% + 2px);
+  padding-top: 0;
+}
+
+.mega-menu-products::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--sp-2));
+  left: 0;
+  right: 0;
+  height: var(--sp-2);
+}
+
+.mega-menu-solutions::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--sp-2));
+  left: 0;
+  right: 0;
+  height: var(--sp-2);
 }
 
 .mega-menu-inner {
@@ -390,6 +437,7 @@
   display: none;
   padding: var(--sp-2);
   color: var(--clr-text-primary);
+  margin-left: auto; /* Pushes the hamburger toggle menu to the right side of the navbar container */
 }
 
 .navbar-transparent .navbar-toggle {
@@ -505,8 +553,82 @@
   color: var(--clr-text-muted);
 }
 
+/* ── Mobile Language Switcher inside Sidebar ── */
+.mobile-lang-switcher {
+  margin-bottom: var(--sp-6);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--clr-border-light);
+}
+
+.mobile-lang-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mobile-lang-title svg {
+  color: var(--clr-primary);
+}
+
+.mobile-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+}
+
+.mobile-lang-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--sp-2) var(--sp-1);
+  background: var(--clr-off-white);
+  border: 1.5px solid var(--clr-border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.mobile-lang-btn:hover {
+  background: var(--clr-primary-surface);
+  border-color: var(--clr-primary-lighter);
+}
+
+.mobile-lang-btn.active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: white;
+}
+
+.mobile-lang-char {
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+}
+
+.mobile-lang-btn.active .mobile-lang-char {
+  color: white;
+}
+
+.mobile-lang-name {
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-body);
+}
+
+.mobile-lang-btn.active .mobile-lang-name {
+  color: white;
+}
+
 /* ── Responsive ── */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 
   .navbar-links,
   .navbar-actions {
@@ -515,6 +637,10 @@
 
   .navbar-toggle {
     display: block;
+  }
+
+  .navbar-inner {
+    padding-right: var(--sp-2); /* Push hamburger toggle menu totally towards the right edge */
   }
 }
 
@@ -536,32 +662,6 @@
     justify-content: center;
     justify-self: center;
   }
-}
-
-@media (max-width: 480px) {
-  .topbar {
-    display: none;
-  }
-
-  .navbar {
-    margin-top: 0;
-  }
-}
-
-.topbar-left,
-.topbar-center {
-  display: none;
-}
-
-.topbar-content {
-  grid-template-columns: 1fr;
-}
-
-.topbar-right {
-  width: 100%;
-  justify-content: center;
-  justify-self: center;
-}
 }
 
 @media (max-width: 480px) {

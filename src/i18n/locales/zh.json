@@ -117,6 +117,22 @@
       "accessibility": {
         "title": "可及性",
         "desc": "优质解决方案，价格合理，全印度供应。"
+      },
+      "quality_driven_manufacturing": {
+        "title": "以质量为驱动的制造",
+        "desc": "确保我们生产的每种制剂都具有一致的性能和作物安全性。"
+      },
+      "innovation_and_research_focused_development": {
+        "title": "以创新与研发为核心的发展",
+        "desc": "通过先进的生物研发推动农业科学的边界。"
+      },
+      "strong_customer_relationships": {
+        "title": "牢固的客户关系",
+        "desc": "通过信任与共同成功，与我们的农民和合作伙伴携手成长。"
+      },
+      "ethical_and_transparent_business_practices": {
+        "title": "道德且透明的商业行为",
+        "desc": "在每一次交易和产品声明中保持诚信与诚实。"
       }
     }
   },
@@ -167,6 +183,21 @@
     "products_h2": "60+ 创新产品",
     "products_subtitle": "跨越 5 个类别 — 生物肥料、生物农药、生长调节剂、有机营养物和特种产品。",
     "products_count": "{{count}} 个产品",
+    "products_card_overline": "农业科技卓越",
+    "products_card_title": "可持续农业由此开始",
+    "products_desc_simplified": "先进的有机投入品与生物解决方案，专为最大化作物产量、增强抗逆性及恢复土壤活力而设计。",
+    "products_cta_simplified": "探索完整系列",
+    "products": {
+      "feat_science": "科学实验室",
+      "feat_science_desc": "专为高生物稳定性和超长保质期而设计。",
+      "feat_eco": "100% 生态安全",
+      "feat_eco_desc": "旨在丰富土壤天然微生物群落的有机制剂。",
+      "feat_yield": "经证实的产量",
+      "feat_yield_desc": "确保作物强壮生长、提高抗逆性及提升农产品品质。",
+      "metric_products": "产品",
+      "metric_categories": "类别",
+      "metric_biological": "生态安全"
+    },
     "why_title": "为什么选择 Jay Agritech？",
     "why_h2": "Jay Agritech 的优势",
     "why_subtitle": "我们在农业创新领域的独特之处",

@@ -1,25 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { Users, Truck, Globe, ArrowRight, CheckCircle, TrendingUp, Award, Headphones } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
+import { assetSrc } from '../../utils/assetSrc';
 
 function AnimatedSection({ children, className = '' }) {
   const [ref, isVisible] = useScrollAnimation();
   return <div ref={ref} className={`anim-hidden ${isVisible ? 'anim-visible' : ''} ${className}`}>{children}</div>;
 }
 
-import imgDealer from '../../assets/partners/dealer.png';
-import imgDistributor from '../../assets/partners/distributor.png';
-import imgExport from '../../assets/partners/export.png';
+import imgDealerAsset from '../../assets/partners/dealer.png';
+import imgDistributorAsset from '../../assets/partners/distributor.png';
+import imgExportAsset from '../../assets/partners/export.png';
 
 const typeImages = {
-  dealer: imgDealer,
-  distributor: imgDistributor,
-  export: imgExport,
+  dealer: assetSrc(imgDealerAsset),
+  distributor: assetSrc(imgDistributorAsset),
+  export: assetSrc(imgExportAsset),
 };
 
-import imgHero from '../../assets/partners/hero.png';
+import imgHeroAsset from '../../assets/partners/hero.png';
+
+const imgHero = assetSrc(imgHeroAsset);
 
 export default function Partners() {
   const { t } = useTranslation();
@@ -45,7 +48,7 @@ export default function Partners() {
                   <h3 style={{ marginBottom: 'var(--sp-3)' }}>{t(`pages_details.partners.reasons.${type.key}.title`)}</h3>
                   <p style={{ color: 'var(--clr-text-muted)', fontSize: 'var(--fs-body-sm)', marginBottom: 'var(--sp-5)' }}>{t(`pages_details.partners.reasons.${type.key}.desc`)}</p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)', marginBottom: 'var(--sp-6)', flex: 1 }}>
-                    {t(`pages_details.partners.reasons.${type.key}.benefits`, { returnObjects: true }).map((b, j) => (
+                    {(Array.isArray(t(`pages_details.partners.reasons.${type.key}.benefits`, { returnObjects: true })) ? t(`pages_details.partners.reasons.${type.key}.benefits`, { returnObjects: true }) : []).map((b, j) => (
                       <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', fontSize: 'var(--fs-body-sm)' }}>
                         <CheckCircle size={14} style={{ color: type.color, flexShrink: 0 }} /> {b}
                       </div>

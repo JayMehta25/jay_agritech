@@ -1,5 +1,4 @@
 import React from 'react';
-import './Bottle3D.css';
 
 export default function Bottle3D({ imageUrl, modelUrl, className = '' }) {
   // If we have a true 3D model file, use <model-viewer>

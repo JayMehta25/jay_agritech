@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Layout from './components/layout/Layout';
 import Home from './pages/home/Home';
@@ -12,12 +12,10 @@ import Research from './pages/research/Research';
 import Partners from './pages/partners/Partners';
 import FarmerZone from './pages/farmerzone/FarmerZone';
 import Blog from './pages/blog/Blog';
-import CaseStudies from './pages/casestudies/CaseStudies';
 import Careers from './pages/careers/Careers';
 import Contact from './pages/contact/Contact';
 import GrowthSystem from './pages/usp/GrowthSystem';
 import { PrivacyPolicy, Terms } from './pages/legal/Legal';
-import VideoSplashScreen from './components/ui/VideoSplashScreen';
 
 // Component to handle scrolling to top on route change OR scrolling to hash ID
 function ScrollToTopAndHash() {
@@ -42,13 +40,6 @@ function ScrollToTopAndHash() {
 
 export default function App() {
   const { i18n } = useTranslation();
-  const [showSplash, setShowSplash] = useState(() => {
-    // Only show splash if it hasn't been played in this session
-    if (typeof window !== 'undefined') {
-      return !sessionStorage.getItem('splash_played');
-    }
-    return true;
-  });
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -63,15 +54,6 @@ export default function App() {
 
   return (
     <>
-      {showSplash && (
-        <VideoSplashScreen 
-          onComplete={() => {
-            setShowSplash(false);
-            sessionStorage.setItem('splash_played', 'true');
-            window.dispatchEvent(new Event('splashComplete'));
-          }} 
-        />
-      )}
       <BrowserRouter>
         <ScrollToTopAndHash />
         <Routes>
@@ -124,8 +106,7 @@ export default function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:slug" element={<Blog />} />
 
-            {/* Case Studies */}
-            <Route path="case-studies" element={<CaseStudies />} />
+
 
             {/* Careers */}
             <Route path="careers" element={<Careers />} />

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { ArrowRight, Sprout, Shield, Leaf, TrendingUp, Droplets, Bug, BookOpen, Calendar, Download, Video, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';

@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../RouterBridge';
 import {
   MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Youtube,
   ArrowRight, Leaf, Send
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { companyInfo, products } from '../../data/siteData';
-import logoImg from '../../assets/new_title.png';
-import titleImg from '../../assets/title_bg.png';
-import './Footer.css';
+import { assetSrc } from '../../utils/assetSrc';
+import logoImgAsset from '../../assets/new_title.png';
+import titleImgAsset from '../../assets/title_bg.png';
+
+const logoImg = assetSrc(logoImgAsset);
+const titleImg = assetSrc(titleImgAsset);
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -87,7 +90,6 @@ export default function Footer() {
               <h4>{t('footer.resources')}</h4>
               <ul>
                 <li><Link to="/blog">{t('footer.knowledge_hub', 'Knowledge Hub')}</Link></li>
-                <li><Link to="/case-studies">{t('footer.case_studies', 'Case Studies')}</Link></li>
                 <li><Link to="/business">{t('nav.business')}</Link></li>
                 <li><Link to="/growth-system">{t('footer.growth_system', 'Growth System')}</Link></li>
               </ul>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { useState, useRef, useEffect } from 'react';
 import {
   ArrowRight, Leaf, FlaskConical, Shield, Sprout, TrendingUp,
@@ -7,18 +7,13 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, useScrollAnimationGroup, useCountUp } from '../../hooks/useScrollAnimation';
-import { companyInfo, products, caseStudies } from '../../data/siteData';
+import { companyInfo, products } from '../../data/siteData';
+import { assetSrc } from '../../utils/assetSrc';
 import collageImg from '../../assets/sustainable_farming_collage.png';
 // Assets
-import logoImg from '../../assets/new_title.png';
+import logoImgAsset from '../../assets/new_title.png';
 import companyVideo from '../../assets/blog/e_d_mp_.mp4';
-import farmersWorkImg from '../../assets/blog/farmers_work.png';
-import './Home.css';
-
-// Case Study Images
-import caseCottonImg from '../../assets/case-studies/cotton.png';
-import caseGroundnutImg from '../../assets/case-studies/groundnut.png';
-import caseMangoImg from '../../assets/case-studies/mango.png';
+import farmersWorkImgAsset from '../../assets/blog/farmers_work.png';
 
 // Product Category Images
 import catBfImg from '../../assets/products/bio-fertilizers.png';
@@ -28,9 +23,13 @@ import catBioImg from '../../assets/products/biostimulants.png';
 import catInsectImg from '../../assets/products/bio-insecticides.png';
 import catOnImg from '../../assets/products/organic-nutrients.png';
 import catMnImg from '../../assets/products/micronutrients.png';
-import productsImg from '../../data/products.png';
+import productsImgAsset from '../../data/products.png';
 
-const caseImages = { 1: caseCottonImg, 2: caseGroundnutImg, 3: caseMangoImg };
+const logoImg = assetSrc(logoImgAsset);
+const farmersWorkImg = assetSrc(farmersWorkImgAsset);
+const productsImg = assetSrc(productsImgAsset);
+
+
 const catImages = {
   'bio-insecticides': catInsectImg,
   'biostimulants': catBioImg,
@@ -40,16 +39,12 @@ const catImages = {
 };
 
 // Solution Images
-import solSoilImg from '../../assets/solutions/soil-health.png';
-import solNutrientImg from '../../assets/solutions/nutrient-mgmt.png';
-import solPestImg from '../../assets/solutions/pest-control.png';
-import solGrowthImg from '../../assets/solutions/growth-enhancement.png';
 
 const solImages = {
-  'soil-health': solSoilImg,
-  'nutrient-mgmt': solNutrientImg,
-  'pest-disease': solPestImg,
-  'growth': solGrowthImg
+  'soil-health': '/soil health.jpg',
+  'nutrient-mgmt': '/nutrientMgm.jpg',
+  'pest-disease': '/pnd.jpg',
+  'growth': '/growth.jpg'
 };
 
 function AnimatedSection({ children, className = '', direction = 'up' }) {
@@ -67,17 +62,6 @@ function AnimatedSection({ children, className = '', direction = 'up' }) {
   );
 }
 
-function StatCounter({ number, suffix, label }) {
-  const [ref, isVisible] = useScrollAnimation();
-  const count = useCountUp(number, 2000, isVisible);
-
-  return (
-    <div ref={ref} className="stat-item">
-      <span className="stat-number">{count}{suffix}</span>
-      <span className="stat-label">{label}</span>
-    </div>
-  );
-}
 
 const toKey = (text) => text.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 
@@ -103,37 +87,28 @@ export default function Home() {
   const { t } = useTranslation();
   const [videoEnded, setVideoEnded] = useState(false);
   const [isCatalogueOpen, setIsCatalogueOpen] = useState(false);
-  const [canPlay, setCanPlay] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return !!sessionStorage.getItem('splash_played');
-    }
-    return true;
-  });
   const videoRef = useRef(null);
+  const solutionsRef = useRef(null);
 
-  useEffect(() => {
-    const handleSplashComplete = () => {
-      setCanPlay(true);
-    };
-    
-    window.addEventListener('splashComplete', handleSplashComplete);
-    return () => window.removeEventListener('splashComplete', handleSplashComplete);
-  }, []);
-
-  useEffect(() => {
-    if (canPlay && videoRef.current) {
-      // Add a small delay to align with the splash screen fade-out animation
-      setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play().catch(e => console.log('Auto-play prevented:', e));
-        }
-      }, 500); 
+  const handleMouseMove = (e) => {
+    if (solutionsRef.current) {
+      const rect = solutionsRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      solutionsRef.current.style.setProperty('--mouse-x', `${x}px`);
+      solutionsRef.current.style.setProperty('--mouse-y', `${y}px`);
     }
-  }, [canPlay]);
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.log('Auto-play prevented:', e));
+    }
+  }, []);
 
   const handleTimeUpdate = () => {
     if (videoRef.current && videoRef.current.duration) {
-      if (videoRef.current.currentTime >= videoRef.current.duration - 1) {
+      if (videoRef.current.currentTime >= videoRef.current.duration - 3) {
         setVideoEnded(true);
       }
     }
@@ -192,25 +167,29 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="hero-scroll-indicator">
-          <div className="scroll-dot"></div>
-        </div>
       </section>
 
-      {/* ══════════ STATS BAR ══════════ */}
-      <section className="stats-bar" id="stats">
-        <div className="container">
-          <div className="stats-grid">
-            {companyInfo.stats.map((stat, i) => (
-              <StatCounter key={i} number={stat.number} suffix={stat.suffix} label={t(`company.stats.${stat.label.toLowerCase().replace(/\s/g, '_')}`, stat.label)} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ══════════ SOLUTIONS ══════════ */}
-      <section className="section bg-off-white" id="solutions-preview">
+      <section 
+        ref={solutionsRef}
+        onMouseMove={handleMouseMove}
+        className="section bg-off-white" 
+        id="solutions-preview"
+      >
+        {/* Background Agtech Blueprint Grid & Microbial Spores */}
+        <div className="solutions-bg-elements">
+          <div className="solutions-grid-overlay"></div>
+          <div className="bio-spore spore-1"></div>
+          <div className="bio-spore spore-2"></div>
+          <div className="bio-spore spore-3"></div>
+          <div className="bio-spore spore-4"></div>
+          <div className="bio-spore spore-5"></div>
+          <div className="bio-spore spore-6"></div>
+          <div className="bio-spore spore-7"></div>
+          <div className="bio-spore spore-8"></div>
+        </div>
+
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
@@ -222,28 +201,34 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <div className="solutions-grid">
+          <div className="solutions-timeline-vertical">
+            {/* Center vertical stem timeline line */}
+            <div className="vertical-timeline-line"></div>
+
             {[
-              { icon: <Leaf size={24} />, titleKey: 'home.solutions.soil_health.title', descKey: 'home.solutions.soil_health.desc', title: 'Soil Health', id: 'soil-health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32' },
-              { icon: <Sprout size={24} />, titleKey: 'home.solutions.nutrient_management.title', descKey: 'home.solutions.nutrient_management.desc', title: 'Nutrient Management', id: 'nutrient-mgmt', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0' },
-              { icon: <Shield size={24} />, titleKey: 'home.solutions.pest_disease.title', descKey: 'home.solutions.pest_disease.desc', title: 'Pest & Disease', id: 'pest-disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828' },
-              { icon: <TrendingUp size={24} />, titleKey: 'home.solutions.growth_enhancement.title', descKey: 'home.solutions.growth_enhancement.desc', title: 'Growth Enhancement', id: 'growth', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100' },
+              { icon: <Leaf size={20} />, titleKey: 'home.solutions.soil_health.title', descKey: 'home.solutions.soil_health.desc', title: 'Soil Health', id: 'soil-health', desc: 'Restore and maintain soil vitality with microbial solutions that rebuild your soil\'s natural fertility.', link: '/solutions/soil-health', color: '#2E7D32', stage: 'Stage 01', tagline: 'Rebuild' },
+              { icon: <Sprout size={20} />, titleKey: 'home.solutions.nutrient_management.title', descKey: 'home.solutions.nutrient_management.desc', title: 'Nutrient Management', id: 'nutrient-mgmt', desc: 'Balanced, bio-available nutrition through organic and microbial nutrient delivery systems.', link: '/solutions/nutrient-mgmt', color: '#1565C0', stage: 'Stage 02', tagline: 'Nourish' },
+              { icon: <Shield size={20} />, titleKey: 'home.solutions.pest_disease.title', descKey: 'home.solutions.pest_disease.desc', title: 'Pest & Disease', id: 'pest-disease', desc: 'Eco-friendly biological pest management — effective protection without harmful residues.', link: '/solutions/pest-disease', color: '#C62828', stage: 'Stage 03', tagline: 'Protect' },
+              { icon: <TrendingUp size={20} />, titleKey: 'home.solutions.growth_enhancement.title', descKey: 'home.solutions.growth_enhancement.desc', title: 'Growth Enhancement', id: 'growth', desc: 'Maximize crop potential with science-backed growth regulators and bio-stimulants.', link: '/solutions/growth', color: '#E65100', stage: 'Stage 04', tagline: 'Maximize' },
             ].map((sol, i) => (
-              <AnimatedSection key={i}>
-                <Link to={sol.link} className="solution-card card">
-                  <div className="solution-card-image">
-                    <img src={solImages[sol.id]} alt={sol.title} className="solution-img" />
-                    <div className="solution-card-overlay" style={{ background: `linear-gradient(to bottom, transparent, ${sol.color}40)` }}></div>
-                    <div className="solution-icon-floating" style={{ background: sol.color }}>
-                      {sol.icon}
-                    </div>
+              <AnimatedSection key={i} direction={i % 2 === 0 ? 'left' : 'right'} className="timeline-step-wrapper">
+                {/* Centered milestone dot that highlights on hover */}
+                <div className="timeline-node" style={{ '--stage-color': sol.color }}>
+                  {sol.icon}
+                </div>
+
+                <Link to={sol.link} className="timeline-step-card" style={{ '--stage-color': sol.color }}>
+                  <div className="stc-image-section">
+                    <img src={solImages[sol.id]} alt={sol.title} className="stc-img" />
+                    <div className="stc-overlay"></div>
                   </div>
-                  <div className="solution-card-body">
+                  <div className="stc-body-section">
                     <h3>{t(sol.titleKey, sol.title)}</h3>
                     <p>{t(sol.descKey, sol.desc)}</p>
-                    <span className="solution-link" style={{ color: sol.color }}>
-                      {t('common.explore', 'Explore')} <ArrowRight size={14} />
-                    </span>
+                    <div className="stc-link" style={{ color: sol.color }}>
+                      <span>{t('common.explore', 'Explore Stage')}</span>
+                      <ArrowRight size={15} />
+                    </div>
                   </div>
                 </Link>
               </AnimatedSection>
@@ -253,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ FEATURED PRODUCTS ══════════ */}
-      <section className="section moving-gradient-bg" id="products-preview">
+      <section className="section bg-light-organic" id="products-preview">
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
@@ -265,108 +250,78 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <div className="products-showcase-split">
-            <AnimatedSection direction="left" className="products-visual-frame">
-              <div className="products-main-image">
-                <img src={productsImg} alt="Jay Agritech Product Range" className="products-composite-img" />
-                <div className="products-image-overlay"></div>
-              </div>
-              <div className="products-stats-overlay">
-                <div className="pso-item">
-                  <span className="pso-number">60+</span>
-                  <span className="pso-label">Products</span>
-                </div>
-                <div className="pso-divider"></div>
-                <div className="pso-item">
-                  <span className="pso-number">5</span>
-                  <span className="pso-label">Categories</span>
-                </div>
-
-              </div>
-            </AnimatedSection>
-
-            <div className="products-category-list">
-              {products.categories.map((cat, i) => (
-                <AnimatedSection key={cat.id} direction="right">
-                  <Link to={`/products/${cat.slug}`} className="product-list-item">
-                    <div className="pli-icon" style={{ backgroundColor: `${cat.color}15`, color: cat.color }}>
-                      {cat.id === 'bio-insecticides' && <Shield size={24} />}
-                      {cat.id === 'biostimulants' && <Zap size={24} />}
-                      {cat.id === 'bio-fertilizers' && <Microscope size={24} />}
-                      {cat.id === 'organic-nutrients' && <Leaf size={24} />}
-                      {cat.id === 'micronutrients' && <FlaskConical size={24} />}
-                    </div>
-                    <div className="pli-content">
-                      <div className="pli-header">
-                        <h3>{t(cat.nameKey, cat.name)}</h3>
-                        <span className="pli-count">{t('home.products_count', { count: cat.productCount, defaultValue: `${cat.productCount} Products` })}</span>
-                      </div>
-                      <p>{t(cat.descriptionKey, cat.description)}</p>
-                      <div className="pli-action">
-                        <span>{t('common.explore', 'Explore Category')}</span>
-                        <ChevronRight size={16} />
-                      </div>
-                    </div>
-                  </Link>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ══════════ CASE STUDIES ══════════ */}
-      <section className="section bg-off-white" id="case-studies-preview">
-        <div className="container">
           <AnimatedSection>
-            <div className="section-header">
-              <span className="section-overline">{t('home.success_title')}</span>
-              <h2 className="section-title">{t('home.success_h2')}</h2>
-              <p className="section-subtitle">
-                {t('home.success_subtitle')}
-              </p>
+            <div className="portfolio-showcase-card">
+              {/* Left Column: 50% Padded Text Stage */}
+              <div className="showcase-left-panel">
+                <div className="showcase-content-wrapper animate-fade-in">
+                  <span className="showcase-overline">{t('home.products_card_overline', 'Agtech Excellence')}</span>
+                  <h2 className="showcase-title">{t('home.products_card_title', 'Sustainable Agriculture Starts Here')}</h2>
+                  
+                  <p className="showcase-description">
+                    {t('home.products_desc_simplified', 'Advanced organic inputs and bio-solutions engineered to maximize crop yields, strengthen stress tolerance, and restore soil vitality.')}
+                  </p>
+                  
+                  {/* Rich Agtech Value Propositions (Filling the empty space) */}
+                  <div className="showcase-features-list">
+                    <div className="showcase-feature-item">
+                      <span className="sf-icon-dot">🔬</span>
+                      <div className="sf-content">
+                        <strong>{t('home.products.feat_science', 'Scientific Labs')}</strong>
+                        <span>{t('home.products.feat_science_desc', 'Engineered for high biological stability and long shelf-life.')}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="showcase-feature-item">
+                      <span className="sf-icon-dot">🌱</span>
+                      <div className="sf-content">
+                        <strong>{t('home.products.feat_eco', '100% Bio-Safe')}</strong>
+                        <span>{t('home.products.feat_eco_desc', 'Organic formulas that enrich the soil\'s natural microbiome.')}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="showcase-feature-item">
+                      <span className="sf-icon-dot">📈</span>
+                      <div className="sf-content">
+                        <strong>{t('home.products.feat_yield', 'Proven Yields')}</strong>
+                        <span>{t('home.products.feat_yield_desc', 'Ensures robust plant growth, stress resistance, and crop quality.')}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="showcase-metrics">
+                    <div className="metric-item">
+                      <span className="metric-num">60+</span>
+                      <span className="metric-lbl">{t('home.products.metric_products', 'Products')}</span>
+                    </div>
+                    <div className="metric-divider"></div>
+                    <div className="metric-item">
+                      <span className="metric-num">5</span>
+                      <span className="metric-lbl">{t('home.products.metric_categories', 'Categories')}</span>
+                    </div>
+                    <div className="metric-divider"></div>
+                    <div className="metric-item">
+                      <span className="metric-num">100%</span>
+                      <span className="metric-lbl">{t('home.products.metric_biological', 'Bio-Safe')}</span>
+                    </div>
+                  </div>
+                  
+                  <Link to="/products" className="btn btn-gold btn-lg showcase-cta">
+                    {t('home.products_cta_simplified', 'Explore Full Range')} <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: 40% Image Stage */}
+              <div className="showcase-right-panel">
+                <img src={productsImg} alt="Jay Agritech Product Range" className="portfolio-showcase-img" />
+                <div className="portfolio-showcase-mask"></div>
+              </div>
             </div>
-          </AnimatedSection>
-
-          <div className="grid-3">
-            {caseStudies.map((study) => (
-              <AnimatedSection key={study.id}>
-                <Link to={`/case-studies`} className="case-card card">
-                  <div className="case-card-image">
-                    <img src={caseImages[study.id]} alt={study.title} className="case-img" />
-                  </div>
-                  <div className="card-body">
-                    <div className="case-meta">
-                      <span className="badge badge-green">{t(`home.case_studies.${study.slug}.crop`, study.crop)}</span>
-                      <span className="case-location"><MapPin size={12} /> {t(`home.case_studies.${study.slug}.location`, study.location)}</span>
-                    </div>
-                    <h3>{t(`home.case_studies.${study.slug}.title`, study.title)}</h3>
-                    <p>{t(`home.case_studies.${study.slug}.challenge`, study.challenge)}</p>
-                    <div className="case-results">
-                      {study.results.slice(0, 2).map((r, i) => (
-                        <div key={i} className="case-result">
-                          <Check size={14} /> {t(`home.case_studies.${study.slug}.results.${i}`, r)}
-                        </div>
-                      ))}
-                    </div>
-                    <blockquote className="case-quote">
-                      "{t(`home.case_studies.${study.slug}.testimonial`, study.testimonial).slice(0, 100)}..."
-                      <cite>— {t(`home.case_studies.${study.slug}.farmer`, study.farmer)}</cite>
-                    </blockquote>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection className="text-center" style={{ marginTop: 'var(--sp-8)' }}>
-            <Link to="/case-studies" className="btn btn-secondary">
-              {t('common.view_all_case_studies', 'View All Case Studies')} <ArrowRight size={16} />
-            </Link>
           </AnimatedSection>
         </div>
       </section>
+
 
       {/* ══════════ PARTNERS CTA ══════════ */}
       <section className="partners-cta-section" id="partners-cta">
@@ -404,6 +359,9 @@ export default function Home() {
 
       {/* ══════════ VALUES ══════════ */}
       <section className="section bg-white" id="values-preview">
+        <div className="values-bg-blob values-bg-blob-1"></div>
+        <div className="values-bg-blob values-bg-blob-2"></div>
+        <div className="values-bg-blob values-bg-blob-3"></div>
         <div className="container">
           <AnimatedSection>
             <div className="section-header">
@@ -417,8 +375,10 @@ export default function Home() {
               <AnimatedSection key={i}>
                 <div className="value-card">
                   <div className="value-number">{String(i + 1).padStart(2, '0')}</div>
-                  <h4>{t(`company.values.${toKey(val.title)}.title`, val.title)}</h4>
-                  <p>{t(`company.values.${toKey(val.title)}.desc`, val.description)}</p>
+                  <div className="value-card-content">
+                    <h4>{t(`company.values.${toKey(val.title)}.title`, val.title)}</h4>
+                    <p>{t(`company.values.${toKey(val.title)}.desc`, val.description)}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}

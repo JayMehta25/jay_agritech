@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../RouterBridge';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import './GenericPage.css';
 
 export default function GenericPage({ title, subtitle, overline, breadcrumbs = [], children, bodyClassName = '', heroImage }) {
   const { t } = useTranslation();

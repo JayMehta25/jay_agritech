@@ -527,6 +527,24 @@
       "npop": "NPOP Organic Certified",
       "bis": "BIS Standard Compliant",
       "glp": "GLP Compliant Testing"
+    },
+    "values": {
+      "quality_driven_manufacturing": {
+        "title": "Quality-driven manufacturing",
+        "desc": "Ensuring consistent performance and crop safety in every formulation we produce."
+      },
+      "innovation_and_research_focused_development": {
+        "title": "Innovation and research-focused development",
+        "desc": "Pushing the boundaries of agri-science with advanced biological R&D."
+      },
+      "strong_customer_relationships": {
+        "title": "Strong customer relationships",
+        "desc": "Growing together with our farmers and partners through trust and shared success."
+      },
+      "ethical_and_transparent_business_practices": {
+        "title": "Ethical and transparent business practices",
+        "desc": "Maintaining integrity and honesty in every transaction and product claim."
+      }
     }
   },
   "home": {
@@ -859,5 +877,12 @@
       },
       "no_role_text": "Don't see a role that fits? We're always looking for talented individuals."
     }
+  },
+  "about": {
+    "journey_overline": "Our Journey",
+    "journey_title": "Pioneering Agricultural Innovation Since 2026",
+    "company_name": "Jay Agritech Pvt. Ltd.",
+    "journey_text_prefix": "At ",
+    "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint."
   }
 }

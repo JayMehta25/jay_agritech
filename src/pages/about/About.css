@@ -436,32 +436,32 @@
     line-height: 1.5 !important;
   }
 
-  /* Keep Leadership cards horizontal on mobile */
+  /* Stack Leadership cards vertically on mobile for full horizontal text space */
   .about-leadership-card {
-    flex-direction: row !important;
+    flex-direction: column !important;
     align-items: stretch;
   }
   .alc-image-wrapper {
-    width: 130px !important;
-    height: auto !important;
-    min-height: 100%;
+    width: 100% !important;
+    height: 240px !important;
   }
   .alc-avatar-fallback span {
-    font-size: 1.75rem !important;
+    font-size: 2.5rem !important;
   }
   .alc-content {
-    padding: var(--sp-4) var(--sp-5) !important;
+    padding: var(--sp-6) !important;
+    text-align: left;
   }
   .alc-content h3 {
-    font-size: var(--fs-body) !important;
+    font-size: var(--fs-body-lg) !important;
   }
   .alc-role {
-    font-size: 10px !important;
-    margin-bottom: var(--sp-2) !important;
+    font-size: var(--fs-caption) !important;
+    margin-bottom: var(--sp-3) !important;
   }
   .alc-bio {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
+    font-size: var(--fs-body-sm) !important;
+    line-height: 1.6 !important;
   }
 }
 
@@ -483,16 +483,18 @@
 
   /* Leadership card super compact on small screens */
   .alc-image-wrapper {
-    width: 100px !important;
+    width: 100% !important;
+    height: 200px !important;
   }
   .alc-content {
-    padding: var(--sp-3) var(--sp-4) !important;
+    padding: var(--sp-5) var(--sp-4) !important;
   }
   .alc-content h3 {
-    font-size: var(--fs-body-sm) !important;
+    font-size: var(--fs-body) !important;
   }
   .alc-bio {
-    font-size: 10px !important;
+    font-size: var(--fs-body-sm) !important;
+    line-height: 1.5 !important;
   }
 }
 

@@ -6,8 +6,13 @@ import enTranslations from './locales/en.json';
 import hiTranslations from './locales/hi.json';
 import zhTranslations from './locales/zh.json';
 
+const isServer = typeof window === 'undefined';
+
+if (!isServer) {
+  i18n.use(LanguageDetector);
+}
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -15,6 +20,7 @@ i18n
       hi: { translation: hiTranslations },
       zh: { translation: zhTranslations }
     },
+    lng: isServer ? 'en' : undefined,
     fallbackLng: 'en',
     detection: {
       order: ['localStorage', 'cookie', 'htmlTag', 'path', 'subdomain'],

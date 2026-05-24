@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../components/RouterBridge';
 import { Microscope, FlaskConical, Users, Lightbulb, Beaker, ArrowRight, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
@@ -21,7 +21,7 @@ export default function Research() {
               <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('pages.research.science_meets_agriculture')}</h2>
               <p style={{ color: 'var(--clr-text-muted)', lineHeight: 'var(--lh-loose)', marginBottom: 'var(--sp-6)' }}>{t('pages_details.research.subtitle')}</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
-                {t('pages_details.research.capabilities', { returnObjects: true }).map((item, i) => (
+                {(Array.isArray(t('pages_details.research.capabilities', { returnObjects: true })) ? t('pages_details.research.capabilities', { returnObjects: true }) : []).map((item, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
                     <CheckCircle size={16} style={{ color: 'var(--clr-primary)', flexShrink: 0 }} />
                     <span style={{ fontWeight: 'var(--fw-medium)' }}>{item}</span>

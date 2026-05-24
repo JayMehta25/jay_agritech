@@ -1,7 +1,6 @@
 import { Sprout, Leaf, TrendingUp, Shield, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import './GrowthSystemVisual.css';
 
 export default function GrowthSystemVisual() {
   const { t } = useTranslation();

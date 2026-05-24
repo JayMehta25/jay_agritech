@@ -1,29 +1,30 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from '../../components/RouterBridge';
 import { ArrowRight, Droplets, Sprout, Search } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { products } from '../../data/siteData';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import GenericPage from '../../components/ui/GenericPage';
+import { assetSrc } from '../../utils/assetSrc';
 
 // Category Images
-import catBfImg from '../../assets/products/bio-fertilizers.png';
-import catBpImg from '../../assets/products/bio-pesticides.png';
-import catPgrImg from '../../assets/products/pgr.png';
-import catInsectImg from '../../assets/products/bio-insecticides.png';
-import catOnImg from '../../assets/products/organic-nutrients.png';
-import catMnImg from '../../assets/products/micronutrients.png';
-import biofertCategoryImg from '../../assets/products/bio-fertilizers.png';
-import biostimsCategoryImg from '../../assets/products/biostimulants.png';
-import micronutCategoryImg from '../../assets/products/micronutrients.png';
-import organicnutriCategoryImg from '../../assets/products/organic-nutrients.png';
+import catBfImgAsset from '../../assets/products/bio-fertilizers.png';
+import catBpImgAsset from '../../assets/products/bio-pesticides.png';
+import catPgrImgAsset from '../../assets/products/pgr.png';
+import catInsectImgAsset from '../../assets/products/bio-insecticides.png';
+import catOnImgAsset from '../../assets/products/organic-nutrients.png';
+import catMnImgAsset from '../../assets/products/micronutrients.png';
+import biofertCategoryImgAsset from '../../assets/products/bio-fertilizers.png';
+import biostimsCategoryImgAsset from '../../assets/products/biostimulants.png';
+import micronutCategoryImgAsset from '../../assets/products/micronutrients.png';
+import organicnutriCategoryImgAsset from '../../assets/products/organic-nutrients.png';
 
 const catImages = {
-  'bio-insecticides': catInsectImg,
-  'biostimulants': biostimsCategoryImg,
-  'organic-nutrients': catOnImg,
-  'micronutrients': catMnImg,
-  'bio-fertilizers': catBfImg
+  'bio-insecticides': assetSrc(catInsectImgAsset),
+  'biostimulants': assetSrc(biostimsCategoryImgAsset),
+  'organic-nutrients': assetSrc(catOnImgAsset),
+  'micronutrients': assetSrc(catMnImgAsset),
+  'bio-fertilizers': assetSrc(catBfImgAsset)
 };
 
 function AnimatedSection({ children, className = '', delay = 0 }) {
@@ -39,9 +40,10 @@ function AnimatedSection({ children, className = '', delay = 0 }) {
   );
 }
 
-export default function Products() {
+export default function Products({ category: categoryProp } = {}) {
   const { t } = useTranslation();
-  const { category } = useParams();
+  const params = useParams();
+  const category = categoryProp || params.category || params.path?.[0];
   const [searchQuery, setSearchQuery] = useState('');
 
   const translateValue = (val) => {
