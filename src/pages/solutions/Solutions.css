@@ -1,0 +1,234 @@
+/* ============================================
+   Solutions Page Styles — Immersive & Responsive
+   ============================================ */
+
+.solutions-item-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: center;
+  padding: var(--sp-16) 0;
+  border-bottom: 1px solid var(--clr-border-light);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.solutions-item-section:last-child {
+  border-bottom: none;
+}
+
+.solutions-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.solutions-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-6);
+  transition: all var(--duration-normal) var(--ease-spring);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.solutions-item-section:hover .solutions-icon-wrapper {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.solutions-content-col h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-4);
+  letter-spacing: var(--ls-tight);
+}
+
+.solutions-desc {
+  color: var(--clr-text-muted);
+  font-size: var(--fs-body-lg);
+  line-height: 1.7;
+  margin-bottom: var(--sp-6);
+}
+
+/* Premium Feature Capsules / Badges */
+.solutions-features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2.5);
+  margin-bottom: var(--sp-8);
+  width: 100%;
+}
+
+.solutions-feature-item {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  gap: var(--sp-2);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.solutions-feature-item:hover {
+  transform: translateY(-2px);
+}
+
+.solutions-feature-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.solutions-feature-text {
+  font-size: 13px !important;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-body);
+}
+
+.solutions-image-col {
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-out);
+  z-index: 2;
+}
+
+.solutions-image-wrapper {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--clr-border-light);
+  position: relative;
+}
+
+.solutions-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.solutions-item-section:hover .solutions-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* ── Responsive Styling (Desktop / Tablet compactions) ── */
+@media (max-width: 1024px) {
+  .solutions-item-section {
+    gap: var(--sp-10);
+    padding: var(--sp-12) 0;
+  }
+  
+  .solutions-content-col h2 {
+    font-size: var(--fs-h3);
+  }
+  
+  .solutions-desc {
+    font-size: var(--fs-body);
+  }
+}
+
+/* ── Immersive Mobile Redesign (WOW Factor) ── */
+@media (max-width: 768px) {
+  #overview {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-8);
+  }
+
+  .solutions-item-section {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    background: white;
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(46, 125, 50, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(46, 125, 50, 0.01);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0 !important;
+  }
+
+  /* Image Column at the TOP */
+  .solutions-image-col {
+    order: -1 !important; /* Forces image column to stack at the very top */
+    width: 100%;
+  }
+
+  .solutions-image-wrapper {
+    aspect-ratio: 16/9; /* Modern landscape aspect ratio for top banner */
+    border-radius: 0; /* Remove top corners border-radius as it spans to top edges */
+    border: none;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.06);
+    box-shadow: none;
+  }
+
+  /* Content Column at the BOTTOM styled as a premium card */
+  .solutions-content-col {
+    order: 2 !important;
+    padding: var(--sp-8) var(--sp-5) var(--sp-6) var(--sp-5) !important; /* Top padding is large to clear absolute icon badge */
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #fafcfa 100%);
+    position: relative;
+  }
+
+  /* Absolutely Positioned Icon Badge overlapping the image-card boundary */
+  .solutions-icon-wrapper {
+    position: absolute;
+    top: -28px; /* Floats perfectly halfway on top of the image banner boundary */
+    right: var(--sp-5); /* Anchored to the right side */
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0 !important;
+    border: 3.5px solid white; /* Thick white frame to POP off the image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .solutions-content-col h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--sp-3);
+    font-weight: var(--fw-bold);
+    padding-right: 48px; /* Leave space so the text doesn't overlap the absolute icon */
+  }
+
+  .solutions-desc {
+    font-size: var(--fs-body-sm);
+    line-height: 1.6;
+    margin-bottom: var(--sp-5);
+  }
+
+  /* Horizontal Scrolling Capsules for Features */
+  .solutions-features-list {
+    margin-bottom: var(--sp-6);
+    gap: 6px;
+    display: flex;
+    flex-wrap: wrap; /* Side-by-side wrapped pills */
+  }
+
+  .solutions-feature-item {
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .solutions-feature-text {
+    font-size: 12px !important;
+  }
+
+  /* Full Width CTA Button for Mobile optimal touch targets */
+  .solutions-content-col .btn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--sp-3) var(--sp-4);
+    font-size: var(--fs-body-sm);
+  }
+}

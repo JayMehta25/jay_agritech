@@ -13,6 +13,7 @@ import '../src/components/ui/ProcessFlow.css';
 import '../src/pages/about/About.css';
 import '../src/pages/home/Home.css';
 import '../src/pages/business/Business.css';
+import '../src/pages/solutions/Solutions.css';
 import '../src/i18n/config';
 
 export default function MyApp({ Component, pageProps }) {
