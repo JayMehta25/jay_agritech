@@ -122,6 +122,10 @@
 }
 
 .centered-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  line-height: var(--lh-loose);
   color: rgba(255, 255, 255, 0.9);
   font-size: var(--fs-body-lg);
   max-width: 700px;
