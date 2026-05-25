@@ -893,7 +893,6 @@ export const navLinks = [
         title: 'Operations',
         links: [
           { label: 'Certifications', path: '/about#certifications', description: 'Quality standards & approvals' },
-          { label: 'Milestones', path: '/about#journey', description: 'Key achievements' },
         ]
       }
     ]
@@ -906,11 +905,10 @@ export const navLinks = [
       {
         title: 'Crop Solutions',
         links: [
-          { label: 'Solutions Overview', path: '/solutions#overview', description: 'Complete solution portfolio' },
-          { label: 'Soil Health', path: '/solutions#soil-health', description: 'Restore & maintain soil vitality' },
-          { label: 'Nutrient Management', path: '/solutions#nutrient-mgmt', description: 'Balanced crop nutrition' },
-          { label: 'Pest & Disease', path: '/solutions#pest-disease', description: 'Biological crop protection' },
-          { label: 'Growth Enhancement', path: '/solutions#growth', description: 'Maximize crop potential' },
+          { label: 'Soil Health', path: '/solutions/soil-health', description: 'Restore & maintain soil vitality' },
+          { label: 'Nutrient Management', path: '/solutions/nutrient-mgmt', description: 'Balanced crop nutrition' },
+          { label: 'Pest & Disease', path: '/solutions/pest-disease', description: 'Biological crop protection' },
+          { label: 'Growth Enhancement', path: '/solutions/growth', description: 'Maximize crop potential' },
         ]
       }
     ]
@@ -923,7 +921,6 @@ export const navLinks = [
       {
         title: 'Product Categories',
         links: [
-          { label: 'All Products', path: '/products', description: 'Browse our full catalog' },
           { label: 'Bio Insecticides', path: '/products/bio-insecticides', description: '11 products' },
           { label: 'Bio Fertilizers', path: '/products/bio-fertilizers', description: '12 products' },
           { label: 'Biostimulants', path: '/products/biostimulants', description: '10 products' },
@@ -941,7 +938,6 @@ export const navLinks = [
       {
         title: 'B2B Solutions',
         links: [
-          { label: 'Business Overview', path: '/business#overview', description: 'Partnership opportunities' },
           { label: 'Contract Manufacturing', path: '/business#contract-mfg', description: 'OEM & custom formulations' },
           { label: 'Research Services', path: '/business#research', description: 'R&D collaborations' },
           { label: 'White/Private Label', path: '/business#white-label', description: 'Your brand, our quality' },

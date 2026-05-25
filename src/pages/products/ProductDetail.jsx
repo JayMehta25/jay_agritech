@@ -180,7 +180,7 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
 
           <AnimatedSection delay={340}>
             <div className="robusta-bottom-cta">
-              <Link to="/contact" className="btn btn-primary btn-lg robusta-bottom-cta__button">
+              <Link to={`/products/${category}/${slug}/enquire`} className="btn btn-primary btn-lg robusta-bottom-cta__button">
                 {t('common.enquire_now')}
               </Link>
               <a

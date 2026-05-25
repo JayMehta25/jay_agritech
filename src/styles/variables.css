@@ -90,8 +90,8 @@
   
   /* ── Layout ── */
   --container-max: 1200px;
-  --container-wide: 1400px;
-  --container-narrow: 800px;
+  --container-wide: 1200px;
+  --container-narrow: 1200px;
   --navbar-height: 72px;
   --sidebar-width: 280px;
   

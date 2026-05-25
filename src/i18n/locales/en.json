@@ -884,5 +884,138 @@
     "company_name": "Jay Agritech Pvt. Ltd.",
     "journey_text_prefix": "At ",
     "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint."
+  },
+  "enquiry": {
+    "page_title": "Product Enquiry",
+    "page_subtitle": "Request a Personalized Quote",
+    "breadcrumbs_label": "Enquiry",
+    "back_to_product": "Back to Product Details",
+    "why_choose": "Quick Specifications:",
+    "success": {
+      "title": "Enquiry Submitted Successfully!",
+      "intro": "Thank you for your interest! A personalized quote request for the following configuration has been generated:",
+      "individual": "Individual Farm",
+      "footer_msg": "Our regional sales manager or technical consultant will review these specific details and contact you at the provided email/phone within 24 hours.",
+      "return_btn": "Return to Details",
+      "new_inquiry_btn": "Submit Another"
+    },
+    "form": {
+      "get_quote": "Request a Personalized Quote",
+      "instructions": "Fill out the form below to receive a custom bulk pricing and application proposal from our specialists.",
+      "product": "Target Product",
+      "pack_size": "Preferred Pack Size",
+      "quantity": "Required Volume",
+      "company": "Company / Farm Name",
+      "name": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "company_placeholder": "e.g. Green Valley Farms",
+      "email": "Email Address",
+      "email_placeholder": "yourname@example.com",
+      "phone": "Phone Number",
+      "phone_placeholder": "e.g. +91 98765 43210",
+      "location": "Location (City & State)",
+      "location_placeholder": "e.g. Valsad, Gujarat",
+      "crop": "Target Crops / Application",
+      "crop_placeholder": "e.g. Cotton, Chillies",
+      "inquiry_type": "Type of Inquiry",
+      "message": "Specific Requirements / Message",
+      "message_placeholder": "Provide any extra requirements or delivery schedule queries...",
+      "submitting": "Processing Quote...",
+      "submit": "Submit Quote Request"
+    },
+    "units": {
+      "liters": "Liters",
+      "kilograms": "Kilograms",
+      "kits": "Kits"
+    },
+    "options": {
+      "bulk": "Bulk Farm Purchase",
+      "distributor": "Dealership / Distribution",
+      "oem": "OEM / Private Labeling",
+      "consultancy": "Technical Consultation"
+    }
+  },
+  "b2b": {
+    "modal": {
+      "subtitle": "B2B Proposal Inquiry"
+    },
+    "form": {
+      "custom_specs": "Custom Proposal Specifications",
+      "service": "B2B Category",
+      "cm_formulation": "Formulation Type",
+      "cm_volume": "Expected Annual Volume",
+      "cm_packaging": "Packaging Format",
+      "res_focus": "R&D Focus",
+      "res_timeline": "Collaboration Timeline",
+      "res_crops": "Target Crops / Pathogens",
+      "res_crops_placeholder": "e.g. Cotton Wilt, Rice Blast",
+      "wl_category": "Product Category",
+      "wl_batch": "Initial Launch Batch",
+      "wl_design": "Design Services Needed?",
+      "exp_country": "Target Market / Country",
+      "exp_country_placeholder": "e.g. Kenya, Vietnam",
+      "exp_type": "Partnership Model",
+      "exp_license": "Import License Status",
+      "name": "Contact Person",
+      "name_placeholder": "Your full name",
+      "company": "Registered Company Name",
+      "company_placeholder": "Registered legal entity name",
+      "email": "Business Email",
+      "phone": "Mobile / Whatsapp",
+      "location": "Location (City, State / Country)",
+      "message": "Briefly outline your B2B proposal details",
+      "message_placeholder": "Provide any details regarding customization requirements, required certifications, or target pricing...",
+      "submitting": "Processing B2B Request...",
+      "submit": "Submit B2B Inquiry"
+    },
+    "cm": {
+      "liquid": "Liquid Formulation",
+      "wp": "Wettable Powder (WP)",
+      "sp": "Soluble Powder (SP)",
+      "granules": "Bio Granules",
+      "custom": "Custom Biotech",
+      "pilot": "Pilot Trial (<1k L/Kg)",
+      "small": "Medium Batch (1k-5k L/Kg)",
+      "commercial": "Commercial Scale (>5k L/Kg)",
+      "bulk": "Bulk Containers",
+      "retail": "Retail Branding",
+      "oem": "Custom OEM Packets"
+    },
+    "res": {
+      "strain": "Strain Screening",
+      "ferment": "Fermentation Opt.",
+      "stability": "Stability Testing",
+      "field": "Field Trial Prep",
+      "short": "Short Term (<3 Months)",
+      "mid": "Mid Term (3-9 Months)",
+      "long": "Long Term / Perpetual"
+    },
+    "wl": {
+      "insecticides": "Bio Insecticides",
+      "fertilizers": "Bio Fertilizers",
+      "biostimulants": "Biostimulants",
+      "nutrients": "Organic Nutrients",
+      "micronutrients": "Micronutrients",
+      "test": "Test Market Volume",
+      "regional": "Regional Volume",
+      "commercial": "National Rollout",
+      "design_yes": "Yes - Label Designing",
+      "design_no": "No - Custom Branding ready"
+    },
+    "exp": {
+      "exclusive": "Exclusive Distributor",
+      "distributor": "Franchise Partner",
+      "buyer": "Pure Export Buyer",
+      "license_yes": "Registered & Active",
+      "license_progress": "Application in Progress",
+      "license_no": "Not Applied Yet"
+    },
+    "success": {
+      "title": "B2B Inquiry Registered!",
+      "intro": "Thank you for choosing Jay Agritech. We have generated a custom B2B inquiry ticket with the details listed below:",
+      "individual": "Individual Farm",
+      "footer_msg": "Our commercial account managers or B2B technical consultants will analyze these requirements and connect directly within 24 business hours.",
+      "done_btn": "Finish & Close"
+    }
   }
 }

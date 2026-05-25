@@ -7,6 +7,7 @@ import About from './pages/about/About';
 import Solutions from './pages/solutions/Solutions';
 import Products from './pages/products/Products';
 import ProductDetail from './pages/products/ProductDetail';
+import ProductEnquiry from './pages/products/ProductEnquiry';
 import Business from './pages/business/Business';
 import Research from './pages/research/Research';
 import Partners from './pages/partners/Partners';
@@ -78,6 +79,7 @@ export default function App() {
             <Route path="products" element={<Products />} />
             <Route path="products/:category" element={<Products />} />
             <Route path="products/:category/:slug" element={<ProductDetail />} />
+            <Route path="products/:category/:slug/enquire" element={<ProductEnquiry />} />
 
             {/* Business */}
             <Route path="business" element={<Business />} />

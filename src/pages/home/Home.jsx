@@ -2,8 +2,8 @@ import { Link } from '../../components/RouterBridge';
 import { useState, useRef, useEffect } from 'react';
 import {
   ArrowRight, Leaf, FlaskConical, Shield, Sprout, TrendingUp,
-  Users, Award, MapPin, ChevronRight, Star, Check, Zap,
-  Microscope, Beaker, Globe, Target, Heart, FileText, X
+  Users, Award, MapPin, ChevronRight, ChevronLeft, Star, Check, Zap,
+  Microscope, Beaker, Globe, Target, Heart, FileText, X, Download
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, useScrollAnimationGroup, useCountUp } from '../../hooks/useScrollAnimation';
@@ -67,17 +67,32 @@ const toKey = (text) => text.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-
 
 const PDFModal = ({ isOpen, onClose, pdfUrl }) => {
   if (!isOpen) return null;
+
+  // Proper URL encoding + disable native browser controls to give a seamless custom-embedded look
+  const cleanPdfUrl = encodeURI(pdfUrl) + "#toolbar=0&navpanes=0&scrollbar=1";
+
   return (
     <div className="pdf-modal-overlay" onClick={onClose}>
-      <div className="pdf-modal-container" onClick={e => e.stopPropagation()}>
-        <button className="pdf-modal-close" onClick={onClose} aria-label="Close">
-          <X size={24} />
-        </button>
-        <iframe 
-          src={pdfUrl} 
-          title="Product Catalogue" 
-          className="pdf-iframe"
-        />
+      <div className="pdf-modal-container interactive-catalogue-container" onClick={e => e.stopPropagation()}>
+        {/* Isolated Header Bar to prevent touching iframe / triggering download */}
+        <div className="pdf-modal-header">
+          <div className="modal-title-area">
+            <h3>Jay Agritech Product Catalogue</h3>
+          </div>
+          
+          <button className="pdf-modal-close-btn" onClick={onClose} aria-label="Close">
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Modal Body Section: Holds the clean PDF without default toolbars */}
+        <div className="pdf-modal-body">
+          <iframe 
+            src={cleanPdfUrl} 
+            title="Product Catalogue" 
+            className="pdf-iframe"
+          />
+        </div>
       </div>
     </div>
   );
