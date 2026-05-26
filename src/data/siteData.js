@@ -796,81 +796,60 @@ export const companyInfo = {
 export const blogPosts = [
   {
     id: 1,
-    slug: 'understanding-soil-health',
-    title: 'Understanding Soil Health: The Foundation of Productive Farming',
-    excerpt: 'Healthy soil is the bedrock of successful agriculture. Learn how biological inputs can transform your soil from depleted to thriving.',
-    category: 'Soil Health',
-    author: 'Dr. Priya Sharma',
-    date: '2026-04-15',
+    slug: 'role-of-biofertilizers-sustainable-agriculture-africa-india',
+    title: 'The Role of Biofertilizers in Sustainable Agriculture in Africa and India',
+    excerpt: 'Discover how biofertilizers serve as eco-friendly, cost-effective alternatives to traditional chemical inputs, empowering smallholder farmers and restoring soil health across Africa and India.',
+    category: 'Sustainable Agriculture',
+    author: 'Jay Agritech Research Desk',
+    date: '2026-05-26',
     readTime: '8 min read',
     featured: true,
-    image: null,
-    content: 'Soil health is fundamentally about the biological activity within your soil. A teaspoon of healthy soil contains billions of microorganisms...'
-  },
-  {
-    id: 2,
-    slug: 'integrated-pest-management',
-    title: 'IPM Strategies: Balancing Pest Control with Environmental Safety',
-    excerpt: 'Discover how integrated pest management combines biological, cultural, and chemical methods for sustainable crop protection.',
-    category: 'Pest Management',
-    author: 'Dr. Anil Kumar',
-    date: '2026-04-10',
-    readTime: '6 min read',
-    featured: false,
-    image: null,
-    content: 'Integrated Pest Management (IPM) is a holistic approach to pest control...'
-  },
-  {
-    id: 3,
-    slug: 'bio-fertilizers-vs-chemical',
-    title: 'Bio Fertilizers vs Chemical Fertilizers: A Comprehensive Comparison',
-    excerpt: 'An evidence-based analysis of biological and chemical fertilizers — understanding when and how to use each for optimal results.',
-    category: 'Knowledge',
-    author: 'Dr. Priya Sharma',
-    date: '2026-04-05',
-    readTime: '10 min read',
-    featured: true,
-    image: null,
-    content: 'The debate between bio-fertilizers and chemical fertilizers...'
-  },
-  {
-    id: 4,
-    slug: 'monsoon-crop-preparation',
-    title: 'Monsoon Crop Preparation: A Complete Farmer\'s Guide',
-    excerpt: 'Get your fields ready for the Kharif season with this comprehensive guide covering soil prep, seed treatment, and nutrient planning.',
-    category: 'Seasonal Advisory',
-    author: 'Rajesh Mehta',
-    date: '2026-03-28',
-    readTime: '7 min read',
-    featured: false,
-    image: null,
-    content: 'The monsoon season is critical for Indian agriculture...'
-  },
-  {
-    id: 5,
-    slug: 'organic-farming-certification',
-    title: 'Organic Farming Certification in India: Step-by-Step Process',
-    excerpt: 'Navigate the organic certification journey — from NPOP standards to PGS certification, with cost analysis and timelines.',
-    category: 'Organic Farming',
-    author: 'Dr. Priya Sharma',
-    date: '2026-03-20',
-    readTime: '12 min read',
-    featured: false,
-    image: null,
-    content: 'Organic farming certification opens doors to premium markets...'
-  },
-  {
-    id: 6,
-    slug: 'micronutrient-deficiency-guide',
-    title: 'Identifying Micronutrient Deficiencies in Crops: Visual Guide',
-    excerpt: 'Learn to spot zinc, iron, boron, and manganese deficiencies through leaf symptoms — with treatment recommendations.',
-    category: 'Nutrient Management',
-    author: 'Dr. Anil Kumar',
-    date: '2026-03-15',
-    readTime: '9 min read',
-    featured: false,
-    image: null,
-    content: 'Micronutrient deficiencies can severely impact crop yield...'
+    image: '/blog1.png',
+    content: `With the shift toward sustainable agriculture, biofertilizers are gaining prominence as an eco-friendly alternative to traditional chemical fertilizers in both Africa and India. Derived from organic sources, biofertilizers boost soil fertility, enhance crop resilience, and reduce environmental impact. This blog explores the benefits of biofertilizers, how they support sustainable farming practices, and strategies for encouraging adoption among smallholder farmers in Africa and India.
+
+## 1. Understanding Biofertilizers and Their Benefits
+
+Biofertilizers are composed of natural microorganisms that facilitate nutrient absorption by plants, promoting soil fertility without the need for synthetic chemicals. This method nurtures the soil ecosystem, offering long-term benefits for farmers and the environment.
+
+- **Soil Health Enhancement**: Biofertilizers enrich soil biodiversity, which improves nutrient cycling and enhances plant growth. Regular biofertilizer use can rejuvenate degraded soils, making them ideal for both Indian and African farmers who often face nutrient-depleted lands.
+- **Improved Crop Yields and Resistance**: Biofertilizers, such as nitrogen-fixing bacteria and phosphorus-solubilizing microbes, help plants absorb essential nutrients, resulting in healthier, more resilient crops. This benefit is critical for smallholder farmers managing limited resources.
+- **Environmental Impact Reduction**: Unlike chemical fertilizers, biofertilizers do not pollute groundwater, rivers, or lakes, making them a sustainable choice for environmentally sensitive areas in Africa and India.
+
+## 2. Key Types of Biofertilizers for African and Indian Agriculture
+
+Different types of biofertilizers serve specific roles in enriching soil and supporting crop growth. Farmers can select products based on soil requirements, crop types, and local environmental conditions.
+
+- **Nitrogen-fixing Biofertilizers**: Rhizobium and Azospirillum bacteria, which convert atmospheric nitrogen into a form usable by plants, are especially useful for legume crops and nitrogen-deficient soils. These are popular in pulse and cereal cultivation regions in both Africa and India.
+- **Phosphate-Solubilizing Biofertilizers**: Microbes like Pseudomonas and Bacillus enhance phosphate availability, which is crucial for root development and fruiting. Phosphorus solubilizers are especially beneficial in areas with phosphorus-deficient soils, commonly found in Africa and India’s major agricultural zones.
+- **Mycorrhizal Fungi**: Mycorrhizae establish a symbiotic relationship with plants, enhancing water and nutrient absorption. These fungi are especially beneficial for crops grown in arid and semi-arid regions, where water is scarce.
+
+## 3. Strategies for Promoting Biofertilizer Adoption Among Smallholder Farmers
+
+The adoption of biofertilizers by smallholder farmers requires awareness, accessibility, and education on proper usage. Various strategies can increase the adoption of biofertilizers across Africa and India, supporting sustainable farming at a grassroots level.
+
+- **Awareness Campaigns and Training Programs**: Local governments, NGOs, and agricultural cooperatives can promote biofertilizers through campaigns that highlight their environmental and economic benefits. Training sessions on proper application techniques help farmers achieve the best results.
+- **Local Production and Community-Based Distribution**: Producing biofertilizers locally, either through community-based initiatives or partnerships with small businesses, reduces costs and makes these products more accessible in rural areas.
+- **Incentives and Subsidies for Biofertilizer Use**: Subsidies and incentives encourage farmers to choose biofertilizers over chemical alternatives. Governments in both regions can provide grants or reduced prices to encourage sustainable farming practices.
+
+## 4. Public-Private Partnerships to Scale Biofertilizer Access
+
+Public-private partnerships (PPPs) are essential for increasing biofertilizer production, distribution, and adoption. Collaboration with the private sector, research institutions, and local governments can help scale biofertilizer access across both continents.
+
+- **Investment in Research and Development**: R&D partnerships focused on creating biofertilizers tailored to African and Indian soils can drive innovation, enabling more efficient and effective products. Universities, government agencies, and private enterprises can collaborate to create high-quality, affordable biofertilizers.
+- **Market Development Initiatives**: Partnerships with private companies help expand biofertilizer markets through promotional events, distribution networks, and farmer outreach programs. By creating demand, biofertilizer manufacturers can improve access and affordability.
+- **Support for Biofertilizer Startups**: Funding programs and incubation hubs for biofertilizer startups encourage entrepreneurship and create new supply channels, particularly in remote areas where biofertilizer access is limited.
+
+## 5. Benefits of Biofertilizers for Sustainable Agriculture and Rural Development
+
+The advantages of biofertilizers go beyond individual farms, supporting environmental health, economic resilience, and rural development in emerging markets.
+
+- **Boosted Soil Fertility and Agricultural Productivity**: Biofertilizers rejuvenate soil, providing long-lasting fertility benefits that support higher crop yields. As soil health improves, so does agricultural output, supporting food security in India and Africa.
+- **Enhanced Climate Resilience**: Biofertilizers strengthen plants’ resilience to extreme weather and pests, a critical factor for African and Indian farmers facing climate variability. This resilience translates to more reliable harvests and improved farmer livelihoods.
+- **Economic Empowerment and Rural Job Creation**: Local biofertilizer production can create jobs in rural communities, promoting economic growth. Farmers save on input costs over time, increasing profitability and enabling investment in other areas of their operations.
+
+## Conclusion
+
+Biofertilizers represent a sustainable, cost-effective alternative to chemical fertilizers for farmers in Africa and India. With their ability to enrich soil health, support resilient crop growth, and reduce environmental impact, biofertilizers are integral to sustainable agricultural development. By promoting awareness, fostering local production, and supporting public-private partnerships, stakeholders can drive widespread adoption of biofertilizers, supporting the shift toward eco-friendly farming across Africa and India. The expansion of biofertilizers in these regions marks a vital step in cultivating resilient, productive, and sustainable agricultural systems.`
   }
 ];
 
@@ -945,5 +924,10 @@ export const navLinks = [
         ]
       }
     ]
+  },
+  {
+    label: 'Contact',
+    path: '/contact',
+    megaMenu: false
   }
 ];

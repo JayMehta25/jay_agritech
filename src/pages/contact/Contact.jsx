@@ -24,8 +24,8 @@ export default function Contact() {
   return (
     <GenericPage title={t('pages.contact.title')} subtitle={t('pages.contact.subtitle')} breadcrumbs={[{ label: t('nav.contact') }]}>
       <div className="container">
-        <div className="grid-2" style={{ gap: 'var(--sp-12)', alignItems: 'start' }}>
-          <AnimatedSection>
+        <div className="grid-2" style={{ gap: 'var(--sp-12)', alignItems: 'stretch' }}>
+          <AnimatedSection style={{ height: '100%' }}>
             <div>
               <h2 style={{ marginBottom: 'var(--sp-6)' }}>{t('pages_details.contact.lets_talk')}</h2>
               <p style={{ color: 'var(--clr-text-muted)', marginBottom: 'var(--sp-8)', lineHeight: 'var(--lh-loose)' }}>{t('pages_details.contact.description')}</p>
@@ -47,14 +47,23 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div style={{ aspectRatio: '16/9', background: 'var(--clr-off-white)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--clr-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--sp-2)', color: 'var(--clr-text-muted)' }}>
-                <MapPin size={24} /> <span>{t('footer.address')}</span>
+              <div style={{ width: '100%', height: '240px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--clr-border)', boxShadow: 'var(--shadow-sm)' }}>
+                <iframe
+                  title="Jay Agritech Location Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.76632483838!2d72.8465134707641!3d20.6087799581177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0c27941fb627d%3A0xe5a363ee00b89cfc!2sValsad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1716723223000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection>
-            <div className="card" style={{ padding: 'var(--sp-8)' }}>
+          <AnimatedSection style={{ height: '100%' }}>
+            <div className="card" style={{ padding: 'var(--sp-8)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: 'var(--sp-12)' }}>
                   <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'var(--clr-primary-surface)', color: 'var(--clr-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto var(--sp-4)' }}><Send size={28} /></div>

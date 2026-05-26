@@ -156,10 +156,6 @@ export default function Home() {
 
         <div className="container hero-container-centered">
           <div className="hero-text-centered">
-
-            <div className="centered-badge">
-              <span className="badge badge-premium">{t('hero.badge')}</span>
-            </div>
             <h1 className="hero-title centered-title">
               {t('hero.title_part1')} <span className="text-gradient">{t('hero.title_part2')}</span>
             </h1>

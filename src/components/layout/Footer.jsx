@@ -54,11 +54,11 @@ export default function Footer() {
                 ))}
               </div>
               <div className="footer-social">
-                <a href="#" className="social-link" aria-label="Facebook"><Facebook size={18} /></a>
-                <a href="#" className="social-link" aria-label="Twitter"><Twitter size={18} /></a>
-                <a href="#" className="social-link" aria-label="Instagram"><Instagram size={18} /></a>
-                <a href="#" className="social-link" aria-label="LinkedIn"><Linkedin size={18} /></a>
-                <a href="#" className="social-link" aria-label="YouTube"><Youtube size={18} /></a>
+                <a href="#" className="social-link facebook" aria-label="Facebook"><Facebook size={18} /></a>
+                <a href="#" className="social-link twitter" aria-label="Twitter"><Twitter size={18} /></a>
+                <a href="#" className="social-link instagram" aria-label="Instagram"><Instagram size={18} /></a>
+                <a href="#" className="social-link linkedin" aria-label="LinkedIn"><Linkedin size={18} /></a>
+                <a href="#" className="social-link youtube" aria-label="YouTube"><Youtube size={18} /></a>
               </div>
             </div>
 
@@ -68,7 +68,6 @@ export default function Footer() {
               <ul>
                 <li><Link to="/about">{t('nav.about')}</Link></li>
                 <li><Link to="/about/leadership">{t('nav.links.leadership_team')}</Link></li>
-                <li><Link to="/about/manufacturing">{t('nav.links.manufacturing')}</Link></li>
                 <li><Link to="/about/certifications">{t('nav.links.certifications')}</Link></li>
                 <li><Link to="/careers">{t('footer.careers', 'Careers')}</Link></li>
               </ul>
@@ -81,7 +80,6 @@ export default function Footer() {
                 {products.categories.map((cat) => (
                   <li key={cat.id}><Link to={`/products/${cat.slug}`}>{t(cat.nameKey, cat.name)}</Link></li>
                 ))}
-                <li><Link to="/products">{t('nav.links.all_products')} →</Link></li>
               </ul>
             </div>
 
@@ -136,8 +134,6 @@ export default function Footer() {
             <Link to="/privacy-policy">{t('footer.privacy_policy', 'Privacy Policy')}</Link>
             <span>·</span>
             <Link to="/terms">{t('footer.terms_conditions', 'Terms & Conditions')}</Link>
-            <span>·</span>
-            <Link to="/about/sustainability">{t('nav.links.sustainability')}</Link>
           </div>
           <p className="footer-made">
             <Leaf size={14} /> {t('footer.made_with_care', 'Made with care for Indian agriculture')}

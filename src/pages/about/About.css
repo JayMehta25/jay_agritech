@@ -589,3 +589,13 @@
     font-size: 0.75rem !important;
   }
 }
+
+/* Scoped About page spacing adjustments */
+.about-page-body .section {
+  padding: var(--sp-10) 0; /* Reduced from 80px to 40px */
+}
+
+.about-page-body .about-closing-banner {
+  margin-bottom: 0 !important; /* Managed by section margin */
+  padding: var(--sp-10) var(--sp-6); /* Tighter padding for banner */
+}

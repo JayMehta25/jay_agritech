@@ -1,4 +1,4 @@
-import { useParams, Link } from '../../components/RouterBridge';
+import { useParams, Link, useLocation } from '../../components/RouterBridge';
 import { Check, Droplets, Sprout, Package, Leaf, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { products } from '../../data/siteData';
@@ -49,15 +49,26 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
   if (product.dosage) specs.push({ label: t('products.fields.dosage') || 'Dosage', value: t(`${pKey}.dosage`, translateValue(product.dosage)) });
   if (product.crops && product.crops.length > 0) specs.push({ label: t('products.fields.recommended') || 'Recommended crop', value: t(`${pKey}.recommended`, translateValue(product.crops[0])) });
 
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const isFromGrowthSystem = searchParams.get('from') === 'growth-system';
+
+  const breadcrumbs = isFromGrowthSystem
+    ? [
+        { label: t('pages.growth_system', 'Growth System'), path: '/growth-system' },
+        { label: t(`${pKey}.name`, product.name) }
+      ]
+    : [
+        { label: t('nav.products'), path: '/products' },
+        { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` },
+        { label: t(`${pKey}.name`, product.name) }
+      ];
+
   return (
     <GenericPage
       title={t(`${pKey}.name`, product.name)}
       subtitle={t(`${pKey}.tagline`, product.tagline)}
-      breadcrumbs={[
-        { label: t('nav.products'), path: '/products' },
-        { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` },
-        { label: t(`${pKey}.name`, product.name) }
-      ]}
+      breadcrumbs={breadcrumbs}
       bodyClassName="moving-gradient-bg"
     >
       <div className="container" style={{ paddingTop: 'var(--sp-4)', paddingBottom: 'var(--sp-16)' }}>

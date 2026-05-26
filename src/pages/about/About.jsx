@@ -51,6 +51,7 @@ export default function About() {
       subtitle={t('home.about_lead')} 
       heroImage={sustainableImg}
       breadcrumbs={[{ label: t('nav.about') }]}
+      bodyClassName="about-page-body"
     >
       <div className="container">
         {/* ─── About Us — Overview ─── */}
@@ -72,7 +73,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* ─── Closing Banner — Immersive ─── */}
-        <AnimatedSection id="sustainability" className="section" style={{ marginTop: 'var(--sp-6)', marginBottom: 'var(--sp-12)' }}>
+        <AnimatedSection id="sustainability" className="section" style={{ marginTop: 'var(--sp-2)', marginBottom: 'var(--sp-4)' }}>
           <div className="about-closing-banner">
             <img src={innovationImg} alt="" className="about-closing-banner__bg" />
             <div className="about-closing-banner__content">
@@ -84,7 +85,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* ─── Vision & Mission ─── */}
-        <AnimatedSection id="vision-mission" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-12)' }}>
+        <AnimatedSection id="vision-mission" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-8)' }}>
           <div className="about-vision-mission-grid" style={{ alignItems: 'start' }}>
             <div className="card" style={{ padding: 'var(--sp-8)', borderLeft: '4px solid var(--clr-primary)' }}>
               <h3 style={{ marginBottom: 'var(--sp-3)', color: 'var(--clr-primary)' }}>{t('nav.links.vision_&_mission').split(/&|और|અને/)[0]?.trim()}</h3>
@@ -98,7 +99,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* ─── Leadership ─── */}
-        <AnimatedSection id="leadership" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-12)' }}>
+        <AnimatedSection id="leadership" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-8)' }}>
           <div className="section-header" style={{ marginBottom: 'var(--sp-8)' }}>
             <span className="section-overline">{t('nav.links.leadership_team')}</span>
             <h2 className="section-title">{t('company.leadership.subtitle')}</h2>
@@ -126,7 +127,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* ─── Milestones ─── */}
-        <AnimatedSection id="journey" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-12)' }}>
+        <AnimatedSection id="journey" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-8)' }}>
           <div className="section-header">
             <span className="section-overline">{t('nav.links.our_journey')}</span>
             <h2 className="section-title">{t('nav.links.milestones')}</h2>
@@ -146,7 +147,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* ─── Certifications ─── */}
-        <AnimatedSection id="certifications" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-12)', paddingBottom: 'var(--sp-16)' }}>
+        <AnimatedSection id="certifications" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-8)', paddingBottom: 'var(--sp-10)' }}>
           <div className="section-header">
             <span className="section-overline">{t('nav.links.certifications')}</span>
             <h2 className="section-title">{t('company.certifications.title', 'Our Certifications')}</h2>

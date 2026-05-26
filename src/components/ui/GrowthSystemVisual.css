@@ -197,3 +197,102 @@
   .gsv-step-2 { right: -50px; }
   .gsv-step-4 { left: -50px; }
 }
+
+/* ============================================
+   Growth System Steps Page (Responsive)
+   ============================================ */
+.growth-system-step-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-12);
+  align-items: center;
+  padding: var(--sp-12) 0;
+}
+
+.growth-system-step-row:not(:last-child) {
+  border-bottom: 1px solid var(--clr-border-light);
+}
+
+.growth-system-step-text {
+  /* order is handled via inline styles on desktop and reset on mobile */
+}
+
+.growth-system-step-image-wrapper {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.growth-system-step-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.growth-system-step-row:hover .growth-system-step-image-wrapper img {
+  transform: scale(1.03);
+}
+
+.growth-system-cta-card {
+  text-align: center;
+  padding: var(--sp-12);
+  background: var(--gradient-hero);
+  border-radius: var(--radius-xl);
+  color: white;
+  margin-top: var(--sp-8);
+}
+
+.growth-system-cta-card h2 {
+  color: white;
+  margin-bottom: var(--sp-4);
+}
+
+.growth-system-cta-card p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+  margin: 0 auto var(--sp-6);
+}
+
+.growth-system-cta-buttons {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .growth-system-step-row {
+    grid-template-columns: 1fr !important;
+    gap: var(--sp-6) !important;
+    padding: var(--sp-8) 0 !important;
+  }
+  
+  .growth-system-step-text {
+    order: 0 !important; /* Always show text first on mobile */
+  }
+  
+  .growth-system-step-image-wrapper {
+    order: 1 !important; /* Always show image below text on mobile */
+    aspect-ratio: 16/10 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .growth-system-cta-card {
+    padding: var(--sp-8) var(--sp-4) !important;
+  }
+  
+  .growth-system-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--sp-3) !important;
+  }
+  
+  .growth-system-cta-buttons .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+

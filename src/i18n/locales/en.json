@@ -83,7 +83,7 @@
     "title_part2": "Agriculture",
     "title_part3": "",
     "title_part4": "",
-    "subtitle": "Bridging 50 years of industrial legacy with the future of sustainable bio-technology. Based in Valsad, Gujarat.",
+    "subtitle": "Pioneering the future of sustainable bio-technology for modern agriculture. Based in Valsad, Gujarat.",
     "explore_btn": "Explore Products",
     "story_btn": "Our Story",
     "view_catalogue": "View Catalogue",
@@ -93,6 +93,8 @@
     "learn_more": "Learn More",
     "view_all": "View All",
     "read_more": "Read More",
+    "view_details": "View Details",
+    "read_article": "Read Article",
     "get_in_touch": "Get in Touch",
     "view": "View",
     "enquire_now": "Enquire Now",
@@ -571,7 +573,15 @@
     "partner_h2": "Grow Your Business with Jay Agritech",
     "partner_p1": "Join our expanding network of dealers, distributors, and export partners. Access premium products, marketing support, and competitive margins.",
     "values_title": "Our Values",
-    "values_h2": "What We Stand For"
+    "values_h2": "What We Stand For",
+    "blog_posts": {
+      "role_of_biofertilizers_sustainable_agriculture_africa_india": {
+        "title": "The Role of Biofertilizers in Sustainable Agriculture in Africa and India",
+        "category": "Sustainable Agriculture",
+        "excerpt": "Discover how biofertilizers serve as eco-friendly, cost-effective alternatives to traditional chemical inputs, empowering smallholder farmers and restoring soil health across Africa and India.",
+        "content": "With the shift toward sustainable agriculture, biofertilizers are gaining prominence as an eco-friendly alternative to traditional chemical fertilizers in both Africa and India. Derived from organic sources, biofertilizers boost soil fertility, enhance crop resilience, and reduce environmental impact. This blog explores the benefits of biofertilizers, how they support sustainable farming practices, and strategies for encouraging adoption among smallholder farmers in Africa and India.\n\n## 1. Understanding Biofertilizers and Their Benefits\n\nBiofertilizers are composed of natural microorganisms that facilitate nutrient absorption by plants, promoting soil fertility without the need for synthetic chemicals. This method nurtures the soil ecosystem, offering long-term benefits for farmers and the environment.\n\n- **Soil Health Enhancement**: Biofertilizers enrich soil biodiversity, which improves nutrient cycling and enhances plant growth. Regular biofertilizer use can rejuvenate degraded soils, making them ideal for both Indian and African farmers who often face nutrient-depleted lands.\n\n- **Improved Crop Yields and Resistance**: Biofertilizers, such as nitrogen-fixing bacteria and phosphorus-solubilizing microbes, help plants absorb essential nutrients, resulting in healthier, more resilient crops. This benefit is critical for smallholder farmers managing limited resources.\n\n- **Environmental Impact Reduction**: Unlike chemical fertilizers, biofertilizers do not pollute groundwater, rivers, or lakes, making them a sustainable choice for environmentally sensitive areas in Africa and India.\n\n## 2. Key Types of Biofertilizers for African and Indian Agriculture\n\nDifferent types of biofertilizers serve specific roles in enriching soil and supporting crop growth. Farmers can select products based on soil requirements, crop types, and local environmental conditions.\n\n- **Nitrogen-fixing Biofertilizers**: Rhizobium and Azospirillum bacteria, which convert atmospheric nitrogen into a form usable by plants, are especially useful for legume crops and nitrogen-deficient soils. These are popular in pulse and cereal cultivation regions in both Africa and India.\n\n- **Phosphate-Solubilizing Biofertilizers**: Microbes like Pseudomonas and Bacillus enhance phosphate availability, which is crucial for root development and fruiting. Phosphorus solubilizers are especially beneficial in areas with phosphorus-deficient soils, commonly found in Africa and India’s major agricultural zones.\n\n- **Mycorrhizal Fungi**: Mycorrhizae establish a symbiotic relationship with plants, enhancing water and nutrient absorption. These fungi are especially beneficial for crops grown in arid and semi-arid regions, where water is scarce.\n\n## 3. Strategies for Promoting Biofertilizer Adoption Among Smallholder Farmers\n\nThe adoption of biofertilizers by smallholder farmers requires awareness, accessibility, and education on proper usage. Various strategies can increase the adoption of biofertilizers across Africa and India, supporting sustainable farming at a grassroots level.\n\n- **Awareness Campaigns and Training Programs**: Local governments, NGOs, and agricultural cooperatives can promote biofertilizers through campaigns that highlight their environmental and economic benefits. Training sessions on proper application techniques help farmers achieve the best results.\n\n- **Local Production and Community-Based Distribution**: Producing biofertilizers locally, either through community-based initiatives or partnerships with small businesses, reduces costs and makes these products more accessible in rural areas.\n\n- **Incentives and Subsidies for Biofertilizer Use**: Subsidies and incentives encourage farmers to choose biofertilizers over chemical alternatives. Governments in both regions can provide grants or reduced prices to encourage sustainable farming practices.\n\n## 4. Public-Private Partnerships to Scale Biofertilizer Access\n\nPublic-private partnerships (PPPs) are essential for increasing biofertilizer production, distribution, and adoption. Collaboration with the private sector, research institutions, and local governments can help scale biofertilizer access across both continents.\n\n- **Investment in Research and Development**: R&D partnerships focused on creating biofertilizers tailored to African and Indian soils can drive innovation, enabling more efficient and effective products. Universities, government agencies, and private enterprises can collaborate to create high-quality, affordable biofertilizers.\n\n- **Market Development Initiatives**: Partnerships with private companies help expand biofertilizer markets through promotional events, distribution networks, and farmer outreach programs. By creating demand, biofertilizer manufacturers can improve access and affordability.\n\n- **Support for Biofertilizer Startups**: Funding programs and incubation hubs for biofertilizer startups encourage entrepreneurship and create new supply channels, particularly in remote areas where biofertilizer access is limited.\n\n## 5. Benefits of Biofertilizers for Sustainable Agriculture and Rural Development\n\nThe advantages of biofertilizers go beyond individual farms, supporting environmental health, economic resilience, and rural development in emerging markets.\n\n- **Boosted Soil Fertility and Agricultural Productivity**: Biofertilizers rejuvenate soil, providing long-lasting fertility benefits that support higher crop yields. As soil health improves, so does agricultural output, supporting food security in India and Africa.\n\n- **Enhanced Climate Resilience**: Biofertilizers strengthen plants’ resilience to extreme weather and pests, a critical factor for African and Indian farmers facing climate variability. This resilience translates to more reliable harvests and improved farmer livelihoods.\n\n- **Economic Empowerment and Rural Job Creation**: Local biofertilizer production can create jobs in rural communities, promoting economic growth. Farmers save on input costs over time, increasing profitability and enabling investment in other areas of their operations.\n\n## Conclusion\n\nBiofertilizers represent a sustainable, cost-effective alternative to chemical fertilizers for farmers in Africa and India. With their ability to enrich soil health, support resilient crop growth, and reduce environmental impact, biofertilizers are integral to sustainable agricultural development. By promoting awareness, fostering local production, and supporting public-private partnerships, stakeholders can drive widespread adoption of biofertilizers, supporting the shift toward eco-friendly farming across Africa and India. The expansion of biofertilizers in these regions marks a vital step in cultivating resilient, productive, and sustainable agricultural systems."
+      }
+    }
   },
   "footer": {
     "cta_title": "Ready to Transform Your Agriculture?",
@@ -629,7 +639,110 @@
       "subtitle": "Join India's fastest-growing agri-biotech network. We're looking for passionate partners to help us deliver sustainable solutions to every corner of the country.",
       "overline": "Partnership Opportunities",
       "why_partner": "Why Partner with Jay Agritech?",
-      "apply_now": "Apply Now"
+      "apply_now": "Apply Now",
+      "form": {
+        "mandatory_notice": "Please fill out the form below. Fields marked with an asterisk (*) are mandatory.",
+        "submit_btn": "Submit Application",
+        "cancel_btn": "Cancel",
+        "close_btn": "Close",
+        "success_title": "Application Submitted!",
+        "success_desc": "Thank you for your interest in partnering with Jay Agritech. Our partnership development team will review your application details and get in touch with you within 24 business hours.",
+        "dealer": {
+          "program_name": "Dealer Program",
+          "modal_title": "Become a Dealer",
+          "sec_contact": "1. Contact & Shop Details",
+          "sec_location": "2. Store Location & Address",
+          "sec_profile": "3. Business Profile & Interest",
+          "lbl_fullname": "Full Name",
+          "lbl_shopname": "Shop/Retail Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_address": "Shop Address",
+          "lbl_state": "State",
+          "lbl_city": "City",
+          "lbl_products_sold": "Current Products Sold",
+          "lbl_volume": "Estimated Monthly Sales Volume",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "John Doe",
+          "ph_shopname": "e.g. Agritech Seeds & Fertilizers",
+          "ph_phone": "+91 XXXXX XXXXX",
+          "ph_email": "john@example.com",
+          "ph_address": "123 Main Street",
+          "ph_state": "e.g. Gujarat",
+          "ph_city": "e.g. Valsad",
+          "ph_volume": "e.g. INR 50,000 - 1,00,000",
+          "ph_message": "Tell us more about your shop and interest...",
+          "opt_select_business": "Select current line of business",
+          "opt_seeds": "Seeds Only",
+          "opt_fertilizers": "Fertilizers & Pesticides",
+          "opt_all": "Seeds, Fertilizers, & Pesticides",
+          "opt_none": "New Retail Outlet (None)"
+        },
+        "distributor": {
+          "program_name": "Distributor Network",
+          "modal_title": "Become a Distributor",
+          "sec_contact": "1. Company & Contact Details",
+          "sec_statutory": "2. Statutory & Financial Information",
+          "sec_infrastructure": "3. Infrastructure & Territory Info",
+          "lbl_fullname": "Full Name",
+          "lbl_companyname": "Company/Firm Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_gst": "GST / Tax ID",
+          "lbl_turnover": "Annual Turnover",
+          "lbl_territory": "Proposed Territory for Distribution",
+          "lbl_warehouse": "Warehouse Capacity (Sq Ft)",
+          "lbl_experience": "Experience in Agri-Inputs (Years)",
+          "lbl_address": "Office/Warehouse Address",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "John Doe",
+          "ph_companyname": "e.g. Apex Agri Distributors",
+          "ph_phone": "+91 XXXXX XXXXX",
+          "ph_email": "distributor@example.com",
+          "ph_gst": "e.g. 24ABCDE1234F1Z5",
+          "ph_turnover": "e.g. INR 25 Lakhs - 50 Lakhs",
+          "ph_territory": "e.g. South Gujarat Districts (Valsad, Navsari, Surat)",
+          "ph_warehouse": "e.g. 1,500 Sq Ft",
+          "ph_experience": "e.g. 5",
+          "ph_address": "Complete commercial address",
+          "ph_message": "Tell us more about your current dealership network and fleet..."
+        },
+        "export": {
+          "program_name": "Global Export",
+          "modal_title": "Export Partner",
+          "sec_profile": "1. International Business Profile",
+          "sec_markets": "2. Target Markets & Requirements",
+          "sec_order": "3. Order & Regulatory Support",
+          "lbl_fullname": "Contact Person Name",
+          "lbl_companyname": "Trading Company Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_country": "Headquarters Country",
+          "lbl_target": "Target Countries for Export",
+          "lbl_products": "Specific Products of Interest",
+          "lbl_volume": "Estimated Annual Import Volume",
+          "lbl_regulatory": "Is Regulatory Support Needed?",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "Jane Smith",
+          "ph_companyname": "e.g. Global Agri Solutions LLC",
+          "ph_phone": "Include Country Code (e.g. +1...)",
+          "ph_email": "export@company.com",
+          "ph_country": "e.g. Kenya",
+          "ph_target": "e.g. East Africa (Kenya, Uganda, Tanzania)",
+          "ph_volume": "e.g. 50 Tons",
+          "ph_message": "Describe your overseas network and how we can collaborate...",
+          "opt_select_category": "Select a product category",
+          "opt_bio_fertilizers": "Bio Fertilizers",
+          "opt_bio_insecticides": "Bio Insecticides",
+          "opt_biostimulants": "Biostimulants",
+          "opt_micronutrients": "Micronutrients",
+          "opt_custom": "Custom Formulations / B2B OEM",
+          "opt_select_regulatory": "Select option",
+          "opt_reg_yes": "Yes, import registrations required",
+          "opt_reg_no": "No, we manage local registrations",
+          "opt_reg_maybe": "Unsure / Need advice"
+        }
+      }
     },
     "careers": {
       "title": "Careers",
@@ -638,6 +751,14 @@
       "current_openings": "Current Openings",
       "apply": "Apply Now",
       "email_resume": "Email Your Resume"
+    },
+    "legal": {
+      "privacy_title": "Privacy Policy",
+      "privacy_subtitle": "How we collect, use, and protect your information.",
+      "terms_title": "Terms & Conditions",
+      "terms_subtitle": "The terms governing the use of our website and services.",
+      "updated": "Last updated: April 2026",
+      "terms_updated": "Last updated: April 2026"
     }
   },
   "pages_details": {
@@ -876,6 +997,54 @@
         }
       },
       "no_role_text": "Don't see a role that fits? We're always looking for talented individuals."
+    },
+    "legal": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "How we collect, use, and protect your information.",
+        "updated": "Last updated: April 2026",
+        "sections": {
+          "collect": {
+            "title": "Information We Collect",
+            "body": "We collect information you provide directly, such as contact details when you fill out forms or make enquiries. We may also collect usage data through cookies and analytics to improve the website experience."
+          },
+          "use": {
+            "title": "How We Use Your Information",
+            "body": "We use information to respond to enquiries, process partnership requests, send relevant updates, improve the website, and comply with legal obligations."
+          },
+          "protect": {
+            "title": "Data Protection",
+            "body": "We implement appropriate security measures to protect your personal information. We do not sell or share your information with third parties for marketing purposes without your explicit consent."
+          },
+          "contact": {
+            "title": "Contact Us",
+            "body": "For privacy-related questions, please contact us at privacy@jayagritech.com."
+          }
+        }
+      },
+      "terms": {
+        "title": "Terms & Conditions",
+        "subtitle": "The terms governing the use of our website and services.",
+        "updated": "Last updated: April 2026",
+        "sections": {
+          "acceptance": {
+            "title": "Acceptance of Terms",
+            "body": "By using the Jay Agritech website, you agree to these terms. If you do not agree, please do not use the website."
+          },
+          "product_info": {
+            "title": "Product Information",
+            "body": "While we strive for accuracy, product descriptions and specifications are subject to change."
+          },
+          "ip": {
+            "title": "Intellectual Property",
+            "body": "All content on this website — text, images, logos, and designs — is the property of Jay Agritech. Unauthorized reproduction is prohibited."
+          },
+          "liability": {
+            "title": "Limitation of Liability",
+            "body": "This website is provided on an 'as is' basis and we make no warranties regarding its completeness, accuracy, or availability."
+          }
+        }
+      }
     }
   },
   "about": {
@@ -1017,5 +1186,9 @@
       "footer_msg": "Our commercial account managers or B2B technical consultants will analyze these requirements and connect directly within 24 business hours.",
       "done_btn": "Finish & Close"
     }
+  },
+  "business": {
+    "detail_extension": "We support our partners with comprehensive end-to-end operational capacity, state-of-the-art biological laboratory testing, and robust regulatory compliance. Partnering with Jay Agritech ensures consistent quality, optimized formulations, and rapid scale-to-market.",
+    "core_capabilities": "Core Capabilities & Features"
   }
 }

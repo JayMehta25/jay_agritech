@@ -111,7 +111,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="navbar-links">
-            {navLinks.map((item) => (
+            {navLinks.filter(item => item.label !== 'Contact').map((item) => (
               <div
                 key={item.label}
                 className={`nav-item ${activeMenu === item.label ? 'active' : ''}`}
@@ -196,6 +196,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
+              {t('nav.contact_us', 'Contact Us')}
+            </Link>
             <Link to="/partners/dealer" className="btn btn-primary btn-sm" id="nav-cta">
               {t('nav.become_partner')}
             </Link>
@@ -263,8 +266,11 @@ export default function Navbar() {
             </div>
 
             <div className="mobile-menu-footer">
-              <Link to="/partners/dealer" className="btn btn-primary btn-lg" style={{ width: '100%' }}>
+              <Link to="/partners/dealer" className="btn btn-primary btn-lg" style={{ width: '100%', marginBottom: 'var(--sp-3)', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
                 {t('nav.become_partner')}
+              </Link>
+              <Link to="/contact" className="btn btn-secondary btn-lg" style={{ width: '100%', marginBottom: 'var(--sp-4)', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
+                {t('nav.contact_us', 'Contact Us')}
               </Link>
               <div className="mobile-contact">
                 <a href="tel:+919825142359"><Phone size={16} /> +91 98251 42359</a>
