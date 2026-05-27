@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jay-agritech-7ma5.vercel.app/sitemap.xml

@@ -118,6 +118,8 @@ export default function ChatBot() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingPopup, setShowGreetingPopup] = useState(false);
+  const [introFinished, setIntroFinished] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [activeAnimatingId, setActiveAnimatingId] = useState(null);
@@ -133,7 +135,17 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  // Formatted FAQ Q&A Database
+  // Synchronize greeting popup visibility with chat window state after intro is finished
+  useEffect(() => {
+    if (!introFinished) return;
+    if (!isOpen) {
+      setShowGreetingPopup(true);
+    } else {
+      setShowGreetingPopup(false);
+    }
+  }, [isOpen, introFinished]);
+
+  // Formatted FAQ Q&A Database (8 high-relevance biological and partnership questions)
   const qaData = {
     en: [
       {
@@ -155,6 +167,18 @@ export default function ChatBot() {
       {
         question: "Where is your company located?",
         answer: "### Our Location\nOur corporate headquarters and manufacturing facilities are based in **Valsad, Gujarat, India**.\n\n- **Valsad** is a premium industrial corridor located in West India with excellent logistics connectivity.\n- You can view our **exact location and route map** on our **Contact** page."
+      },
+      {
+        question: "What certifications do your products have?",
+        answer: "### Certified Organic & Quality Tested\nOur products are manufactured under strict quality controls and hold multiple international and national certifications:\n- **OMRI Listed** for use in certified organic production.\n- **ISO 9001:2015** certified manufacturing and R&D facilities.\n- **FCO (Fertilizer Control Order)** compliant formulations.\n- **NPOP (National Programme for Organic Production)** certified manures."
+      },
+      {
+        question: "How do bio-fertilizers improve soil biology?",
+        answer: "### Soil Biology Restoration\nBio-fertilizers contain living microbial inoculants that restore soil health naturally:\n- **Nitrogen Fixation:** Captures atmospheric nitrogen and makes it plant-available.\n- **Nutrient Solubilization:** Converts insoluble phosphorus, potassium, and zinc into absorbable forms.\n- **Microbiome Enrichment:** Enhances soil carbon levels and beneficial microbial activity."
+      },
+      {
+        question: "Can we request product samples for trials?",
+        answer: "### Request Product Samples\nYes! We support field trials and commercial testing:\n- **Who can apply:** Registered dealers, commercial farmers, and institutional buyers.\n- **Trial Support:** Our agronomy team will guide you on application dosages and monitoring.\n- **How to request:** Contact your local sales manager or send a request via our **Contact Us** form."
       }
     ],
     hi: [
@@ -177,6 +201,18 @@ export default function ChatBot() {
       {
         question: "आपकी कंपनी कहाँ स्थित है?",
         answer: "### हमारा पता\nहमारा मुख्यालय और उन्नत विनिर्माण संयंत्र **वलसाड, गुजरात, भारत** में स्थित हैं।\n\n- **वलसाड** पश्चिमी भारत का एक प्रमुख औद्योगिक केंद्र है जिसमें उत्कृष्ट परिवहन कनेक्टिविटी है।\n- आप हमारे **संपर्क (Contact) पृष्ठ** पर सटीक स्थान मानचित्र देख सकते हैं।"
+      },
+      {
+        question: "आपके उत्पादों के पास क्या प्रमाणपत्र हैं?",
+        answer: "### प्रमाणित जैविक और गुणवत्ता परीक्षण\nहमारे उत्पाद सख्त गुणवत्ता नियंत्रण के तहत निर्मित होते हैं और उनके पास कई राष्ट्रीय एवं अंतर्राष्ट्रीय प्रमाणपत्र हैं:\n- प्रमाणित जैविक उत्पादन के लिए **OMRI सूचीबद्ध**।\n- **ISO 9001:2015** प्रमाणित विनिर्माण और अनुसंधान प्रयोगशाला।\n- **FCO (उर्वरक नियंत्रण आदेश)** अनुपालन फॉर्मूलेशन।\n- **NPOP (जैविक उत्पादन के लिए राष्ट्रीय कार्यक्रम)** प्रमाणित जैविक खाद।"
+      },
+      {
+        question: "जैव-उर्वरक मिट्टी की उर्वरता को कैसे सुधारते हैं?",
+        answer: "### मिट्टी के स्वास्थ्य की बहाली\nजैव-उर्वरक में जीवित सूक्ष्मजीव होते हैं जो प्राकृतिक रूप से मिट्टी की उर्वरता बढ़ाते हैं:\n- **नाइट्रोजन स्थिरीकरण:** हवा से नाइट्रोजन लेकर पौधों को उपलब्ध कराते हैं।\n- **पोषक तत्व घुलनशीलता:** अघुलनशील फास्फोरस, पोटाश और जिंक को अवशोषक रूपों में बदलते हैं।\n- **माइक्रोबायोम संवर्धन:** मिट्टी में जैविक कार्बन और लाभकारी कीट गतिविधि को बढ़ाते हैं।"
+      },
+      {
+        question: "क्या हम परीक्षण के लिए उत्पाद के नमूने मांग सकते हैं?",
+        answer: "### उत्पाद नमूना अनुरोध\nहाँ! हम फील्ड परीक्षणों और व्यावसायिक परीक्षणों का समर्थन करते हैं:\n- **कौन आवेदन कर सकता है:** पंजीकृत डीलर, बड़े किसान और संस्थान।\n- **परीक्षण सहायता:** हमारी कृषि टीम खुराक और निगरानी पर आपका मार्गदर्शन करेगी।\n- **अनुरोध कैसे करें:** स्थानीय बिक्री प्रबंधक से संपर्क करें या **Contact Us** फॉर्म के माध्यम से अनुरोध भेजें।"
       }
     ],
     zh: [
@@ -198,7 +234,19 @@ export default function ChatBot() {
       },
       {
         question: "你们公司总部在哪里？",
-        answer: "### 公司地理位置\n我们的公司总部与现代化生态工厂均位于 **印度古吉拉特邦瓦尔萨德 (Valsad, Gujarat, India)**。\n\n- **瓦尔萨德** 是西印度核心工业走廊，拥有极其便利的海陆空物流交通。\n- 您可以在我们网站的 **“联系我们” (Contact)** 页面上查阅精确的交互式位置地图。"
+        answer: "### 公司地理位置\n我们的公司总部与现代化生态工厂均位于 **印度古吉拉特邦瓦尔萨德 (Valsad, Gujarat, India)**。\n\n- **瓦尔萨德** 是西印度核心工业走廊，拥有极其便利的海陆空物流交通。\n- 您可以在我们网站的 **“联系我们” (Contact)** 页面上查阅精确的位置地图。"
+      },
+      {
+        question: "你们的产品有哪些资质认证？",
+        answer: "### 认证有机与品质检测\n我们的产品在严格的质量控制下生产，并拥有多项国际及国家级认证：\n- **OMRI 列名认证**，可用于认证的有机农业生产。\n- **ISO 9001:2015** 认证的生产与研发中心。\n- **FCO (肥料管理条例)** 合规配方。\n- 严格符合 **NPOP (国家有机生产计划)** 认证的有机肥标准。"
+      },
+      {
+        question: "生物肥料如何改良土壤生态？",
+        answer: "### 土壤生物修复\n生物肥料含有活体微生物接种剂，能够自然恢复土壤健康：\n- **固氮作用：** 捕捉大气中的氮素并将其转化为植物可吸收的形态。\n- **养分解离：** 将不溶性的磷、钾和锌转化为植物易吸收的有效养分。\n- **富集菌群：** 显著提升土壤有机碳水平，活跃土壤有益微生物群落。"
+      },
+      {
+        question: "我们可以申请产品样品进行大田试验吗？",
+        answer: "### 申请产品样品\n是的！我们大力支持农作物田间试验和商业化实测：\n- **谁能申请：** 登记的合作商、商业农场及大客户采购代表。\n- **试验支持：** 我们的农学专家团队将指导您具体的施用剂量与效果监测方法。\n- **申请途径：** 请联系您所在区域的销售负责人，或直接通过网站的 **“联系我们” (Contact Us)** 表单提交申请。"
       }
     ]
   };
@@ -215,7 +263,7 @@ export default function ChatBot() {
     zh: "您好！今天我能为您做些什么？ 👋"
   };
 
-  // Initial greeting setup
+  // Initial greeting setup (delayed to align with floating button spring entrance pop animation)
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessages([
@@ -228,13 +276,23 @@ export default function ChatBot() {
         }
       ]);
       setShowGreetingPopup(true);
-    }, 2000);
+      setIntroFinished(true);
+    }, 3800);
     return () => clearTimeout(timer);
   }, [activeLang]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
-    setShowGreetingPopup(false);
+  };
+
+  const getActiveQuestions = () => {
+    const questions = qaData[activeLang] || qaData.en;
+    const total = questions.length;
+    const items = [];
+    for (let i = 0; i < Math.min(3, total); i++) {
+      items.push(questions[(startIndex + i) % total]);
+    }
+    return items;
   };
 
   const handleSelectQuestion = (q) => {
@@ -249,6 +307,9 @@ export default function ChatBot() {
 
     setMessages(prev => [...prev, userMessage]);
     setIsTyping(true);
+
+    // Rotate to the next set of questions
+    setStartIndex(prev => prev + 3);
 
     setTimeout(() => {
       setIsTyping(false);
@@ -282,15 +343,17 @@ export default function ChatBot() {
         </div>
       )}
 
-      {/* Floating Button */}
-      <button 
-        className={`chatbot-toggle ${isOpen ? 'active' : ''}`}
-        onClick={handleToggle}
-        aria-label="Toggle Chatbot"
-      >
-        {isOpen ? <X size={32} /> : <img src={logoImg} alt="Chat" className="chatbot-toggle-img" />}
-        {!isOpen && messages.length > 0 && !showGreetingPopup && <span className="chatbot-notification">1</span>}
-      </button>
+      {/* Floating Button with Wrap for Bobbing Animation */}
+      <div className={`chatbot-toggle-wrap ${isOpen ? 'active' : ''}`}>
+        <button 
+          className={`chatbot-toggle ${isOpen ? 'active' : ''}`}
+          onClick={handleToggle}
+          aria-label="Toggle Chatbot"
+        >
+          {isOpen ? <X size={32} /> : <img src={logoImg} alt="Chat" className="chatbot-toggle-img" />}
+          {!isOpen && <span className="chatbot-notification">1</span>}
+        </button>
+      </div>
 
       {/* Chat Window */}
       {isOpen && (
@@ -354,7 +417,7 @@ export default function ChatBot() {
                 {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : '💡 Suggested Questions:'}
               </span>
               <div className="cqq-list">
-                {qaData[activeLang].map((q, idx) => (
+                {getActiveQuestions().map((q, idx) => (
                   <button 
                     key={idx} 
                     onClick={() => handleSelectQuestion(q)} 
