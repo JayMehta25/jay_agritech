@@ -1,17 +1,129 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageSquare, Send, X, Bot, User } from 'lucide-react';
+import { X, User, HelpCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { assetSrc } from '../../utils/assetSrc';
 import logoImgAsset from '../../assets/new_title.png';
 
 const logoImg = assetSrc(logoImgAsset);
 
+// Self-contained Markdown-Lite Parser for Chat Bubbles
+function formatText(text) {
+  if (!text) return null;
+  
+  const lines = text.split('\n');
+  const elements = [];
+  let listItems = [];
+  
+  // Parse inline bold tags (**bold**)
+  const parseBold = (str) => {
+    const parts = str.split('**');
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index} style={{ fontWeight: 'var(--fw-bold)', color: 'inherit' }}>{part}</strong>;
+      }
+      return part;
+    });
+  };
+
+  lines.forEach((line, i) => {
+    const trimmed = line.trim();
+    
+    // Check if it's a list bullet
+    if (trimmed.startsWith('•') || trimmed.startsWith('-') || trimmed.startsWith('*')) {
+      const bulletText = trimmed.replace(/^[•\-\*]\s*/, '');
+      listItems.push(
+        <li key={i} style={{ marginBottom: '4px', listStyleType: 'disc', marginLeft: '16px', color: 'inherit' }}>
+          {parseBold(bulletText)}
+        </li>
+      );
+    } else {
+      // Flush previous list items if any
+      if (listItems.length > 0) {
+        elements.push(
+          <ul key={`list-${i}`} style={{ margin: '8px 0', paddingLeft: '8px', color: 'inherit' }}>
+            {listItems}
+          </ul>
+        );
+        listItems = [];
+      }
+      
+      if (trimmed) {
+        // Headers & Titles
+        if (trimmed.startsWith('###')) {
+          elements.push(
+            <h5 key={i} style={{ fontSize: '13px', fontWeight: 'var(--fw-bold)', margin: '8px 0 4px 0', color: 'inherit', letterSpacing: '0.3px' }}>
+              {parseBold(trimmed.replace(/^###\s*/, ''))}
+            </h5>
+          );
+        } else if (trimmed.startsWith('##')) {
+          elements.push(
+            <h4 key={i} style={{ fontSize: '14px', fontWeight: 'var(--fw-bold)', margin: '10px 0 6px 0', color: 'inherit', letterSpacing: '0.4px' }}>
+              {parseBold(trimmed.replace(/^##\s*/, ''))}
+            </h4>
+          );
+        } else if (trimmed.startsWith('#')) {
+          elements.push(
+            <h3 key={i} style={{ fontSize: '15px', fontWeight: 'var(--fw-bold)', margin: '12px 0 6px 0', color: 'inherit', letterSpacing: '0.5px' }}>
+              {parseBold(trimmed.replace(/^#\s*/, ''))}
+            </h3>
+          );
+        } else {
+          elements.push(
+            <p key={i} style={{ margin: '6px 0', color: 'inherit', lineHeight: '1.5' }}>
+              {parseBold(trimmed)}
+            </p>
+          );
+        }
+      } else {
+        // Empty line break spacing
+        elements.push(<div key={i} style={{ height: '8px' }} />);
+      }
+    }
+  });
+
+  if (listItems.length > 0) {
+    elements.push(
+      <ul key="list-final" style={{ margin: '8px 0', paddingLeft: '8px', color: 'inherit' }}>
+        {listItems}
+      </ul>
+    );
+  }
+
+  return <div style={{ color: 'inherit' }}>{elements}</div>;
+}
+
+// Typewriter Text Effect Component with Dynamic Live Formatting
+function TypewriterText({ text, onComplete }) {
+  const [displayedText, setDisplayedText] = useState('');
+  
+  useEffect(() => {
+    let index = 0;
+    setDisplayedText('');
+    const timer = setInterval(() => {
+      setDisplayedText((prev) => prev + text.charAt(index));
+      index++;
+      if (index >= text.length) {
+        clearInterval(timer);
+        if (onComplete) onComplete();
+      }
+    }, 12); // Slightly faster 12ms character speed for dynamic rendering
+    
+    return () => clearInterval(timer);
+  }, [text]);
+
+  return <>{formatText(displayedText)}</>;
+}
+
 export default function ChatBot() {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingPopup, setShowGreetingPopup] = useState(false);
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [activeAnimatingId, setActiveAnimatingId] = useState(null);
   const messagesEndRef = useRef(null);
+
+  const activeLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -19,68 +131,145 @@ export default function ChatBot() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isTyping]);
 
-  // Initial greeting
+  // Formatted FAQ Q&A Database
+  const qaData = {
+    en: [
+      {
+        question: "What is Jay Agritech?",
+        answer: "### Jay Agritech Pvt. Ltd.\nWe are a pioneering **agri-biotech company** based in Valsad, Gujarat, founded in **2025**.\n\nOur core mission is **Nurturing Growth** through:\n- **High-efficacy bio-fertilizers** to restore soil biology\n- **OMRI-certified organic manures** for carbon enrichment\n- **Eco-safe bio-insecticides** for chemical-free pest control"
+      },
+      {
+        question: "What products do you offer?",
+        answer: "### Our Product Portfolio\nWe manufacture **60+ premium agricultural solutions** across 5 categories:\n- **Bio Fertilizers:** NB, PB, KB, ZB & MycoRoot (VAM)\n- **Biostimulants:** Rhizosphere activators (Dhara Maxx, Floral)\n- **Organic Nutrients:** OMRI-certified Bhumirich & Cropcharge Manure\n- **Bio Insecticides:** Biological pest controls (Orgo Meta, Orgo Neem)\n- **Micronutrients:** Essential balanced mineral solutions (Microzest)"
+      },
+      {
+        question: "How can I become a dealer or distributor?",
+        answer: "### Join Our Partner Network\nWe are actively expanding our retail and distribution network across **all of India**!\n\n**How to apply:**\n- **Step 1:** Navigate to the **'Become a Partner'** section in our menu.\n- **Step 2:** Fill out the quick Dealer or Distributor application form.\n- **Step 3:** Our sales development team will reach out within **24 hours**!\n\nYou can also email us directly at **sales@jayagritech.com** to get started."
+      },
+      {
+        question: "Do you offer private labeling or contract manufacturing?",
+        answer: "### Custom B2B Solutions\nYes! We are a trusted partner for **Contract Manufacturing** and **OEM private labeling**.\n\n**Our B2B Capabilities:**\n- State-of-the-art microbiology & formulation **R&D lab**\n- Custom liquid, powder, and granule blending\n- Fully certified **ISO 9001:2015 & FCO** compliant processes\n- White labeling options for rapid market scale-up"
+      },
+      {
+        question: "Where is your company located?",
+        answer: "### Our Location\nOur corporate headquarters and manufacturing facilities are based in **Valsad, Gujarat, India**.\n\n- **Valsad** is a premium industrial corridor located in West India with excellent logistics connectivity.\n- You can view our **exact location and route map** on our **Contact** page."
+      }
+    ],
+    hi: [
+      {
+        question: "जय एग्रीटेक क्या है?",
+        answer: "### जय एग्रीटेक प्राइवेट लिमिटेड\nहम वलसाड, गुजरात में स्थित एक अग्रणी **कृषि-बायोटेक कंपनी** हैं, जिसकी स्थापना **2025** में हुई थी।\n\nहमारा मुख्य उद्देश्य **सस्टेनेबल ग्रोथ** को बढ़ावा देना है:\n- मिट्टी की उर्वरता बहाल करने के लिए **जैव-उर्वरक**\n- जैविक कार्बन बढ़ाने के लिए **प्राकृतिक खाद**\n- रासायनिक-मुक्त नियंत्रण के लिए **जैव-कीटनाशक**"
+      },
+      {
+        question: "आप कौन से उत्पाद प्रदान करते हैं?",
+        answer: "### उत्पाद सूची\nहम 5 श्रेणियों में **60+ से अधिक प्रीमियम कृषि समाधान** बनाते हैं:\n- **जैव उर्वरक:** नाइट्रोजन फिक्सिंग, फॉस्फेट और पोटाश बैक्टीरिया\n- **बायोस्टिमुलेंट्स:** मिट्टी और जड़ वर्धक (धरा मैक्स, फ्लोरल)\n- **जैविक पोषक तत्व:** एनपीओपी प्रमाणित भूमिरीच और क्रॉपचार्ज खाद\n- **जैव कीटनाशक:** जैविक कीट नियंत्रण (ऑर्गो मेटा, ऑर्गो नीम)\n- **सूक्ष्म पोषक तत्व:** संतुलित खनिज मिश्रण (माइक्रोज़ेस्ट)"
+      },
+      {
+        question: "मैं डीलर या वितरक कैसे बन सकता हूँ?",
+        answer: "### हमारे पार्टनर बनें\nहम पूरे **भारत** में अपने डीलर और वितरक नेटवर्क का विस्तार कर रहे हैं!\n\n**आवेदन कैसे करें:**\n- **चरण 1:** मुख्य मेनू में **'Become a Partner'** विकल्प पर जाएं।\n- **चरण 2:** डीलर या वितरक का त्वरित आवेदन फॉर्म भरें।\n- **चरण 3:** हमारी टीम **24 घंटे** के भीतर आपसे संपर्क करेगी!\n\nआप हमें सीधे **sales@jayagritech.com** पर भी ईमेल लिख सकते हैं।"
+      },
+      {
+        question: "क्या आप निजी लेबलिंग या अनुबंध निर्माण की पेशकश करते हैं?",
+        answer: "### B2B सेवाएं\nहाँ! हम **अनुबंध निर्माण (Contract Manufacturing)** और **निजी लेबलिंग (OEM)** के लिए एक विश्वसनीय भागीदार हैं।\n\n**हमारी क्षमताएं:**\n- अत्याधुनिक सूक्ष्मजीव विज्ञान एवं फॉर्मूलेशन **R&D लैब**\n- तरल, पाउडर और दानेदार मिश्रणों का कस्टम निर्माण\n- पूर्णतः प्रमाणित **ISO 9001:2015 और FCO** अनुपालन\n- त्वरित बाजार लॉन्च के लिए तैयार प्राइवेट लेबल विकल्प"
+      },
+      {
+        question: "आपकी कंपनी कहाँ स्थित है?",
+        answer: "### हमारा पता\nहमारा मुख्यालय और उन्नत विनिर्माण संयंत्र **वलसाड, गुजरात, भारत** में स्थित हैं।\n\n- **वलसाड** पश्चिमी भारत का एक प्रमुख औद्योगिक केंद्र है जिसमें उत्कृष्ट परिवहन कनेक्टिविटी है।\n- आप हमारे **संपर्क (Contact) पृष्ठ** पर सटीक स्थान मानचित्र देख सकते हैं।"
+      }
+    ],
+    zh: [
+      {
+        question: "什么是 Jay Agritech？",
+        answer: "### 杰亚农科 (Jay Agritech Pvt. Ltd.)\n我们是一家总部位于印度古吉拉特邦瓦尔萨德的领先 **农业生物技术企业**，成立于 **2025年**。\n\n我们的核心使命是实现 **可持续农业增长**：\n- 用于重建土壤生物群落的 **高效生物肥料**\n- 用于提升土壤碳含量的 **OMRI认证有机肥**\n- 用于无化学残留病虫害防治的 **生态安全生物杀虫剂**"
+      },
+      {
+        question: "你们提供哪些产品？",
+        answer: "### 我们的产品矩阵\n我们生产 5 大类 **60余种优质农业解决方案**：\n- **生物肥料：** 固氮、解磷、解钾、解锌菌及优质菌根菌 (VAM)\n- **生物刺激素：** 根系激活与促花保果剂 (Dhara Maxx, Floral)\n- **有机营养物：** NPOP认证的 Bhumirich 和 Cropcharge 优质有机肥\n- **生物杀虫剂：** 微生物病虫害生物防治剂 (Orgo Meta, Orgo Neem)\n- **微量元素：** 必需的平衡矿物营养液 (Microzest)"
+      },
+      {
+        question: "我该如何成为经销商或分销商？",
+        answer: "### 加入我们的合作网络\n我们正在全印度积极拓展零售及分销网络！\n\n**如何申请：**\n- **步骤 1：** 导航至主菜单中的 **“成为合作伙伴” (Become a Partner)** 栏目。\n- **步骤 2：** 在线填写简要的经销商或分销商申请表。\n- **步骤 3：** 我们的销售拓展团队将在 **24小时** 内与您取得联系！\n\n您也可以直接发送邮件至 **sales@jayagritech.com** 开启合作。"
+      },
+      {
+        question: "你们提供代工 (OEM) 或合同制造服务吗？",
+        answer: "### B2B 商务解决方案\n是的！我们是 **合同定制开发与生产 (CDMO)** 以及 **OEM白标代工** 的首选合作伙伴。\n\n**我们的B2B制造实力：**\n- 配备一流分析检测设备的微生物与制剂 **研发实验室**\n- 液体、粉剂和颗粒剂的定制配方混合与灌装能力\n- 严格符合 **ISO 9001:2015 质量体系与 FCO (肥料法)** 标准\n- 极具灵活性的白标代工合作模式"
+      },
+      {
+        question: "你们公司总部在哪里？",
+        answer: "### 公司地理位置\n我们的公司总部与现代化生态工厂均位于 **印度古吉拉特邦瓦尔萨德 (Valsad, Gujarat, India)**。\n\n- **瓦尔萨德** 是西印度核心工业走廊，拥有极其便利的海陆空物流交通。\n- 您可以在我们网站的 **“联系我们” (Contact)** 页面上查阅精确的交互式位置地图。"
+      }
+    ]
+  };
+
+  const greetings = {
+    en: "Hi there! 👋 Welcome to Jay Agritech. Click any of the frequently asked questions below to learn more about us and our biological solutions!",
+    hi: "नमस्ते! 👋 जय एग्रीटेक में आपका स्वागत है। हमारे और हमारे जैविक समाधानों के बारे में अधिक जानने के लिए नीचे दिए गए अक्सर पूछे जाने वाले प्रश्नों पर क्लिक करें!",
+    zh: "您好！👋 欢迎来到 Jay Agritech。点击下方常见问题，了解更多关于我们及生物解决方案的信息！"
+  };
+
+  const popupTexts = {
+    en: "Hi! How can I help you today? 👋",
+    hi: "नमस्ते! मैं आज आपकी क्या सहायता कर सकता हूँ? 👋",
+    zh: "您好！今天我能为您做些什么？ 👋"
+  };
+
+  // Initial greeting setup
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessages([
         { 
           id: 1, 
-          text: "Hi there! 👋 Welcome to Jay Agritech. How can I help you with our biological solutions today?", 
+          text: greetings[activeLang], 
           sender: 'bot',
+          isAnimating: false,
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
       ]);
       setShowGreetingPopup(true);
     }, 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [activeLang]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
     setShowGreetingPopup(false);
   };
 
-  const handleSend = () => {
-    if (!inputValue.trim()) return;
+  const handleSelectQuestion = (q) => {
+    if (isTyping || activeAnimatingId) return;
 
-    const newUserMessage = {
+    const userMessage = {
       id: Date.now(),
-      text: inputValue,
+      text: q.question,
       sender: 'user',
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    setMessages(prev => [...prev, newUserMessage]);
-    setInputValue('');
+    setMessages(prev => [...prev, userMessage]);
     setIsTyping(true);
 
-    // Simulate bot response
     setTimeout(() => {
-      const botResponse = {
-        id: Date.now() + 1,
-        text: getBotResponse(inputValue),
+      setIsTyping(false);
+      const botMessageId = Date.now() + 1;
+      const botMessage = {
+        id: botMessageId,
+        text: q.answer,
         sender: 'bot',
+        isAnimating: true,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
-      setMessages(prev => [...prev, botResponse]);
-      setIsTyping(false);
-    }, 1500);
+      setMessages(prev => [...prev, botMessage]);
+      setActiveAnimatingId(botMessageId);
+    }, 850);
   };
 
-  const getBotResponse = (text) => {
-    const query = text.toLowerCase();
-    if (query.includes('product') || query.includes('insecticide')) {
-      return "We have over 60 innovative biological products across 4 main categories. You can explore them in our Products section!";
-    }
-    if (query.includes('price') || query.includes('cost')) {
-      return "For pricing and bulk orders, please connect with our sales team via the Contact form or email us at info@jayagritech.com.";
-    }
-    if (query.includes('partner') || query.includes('dealer')) {
-      return "That's great! We are actively looking for dealers and distributors. Check out our 'Become a Partner' section for details.";
-    }
-    return "Thank you for your message! I'm still learning, but one of our experts can help you better. Would you like to check our product catalog?";
+  const handleAnimationComplete = (id) => {
+    setMessages(prev => 
+      prev.map(msg => msg.id === id ? { ...msg, isAnimating: false } : msg)
+    );
+    setActiveAnimatingId(null);
   };
 
   return (
@@ -89,7 +278,7 @@ export default function ChatBot() {
       {!isOpen && showGreetingPopup && (
         <div className="chatbot-greeting-popup" onClick={handleToggle}>
           <div className="chatbot-greeting-close" onClick={(e) => { e.stopPropagation(); setShowGreetingPopup(false); }}><X size={14} /></div>
-          <p>Hi! How can I help you today? 👋</p>
+          <p>{popupTexts[activeLang]}</p>
         </div>
       )}
 
@@ -114,7 +303,7 @@ export default function ChatBot() {
               </div>
               <div>
                 <h4>Jay Assistant</h4>
-                <span className="chatbot-status">Online</span>
+                <span className="chatbot-status">{t('chatbot.online', 'Online')}</span>
               </div>
             </div>
             <button className="chatbot-close" onClick={() => setIsOpen(false)}><X size={18} /></button>
@@ -128,17 +317,28 @@ export default function ChatBot() {
                   {msg.sender === 'bot' ? (
                     <img src={logoImg} alt="Bot" className="chatbot-avatar-img" />
                   ) : (
-                    <User size={14} />
+                    <div className="chatbot-avatar-user-fallback" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', background: 'var(--clr-primary-surface)', color: 'var(--clr-primary)', fontSize: '10px', fontWeight: 'bold' }}>U</div>
                   )}
                 </div>
                 <div className="chatbot-message-bubble">
-                  <p>{msg.text}</p>
+                  {msg.isAnimating ? (
+                    <TypewriterText 
+                      text={msg.text} 
+                      onComplete={() => handleAnimationComplete(msg.id)} 
+                    />
+                  ) : (
+                    formatText(msg.text)
+                  )}
                   <span className="chatbot-message-time">{msg.time}</span>
                 </div>
               </div>
             ))}
+            
             {isTyping && (
               <div className="chatbot-message bot">
+                <div className="chatbot-message-avatar">
+                  <img src={logoImg} alt="Bot" className="chatbot-avatar-img" />
+                </div>
                 <div className="chatbot-message-bubble typing">
                   <span></span><span></span><span></span>
                 </div>
@@ -147,18 +347,30 @@ export default function ChatBot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="chatbot-input">
-            <input 
-              type="text" 
-              placeholder="Type your message..." 
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            />
-            <button onClick={handleSend} disabled={!inputValue.trim()}>
-              <Send size={18} />
-            </button>
+          {/* suggested Questions Container */}
+          <div className="chatbot-input" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 'var(--sp-2)' }}>
+            <div className="chatbot-quick-questions">
+              <span className="cqq-title">
+                {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : '💡 Suggested Questions:'}
+              </span>
+              <div className="cqq-list">
+                {qaData[activeLang].map((q, idx) => (
+                  <button 
+                    key={idx} 
+                    onClick={() => handleSelectQuestion(q)} 
+                    className="cqq-btn"
+                    disabled={isTyping || activeAnimatingId !== null}
+                    style={{
+                      opacity: (isTyping || activeAnimatingId !== null) ? 0.6 : 1,
+                      cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
+                    }}
+                  >
+                    <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
+                    {q.question}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
