@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Layout from '../src/components/layout/Layout';
 import '../src/styles/index.css';
 import '../src/components/layout/Footer.css';
@@ -21,15 +22,35 @@ export default function MyApp({ Component, pageProps }) {
   const { i18n } = useTranslation();
   const router = useRouter();
 
+  // Safe client-side language detection and switching post-hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.documentElement.lang = i18n.language;
+      const savedLang = localStorage.getItem('i18nextLng');
+      if (savedLang && ['en', 'hi', 'zh'].includes(savedLang)) {
+        if (i18n.language !== savedLang) {
+          i18n.changeLanguage(savedLang);
+        }
+      } else {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const shortLang = browserLang?.split('-')[0];
+        const langToUse = ['en', 'hi', 'zh'].includes(shortLang) ? shortLang : 'en';
+        if (i18n.language !== langToUse) {
+          i18n.changeLanguage(langToUse);
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
+      document.documentElement.lang = currentLang;
       const titles = {
         en: 'Jay Agritech | Innovating Agriculture',
         hi: 'जय एग्रीटेक | कृषि नवाचार',
         zh: 'Jay Agritech | 创新农业'
       };
-      document.title = titles[i18n.language] || titles.en;
+      document.title = titles[currentLang] || titles.en;
     }
   }, [i18n.language]);
 
@@ -72,6 +93,10 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>

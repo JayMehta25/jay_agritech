@@ -27,10 +27,13 @@ export default function Navbar() {
     { code: 'zh', label: 'Mandarin', nativeChar: '文' }
   ];
 
-  const currentLanguage = languages.find(l => l.code === i18n.language) || languages[0];
+  const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
 
   const changeLanguage = (code) => {
     i18n.changeLanguage(code);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('i18nextLng', code);
+    }
     setShowLangMenu(false);
   };
 
@@ -186,7 +189,7 @@ export default function Navbar() {
                   {languages.map(lang => (
                     <button
                       key={lang.code}
-                      className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
+                      className={`lang-option ${i18n.language?.startsWith(lang.code) ? 'active' : ''}`}
                       onClick={() => changeLanguage(lang.code)}
                     >
                       <span className="lang-native-char">{lang.nativeChar}</span>
@@ -234,7 +237,7 @@ export default function Navbar() {
                   {languages.map(lang => (
                     <button
                       key={lang.code}
-                      className={`mobile-lang-btn ${i18n.language === lang.code ? 'active' : ''}`}
+                      className={`mobile-lang-btn ${i18n.language?.startsWith(lang.code) ? 'active' : ''}`}
                       onClick={() => {
                         changeLanguage(lang.code);
                         setMobileOpen(false); // Close sidebar on selection

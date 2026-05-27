@@ -478,6 +478,16 @@
     "leadership": {
       "subtitle": "Meet the minds behind our mission.",
       "people": {
+        "director_1": {
+          "name": "Babulal Mehta",
+          "role": "Managing Director",
+          "bio": "With over 45 years of distinguished experience in the Asha Group and chemical industries, our Managing Director provides the visionary leadership and strategic wisdom that drives Jay Agritech's commitment to innovation and ethical growth."
+        },
+        "jinesh_mehta": {
+          "name": "Jinesh Mehta",
+          "role": "Director",
+          "bio": "Bringing over 20 years of extensive experience in leadership and operational management within the Asha Group. Jinesh oversees strategic expansion and ensures the highest standards of excellence across all business verticals."
+        },
         "kaushal_doshi": {
           "name": "Kaushal Doshi",
           "role": "CMO",
@@ -1052,7 +1062,8 @@
     "journey_title": "Pioneering Agricultural Innovation Since 2025",
     "company_name": "Jay Agritech Pvt. Ltd.",
     "journey_text_prefix": "At ",
-    "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint."
+    "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint.",
+    "closing_quote": "With a vision to become a trusted name in the agriculture industry, we continue to expand our capabilities while maintaining our commitment to excellence and value creation for all stakeholders."
   },
   "enquiry": {
     "page_title": "Product Enquiry",

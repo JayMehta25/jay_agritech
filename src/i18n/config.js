@@ -1,16 +1,9 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import enTranslations from './locales/en.json';
 import hiTranslations from './locales/hi.json';
 import zhTranslations from './locales/zh.json';
-
-const isServer = typeof window === 'undefined';
-
-if (!isServer) {
-  i18n.use(LanguageDetector);
-}
 
 i18n
   .use(initReactI18next)
@@ -20,13 +13,11 @@ i18n
       hi: { translation: hiTranslations },
       zh: { translation: zhTranslations }
     },
-    lng: isServer ? 'en' : undefined,
+    supportedLngs: ['en', 'hi', 'zh'],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
+    lng: 'en', // Force English initially on both server and client to prevent hydration mismatches
     fallbackLng: 'en',
-    detection: {
-      order: ['localStorage', 'cookie', 'htmlTag', 'path', 'subdomain'],
-      caches: ['localStorage', 'cookie'],
-      lookupLocalStorage: 'i18nextLng',
-    },
     interpolation: {
       escapeValue: false
     }

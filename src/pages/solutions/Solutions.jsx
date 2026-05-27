@@ -181,8 +181,7 @@ export default function Solutions() {
     const sol = solutions.find(s => s.key === solKey);
     const relatedProducts = getSolutionProducts(slug);
     
-    // Fetch localized challenge copy
-    const lang = localizedDetails[i18n.language] ? i18n.language : 'en';
+    const lang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
     const detailCopy = localizedDetails[lang][solKey] || localizedDetails['en'][solKey];
 
     const solTitle = t(`pages_details.solutions.items.${solKey}.title`);

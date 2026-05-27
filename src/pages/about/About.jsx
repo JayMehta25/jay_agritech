@@ -7,10 +7,8 @@ import { companyInfo } from '../../data/siteData';
 import GenericPage from '../../components/ui/GenericPage';
 import { assetSrc } from '../../utils/assetSrc';
 import sustainableImgAsset from '../../assets/sustainable_farming_collage.png';
-import innovationImgAsset from '../../assets/modern_agriculture_innovation.png';
 
 const sustainableImg = assetSrc(sustainableImgAsset);
-const innovationImg = assetSrc(innovationImgAsset);
 
 function AnimatedSection({ children, className = '', id = '' }) {
   const [ref, isVisible] = useScrollAnimation();
@@ -72,17 +70,6 @@ export default function About() {
           </div>
         </AnimatedSection>
 
-        {/* ─── Closing Banner — Immersive ─── */}
-        <AnimatedSection id="sustainability" className="section" style={{ marginTop: 'var(--sp-2)', marginBottom: 'var(--sp-4)' }}>
-          <div className="about-closing-banner">
-            <img src={innovationImg} alt="" className="about-closing-banner__bg" />
-            <div className="about-closing-banner__content">
-              <p>
-                "With a vision to become a trusted name in the agriculture industry, we continue to expand our capabilities while maintaining our commitment to excellence and value creation for all stakeholders."
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
 
         {/* ─── Vision & Mission ─── */}
         <AnimatedSection id="vision-mission" className="section" style={{ borderTop: '1px solid var(--clr-border-light)', paddingTop: 'var(--sp-8)' }}>

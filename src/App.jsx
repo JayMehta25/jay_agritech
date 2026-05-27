@@ -43,14 +43,15 @@ export default function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    document.documentElement.lang = i18n.language;
+    const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
+    document.documentElement.lang = currentLang;
     // Update document title for SEO if needed
     const titles = {
       en: 'Jay Agritech | Innovating Agriculture',
       hi: 'जय एग्रीटेक | कृषि नवाचार',
       zh: 'Jay Agritech | 创新农业'
     };
-    document.title = titles[i18n.language] || titles.en;
+    document.title = titles[currentLang] || titles.en;
   }, [i18n.language]);
 
   return (
