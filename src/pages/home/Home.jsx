@@ -147,7 +147,7 @@ export default function Home() {
           ) : (
             <img
               src={farmersWorkImg}
-              alt="Farmers at work"
+              alt={t('home.hero_alt', 'Farmers working sustainably on Indian agricultural fields - Jay Agritech')}
               className="hero-video-element hero-image-fade-in"
             />
           )}
@@ -230,7 +230,11 @@ export default function Home() {
 
                 <Link to={sol.link} className="timeline-step-card" style={{ '--stage-color': sol.color }}>
                   <div className="stc-image-section">
-                    <img src={solImages[sol.id]} alt={sol.title} className="stc-img" />
+                    <img 
+                      src={solImages[sol.id]} 
+                      alt={`${t(sol.titleKey, sol.title)} - ${t('home.solutions_seo_suffix', 'Sustainable Agriculture Solutions by Jay Agritech')}`} 
+                      className="stc-img" 
+                    />
                     <div className="stc-overlay"></div>
                   </div>
                   <div className="stc-body-section">
@@ -325,7 +329,11 @@ export default function Home() {
 
               {/* Right Column: 40% Image Stage */}
               <div className="showcase-right-panel">
-                <img src={productsImg} alt="Jay Agritech Product Range" className="portfolio-showcase-img" />
+                <img 
+                  src={productsImg} 
+                  alt={t('home.products_alt', 'Comprehensive organic and bio-safe agricultural product range - Jay Agritech')} 
+                  className="portfolio-showcase-img" 
+                />
                 <div className="portfolio-showcase-mask"></div>
               </div>
             </div>

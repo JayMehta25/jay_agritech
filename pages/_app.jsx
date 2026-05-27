@@ -60,6 +60,40 @@ const schemaData = {
   ]
 };
 
+const getFaqSchema = (lang) => {
+  const faqs = {
+    en: [
+      { q: "What is Jay Agritech?", a: "Jay Agritech Pvt. Ltd. is a pioneering agri-biotech company based in Valsad, Gujarat, India. We manufacture high-efficacy bio-fertilizers, organic manures, bio-insecticides, and micronutrients." },
+      { q: "What products do you offer?", a: "We offer 60+ premium agricultural solutions across categories: Bio Fertilizers, Biostimulants, Organic Nutrients, Bio Insecticides, and Micronutrients." },
+      { q: "Where is your company located?", a: "Our corporate headquarters and manufacturing facilities are based in Valsad, Gujarat, India, offering excellent logistical connectivity across West India." }
+    ],
+    hi: [
+      { q: "जय एग्रीटेक क्या है?", a: "जय एग्रीटेक प्राइवेट लिमिटेड वलसाड, गुजरात में स्थित एक अग्रणी कृषि-बायोटेक कंपनी है जो जैविक उर्वरक, प्राकृतिक खाद, जैव-कीटनाशक और सूक्ष्म पोषक तत्व प्रदान करती है।" },
+      { q: "आप कौन से उत्पाद प्रदान करते हैं?", a: "हम जैविक उर्वरक, बायोसिटमुलेंट्स, प्राकृतिक पोषक तत्व, जैविक कीटनाशक और सूक्ष्म पोषक तत्वों सहित 60+ प्रीमियम कृषि समाधान प्रदान करते हैं।" },
+      { q: "आपकी कंपनी कहाँ स्थित है?", a: "हमारा मुख्यालय और उन्नत विनिर्माण संयंत्र वलसाड, गुजरात, भारत में स्थित हैं।" }
+    ],
+    zh: [
+      { q: "什么是 Jay Agritech？", a: "杰亚农科 (Jay Agritech Pvt. Ltd.) 是印度领先的农业生物技术公司，提供60多种高效生物肥料、有机肥料、生物杀虫剂及微量元素，助力可持续农业发展。" },
+      { q: "你们提供哪些产品？", a: "我们生产5大类60余种优质农业解决方案：生物肥料、生物刺激素、有机营养物、生物杀虫剂以及微量元素。" },
+      { q: "你们公司总部在哪里？", a: "我们的公司总部与现代化生态工厂均位于印度古吉拉特邦瓦尔萨德 (Valsad, Gujarat, India)。" }
+    ]
+  };
+  const list = faqs[lang] || faqs.en;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": list.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
+};
+
+
 export default function MyApp({ Component, pageProps }) {
   const { i18n } = useTranslation();
   const router = useRouter();
@@ -166,6 +200,10 @@ export default function MyApp({ Component, pageProps }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getFaqSchema(currentLang)) }}
         />
       </Head>
       <Layout>
