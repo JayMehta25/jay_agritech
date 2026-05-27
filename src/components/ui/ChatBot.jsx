@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { X, User, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { assetSrc } from '../../utils/assetSrc';
@@ -114,8 +115,68 @@ function TypewriterText({ text, onComplete }) {
   return <>{formatText(displayedText)}</>;
 }
 
+const getDynamicPopupText = (pathname, lang) => {
+  const paths = {
+    home: {
+      en: "Welcome to Jay Agritech! Want to explore our 60+ biological products? 🌾",
+      hi: "जय एग्रीटेक में आपका स्वागत है! हमारे 60+ जैविक उत्पादों को देखना चाहते हैं? 🌾",
+      zh: "欢迎来到杰亚农科！想了解我们的60余种生物肥料与农科产品吗？ 🌾"
+    },
+    products: {
+      en: "Looking for premium bio-fertilizers, stimulators, or organic manure? Let me help! 🧪",
+      hi: "क्या आप प्रीमियम जैविक उर्वरक, बायोसिटमुलेंट्स, या जैविक खाद खोज रहे हैं? मैं मदद करूँ! 🧪",
+      zh: "正在寻找优质的生物肥料、生物刺激素或有机肥吗？让我来帮您！ 🧪"
+    },
+    about: {
+      en: "Curious about our 50-year legacy, R&D labs, or green quality standards? Let's chat! 🔬",
+      hi: "क्या आप हमारी 50 साल की विरासत, आरएंडडी प्रयोगशालाओं, या ग्रीन मानकों के बारे में उत्सुक हैं? 🔬",
+      zh: "对我们的50年工业传承、微生物研发中心或绿色质量标准感兴趣吗？聊聊吧！ 🔬"
+    },
+    partners: {
+      en: "Interested in becoming an authorized dealer or distributor in India? Ask me! 🤝",
+      hi: "क्या आप भारत में हमारे अधिकृत डीलर या वितरक बनने में रुचि रखते हैं? 🤝",
+      zh: "有兴趣成为我们在印度的特许经销商或分销合作伙伴吗？问我吧！ 🤝"
+    },
+    solutions: {
+      en: "Need advice on soil health, nutrient management, or disease protection? 🌿",
+      hi: "मिट्टी के स्वास्थ्य, पोषक तत्व प्रबंधन, या कीट रोग सुरक्षा पर सलाह चाहिए? 🌿",
+      zh: "需要土壤健康修复、作物营养管理或绿色病虫害防治方面的建议吗？ 🌿"
+    },
+    contact: {
+      en: "Have questions about quotes, samples, or visits? Ask me anything! 📞",
+      hi: "क्या आपके पास कोटेशन, उत्पाद नमूने, या विनिर्माण दौरे के बारे में प्रश्न हैं? 📞",
+      zh: "关于价格报价、免费大田试验样品或考察参观有任何疑问吗？问我吧！ 📞"
+    },
+    defaultText: {
+      en: "Hi! How can I help you today? 👋",
+      hi: "नमस्ते! मैं आज आपकी क्या सहायता कर सकता हूँ? 👋",
+      zh: "您好！今天我能为您做些什么？ 👋"
+    }
+  };
+
+  let pageType = 'defaultText';
+  if (pathname === '/' || pathname === '') {
+    pageType = 'home';
+  } else if (pathname.includes('/products')) {
+    pageType = 'products';
+  } else if (pathname.includes('/about') || pathname.includes('/presence')) {
+    pageType = 'about';
+  } else if (pathname.includes('/partners') || pathname.includes('/become_partner')) {
+    pageType = 'partners';
+  } else if (pathname.includes('/solutions') || pathname.includes('/growth-system')) {
+    pageType = 'solutions';
+  } else if (pathname.includes('/contact')) {
+    pageType = 'contact';
+  }
+
+  const set = paths[pageType] || paths.defaultText;
+  return set[lang] || set.en;
+};
+
 export default function ChatBot() {
   const { t, i18n } = useTranslation();
+  const router = useRouter();
+  const currentPath = router ? router.asPath : '';
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingPopup, setShowGreetingPopup] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
@@ -144,6 +205,14 @@ export default function ChatBot() {
       setShowGreetingPopup(false);
     }
   }, [isOpen, introFinished]);
+
+  // Re-trigger/update greeting popup when navigating to a new page
+  useEffect(() => {
+    if (!introFinished) return;
+    if (!isOpen) {
+      setShowGreetingPopup(true);
+    }
+  }, [currentPath, isOpen, introFinished]);
 
   // Formatted FAQ Q&A Database (8 high-relevance biological and partnership questions)
   const qaData = {

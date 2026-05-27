@@ -109,7 +109,8 @@
   min-width: 130px;
   overflow: hidden;
   z-index: calc(var(--z-fixed) + 50);
-  animation: megaMenuFadeIn var(--duration-fast) var(--ease-out);
+  transform-origin: top right;
+  animation: langDropdownFadeIn 220ms var(--ease-out);
 }
 
 .lang-option {
@@ -126,6 +127,21 @@
   text-align: left;
   cursor: pointer;
   transition: all var(--duration-fast);
+  opacity: 0;
+  transform: translateY(-4px);
+  animation: langOptionReveal 320ms var(--ease-out) forwards;
+}
+
+.lang-option:nth-child(1) {
+  animation-delay: 40ms;
+}
+
+.lang-option:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.lang-option:nth-child(3) {
+  animation-delay: 200ms;
 }
 
 .lang-option:last-child {
@@ -317,6 +333,30 @@
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes langDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes langOptionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

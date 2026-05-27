@@ -173,7 +173,12 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="navbar-actions">
-            <div className="lang-switcher-wrapper" ref={langMenuRef}>
+            <div
+              className="lang-switcher-wrapper"
+              ref={langMenuRef}
+              onMouseEnter={() => setShowLangMenu(true)}
+              onMouseLeave={() => setShowLangMenu(false)}
+            >
               <button
                 className="lang-switcher-btn"
                 onClick={() => setShowLangMenu(!showLangMenu)}

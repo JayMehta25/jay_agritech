@@ -121,6 +121,26 @@
       "active_ingredients": "活性成分",
       "specifications": "规格"
     },
+    "detail": {
+      "default_organic": "100% 有机",
+      "default_bio_active": "生物活性",
+      "default_premium_pack": "优质包装",
+      "premium_kit": "优质套装",
+      "bio_formulation": "生物配方",
+      "easy_to_apply": "易于施用",
+      "eco_friendly_safe": "环保安全",
+      "benefits_intro": "经过科学配方设计，确保最大效果和可持续的作物表现。",
+      "quick_specs_title": "快速规格",
+      "quick_specs_desc": "经销商或农民一眼即可了解所需信息。",
+      "benefit_subdesc_0": "提升作物发育并优化养分利用效率。",
+      "benefit_subdesc_1": "增强根系结构并改善土壤活力。",
+      "benefit_subdesc_2": "提升作物对环境胁迫的天然抗性。",
+      "benefit_subdesc_3": "促进可持续实践和优质产量。",
+      "nc_subdesc_0": "通过载体基质形式实现快速吸收。",
+      "nc_subdesc_1": "便于顺畅处理并保持稳定的田间使用效果。",
+      "nc_subdesc_2": "改善根区活性物质的输送。",
+      "nc_subdesc_3": "为直接、实用的施用方式而设计。"
+    },
     "common_values": {
       "soil_application": "土壤施用",
       "foliar_application": "叶面喷施",
@@ -295,6 +315,436 @@
           "5 升"
         ]
       },
+      "bi-001": {
+        "name": "AT ORGO 特里科",
+        "tagline": "生物杀真菌剂（木霉菌 Trichoderma viride）",
+        "description": "用于种子和土壤处理的生物杀真菌剂，可抑制由真菌病原引起的多种病害。它能保护作物免受立枯丝核菌（Rhizoctonia spp.）、镰刀菌（Fusarium）、链格孢（Alternaria）、腐霉菌（Pythium）等多种种传和土传病原的侵害。",
+        "benefits": [
+          "控制种传和土传病原",
+          "抑制立枯丝核菌、镰刀菌和腐霉菌",
+          "增强植物免疫力",
+          "对环境安全"
+        ],
+        "microbes": "木霉菌 Trichoderma viride 1.5% LF",
+        "application": "土壤施用",
+        "dosage": "1 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-002": {
+        "name": "AT ORGO 特里科-P",
+        "tagline": "生物杀真菌剂（木霉菌 Trichoderma viride）- 可湿性粉剂",
+        "description": "可湿性粉剂形态的生物杀真菌剂，用于种子和土壤处理，以抑制由真菌病原引起的多种病害。它能保护作物免受立枯丝核菌（Rhizoctonia spp.）、镰刀菌（Fusarium）、链格孢（Alternaria）、腐霉菌（Pythium）等多种种传和土传病原的侵害。",
+        "benefits": [
+          "对真菌病原有效",
+          "适合种子处理",
+          "抑制多种土传病害",
+          "100% 天然配方"
+        ],
+        "microbes": "木霉菌 Trichoderma viride 1.0% WP",
+        "application": "土壤施用",
+        "dosage": "1 公斤/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 公斤"
+        ]
+      },
+      "bi-003": {
+        "name": "AT ORGO 普苏多",
+        "tagline": "生物促生剂兼杀真菌剂（荧光假单胞菌 Pseudomonas fluorescens）",
+        "description": "一种生物植物促生剂兼生物杀真菌剂。它通过释放 PGPR 酶促进植物生长，并通过释放多种抗生素防治细菌和真菌病害。",
+        "benefits": [
+          "借助 PGPR 酶促进生长",
+          "防治细菌和真菌病害",
+          "双重作用配方",
+          "增强根系健康"
+        ],
+        "microbes": "荧光假单胞菌 Pseudomonas fluorescens 1.5% LF",
+        "application": "土壤和叶面施用",
+        "dosage": "1 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-004": {
+        "name": "AT ORGO 普苏多-P",
+        "tagline": "生物促生剂兼杀真菌剂（荧光假单胞菌 Pseudomonas fluorescens）- 可湿性粉剂",
+        "description": "可湿性粉剂形态的生物植物促生剂兼生物杀真菌剂。它通过释放 PGPR 酶促进植物生长，并通过释放多种抗生素防治细菌和真菌病害。",
+        "benefits": [
+          "促生长酶",
+          "抑制细菌性病害",
+          "通过抗生素释放提供保护",
+          "用途广泛"
+        ],
+        "microbes": "荧光假单胞菌 Pseudomonas fluorescens 1.0% WP",
+        "application": "土壤和叶面施用",
+        "dosage": "1 公斤/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 公斤"
+        ]
+      },
+      "bi-005": {
+        "name": "AT ORGO 迈塔",
+        "tagline": "生物杀虫剂（绿僵菌 Metarhizium anisopliae）",
+        "description": "基于天然存在的虫生土壤真菌绿僵菌 Metarhizium anisopliae 优选菌株的生物杀虫剂，可感染并杀死蓟马、螨类、叶蝉、象甲、白粉虱和毛虫等多种昆虫的幼虫和成虫。",
+        "benefits": [
+          "杀灭幼虫和成虫",
+          "防治蓟马、螨类和白粉虱",
+          "天然虫生真菌菌株",
+          "无化学残留"
+        ],
+        "microbes": "绿僵菌 Metarhizium anisopliae 1.5% LF",
+        "application": "叶面施用",
+        "dosage": "1 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-006": {
+        "name": "AT ORGO 迈塔-P",
+        "tagline": "生物杀虫剂（绿僵菌 Metarhizium anisopliae）- 可湿性粉剂",
+        "description": "可湿性粉剂形态的生物杀虫剂，基于天然存在的虫生土壤真菌绿僵菌 Metarhizium anisopliae。对蓟马、螨类、叶蝉、果实和嫩梢蛀虫以及毛虫等害虫有效。",
+        "benefits": [
+          "广谱害虫防治",
+          "感染并杀死鳞翅目害虫",
+          "对有益昆虫安全",
+          "可持续的害虫管理"
+        ],
+        "microbes": "绿僵菌 Metarhizium anisopliae 1.0% WP",
+        "application": "叶面施用",
+        "dosage": "1 公斤/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 公斤"
+        ]
+      },
+      "bi-007": {
+        "name": "AT ORGO 奈马提克",
+        "tagline": "生物杀线虫剂（淡紫拟青霉 Paecilomyces lilacinus）",
+        "description": "基于天然存在的虫生真菌淡紫拟青霉 Paecilomyces lilacinus 优选菌株的生物杀线虫剂。它能感染并杀死根结、胞囊、柑橘和病斑线虫等植物病原线虫的卵、幼虫和成虫。",
+        "benefits": [
+          "防治根结和胞囊线虫",
+          "杀死线虫卵、幼虫和成虫",
+          "天然虫生真菌菌株",
+          "改善根系健康"
+        ],
+        "microbes": "淡紫拟青霉 Paecilomyces lilacinus 1.5% LF",
+        "application": "土壤施用",
+        "dosage": "1 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-008": {
+        "name": "AT ORGO 奈马提克-P",
+        "tagline": "生物杀线虫剂（厚垣孢轮枝菌 Verticillium Chlamydosporium）- 可湿性粉剂",
+        "description": "基于天然存在的虫生真菌厚垣孢轮枝菌 Verticillium Chlamydosporium 优选菌株的生物杀线虫剂。对多种植物病原线虫有效。",
+        "benefits": [
+          "靶向病原线虫",
+          "感染线虫卵和幼虫",
+          "抑制土传真菌病害",
+          "适合有机农业"
+        ],
+        "microbes": "厚垣孢轮枝菌 Verticillium Chlamydosporium 1% WP",
+        "application": "土壤施用",
+        "dosage": "1 公斤/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 公斤"
+        ]
+      },
+      "bi-009": {
+        "name": "AT ORGO 尼姆",
+        "tagline": "含印楝素（1500 ppm）的杀虫剂",
+        "description": "以印楝素（1500 ppm）为基础的产品，可作为杀虫剂和杀螨剂使用。它具有拒食、昆虫生长调节和驱避作用，可防治白粉虱、蚜虫和螨类等害虫。",
+        "benefits": [
+          "防治 200+ 种昆虫",
+          "三重作用：驱避、拒食、生长调节",
+          "作物零残留",
+          "对有益昆虫安全"
+        ],
+        "contents": "印楝油、印楝素（1500 ppm）",
+        "application": "叶面施用",
+        "dosage": "3-4 毫升/升",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-010": {
+        "name": "AT ORGO 尼姆 PLUS",
+        "tagline": "含印楝素（3000 ppm）的杀虫剂",
+        "description": "高浓缩印楝素（3000 ppm）配方，可在不伤害有益昆虫的情况下驱避蓟马、粉蚧和潜叶蝇等害虫。",
+        "benefits": [
+          "高效印楝素",
+          "对蓟马和白粉虱有效",
+          "干扰昆虫生命周期",
+          "适合综合虫害管理（IPM）"
+        ],
+        "contents": "印楝油、印楝素（3000 ppm）",
+        "application": "叶面施用",
+        "dosage": "2-3 毫升/升",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bi-011": {
+        "name": "AT ORGO 尼姆 超强",
+        "tagline": "含印楝素（10000 ppm）的杀虫剂",
+        "description": "超高浓度印楝素（10000 ppm），提供最大程度保护。可作为强效驱避剂和生长调节剂，用于广谱害虫管理。",
+        "benefits": [
+          "最高强度配方",
+          "低剂量需求",
+          "强效驱避作用",
+          "高端生态安全保护"
+        ],
+        "contents": "印楝油、印楝素（10000 ppm）",
+        "application": "叶面施用",
+        "dosage": "0.5 毫升/升",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升"
+        ]
+      },
+      "bs-001": {
+        "name": "AT ORGO 达拉麦克斯",
+        "tagline": "天然植物生长模拟剂（粉剂）",
+        "description": "一种粉剂形态的天然植物生长模拟剂，源自有机原料。它可作为强效根际活化剂，改善土壤生物活性并增强根系健康。",
+        "benefits": [
+          "根际活化剂",
+          "改善土壤结构",
+          "促进养分吸收",
+          "源自有机原料"
+        ],
+        "contents": "腐植酸、富里酸、氢氧化钾等",
+        "application": "土壤施用",
+        "dosage": "500 克/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "500 克",
+          "1.0 公斤"
+        ]
+      },
+      "bs-002": {
+        "name": "AT ORGO 达拉轻",
+        "tagline": "天然植物生长模拟剂（液体）",
+        "description": "一种液体形态的天然植物生长模拟剂，源自有机原料。它可作为根际活化剂，快速促进土壤和根系更新。",
+        "benefits": [
+          "液体根际活化剂",
+          "快速吸收养分",
+          "改善植株长势",
+          "可持续有机来源"
+        ],
+        "contents": "腐植酸、富里酸等",
+        "application": "土壤施用",
+        "dosage": "500 毫升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "100 毫升",
+          "250 毫升",
+          "500 毫升",
+          "1.0 升"
+        ]
+      },
+      "bs-003": {
+        "name": "AT ORGO 弗洛拉尔",
+        "tagline": "丰花诱导剂",
+        "description": "源自有机原料的天然植物生长模拟剂。含有长链肽和游离氨基酸，可在农作物和园艺作物中促进大花量形成。",
+        "benefits": [
+          "促进大量开花",
+          "减少落花",
+          "富含肽和氨基酸",
+          "提升产量潜力"
+        ],
+        "contents": "蛋白水解物、海藻提取物等",
+        "application": "叶面喷施",
+        "dosage": "400 毫升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "250 毫升",
+          "500 毫升",
+          "1.0 升"
+        ]
+      },
+      "bs-004": {
+        "name": "AT ORGO 果实增效",
+        "tagline": "促果增重剂",
+        "description": "含有同化芸苔素内酯，可促进代谢活动并诱导丰产坐果。有效控制花果早落并显著提高坐果率。",
+        "benefits": [
+          "促进丰果形成",
+          "防止落花/落果",
+          "增加果实大小和重量",
+          "促进代谢活动"
+        ],
+        "contents": "同化芸苔素内酯",
+        "application": "叶面喷施",
+        "dosage": "100 毫升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "100 毫升",
+          "250 毫升"
+        ]
+      },
+      "bs-005": {
+        "name": "AT ORGO 奥查格罗",
+        "tagline": "代谢活性诱导剂",
+        "description": "特别配方，含蛋白水解物、木质素和维生素，通过促进植物体内代谢活动来诱导大量开花。",
+        "benefits": [
+          "促进代谢诱导",
+          "确保开花整齐",
+          "富含维生素和木质素",
+          "高性能有机配方"
+        ],
+        "contents": "蛋白水解物（玉米）、氧化木质素、肌醇、溴硝醇等",
+        "application": "叶面喷施",
+        "dosage": "500 毫升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "500 毫升",
+          "1.0 升"
+        ]
+      },
+      "bs-006": {
+        "name": "AT ORGO 奥查助",
+        "tagline": "果面增光增甜剂",
+        "description": "高浓度游离 L-氨基酸，可作为天然促果剂，提升果实大小、重量、光泽和甜度。",
+        "benefits": [
+          "改善果面光泽和重量",
+          "提高甜度（Brix）",
+          "高含量 L-氨基酸",
+          "天然促果剂"
+        ],
+        "contents": "蛋白水解物、维生素等",
+        "application": "叶面喷施",
+        "dosage": "600 毫升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "500 毫升",
+          "1.0 升"
+        ]
+      },
+      "bs-007": {
+        "name": "AT ORGO 姆鲁达米特",
+        "tagline": "全方位植物健康模拟剂",
+        "description": "在整个生育周期中提供必需的大量元素和微量元素，改善植物整体生长、健康和品质。",
+        "benefits": [
+          "全生命周期支持",
+          "提供大量元素和微量元素",
+          "源自大豆和海藻",
+          "增强植物免疫力"
+        ],
+        "contents": "海藻（Ascophyllum nodosum）、大豆蛋白水解物、腐植酸",
+        "application": "土壤施用",
+        "dosage": "4 公斤/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "4 公斤"
+        ]
+      },
+      "bs-008": {
+        "name": "AT ORGO 西维塔",
+        "tagline": "海藻提取物强效配方",
+        "description": "基于 Ascophyllum nodosum 提取物，可刺激植物生长并改善农产品的品质指标。",
+        "benefits": [
+          "优质海藻浓缩物",
+          "促进营养生长",
+          "改善农产品品质",
+          "富含天然维生素"
+        ],
+        "contents": "海藻提取物、维生素等",
+        "application": "土壤施用",
+        "dosage": "1 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "500 毫升",
+          "1.0 升"
+        ]
+      },
+      "bs-009": {
+        "name": "AT ORGO 胡米维塔",
+        "tagline": "天然植物生长模拟剂（腐殖质基）",
+        "description": "一种完全天然的植物生长模拟剂，以腐殖质为基础。其主要成分为腐植酸，可提升作物整体生长和产量。",
+        "benefits": [
+          "提高整体生长",
+          "提升产量",
+          "天然腐殖质基配方"
+        ],
+        "contents": "腐植酸、富里酸、维生素等",
+        "application": "土壤施用",
+        "dosage": "2 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升",
+          "5 升"
+        ]
+      },
+      "bs-010": {
+        "name": "AT ORGO 碳普乐斯",
+        "tagline": "天然植物生长模拟剂（腐殖质基）",
+        "description": "一种完全天然的植物生长模拟剂，以腐殖质为基础。其主要成分为腐植酸，可提升作物整体生长和产量。",
+        "benefits": [
+          "提高整体生长",
+          "提升产量",
+          "天然腐殖质基配方"
+        ],
+        "contents": "腐植酸、富里酸、维生素等",
+        "application": "土壤施用",
+        "dosage": "4 升/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "1 升",
+          "5 升"
+        ]
+      },
       "bf-007": {
         "name": "AT ORGO ROBUSTA PRO-LDC KIT",
         "tagline": "长周期作物营养套餐",
@@ -419,6 +869,66 @@
         "packSizes": [
           "250 毫升",
           "1 升"
+        ]
+      },
+      "on-003": {
+        "name": "AT ORGO 布米里奇",
+        "tagline": "优质有机肥",
+        "description": "一种由牛粪和农场废弃物制成的高品质有机肥。富含植物健康生长所需的关键大量元素和微量元素。",
+        "benefits": [
+          "富含大量元素和微量元素",
+          "改善土壤有机碳",
+          "源自天然牛粪",
+          "增强植物活力"
+        ],
+        "specifications": "符合 FCO 1985 标准",
+        "application": "土壤施用",
+        "dosage": "200-250 千克/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "50 千克"
+        ]
+      },
+      "on-004": {
+        "name": "AT ORGO 作物增效",
+        "tagline": "生物增效有机肥",
+        "description": "一种由牛粪和农场废弃物制成的生物增效有机肥。富含有益微生物和养分，可支持作物健壮生长。",
+        "benefits": [
+          "富含有益微生物",
+          "矿物质组成丰富",
+          "促进旺盛生长",
+          "完整的土壤健康解决方案"
+        ],
+        "specifications": "符合 FCO 1985 标准",
+        "application": "土壤施用",
+        "dosage": "100-125 千克/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "25 千克"
+        ]
+      },
+      "on-005": {
+        "name": "AT ORGO 农磷肥",
+        "tagline": "富磷有机肥（PROM）",
+        "description": "一种通过将高品位岩磷与有机质共同堆肥生产的富磷有机肥（PROM）。可作为化学磷肥的优质替代方案。",
+        "benefits": [
+          "增值 PROM 技术",
+          "与岩磷共同堆肥",
+          "可持续的磷源",
+          "提高养分吸收效率"
+        ],
+        "specifications": "符合 FCO 1985 标准",
+        "application": "土壤施用",
+        "dosage": "50-100 千克/英亩",
+        "crops": [
+          "所有作物"
+        ],
+        "packSizes": [
+          "50 千克"
         ]
       }
     }

@@ -95,13 +95,13 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
                 </div>
                 <div className="robusta-detail-facts">
                   <div className="robusta-fact">
-                    <Droplets size={16} /> {product.dosage ? t(`${pKey}.dosage`, translateValue(product.dosage)) : '100% Organic'}
+                    <Droplets size={16} /> {product.dosage ? t(`${pKey}.dosage`, translateValue(product.dosage)) : t('products.detail.default_organic', '100% Organic')}
                   </div>
                   <div className="robusta-fact">
-                    <Sprout size={16} /> {product.application ? t(`${pKey}.application`, translateValue(product.application)) : 'Bio-active'}
+                    <Sprout size={16} /> {product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.default_bio_active', 'Bio-active')}
                   </div>
                   <div className="robusta-fact">
-                    <Package size={16} /> {product.packSizes && product.packSizes[0] ? t(`${pKey}.packSizes.0`, translateValue(product.packSizes[0])) : 'Premium Pack'}
+                    <Package size={16} /> {product.packSizes && product.packSizes[0] ? t(`${pKey}.packSizes.0`, translateValue(product.packSizes[0])) : t('products.detail.default_premium_pack', 'Premium Pack')}
                   </div>
                 </div>
               </div>
@@ -115,9 +115,9 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
                 <p className="robusta-detail-description">{t(`${pKey}.description`, product.description)}</p>
 
                 <div className="robusta-detail-badges">
-                  <span className="robusta-detail-badge">{product.slug.includes('kit') ? 'Premium Kit' : 'Bio-Formulation'}</span>
-                  <span className="robusta-detail-badge">{product.application ? t(`${pKey}.application`, translateValue(product.application)) : 'Easy to Apply'}</span>
-                  <span className="robusta-detail-badge">Eco-Friendly & Safe</span>
+                  <span className="robusta-detail-badge">{product.slug.includes('kit') ? t('products.detail.premium_kit', 'Premium Kit') : t('products.detail.bio_formulation', 'Bio-Formulation')}</span>
+                  <span className="robusta-detail-badge">{product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.easy_to_apply', 'Easy to Apply')}</span>
+                  <span className="robusta-detail-badge">{t('products.detail.eco_friendly_safe', 'Eco-Friendly & Safe')}</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -128,21 +128,21 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
               <section className="robusta-panel robusta-panel--main">
                 <div className="robusta-panel__header">
                   <h3>{t('products.fields.key_benefits') || 'Key Benefits'}</h3>
-                  <p>Scientifically formulated for maximum effectiveness and sustainable crop performance.</p>
+                  <p>{t('products.detail.benefits_intro', 'Scientifically formulated for maximum effectiveness and sustainable crop performance.')}</p>
                 </div>
                 <div className="robusta-benefit-grid">
                   {product.benefits.map((benefit, index) => {
                     const getSubDesc = (idx) => {
                       if (product.slug === 'at-orgo-robusta-pro-nc-kit') {
-                        return idx === 0 ? 'Supports rapid uptake through the carrier-based format.' : 
-                               idx === 1 ? 'Designed for smooth handling and consistent field use.' : 
-                               idx === 2 ? 'Improves delivery of active material in the root zone.' : 
-                               'Built for straightforward, practical application.';
+                        return idx === 0 ? t('products.detail.nc_subdesc_0', 'Supports rapid uptake through the carrier-based format.') : 
+                               idx === 1 ? t('products.detail.nc_subdesc_1', 'Designed for smooth handling and consistent field use.') : 
+                               idx === 2 ? t('products.detail.nc_subdesc_2', 'Improves delivery of active material in the root zone.') : 
+                               t('products.detail.nc_subdesc_3', 'Built for straightforward, practical application.');
                       }
-                      return idx === 0 ? 'Enhances crop development and optimizes nutrient efficiency.' :
-                             idx === 1 ? 'Strengthens root structure and improves soil vitality.' :
-                             idx === 2 ? 'Boosts natural crop resistance against environmental stress.' :
-                             'Promotes sustainable practices and premium yield quality.';
+                      return idx === 0 ? t('products.detail.benefit_subdesc_0', 'Enhances crop development and optimizes nutrient efficiency.') :
+                             idx === 1 ? t('products.detail.benefit_subdesc_1', 'Strengthens root structure and improves soil vitality.') :
+                             idx === 2 ? t('products.detail.benefit_subdesc_2', 'Boosts natural crop resistance against environmental stress.') :
+                             t('products.detail.benefit_subdesc_3', 'Promotes sustainable practices and premium yield quality.');
                     };
                     return (
                       <div key={index} className="robusta-benefit-card">
@@ -161,8 +161,8 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
             <AnimatedSection delay={260}>
               <section className="robusta-panel robusta-panel--full">
                 <div className="robusta-panel__header">
-                  <h3>Quick specs</h3>
-                  <p>Everything a distributor or farmer needs at a glance.</p>
+                  <h3>{t('products.detail.quick_specs_title', 'Quick specs')}</h3>
+                  <p>{t('products.detail.quick_specs_desc', 'Everything a distributor or farmer needs at a glance.')}</p>
                 </div>
 
                 <div className="robusta-spec-list">
