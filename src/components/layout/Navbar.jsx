@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, startTransition } from 'react';
 import { Link, useLocation } from '../RouterBridge';
-import { Menu, X, ChevronDown, Phone, Mail, Search, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/siteData';
 import { assetSrc } from '../../utils/assetSrc';
@@ -14,9 +14,10 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [showLangMenu, setShowLangMenu] = useState(false);
-  const menuTimeoutRef = useRef(null);
+  const navbarRef = useRef(null);
   const langMenuRef = useRef(null);
   const location = useLocation();
   const { pathname, search, hash } = location;
@@ -30,20 +31,48 @@ export default function Navbar() {
   const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
 
   const changeLanguage = (code) => {
-    i18n.changeLanguage(code);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('i18nextLng', code);
-    }
     setShowLangMenu(false);
+    startTransition(() => {
+      i18n.changeLanguage(code);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('i18nextLng', code);
+      }
+    });
   };
 
   useEffect(() => {
+    let ticking = false;
+    const lastY = { value: window.scrollY };
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const y = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(y > 20);
+          if (pathname === '/') {
+            // On the homepage, once the navbar moves up, keep it pinned there for uniformity.
+            if (y > 120) {
+              setHideOnScroll(true);
+            }
+          } else if (y > lastY.value && y > 120) {
+            setHideOnScroll(true);
+          } else if (y < lastY.value) {
+            setHideOnScroll(false);
+          }
+          lastY.value = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname !== '/') {
+      setHideOnScroll(false);
+    }
+  }, [pathname]);
 
   const lastPathRef = useRef({ pathname, search, hash });
 
@@ -67,44 +96,29 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (navbarRef.current && navbarRef.current.contains(event.target)) {
+        return;
+      }
       if (langMenuRef.current && !langMenuRef.current.contains(event.target)) {
         setShowLangMenu(false);
       }
+      setActiveMenu(null);
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleMenuEnter = (label) => {
-    if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
     setActiveMenu(label);
   };
 
-  const handleMenuLeave = () => {
-    menuTimeoutRef.current = setTimeout(() => setActiveMenu(null), 300);
-  };
-
   const isHomePage = location.pathname === '/';
-  const navbarClass = `navbar ${isScrolled || !isHomePage ? 'navbar-solid' : 'navbar-transparent'}`;
+  const navbarClass = `navbar ${isScrolled || !isHomePage ? 'navbar-solid' : 'navbar-transparent'} ${hideOnScroll ? 'navbar-hidden' : ''}`;
 
   return (
     <>
-      {/* Top bar */}
-      <div className="topbar">
-        <div className="container-wide topbar-content">
-          <div className="topbar-left"></div>
-          <div className="topbar-center">
-            <span>🌱 {t('nav.tagline', 'Innovating Agriculture, Nurturing Growth')}</span>
-          </div>
-          <div className="topbar-right">
-            <a href="tel:+919825142359"><Phone size={12} /> +91 98251 42359</a>
-            <a href="mailto:info@jayagritech.com"><Mail size={12} /> info@jayagritech.com</a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navbar */}
-      <nav className={navbarClass} id="main-navbar">
+      <nav className={navbarClass} id="main-navbar" ref={navbarRef}>
         <div className="container-wide navbar-inner">
           {/* Logo */}
           <Link to="/" className="navbar-logo" id="nav-logo">
@@ -119,7 +133,6 @@ export default function Navbar() {
                 key={item.label}
                 className={`nav-item ${activeMenu === item.label ? 'active' : ''}`}
                 onMouseEnter={() => item.megaMenu && handleMenuEnter(item.label)}
-                onMouseLeave={handleMenuLeave}
               >
                 {item.megaMenu ? (
                   <button
@@ -148,7 +161,6 @@ export default function Navbar() {
                   <div
                     className={`mega-menu ${item.label === 'Solutions' ? 'mega-menu-solutions' : ''} ${item.label === 'Products' ? 'mega-menu-products' : ''}`}
                     onMouseEnter={() => handleMenuEnter(item.label)}
-                    onMouseLeave={handleMenuLeave}
                   >
                     <div className="mega-menu-inner">
                       {item.sections.map((section) => (
@@ -173,11 +185,16 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="navbar-actions">
+            <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
+              {t('nav.contact_us', 'Contact Us')}
+            </Link>
+            <Link to="/partners/dealer" className="btn btn-primary btn-sm" id="nav-cta">
+              {t('nav.become_partner')}
+            </Link>
             <div
               className="lang-switcher-wrapper"
               ref={langMenuRef}
               onMouseEnter={() => setShowLangMenu(true)}
-              onMouseLeave={() => setShowLangMenu(false)}
             >
               <button
                 className="lang-switcher-btn"
@@ -204,12 +221,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
-              {t('nav.contact_us', 'Contact Us')}
-            </Link>
-            <Link to="/partners/dealer" className="btn btn-primary btn-sm" id="nav-cta">
-              {t('nav.become_partner')}
-            </Link>
           </div>
 
           {/* Mobile Toggle */}

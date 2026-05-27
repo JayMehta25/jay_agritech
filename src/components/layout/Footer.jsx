@@ -4,7 +4,7 @@ import {
   ArrowRight, Leaf, Send
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { companyInfo, products } from '../../data/siteData';
+import { companyInfo, products, navLinks } from '../../data/siteData';
 import { assetSrc } from '../../utils/assetSrc';
 import logoImgAsset from '../../assets/new_title.png';
 import titleImgAsset from '../../assets/title_bg.png';
@@ -66,20 +66,31 @@ export default function Footer() {
             <div className="footer-links-group">
               <h4>{t('footer.company')}</h4>
               <ul>
-                <li><Link to="/about">{t('nav.about')}</Link></li>
-                <li><Link to="/about/leadership">{t('nav.links.leadership_team')}</Link></li>
-                <li><Link to="/about/certifications">{t('nav.links.certifications')}</Link></li>
+                <li><Link to="/aboutus">{t('nav.about')}</Link></li>
+                <li><Link to="/aboutus/leadership">{t('nav.links.leadership_team')}</Link></li>
+                <li><Link to="/aboutus/certifications">{t('nav.links.certifications')}</Link></li>
                 <li><Link to="/careers">{t('footer.careers', 'Careers')}</Link></li>
               </ul>
             </div>
 
-            {/* Products */}
+            {/* Solutions (replacing Products label) */}
             <div className="footer-links-group">
-              <h4>{t('footer.products')}</h4>
+              <h4>{t('nav.solutions')}</h4>
               <ul>
-                {products.categories.map((cat) => (
-                  <li key={cat.id}><Link to={`/products/${cat.slug}`}>{t(cat.nameKey, cat.name)}</Link></li>
-                ))}
+                {(() => {
+                  const solutionsItem = navLinks.find(n => n.label === 'Solutions');
+                  if (solutionsItem && solutionsItem.sections) {
+                    return solutionsItem.sections.flatMap(section =>
+                      section.links.map(link => (
+                        <li key={link.path}><Link to={link.path}>{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.label)}</Link></li>
+                      ))
+                    );
+                  }
+                  // fallback to product categories if navLinks not available
+                  return products.categories.map((cat) => (
+                    <li key={cat.id}><Link to={`/products/${cat.slug}`}>{t(cat.nameKey, cat.name)}</Link></li>
+                  ));
+                })()}
               </ul>
             </div>
 

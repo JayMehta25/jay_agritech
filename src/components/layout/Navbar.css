@@ -2,59 +2,6 @@
    Navbar Styles
    ============================================ */
 
-/* ── Top Bar ── */
-.topbar {
-  background: var(--clr-primary-dark);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: var(--fs-caption);
-  padding: var(--sp-2) 0;
-  position: relative;
-  z-index: var(--z-fixed);
-}
-
-.topbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 var(--sp-4);
-}
-
-.topbar-left {
-  flex: 1;
-}
-
-.topbar-center {
-  flex: 2;
-  text-align: center;
-}
-
-.topbar-center span {
-  font-weight: var(--fw-medium);
-  letter-spacing: var(--ls-wide);
-  font-size: 11px;
-}
-
-.topbar-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-5);
-  justify-content: flex-end;
-}
-
-.topbar-right a {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-1);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 11px;
-  transition: color var(--duration-fast);
-}
-
-.topbar-right a:hover {
-  color: white;
-}
-
 /* ── Language Switcher ── */
 .lang-switcher-wrapper {
   position: relative;
@@ -183,18 +130,21 @@
 /* ── Main Navbar ── */
 .navbar {
   position: fixed;
-  top: 32px;
-  /* Height of topbar */
+  top: 12px;
   left: 0;
   right: 0;
   height: var(--navbar-height);
   z-index: var(--z-fixed);
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: transform 520ms var(--ease-out), background 240ms var(--ease-out);
+  will-change: transform;
 }
 
 @media (max-width: 480px) {
   .navbar {
-    top: 0;
+    top: 8px;
+  }
+  .navbar-hidden {
+    transform: translateY(0);
   }
 }
 
@@ -207,6 +157,11 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
+}
+
+/* hide navbar by moving it up only slightly so it remains visible */
+.navbar-hidden {
+  transform: translateY(-24px);
 }
 
 .navbar-inner {

@@ -62,15 +62,15 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
 
-            {/* About */}
-            <Route path="about" element={<About />} />
-            <Route path="about/journey" element={<About />} />
-            <Route path="about/vision-mission" element={<About />} />
-            <Route path="about/leadership" element={<About />} />
-            <Route path="about/manufacturing" element={<About />} />
-            <Route path="about/certifications" element={<About />} />
-            <Route path="about/sustainability" element={<About />} />
-            <Route path="about/milestones" element={<About />} />
+            {/* About / About Us */}
+            <Route path="aboutus" element={<About />} />
+            <Route path="aboutus/journey" element={<About />} />
+            <Route path="aboutus/vision-mission" element={<About />} />
+            <Route path="aboutus/leadership" element={<About />} />
+            <Route path="aboutus/manufacturing" element={<About />} />
+            <Route path="aboutus/certifications" element={<About />} />
+            <Route path="aboutus/sustainability" element={<About />} />
+            <Route path="aboutus/milestones" element={<About />} />
 
             {/* Solutions */}
             <Route path="solutions" element={<Solutions />} />

@@ -602,7 +602,19 @@ export default function Partners() {
         <div className="grid-3" style={{ marginBottom: 'var(--sp-16)' }}>
           {types.map((type, i) => (
             <AnimatedSection key={i}>
-              <div className="card hover-lift" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <div
+                className="card hover-lift"
+                role="button"
+                tabIndex={0}
+                onClick={() => openModal(type.key)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(type.key);
+                  }
+                }}
+                style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%', cursor: 'pointer' }}
+              >
                 <div style={{ width: '100%', height: 200, overflow: 'hidden', position: 'relative' }}>
                   <img src={typeImages[type.key]} alt={t(`pages_details.partners.reasons.${type.key}.title`)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${type.color}40)` }}></div>
@@ -618,7 +630,7 @@ export default function Partners() {
                       </div>
                     ))}
                   </div>
-                  <button onClick={() => openModal(type.key)} className="btn btn-primary" style={{ width: '100%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <button onClick={(e) => { e.stopPropagation(); openModal(type.key); }} className="btn btn-primary" style={{ width: '100%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                     {t('pages.partners.apply_now', 'Apply Now')} <ArrowRight size={16} />
                   </button>
                 </div>

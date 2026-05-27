@@ -266,7 +266,7 @@ export default function Solutions() {
       <div className="container" id="overview">
         {solutions.map((sol, i) => (
           <AnimatedSection key={sol.key} id={sol.id}>
-            <section className="solutions-item-section">
+            <section className={`solutions-item-section ${sol.key === 'nutrient_management' ? 'nutrient-management-horizontal' : ''}`}>
               <div className="solutions-content-col" style={{ order: i % 2 === 0 ? 0 : 1 }}>
                 <div className="solutions-icon-wrapper" style={{ background: `${sol.color}15`, color: sol.color }}>
                   {sol.icon}

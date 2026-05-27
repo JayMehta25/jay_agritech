@@ -152,6 +152,8 @@
       "apply_5kg_acre_before_sowing_mix_with_organic_manure_for_best_results": "播种前施用 5kg/英亩。与有机肥混合施用效果最佳。",
       "all_crops": "所有作物",
       "1_liter_acre": "1 升/英亩",
+      "2_2_5_liter_acre": "2-2.5 升/英亩",
+      "10_kg_acre": "10 公斤/英亩",
       "100_ml_acre": "100 毫升/英亩",
       "400_ml_acre": "400 毫升/英亩",
       "500_ml_acre": "500 毫升/英亩",
@@ -162,6 +164,9 @@
       "1_kit_acre": "1 套/英亩",
       "long_duration_crops": "长周期作物",
       "short_duration_crops": "短周期作物",
+      "all_fe_deficient_crops": "所有缺铁作物",
+      "all_zn_deficient_crops": "所有缺锌作物",
+      "all_fe_and_zn_deficient_crops": "所有缺铁和缺锌作物",
       "cotton": "棉花",
       "vegetables": "蔬菜",
       "fruits": "水果",
@@ -744,6 +749,90 @@
           "1 升",
           "5 升"
         ]
+      },
+      "mn-001": {
+        "name": "AT NUTRI 微泽特",
+        "tagline": "混合微量元素（古吉拉特一级）",
+        "description": "含铁、锰、锌、铜和硼等元素的平衡微量元素混合物，可纠正微量元素缺乏并为植物提供均衡营养。",
+        "benefits": [
+          "纠正多种微量元素缺乏",
+          "均衡营养输送",
+          "提升作物产量与品质",
+          "高吸收配方"
+        ],
+        "application": "叶面喷施",
+        "dosage": "1 升/英亩",
+        "recommended": "所有作物"
+      },
+      "mn-002": {
+        "name": "AT NUTRI 微哲恩",
+        "tagline": "混合微量元素（古吉拉特二级）",
+        "description": "含 Fe、Mn、Zn、Cu 和硼的特制微量元素混合物（古吉拉特二级），特别推荐用于缺铁作物。",
+        "benefits": [
+          "针对铁（Fe）缺乏",
+          "促进叶绿素合成",
+          "平衡微量元素配比",
+          "快速叶面吸收"
+        ],
+        "application": "叶面喷施",
+        "dosage": "1 升/英亩",
+        "recommended": "所有缺铁作物"
+      },
+      "mn-003": {
+        "name": "AT NUTRI 微力斯-SP",
+        "tagline": "混合微量元素（古吉拉特三级）- 叶面",
+        "description": "高性能微量元素混合物（古吉拉特三级），专门通过叶面喷施纠正锌（Zn）缺乏。",
+        "benefits": [
+          "针对锌（Zn）缺乏",
+          "增强酶活性",
+          "均衡矿物营养",
+          "高溶解度与高纯度"
+        ],
+        "application": "叶面喷施",
+        "dosage": "1 升/英亩",
+        "recommended": "所有缺锌作物"
+      },
+      "mn-004": {
+        "name": "AT NUTRI 微倍-DF",
+        "tagline": "混合微量元素（古吉拉特三级）- 土壤",
+        "description": "用于土壤施用的微量元素混合物（古吉拉特三级）。可向根区提供持久的锌及其他必需矿物质。",
+        "benefits": [
+          "高效土壤型 Zn 校正",
+          "长效养分供应",
+          "改善根际健康",
+          "适合缺锌土壤"
+        ],
+        "application": "土壤施用",
+        "dosage": "2-2.5 升/英亩",
+        "recommended": "所有缺锌作物"
+      },
+      "mn-005": {
+        "name": "AT NUTRI 微博斯特",
+        "tagline": "混合微量元素（古吉拉特四级）",
+        "description": "同时针对铁（Fe）和锌（Zn）缺乏的综合微量元素混合物（古吉拉特四级）。",
+        "benefits": [
+          "双重 Fe 与 Zn 缺乏修复",
+          "完整微量元素平衡",
+          "促进营养生长",
+          "优质矿物配方"
+        ],
+        "application": "叶面喷施",
+        "dosage": "1 升/英亩",
+        "recommended": "所有缺铁和缺锌作物"
+      },
+      "mn-006": {
+        "name": "AT NUTRI 纽特瑞瓦",
+        "tagline": "混合微量元素（古吉拉特五级）",
+        "description": "用于土壤施用的颗粒/粉末微量元素混合物（古吉拉特五级），为所有作物提供稳定的营养基础。",
+        "benefits": [
+          "全面土壤营养基础",
+          "均衡 Fe、Mn、Zn、Cu、Bo",
+          "稳定释放矿物质",
+          "适合所有土壤类型"
+        ],
+        "application": "土壤施用",
+        "dosage": "10 公斤/英亩",
+        "recommended": "所有作物"
       },
       "bf-007": {
         "name": "AT ORGO ROBUSTA PRO-LDC KIT",

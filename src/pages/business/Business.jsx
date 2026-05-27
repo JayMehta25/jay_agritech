@@ -72,11 +72,11 @@ export default function Business() {
               </div>
               
               <p className="bsc-full-desc" style={{ color: 'var(--clr-text-body)', fontSize: 'var(--fs-body-lg)', lineHeight: 1.8, margin: 'var(--sp-6) 0' }}>
-                {svcDesc} {t('business.detail_extension', 'We support our partners with comprehensive end-to-end operational capacity, state-of-the-art biological laboratory testing, and robust regulatory compliance. Partnering with Jay Agritech ensures consistent quality, optimized formulations, and rapid scale-to-market.')}
+                {svcDesc} {t('business.detail_extension')}
               </p>
 
               <div className="bsc-features-section" style={{ borderTop: '1px dashed var(--clr-border-light)', paddingTop: 'var(--sp-8)', marginTop: 'var(--sp-6)' }}>
-                <h3 style={{ fontSize: 'var(--fs-h3)', marginBottom: 'var(--sp-6)' }}>🌱 {t('business.core_capabilities', 'Core Capabilities & Features')}</h3>
+                <h3 style={{ fontSize: 'var(--fs-h3)', marginBottom: 'var(--sp-6)' }}>🌱 {t('business.core_capabilities')}</h3>
                 
                 <div className="bsc-features-grid">
                   {svcFeatures.map((f, idx) => (
@@ -88,11 +88,10 @@ export default function Business() {
                 </div>
               </div>
 
-              <div className="bsc-cta-area" style={{ marginTop: 'var(--sp-10)', textAlign: 'left' }}>
+              <div className="bsc-cta-area">
                 <button
                   onClick={() => setActiveSvc({ key: svc.key, id: svc.id, title: svcTitle, color: svc.color })}
-                  className="btn btn-primary btn-lg"
-                  style={{ background: svc.color, borderColor: svc.color }}
+                  className="btn bsc-inquire-btn"
                 >
                   {t('pages.business.inquire_now', 'Inquire Now')} <ArrowRight size={18} />
                 </button>

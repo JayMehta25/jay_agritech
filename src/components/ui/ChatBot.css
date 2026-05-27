@@ -465,10 +465,26 @@
 .cqq-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   max-height: 180px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding: 2px 4px 2px 0;
+}
+
+.cqq-item {
+  padding: 3px 0;
+}
+
+.cqq-item:hover .cqq-btn:not(:disabled),
+.cqq-item:focus-within .cqq-btn:not(:disabled) {
+  background: var(--clr-primary);
+  color: white !important;
+  border-color: var(--clr-primary);
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
+}
+
+.cqq-item:hover .cqq-btn:not(:disabled) svg,
+.cqq-item:focus-within .cqq-btn:not(:disabled) svg {
+  color: white !important;
 }
 
 /* Custom Scrollbar for Quick Questions */
@@ -500,13 +516,13 @@
   display: inline-flex;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .cqq-btn:hover:not(:disabled) {
   background: var(--clr-primary);
   color: white !important;
   border-color: var(--clr-primary);
-  transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
 }
 

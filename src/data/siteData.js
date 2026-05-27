@@ -856,22 +856,22 @@ Biofertilizers represent a sustainable, cost-effective alternative to chemical f
 export const navLinks = [
   {
     label: 'About',
-    path: '/about',
+    path: '/aboutus',
     megaMenu: true,
     sections: [
       {
         title: 'Company',
         links: [
-          { label: 'Company Overview', path: '/about#overview', description: 'Our story, vision & mission' },
-          { label: 'Our Journey', path: '/about#journey', description: 'From founding to today' },
-          { label: 'Vision & Mission', path: '/about#vision-mission', description: 'What drives us' },
-          { label: 'Leadership Team', path: '/about#leadership', description: 'Meet our team' },
+          { label: 'Company Overview', path: '/aboutus#overview', description: 'Our story, vision & mission' },
+          { label: 'Our Journey', path: '/aboutus#journey', description: 'From founding to today' },
+          { label: 'Vision & Mission', path: '/aboutus#vision-mission', description: 'What drives us' },
+          { label: 'Leadership Team', path: '/aboutus#leadership', description: 'Meet our team' },
         ]
       },
       {
         title: 'Operations',
         links: [
-          { label: 'Certifications', path: '/about#certifications', description: 'Quality standards & approvals' },
+          { label: 'Certifications', path: '/aboutus#certifications', description: 'Quality standards & approvals' },
         ]
       }
     ]

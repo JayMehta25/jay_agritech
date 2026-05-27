@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, startTransition } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -97,25 +97,33 @@ const getFaqSchema = (lang) => {
 export default function MyApp({ Component, pageProps }) {
   const { i18n } = useTranslation();
   const router = useRouter();
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   // Safe client-side language detection and switching post-hydration
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedLang = localStorage.getItem('i18nextLng');
-      if (savedLang && ['en', 'hi', 'zh'].includes(savedLang)) {
-        if (i18n.language !== savedLang) {
-          i18n.changeLanguage(savedLang);
-        }
-      } else {
-        const browserLang = navigator.language || navigator.userLanguage;
-        const shortLang = browserLang?.split('-')[0];
-        const langToUse = ['en', 'hi', 'zh'].includes(shortLang) ? shortLang : 'en';
-        if (i18n.language !== langToUse) {
-          i18n.changeLanguage(langToUse);
-        }
-      }
+    if (!hydrated || typeof window === 'undefined') {
+      return;
     }
-  }, []);
+
+    const savedLang = localStorage.getItem('i18nextLng');
+    const browserLang = navigator.language || navigator.userLanguage;
+    const shortLang = browserLang?.split('-')[0];
+    const langToUse = savedLang && ['en', 'hi', 'zh'].includes(savedLang)
+      ? savedLang
+      : ['en', 'hi', 'zh'].includes(shortLang)
+        ? shortLang
+        : 'en';
+
+    if (i18n.language !== langToUse) {
+      startTransition(() => {
+        i18n.changeLanguage(langToUse);
+      });
+    }
+  }, [hydrated, i18n]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

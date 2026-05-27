@@ -1796,19 +1796,19 @@
   backdrop-filter: blur(10px);
   z-index: 10000;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--sp-4);
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
   animation: fadeIn 0.3s ease-out;
 }
 
 .pdf-modal-container {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: 90vh;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
   background: white;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   animation: modalScaleUp 0.3s ease-out;
@@ -1870,6 +1870,54 @@
   height: 65px;
   flex-shrink: 0;
   z-index: 10002;
+}
+
+.modal-title-area {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pdf-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+  margin-right: var(--sp-3);
+  flex: 0 0 auto;
+}
+
+.pdf-action-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-full);
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 0;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.pdf-action-btn--download {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.pdf-action-btn--download:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.pdf-action-btn--share {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.pdf-action-btn--share:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .modal-title-area h3 {
@@ -2259,17 +2307,40 @@
 /* Mobile Media Queries specifically for PDFModal */
 @media (max-width: 768px) {
   .interactive-catalogue-container {
-    height: 95vh;
-    border-radius: var(--radius-xl);
+    height: 100vh;
+    border-radius: 0;
   }
 
   .pdf-modal-header {
-    height: 55px;
+    height: auto;
     padding: var(--sp-3) var(--sp-4);
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+
+  .pdf-modal-actions {
+    order: 2;
+    width: auto;
+    margin: 0 0 0 auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: var(--sp-3);
+  }
+
+  .pdf-action-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 0;
+    flex: 0 0 44px;
+  }
+
+  .pdf-modal-close-btn {
+    order: 3;
   }
 
   .pdf-modal-body {
-    height: calc(100% - 55px);
+    height: calc(100% - 96px);
   }
 
   .catalogue-slide {

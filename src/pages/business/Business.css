@@ -105,23 +105,30 @@
 /* B2B Inquire CTA Actions */
 .bsc-cta-area {
   margin-top: var(--sp-8) !important;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.bsc-cta-area .btn {
+.bsc-inquire-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-4) var(--sp-8);
+  justify-content: center;
+  min-width: 220px;
+  padding: 14px 24px;
   font-weight: var(--fw-bold);
-  border-radius: var(--radius-lg);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(46, 125, 50, 0.18);
+  background: linear-gradient(135deg, var(--clr-primary) 0%, #1b5e20 100%);
+  color: white;
+  box-shadow: 0 14px 28px rgba(46, 125, 50, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.bsc-cta-area .btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  filter: brightness(1.08);
+.bsc-inquire-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 18px 34px rgba(46, 125, 50, 0.28);
 }
 
 /* ── B2B Modal Overlay and Cards ── */

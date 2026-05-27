@@ -159,7 +159,7 @@ const getDynamicPopupText = (pathname, lang) => {
     pageType = 'home';
   } else if (pathname.includes('/products')) {
     pageType = 'products';
-  } else if (pathname.includes('/about') || pathname.includes('/presence')) {
+  } else if (pathname.includes('/aboutus') || pathname.includes('/presence')) {
     pageType = 'about';
   } else if (pathname.includes('/partners') || pathname.includes('/become_partner')) {
     pageType = 'partners';
@@ -487,19 +487,20 @@ export default function ChatBot() {
               </span>
               <div className="cqq-list">
                 {getActiveQuestions().map((q, idx) => (
-                  <button 
-                    key={idx} 
-                    onClick={() => handleSelectQuestion(q)} 
-                    className="cqq-btn"
-                    disabled={isTyping || activeAnimatingId !== null}
-                    style={{
-                      opacity: (isTyping || activeAnimatingId !== null) ? 0.6 : 1,
-                      cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
-                    }}
-                  >
-                    <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
-                    {q.question}
-                  </button>
+                  <div key={idx} className="cqq-item">
+                    <button 
+                      onClick={() => handleSelectQuestion(q)} 
+                      className="cqq-btn"
+                      disabled={isTyping || activeAnimatingId !== null}
+                      style={{
+                        opacity: (isTyping || activeAnimatingId !== null) ? 0.6 : 1,
+                        cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
+                      }}
+                    >
+                      <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
+                      {q.question}
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>

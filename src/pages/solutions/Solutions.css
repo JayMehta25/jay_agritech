@@ -158,6 +158,39 @@
     margin-bottom: 0 !important;
   }
 
+  .solutions-item-section.nutrient-management-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: initial;
+  }
+
+  .solutions-item-section.nutrient-management-horizontal .solutions-image-col {
+    order: initial !important;
+    width: auto;
+  }
+
+  .solutions-item-section.nutrient-management-horizontal .solutions-content-col {
+    order: initial !important;
+  }
+
+  .solutions-item-section.nutrient-management-horizontal .solutions-image-wrapper {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-2xl);
+    border: none;
+    box-shadow: none;
+  }
+
+  .solutions-item-section.nutrient-management-horizontal .solutions-icon-wrapper {
+    position: static;
+    top: auto;
+    right: auto;
+    margin-bottom: var(--sp-6) !important;
+  }
+
+  .solutions-item-section.nutrient-management-horizontal .solutions-content-col {
+    padding: var(--sp-8) var(--sp-5) var(--sp-6) var(--sp-5) !important;
+  }
+
   /* Image Column at the TOP */
   .solutions-image-col {
     order: -1 !important; /* Forces image column to stack at the very top */

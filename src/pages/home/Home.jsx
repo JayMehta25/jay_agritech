@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import {
   ArrowRight, Leaf, FlaskConical, Shield, Sprout, TrendingUp,
   Users, Award, MapPin, ChevronRight, ChevronLeft, Star, Check, Zap,
-  Microscope, Beaker, Globe, Target, Heart, FileText, X, Download
+  Microscope, Beaker, Target, Heart, FileText, X, Download, Share2
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, useScrollAnimationGroup, useCountUp } from '../../hooks/useScrollAnimation';
@@ -70,6 +70,40 @@ const PDFModal = ({ isOpen, onClose, pdfUrl }) => {
 
   // Proper URL encoding + disable native browser controls to give a seamless custom-embedded look
   const cleanPdfUrl = encodeURI(pdfUrl) + "#toolbar=0&navpanes=0&scrollbar=1";
+  const pdfName = 'Jay_Agritech_Product_Catalogue.pdf';
+
+  const handleShare = async () => {
+    if (typeof window === 'undefined') return;
+
+    const shareUrl = `${window.location.origin}${pdfUrl}`;
+
+    try {
+      const response = await fetch(pdfUrl);
+      const pdfBlob = await response.blob();
+      const pdfFile = new File([pdfBlob], pdfName, { type: 'application/pdf' });
+
+      if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+        await navigator.share({
+          title: 'Jay Agritech Product Catalogue',
+          text: 'Jay Agritech Product Catalogue',
+          files: [pdfFile]
+        });
+        return;
+      }
+    } catch (error) {
+      // Fall back to sharing the public PDF URL.
+    }
+
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Jay Agritech Product Catalogue',
+        text: 'Jay Agritech Product Catalogue',
+        url: shareUrl
+      });
+    } else {
+      await navigator.clipboard?.writeText(shareUrl);
+    }
+  };
 
   return (
     <div className="pdf-modal-overlay" onClick={onClose}>
@@ -78,6 +112,16 @@ const PDFModal = ({ isOpen, onClose, pdfUrl }) => {
         <div className="pdf-modal-header">
           <div className="modal-title-area">
             <h3>Jay Agritech Product Catalogue</h3>
+          </div>
+
+          <div className="pdf-modal-actions">
+            <a className="pdf-action-btn pdf-action-btn--download" href={pdfUrl} download={pdfName} aria-label="Download PDF" title="Download PDF">
+              <Download size={16} />
+            </a>
+
+            <button className="pdf-action-btn pdf-action-btn--share" onClick={handleShare} type="button" aria-label="Share PDF" title="Share PDF">
+              <Share2 size={16} />
+            </button>
           </div>
           
           <button className="pdf-modal-close-btn" onClick={onClose} aria-label="Close">
@@ -172,7 +216,7 @@ export default function Home() {
               >
                 {t('hero.view_catalogue')} <FileText size={18} />
               </button>
-              <Link to="/about" className="btn btn-hero-outline btn-lg">
+              <Link to="/aboutus" className="btn btn-hero-outline btn-lg">
                 {t('hero.story_btn')} <ChevronRight size={18} />
               </Link>
             </div>

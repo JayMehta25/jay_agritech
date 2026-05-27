@@ -1,5 +1,12 @@
-import About from '../../src/pages/about/About';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-export default function AboutPage() {
-  return <About />;
+export default function AboutRedirect() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/aboutus');
+  }, [router]);
+
+  return null;
 }

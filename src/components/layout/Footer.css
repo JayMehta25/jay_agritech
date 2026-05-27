@@ -141,9 +141,18 @@
 }
 
 .footer-links-group ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
+  display: block;
+  margin: 0;
+  padding-left: var(--sp-5);
+}
+
+.footer-links-group ul li {
+  margin-bottom: var(--sp-3);
+  list-style: disc;
+}
+
+.footer-links-group ul li a {
+  display: inline-block;
 }
 
 .footer-links-group a {
