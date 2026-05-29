@@ -2022,5 +2022,34 @@
   "business": {
     "detail_extension": "我们为合作伙伴提供全面的端到端运营能力、最先进的生物实验室检测以及完善的合规性支持。与杰亚农科（Jay Agritech）合作可确保稳定的品质、优化的配方以及快速的市场化推广。",
     "core_capabilities": "核心能力与特点"
+  },
+  "footer": {
+    "cta_title": "准备好转型您的农业了吗？",
+    "cta_desc": "加入 500 多家与 Jay Agritech 创新生物解决方案共同成长的合作伙伴。",
+    "get_in_touch": "联系我们",
+    "quick_links": "快速链接",
+    "products": "产品",
+    "solutions": "解决方案",
+    "company": "公司",
+    "resources": "资源",
+    "contact_us": "联系我们",
+    "address": "瓦尔萨德，古吉拉特邦 — 地图视图",
+    "phone": "+91 98251 42359",
+    "email": "info@jayagritech.com",
+    "copyright": "© 2026 Jay Agritech。版权所有。",
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "follow_us": "关注我们",
+    "knowledge_hub": "知识中心",
+    "growth_system": "增长系统",
+    "contact_address": "印度古吉拉特邦瓦尔萨德 396001",
+    "newsletter_title": "订阅更新",
+    "newsletter_placeholder": "您的电子邮件",
+    "subscribe": "订阅",
+    "privacy_policy": "隐私政策",
+    "terms_conditions": "条款和条件",
+    "made_with_care": "精心为印度农业打造",
+    "description": "开创可持续农业的生物和有机农业解决方案。受全印度农民信赖的科学支撑产品。",
+    "careers": "职业生涯"
   }
 }

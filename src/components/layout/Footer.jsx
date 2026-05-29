@@ -49,8 +49,8 @@ export default function Footer() {
                 {t('footer.description')}
               </p>
               <div className="footer-certifications">
-                {companyInfo.certifications.slice(0, 3).map((cert) => (
-                  <span key={cert} className="footer-cert-badge">✓ {cert}</span>
+                {['iso_9001', 'fco_approved', 'cib_rc'].map((key) => (
+                  <span key={key} className="footer-cert-badge">✓ {t(`company.certifications_list.${key}`)}</span>
                 ))}
               </div>
               <div className="footer-social">

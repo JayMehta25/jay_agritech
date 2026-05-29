@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, startTransition } from 'react';
 import { Link, useLocation } from '../RouterBridge';
-import { Menu, X, ChevronDown, Search, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, Globe, Phone, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/siteData';
 import { assetSrc } from '../../utils/assetSrc';

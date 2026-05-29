@@ -956,32 +956,29 @@
       "reasons": {
         "dealer": {
           "title": "Become a Dealer",
-          "desc": "Perfect for local retail shops looking to provide high-quality biological inputs to their farming community.",
+          "desc": "Serve local farmers with trusted bio-inputs.",
           "benefits": [
-            "Low initial investment",
-            "Direct marketing support",
-            "Regular product training",
-            "Exclusive dealer margins"
+            "Low startup cost",
+            "Local marketing support",
+            "Regular product training"
           ]
         },
         "distributor": {
           "title": "Become a Distributor",
-          "desc": "Scale your business by managing regional distribution networks and supplying to multiple retail outlets.",
+          "desc": "Manage regional distribution to scale your reach.",
           "benefits": [
             "Regional exclusivity",
-            "Bulk purchase discounts",
-            "Dedicated account manager",
-            "Supply chain logistics support"
+            "Volume discounts",
+            "Dedicated account support"
           ]
         },
         "export": {
           "title": "Export Partner",
-          "desc": "Join us in taking sustainable Indian agri-technology to global markets. We support international expansion.",
+          "desc": "Partner to bring our sustainable agri-tech to global markets.",
           "benefits": [
-            "Export-quality documentation",
-            "Global regulatory support",
-            "Market-specific packaging",
-            "Collaborative R&D for global crops"
+            "Export documentation support",
+            "Regulatory assistance",
+            "Market-specific packaging"
           ]
         },
         "market": {

@@ -26,4 +26,37 @@ i18n
     }
   });
 
-export default i18n;
+  // Override i18n.t to avoid developer-provided English fallbacks leaking into Hindi UI.
+  // Many components call t('key', 'English text') — that string becomes the defaultValue.
+  // When the active language is Hindi, we want to ignore those string fallbacks and
+  // return an empty defaultValue instead so untranslated keys don't show English.
+  const _origT = i18n.t.bind(i18n);
+  i18n.t = (key, options) => {
+    try {
+      const lang = i18n.language || '';
+      const isHi = lang.startsWith('hi');
+
+      // If options is a plain string (common developer pattern), treat it as defaultValue
+      if (typeof options === 'string') {
+        if (isHi) return _origT(key, { defaultValue: '' });
+        return _origT(key, { defaultValue: options });
+      }
+
+      // If options is an object that contains defaultValue, and we're on Hindi, strip it
+      if (options && typeof options === 'object' && Object.prototype.hasOwnProperty.call(options, 'defaultValue')) {
+        if (isHi) {
+          const cloned = { ...options, defaultValue: '' };
+          return _origT(key, cloned);
+        }
+        return _origT(key, options);
+      }
+
+      // Fallback: delegate to original
+      return _origT(key, options);
+    } catch (e) {
+      // In case of unexpected errors, fall back to original behavior to avoid breaking UI
+      return _origT(key, options);
+    }
+  };
+
+  export default i18n;
