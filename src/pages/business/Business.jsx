@@ -50,16 +50,25 @@ export default function Business() {
   return (
     <GenericPage 
       title={t('pages.business.title')} 
-      overline={t('pages.business.overline', 'B2B Services')} 
+      overline={t('pages.business.overline')}
       subtitle={t('pages.business.subtitle')} 
       breadcrumbs={[{ label: t('nav.business') }]}
     >
       <div className="container" id="overview" style={{ paddingBottom: 'var(--sp-16)' }}>
         {services.map((svc, i) => {
-          const svcTitle = t(`pages_details.business.services.${svc.key}.title`);
-          const svcDesc = t(`pages_details.business.services.${svc.key}.description`);
-          const svcFeatures = Array.isArray(t(`pages_details.business.services.${svc.key}.features`, { returnObjects: true }))
-            ? t(`pages_details.business.services.${svc.key}.features`, { returnObjects: true })
+          const titleKey = `pages_details.business.services.${svc.key}.title`;
+          const descKey = `pages_details.business.services.${svc.key}.description`;
+          const featuresKey = `pages_details.business.services.${svc.key}.features`;
+
+          const svcTitle = t(titleKey, { defaultValue: '' });
+          // Use defaultValue empty so missing translations do not fall back to other languages
+          const svcDesc = t(descKey, { defaultValue: '' });
+          // Prefer detailed page-level copy when available (hi uses pages_details), otherwise fall back to top-level business keys (en)
+          const detailExtension = t('pages_details.business.detail_extension', { defaultValue: '' }) || t('business.detail_extension', { defaultValue: '' });
+          const coreCapabilities = t('pages_details.business.core_capabilities', { defaultValue: '' }) || t('business.core_capabilities', { defaultValue: '' });
+          const svcFeaturesRaw = t(featuresKey, { returnObjects: true, defaultValue: [] });
+          const svcFeatures = Array.isArray(svcFeaturesRaw)
+            ? svcFeaturesRaw.filter(f => typeof f === 'string' && f.trim() !== '' )
             : [];
 
           return (
@@ -72,11 +81,11 @@ export default function Business() {
               </div>
               
               <p className="bsc-full-desc" style={{ color: 'var(--clr-text-body)', fontSize: 'var(--fs-body-lg)', lineHeight: 1.8, margin: 'var(--sp-6) 0' }}>
-                {svcDesc} {t('business.detail_extension')}
+                {svcDesc || detailExtension}
               </p>
 
               <div className="bsc-features-section" style={{ borderTop: '1px dashed var(--clr-border-light)', paddingTop: 'var(--sp-8)', marginTop: 'var(--sp-6)' }}>
-                <h3 style={{ fontSize: 'var(--fs-h3)', marginBottom: 'var(--sp-6)' }}>🌱 {t('business.core_capabilities')}</h3>
+                <h3 style={{ fontSize: 'var(--fs-h3)', marginBottom: 'var(--sp-6)' }}>🌱 {coreCapabilities || ' '}</h3>
                 
                 <div className="bsc-features-grid">
                   {svcFeatures.map((f, idx) => (
@@ -93,7 +102,7 @@ export default function Business() {
                   onClick={() => setActiveSvc({ key: svc.key, id: svc.id, title: svcTitle, color: svc.color })}
                   className="btn bsc-inquire-btn"
                 >
-                  {t('pages.business.inquire_now', 'Inquire Now')} <ArrowRight size={18} />
+                  {t('pages.business.inquire_now')} <ArrowRight size={18} />
                 </button>
               </div>
             </AnimatedSection>

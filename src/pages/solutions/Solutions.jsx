@@ -225,34 +225,45 @@ export default function Solutions() {
               {(localizedDetails[lang].shelfTitle || "🌱 Recommended Bio-Solutions for {title}").replace('{title}', solTitle)}
             </h3>
             <div className="shelf-products-grid">
-              {relatedProducts.map((p) => (
-                <div key={p.id} className="shelf-product-card">
-                  <div className="spc-image-area">
-                    {p.image ? (
-                      <img src={p.image} alt={p.name} className="spc-img" />
-                    ) : (
-                      <div className="spc-placeholder" style={{ background: `${sol.color}08`, color: sol.color }}>
-                        <Leaf size={32} />
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="spc-info-area">
-                    <span className="spc-category-label">{p.categoryName}</span>
-                    <h4>{p.name}</h4>
-                    <p className="spc-tagline">{p.tagline}</p>
-                    
-                    <div className="spc-specs">
-                      {p.dosage && <span><strong>Dosage:</strong> {p.dosage}</span>}
-                      {p.application && <span><strong>Application:</strong> {p.application}</span>}
+              {relatedProducts.map((p) => {
+                const pKey = `products.items.${p.id}`;
+                const translateValue = (val) => {
+                  if (!val) return val;
+                  const cleanKey = val.toLowerCase().replace(/[^a-z0-9]/g, '_');
+                  const key = `products.common_values.${cleanKey}`;
+                  const translated = t(key);
+                  return (translated && translated !== key) ? translated : val;
+                };
+
+                return (
+                  <div key={p.id} className="shelf-product-card">
+                    <div className="spc-image-area">
+                      {p.image ? (
+                        <img src={p.image} alt={p.name} className="spc-img" />
+                      ) : (
+                        <div className="spc-placeholder" style={{ background: `${sol.color}08`, color: sol.color }}>
+                          <Leaf size={32} />
+                        </div>
+                      )}
                     </div>
-                    
-                    <Link to={`/products/${p.categorySlug}/${p.slug}`} className="btn btn-sm btn-outline-gold spc-view-btn">
-                      View Details <ArrowRight size={14} />
-                    </Link>
+
+                    <div className="spc-info-area">
+                      <span className="spc-category-label">{p.categoryName}</span>
+                      <h4>{i18n.language?.startsWith('zh') ? t(`${pKey}.name`) : t(`${pKey}.name`, p.name)}</h4>
+                      <p className="spc-tagline">{t(`${pKey}.tagline`, p.tagline)}</p>
+
+                      <div className="spc-specs">
+                        {p.dosage && <span><strong>{t('products.fields.dosage')}:</strong> {t(`${pKey}.dosage`, translateValue(p.dosage))}</span>}
+                        {p.application && <span><strong>{t('products.fields.application')}:</strong> {t(`${pKey}.application`, translateValue(p.application))}</span>}
+                      </div>
+
+                      <Link to={`/products/${p.categorySlug}/${p.slug}`} className="btn btn-sm btn-outline-gold spc-view-btn">
+                        {t('common.view_details')} <ArrowRight size={14} />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

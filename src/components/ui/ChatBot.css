@@ -153,6 +153,7 @@
   max-height: calc(100vh - 160px);
   background: white;
   border-radius: var(--radius-xl);
+  border: 1px solid var(--clr-border);
   box-shadow: var(--shadow-2xl);
   display: flex;
   flex-direction: column;
@@ -166,12 +167,17 @@
 }
 
 .chatbot-header {
-  background: var(--clr-primary);
-  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+  background: white;
+  color: var(--clr-text-primary);
   padding: var(--sp-4);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--clr-border-light);
 }
 
 .chatbot-header-info {
@@ -189,7 +195,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--clr-border);
 }
 
 .chatbot-avatar-img {
@@ -203,11 +209,12 @@
   font-size: var(--fs-body);
   margin: 0;
   line-height: 1.2;
+  color: var(--clr-text-primary);
 }
 
 .chatbot-status {
   font-size: 11px;
-  opacity: 0.8;
+  color: var(--clr-text-muted);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -224,10 +231,16 @@
 .chatbot-close {
   background: transparent;
   border: none;
-  color: white;
-  opacity: 0.6;
+  color: var(--clr-text-muted);
+  opacity: 0.8;
   cursor: pointer;
   padding: var(--sp-1);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.chatbot-close:hover {
+  color: var(--clr-text-primary);
+  opacity: 1;
 }
 
 @keyframes gradientBG {
@@ -240,6 +253,7 @@
   flex: 1;
   padding: var(--sp-4);
   overflow-y: auto;
+  overscroll-behavior: contain;
   min-height: 300px;
   background: linear-gradient(-45deg, #f5f5f5, #e8f5e9, #e3f2fd, #efebe9);
   background-size: 400% 400%;
@@ -319,6 +333,7 @@
 }
 
 .chatbot-input {
+  flex-shrink: 0;
   padding: var(--sp-3) var(--sp-4);
   background: white;
   border-top: 1px solid var(--clr-border-light);
@@ -465,13 +480,22 @@
 .cqq-list {
   display: flex;
   flex-direction: column;
-  max-height: 180px;
-  overflow-y: auto;
-  padding: 2px 4px 2px 0;
+  padding: 0;
+  overflow: visible;
 }
 
 .cqq-item {
-  padding: 3px 0;
+  padding: 0;
+}
+
+.cqq-item:not(:first-child) {
+  margin-top: -1px;
+}
+
+.cqq-item:hover,
+.cqq-item:focus-within {
+  position: relative;
+  z-index: 1;
 }
 
 .cqq-item:hover .cqq-btn:not(:disabled),
@@ -479,7 +503,6 @@
   background: var(--clr-primary);
   color: white !important;
   border-color: var(--clr-primary);
-  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
 }
 
 .cqq-item:hover .cqq-btn:not(:disabled) svg,
@@ -487,43 +510,37 @@
   color: white !important;
 }
 
-/* Custom Scrollbar for Quick Questions */
-.cqq-list::-webkit-scrollbar {
-  width: 4px;
-}
-
-.cqq-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.cqq-list::-webkit-scrollbar-thumb {
-  background: var(--clr-border-light);
-  border-radius: var(--radius-circle);
-}
-
 .cqq-btn {
   background: #f8f9fa;
   color: var(--clr-primary);
   border: 1px solid var(--clr-primary-surface);
   padding: 8px 12px;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   font-size: 12px;
   font-weight: var(--fw-medium);
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
   display: inline-flex;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 
+.cqq-item:first-child .cqq-btn {
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.cqq-item:last-child .cqq-btn {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
 .cqq-btn:hover:not(:disabled) {
   background: var(--clr-primary);
   color: white !important;
   border-color: var(--clr-primary);
-  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
 }
 
 .cqq-btn:hover:not(:disabled) svg {

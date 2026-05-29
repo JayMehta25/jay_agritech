@@ -354,6 +354,22 @@ export default function ChatBot() {
     setIsOpen(!isOpen);
   };
 
+  // Prevent background page from scrolling when chatbot is open
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isOpen]);
+
   const getActiveQuestions = () => {
     const questions = qaData[activeLang] || qaData.en;
     const total = questions.length;
@@ -435,7 +451,7 @@ export default function ChatBot() {
               </div>
               <div>
                 <h4>Jay Assistant</h4>
-                <span className="chatbot-status">{t('chatbot.online', 'Online')}</span>
+                <span className="chatbot-status">{t('chatbot.online')}</span>
               </div>
             </div>
             <button className="chatbot-close" onClick={() => setIsOpen(false)}><X size={18} /></button>

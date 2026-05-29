@@ -143,7 +143,7 @@ export default function Navbar() {
                     aria-haspopup="menu"
                     aria-expanded={activeMenu === item.label}
                   >
-                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}
+                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`)}
                     <ChevronDown size={14} className="nav-chevron" />
                   </button>
                 ) : (
@@ -152,7 +152,7 @@ export default function Navbar() {
                     className="nav-link"
                     id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}
                   >
-                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}
+                    {t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`)}
                   </Link>
                 )}
 
@@ -165,12 +165,12 @@ export default function Navbar() {
                     <div className="mega-menu-inner">
                       {item.sections.map((section) => (
                         <div key={section.title} className="mega-section">
-                          <h4 className="mega-section-title">{t(`nav.sections.${section.title.toLowerCase().replace(/\s/g, '_')}`, section.title)}</h4>
+                          <h4 className="mega-section-title">{t(`nav.sections.${section.title.toLowerCase().replace(/\s/g, '_')}`)}</h4>
                           <div className="mega-links">
                             {section.links.map((link) => (
                               <Link key={link.path} to={link.path} className="mega-link" onClick={() => setActiveMenu(null)}>
-                                <span className="mega-link-label">{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.label)}</span>
-                                <span className="mega-link-desc">{t(`nav.desc.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.description)}</span>
+                                <span className="mega-link-label">{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`)}</span>
+                                <span className="mega-link-desc">{t(`nav.desc.${link.label.toLowerCase().replace(/\s/g, '_')}`)}</span>
                               </Link>
                             ))}
                           </div>
@@ -186,7 +186,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="navbar-actions">
             <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
-              {t('nav.contact_us', 'Contact Us')}
+              {t('nav.contact_us')}
             </Link>
             <Link to="/partners/dealer" className="btn btn-primary btn-sm" id="nav-cta">
               {t('nav.become_partner')}
@@ -199,7 +199,7 @@ export default function Navbar() {
               <button
                 className="lang-switcher-btn"
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                aria-label={t('nav.change_language', 'Change Language')}
+                aria-label={t('nav.change_language')}
               >
                 <Globe size={14} />
                 <span>{currentLanguage.label}</span>
@@ -224,7 +224,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Toggle */}
-          <button className="navbar-toggle" onClick={() => setMobileOpen(!mobileOpen)} id="nav-mobile-toggle" aria-label={t('nav.toggle_menu', 'Toggle menu')}>
+          <button className="navbar-toggle" onClick={() => setMobileOpen(!mobileOpen)} id="nav-mobile-toggle" aria-label={t('nav.toggle_menu')}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -239,7 +239,7 @@ export default function Navbar() {
                 <img src={logoImg} alt="Jay Agritech Logo" className="logo-icon-img" />
                 <img src={titleImg} alt="Jay Agritech" className="logo-title-img" />
               </Link>
-              <button onClick={() => setMobileOpen(false)} aria-label={t('nav.close_menu', 'Close menu')}><X size={24} /></button>
+              <button onClick={() => setMobileOpen(false)} aria-label={t('nav.close_menu')}><X size={24} /></button>
             </div>
 
             <div className="mobile-menu-body">
@@ -247,7 +247,7 @@ export default function Navbar() {
               <div className="mobile-lang-switcher">
                 <div className="mobile-lang-title">
                   <Globe size={16} />
-                  <span>{t('nav.select_language', 'Select Language')}</span>
+                  <span>{t('nav.select_language')}</span>
                 </div>
                 <div className="mobile-lang-grid">
                   {languages.map(lang => (
@@ -268,13 +268,13 @@ export default function Navbar() {
 
               {navLinks.map((item) => (
                 <div key={item.label} className="mobile-nav-group">
-                  <Link to={item.path} className="mobile-nav-link">{t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`, item.label)}</Link>
+                  <Link to={item.path} className="mobile-nav-link">{t(`nav.${item.label.toLowerCase().replace(/\s/g, '_')}`)}</Link>
                   {item.megaMenu && item.sections && (
                     <div className="mobile-sub-links">
                       {item.sections.map((section) =>
                         section.links.map((link) => (
                           <Link key={link.path} to={link.path} className="mobile-sub-link">
-                            {t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.label)}
+                            {t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`)}
                           </Link>
                         ))
                       )}
@@ -289,7 +289,7 @@ export default function Navbar() {
                 {t('nav.become_partner')}
               </Link>
               <Link to="/contact" className="btn btn-secondary btn-lg" style={{ width: '100%', marginBottom: 'var(--sp-4)', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
-                {t('nav.contact_us', 'Contact Us')}
+                {t('nav.contact_us')}
               </Link>
               <div className="mobile-contact">
                 <a href="tel:+919825142359"><Phone size={16} /> +91 98251 42359</a>

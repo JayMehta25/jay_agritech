@@ -11,7 +11,7 @@ export default function ProcessFlow() {
     <div className="process-flow-container">
       {/* Background Image with Overlay */}
       <div className="hero-visual-img-container">
-        <img src={heroVisualImg} alt={t('home.process_flow.image_alt', 'Modern Agriculture')} className="hero-visual-main-img" />
+        <img src={heroVisualImg} alt={t('home.process_flow.image_alt')} className="hero-visual-main-img" />
         <div className="hero-visual-overlay"></div>
       </div>
 
@@ -32,32 +32,32 @@ export default function ProcessFlow() {
       <div className="flow-node node-tl node-pulse">
         <div className="node-icon-wrapper"><Microscope size={20} /></div>
         <div className="node-text">
-          <span>{t('home.process_flow.node1.title', 'Microbial R&D')}</span>
-          <small>{t('home.process_flow.node1.desc', 'Innovation')}</small>
+          <span>{t('home.process_flow.node1.title')}</span>
+          <small>{t('home.process_flow.node1.desc')}</small>
         </div>
       </div>
 
       <div className="flow-node node-tr node-pulse">
         <div className="node-icon-wrapper"><Leaf size={20} /></div>
         <div className="node-text">
-          <span>{t('home.process_flow.node2.title', 'Bio Solutions')}</span>
-          <small>{t('home.process_flow.node2.desc', 'Potent Products')}</small>
+          <span>{t('home.process_flow.node2.title')}</span>
+          <small>{t('home.process_flow.node2.desc')}</small>
         </div>
       </div>
 
       <div className="flow-node node-br node-pulse">
         <div className="node-icon-wrapper"><TrendingUp size={20} /></div>
         <div className="node-text">
-          <span>{t('home.process_flow.node3.title', 'Higher Yields')}</span>
-          <small>{t('home.process_flow.node3.desc', 'Prosperity')}</small>
+          <span>{t('home.process_flow.node3.title')}</span>
+          <small>{t('home.process_flow.node3.desc')}</small>
         </div>
       </div>
 
       <div className="flow-node node-bl node-pulse">
         <div className="node-icon-wrapper"><Shield size={20} /></div>
         <div className="node-text">
-          <span>{t('home.process_flow.node4.title', 'Eco Legacy')}</span>
-          <small>{t('home.process_flow.node4.desc', 'Sustainability')}</small>
+          <span>{t('home.process_flow.node4.title')}</span>
+          <small>{t('home.process_flow.node4.desc')}</small>
         </div>
       </div>
     </div>

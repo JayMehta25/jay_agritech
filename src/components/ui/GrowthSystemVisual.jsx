@@ -16,39 +16,39 @@ export default function GrowthSystemVisual() {
       {/* Central Core */}
       <div className="gsv-core">
         <Sprout size={56} />
-        <span>{t('home.growth_visual.core', '4-Step')}<br/>{t('home.growth_visual.system', 'System')}</span>
+        <span>{t('home.growth_visual.core')}<br/>{t('home.growth_visual.system')}</span>
       </div>
 
       {/* Step Nodes — appear sequentially */}
       <div className="gsv-step gsv-step-1">
         <div className="gsv-step-icon"><Leaf size={32} /></div>
         <div className="gsv-step-info">
-          <strong>{t('home.growth_visual.step1.title', 'Soil Foundation')}</strong>
-          <small>{t('home.growth_visual.step1.desc', 'Rebuild biology')}</small>
+          <strong>{t('home.growth_visual.step1.title')}</strong>
+          <small>{t('home.growth_visual.step1.desc')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-2">
         <div className="gsv-step-icon"><TrendingUp size={32} /></div>
         <div className="gsv-step-info">
-          <strong>{t('home.growth_visual.step2.title', 'Bio Nutrition')}</strong>
-          <small>{t('home.growth_visual.step2.desc', 'Natural delivery')}</small>
+          <strong>{t('home.growth_visual.step2.title')}</strong>
+          <small>{t('home.growth_visual.step2.desc')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-3">
         <div className="gsv-step-icon"><Shield size={32} /></div>
         <div className="gsv-step-info">
-          <strong>{t('home.growth_visual.step3.title', 'Eco Protection')}</strong>
-          <small>{t('home.growth_visual.step3.desc', 'Safe pest control')}</small>
+          <strong>{t('home.growth_visual.step3.title')}</strong>
+          <small>{t('home.growth_visual.step3.desc')}</small>
         </div>
       </div>
 
       <div className="gsv-step gsv-step-4">
         <div className="gsv-step-icon"><Zap size={32} /></div>
         <div className="gsv-step-info">
-          <strong>{t('home.growth_visual.step4.title', 'Growth Boost')}</strong>
-          <small>{t('home.growth_visual.step4.desc', 'Maximize yield')}</small>
+          <strong>{t('home.growth_visual.step4.title')}</strong>
+          <small>{t('home.growth_visual.step4.desc')}</small>
         </div>
       </div>
     </div>

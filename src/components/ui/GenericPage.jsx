@@ -16,7 +16,7 @@ export default function GenericPage({ title, subtitle, overline, breadcrumbs = [
         <div className="container">
           {breadcrumbs.length > 0 && (
             <div className="breadcrumbs">
-              <Link to="/">{t('common.home', 'Home')}</Link>
+              <Link to="/">{t('common.home')}</Link>
               {breadcrumbs.map((bc, i) => (
                 <span key={i}>
                   <ChevronRight size={14} />

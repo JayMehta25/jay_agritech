@@ -18,6 +18,10 @@ import '../src/pages/business/Business.css';
 import '../src/pages/solutions/Solutions.css';
 import '../src/pages/legal/Legal.css';
 import '../src/i18n/config';
+import logoImgAsset from '../src/assets/new_title.png';
+import { assetSrc } from '../src/utils/assetSrc';
+
+const logoImg = assetSrc(logoImgAsset);
 
 const seoConfig = {
   en: {
@@ -98,10 +102,35 @@ export default function MyApp({ Component, pageProps }) {
   const { i18n } = useTranslation();
   const router = useRouter();
   const [hydrated, setHydrated] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setHydrated(true);
   }, []);
+
+  useEffect(() => {
+    const handleStart = (url) => {
+      const currentPath = router.pathname;
+      const newPath = url.split('?')[0].split('#')[0];
+      if (newPath !== currentPath) {
+        setLoading(true);
+      }
+    };
+    
+    const handleComplete = () => {
+      setLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
 
   // Safe client-side language detection and switching post-hydration
   useEffect(() => {
@@ -214,6 +243,55 @@ export default function MyApp({ Component, pageProps }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getFaqSchema(currentLang)) }}
         />
       </Head>
+      {loading && (
+        <div className="global-route-loader">
+          <style dangerouslySetInnerHTML={{ __html: `
+            .global-route-loader {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background: rgba(255, 255, 255, 0.95);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 99999;
+              backdrop-filter: blur(8px);
+              animation: loaderFadeIn 0.3s ease-out;
+              cursor: wait;
+              user-select: none;
+              -webkit-user-select: none;
+            }
+            .loader-content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              pointer-events: none;
+            }
+            .loader-logo {
+              width: 96px;
+              height: 96px;
+              object-fit: contain;
+              animation: logo-rotate 1.8s linear infinite;
+              filter: drop-shadow(0 4px 12px rgba(46, 125, 50, 0.2));
+              pointer-events: none;
+            }
+            @keyframes logo-rotate {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+            @keyframes loaderFadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+          `}} />
+          <div className="loader-content">
+            <img src={logoImg} alt="Loading..." className="loader-logo" />
+          </div>
+        </div>
+      )}
       <Layout>
         <Component {...pageProps} />
         <Analytics />

@@ -46,7 +46,7 @@ export default function Footer() {
                 <img src={titleImg} alt="Jay Agritech" className="logo-title-img footer-title-img" />
               </Link>
               <p className="footer-description">
-                {t('footer.description', 'Pioneering biological and organic agricultural solutions for sustainable farming. Science-backed products trusted by farmers across India.')}
+                {t('footer.description')}
               </p>
               <div className="footer-certifications">
                 {companyInfo.certifications.slice(0, 3).map((cert) => (
@@ -69,7 +69,7 @@ export default function Footer() {
                 <li><Link to="/aboutus">{t('nav.about')}</Link></li>
                 <li><Link to="/aboutus/leadership">{t('nav.links.leadership_team')}</Link></li>
                 <li><Link to="/aboutus/certifications">{t('nav.links.certifications')}</Link></li>
-                <li><Link to="/careers">{t('footer.careers', 'Careers')}</Link></li>
+                <li><Link to="/careers">{t('footer.careers')}</Link></li>
               </ul>
             </div>
 
@@ -82,7 +82,7 @@ export default function Footer() {
                   if (solutionsItem && solutionsItem.sections) {
                     return solutionsItem.sections.flatMap(section =>
                       section.links.map(link => (
-                        <li key={link.path}><Link to={link.path}>{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`, link.label)}</Link></li>
+                        <li key={link.path}><Link to={link.path}>{t(`nav.links.${link.label.toLowerCase().replace(/\s/g, '_')}`)}</Link></li>
                       ))
                     );
                   }
@@ -98,9 +98,9 @@ export default function Footer() {
             <div className="footer-links-group">
               <h4>{t('footer.resources')}</h4>
               <ul>
-                <li><Link to="/blog">{t('footer.knowledge_hub', 'Knowledge Hub')}</Link></li>
+                <li><Link to="/blog">{t('footer.knowledge_hub')}</Link></li>
                 <li><Link to="/business">{t('nav.business')}</Link></li>
-                <li><Link to="/growth-system">{t('footer.growth_system', 'Growth System')}</Link></li>
+                <li><Link to="/growth-system">{t('footer.growth_system')}</Link></li>
               </ul>
             </div>
 
@@ -110,7 +110,7 @@ export default function Footer() {
               <div className="footer-contact-items">
                 <div className="footer-contact-item">
                   <MapPin size={16} />
-                  <span>{t('footer.contact_address', 'Valsad, Gujarat 396001, India')}</span>
+                  <span>{t('footer.contact_address')}</span>
                 </div>
                 <div className="footer-contact-item">
                   <Phone size={16} />
@@ -124,10 +124,10 @@ export default function Footer() {
 
               {/* Newsletter */}
               <div className="footer-newsletter">
-                <h5>{t('footer.newsletter_title', 'Subscribe to Updates')}</h5>
+                <h5>{t('footer.newsletter_title')}</h5>
                 <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                  <input type="email" placeholder={t('footer.newsletter_placeholder', 'Your email')} className="newsletter-input" />
-                  <button type="submit" className="newsletter-btn" aria-label={t('footer.subscribe', 'Subscribe')}>
+                  <input type="email" placeholder={t('footer.newsletter_placeholder')} className="newsletter-input" />
+                  <button type="submit" className="newsletter-btn" aria-label={t('footer.subscribe')}>
                     <Send size={16} />
                   </button>
                 </form>
@@ -142,12 +142,12 @@ export default function Footer() {
         <div className="container footer-bottom-inner">
           <p>{t('footer.copyright', `© ${currentYear} Jay Agritech Pvt. Ltd. All rights reserved.`)}</p>
           <div className="footer-bottom-links">
-            <Link to="/privacy-policy">{t('footer.privacy_policy', 'Privacy Policy')}</Link>
+            <Link to="/privacy-policy">{t('footer.privacy_policy')}</Link>
             <span>·</span>
-            <Link to="/terms">{t('footer.terms_conditions', 'Terms & Conditions')}</Link>
+            <Link to="/terms">{t('footer.terms_conditions')}</Link>
           </div>
           <p className="footer-made">
-            <Leaf size={14} /> {t('footer.made_with_care', 'Made with care for Indian agriculture')}
+            <Leaf size={14} /> {t('footer.made_with_care')}
           </p>
         </div>
       </div>

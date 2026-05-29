@@ -29,9 +29,9 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
   const cat = products.categories.find(c => c.slug === category);
   if (!cat) {
     return (
-      <GenericPage title={t('common.not_found', 'Not Found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }]}>
+      <GenericPage title={t('common.not_found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }]}>
         <div className="container" style={{ padding: 'var(--sp-20) 0', textAlign: 'center' }}>
-          <p>{t('common.not_found', 'Product category not found.')}</p>
+          <p>{t('common.not_found')}</p>
         </div>
       </GenericPage>
     );
@@ -40,9 +40,9 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
   const product = cat.products.find(p => p.slug === slug);
   if (!product) {
     return (
-      <GenericPage title={t('common.not_found', 'Not Found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }, { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` }]}>
+      <GenericPage title={t('common.not_found')} breadcrumbs={[{ label: t('nav.products'), path: '/products' }, { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` }]}>
         <div className="container" style={{ padding: 'var(--sp-20) 0', textAlign: 'center' }}>
-          <p>{t('common.not_found', 'Product not found.')}</p>
+          <p>{t('common.not_found')}</p>
         </div>
       </GenericPage>
     );
@@ -70,11 +70,11 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
   const detectUnit = (size = '') => {
     const s = size.toLowerCase();
     if (s.includes('lit') || s.includes(' l') || s.includes('ml') || s.includes('liquid')) {
-      return t('enquiry.units.liters', 'Liters');
+      return t('enquiry.units.liters');
     } else if (s.includes('kit')) {
-      return t('enquiry.units.kits', 'Kits');
+      return t('enquiry.units.kits');
     } else {
-      return t('enquiry.units.kilograms', 'Kilograms');
+      return t('enquiry.units.kilograms');
     }
   };
 
@@ -113,13 +113,13 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
 
   return (
     <GenericPage
-      title={t('enquiry.page_title', 'Product Enquiry')}
-      subtitle={t('enquiry.page_subtitle', 'Personalized B2B Enquiry Form')}
+      title={t('enquiry.page_title')}
+      subtitle={t('enquiry.page_subtitle')}
       breadcrumbs={[
         { label: t('nav.products'), path: '/products' },
         { label: t(cat.nameKey, cat.name), path: `/products/${cat.slug}` },
         { label: t(`${pKey}.name`, product.name), path: `/products/${cat.slug}/${product.slug}` },
-        { label: t('enquiry.breadcrumbs_label', 'Enquiry') }
+        { label: t('enquiry.breadcrumbs_label') }
       ]}
       bodyClassName="moving-gradient-bg"
     >
@@ -127,7 +127,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
         {/* Back Link */}
         <div style={{ marginBottom: 'var(--sp-6)' }}>
           <Link to={`/products/${cat.slug}/${product.slug}`} className="btn btn-outline-gold btn-sm" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
-            <ArrowLeft size={14} /> {t('enquiry.back_to_product', 'Back to Product Details')}
+            <ArrowLeft size={14} /> {t('enquiry.back_to_product')}
           </Link>
         </div>
 
@@ -159,25 +159,25 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                 <div className="enquiry-sidebar-divider"></div>
                 
                 <h4 style={{ fontSize: 'var(--fs-body-sm)', fontWeight: 'bold', marginBottom: 'var(--sp-3)', color: 'var(--clr-text)' }}>
-                  {t('enquiry.why_choose', 'Quick Specifications:')}
+                  {t('enquiry.why_choose')}
                 </h4>
                 <ul className="enquiry-sidebar-specs">
                   {product.microbes && (
                     <li>
                       <Package size={14} style={{ color: 'var(--clr-gold)', flexShrink: 0 }} /> 
-                      <span><strong>{t('products.fields.microbial_content', 'Microbial')}:</strong> {t(`${pKey}.microbes`, product.microbes)}</span>
+                      <span><strong>{t('products.fields.microbial_content')}:</strong> {t(`${pKey}.microbes`, product.microbes)}</span>
                     </li>
                   )}
                   {product.contents && (
                     <li>
                       <Package size={14} style={{ color: 'var(--clr-gold)', flexShrink: 0 }} /> 
-                      <span><strong>{t('products.fields.active_ingredients', 'Active')}:</strong> {t(`${pKey}.contents`, product.contents)}</span>
+                      <span><strong>{t('products.fields.active_ingredients')}:</strong> {t(`${pKey}.contents`, product.contents)}</span>
                     </li>
                   )}
                   {product.dosage && (
                     <li>
                       <Leaf size={14} style={{ color: 'var(--clr-gold)', flexShrink: 0 }} /> 
-                      <span><strong>{t('products.fields.dosage', 'Dosage')}:</strong> {t(`${pKey}.dosage`, product.dosage)}</span>
+                      <span><strong>{t('products.fields.dosage')}:</strong> {t(`${pKey}.dosage`, product.dosage)}</span>
                     </li>
                   )}
                 </ul>
@@ -194,55 +194,55 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       <ShieldCheck size={40} className="enquiry-success-icon" />
                     </div>
                     
-                    <h3 className="enquiry-success-title">{t('enquiry.success.title', 'Enquiry Submitted Successfully!')}</h3>
+                    <h3 className="enquiry-success-title">{t('enquiry.success.title')}</h3>
                     <p className="enquiry-success-text">
-                      {t('enquiry.success.intro', 'Thank you for your interest! A personalized quote request for the following configuration has been generated:')}
+                      {t('enquiry.success.intro')}
                     </p>
 
                     <div className="enquiry-receipt-card">
                       <div className="receipt-row">
-                        <span className="receipt-label">{t('enquiry.form.product', 'Target Product')}:</span>
+                        <span className="receipt-label">{t('enquiry.form.product')}:</span>
                         <strong className="receipt-val">{t(`${pKey}.name`, product.name)}</strong>
                       </div>
                       <div className="receipt-row">
-                        <span className="receipt-label">{t('enquiry.form.pack_size', 'Preferred Pack Size')}:</span>
+                        <span className="receipt-label">{t('enquiry.form.pack_size')}:</span>
                         <strong className="receipt-val">{formData.packSize}</strong>
                       </div>
                       <div className="receipt-row">
-                        <span className="receipt-label">{t('enquiry.form.quantity', 'Required Volume')}:</span>
+                        <span className="receipt-label">{t('enquiry.form.quantity')}:</span>
                         <strong className="receipt-val">{formData.quantity} {currentUnit}</strong>
                       </div>
                       <div className="receipt-row">
-                        <span className="receipt-label">{t('enquiry.form.company', 'Company / Farm')}:</span>
-                        <strong className="receipt-val">{formData.company || t('enquiry.success.individual', 'Individual Farm')}</strong>
+                        <span className="receipt-label">{t('enquiry.form.company')}:</span>
+                        <strong className="receipt-val">{formData.company || t('enquiry.success.individual')}</strong>
                       </div>
                       {formData.crop && (
                         <div className="receipt-row">
-                          <span className="receipt-label">{t('enquiry.form.crop', 'Target Crops')}:</span>
+                          <span className="receipt-label">{t('enquiry.form.crop')}:</span>
                           <strong className="receipt-val">{formData.crop}</strong>
                         </div>
                       )}
                     </div>
 
                     <p className="enquiry-success-footer">
-                      {t('enquiry.success.footer_msg', 'Our regional sales manager or technical consultant will review these specific details and contact you at the provided email/phone within 24 hours.')}
+                      {t('enquiry.success.footer_msg')}
                     </p>
 
                     <div style={{ display: 'flex', gap: 'var(--sp-4)', justifyContent: 'center', marginTop: 'var(--sp-6)' }}>
                       <Link to={`/products/${cat.slug}/${product.slug}`} className="btn btn-primary">
-                        {t('enquiry.success.return_btn', 'Return to Details')}
+                        {t('enquiry.success.return_btn')}
                       </Link>
                       <button onClick={handleReset} className="btn btn-secondary">
-                        {t('enquiry.success.new_inquiry_btn', 'Submit Another')}
+                        {t('enquiry.success.new_inquiry_btn')}
                       </button>
                     </div>
                   </div>
                 ) : (
                   /* Enquiry Form */
                   <>
-                    <h3 className="enquiry-form-title">{t('enquiry.form.get_quote', 'Request a Personalized Quote')}</h3>
+                    <h3 className="enquiry-form-title">{t('enquiry.form.get_quote')}</h3>
                     <p className="enquiry-form-subtitle">
-                      {t('enquiry.form.instructions', 'Fill out the form below to receive a custom bulk pricing and application proposal from our specialists.')}
+                      {t('enquiry.form.instructions')}
                     </p>
 
                     <form onSubmit={handleSubmit} className="enquiry-actual-form">
@@ -250,7 +250,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                         <div className="form-group">
                           <label className="form-label">
-                            <User size={12} /> {t('enquiry.form.name', 'Full Name')} *
+                            <User size={12} /> {t('enquiry.form.name')} *
                           </label>
                           <input
                             type="text"
@@ -259,12 +259,12 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             value={formData.name}
                             onChange={handleChange}
                             className="form-input"
-                            placeholder={t('enquiry.form.name_placeholder', 'Enter your full name')}
+                            placeholder={t('enquiry.form.name_placeholder')}
                           />
                         </div>
                         <div className="form-group">
                           <label className="form-label">
-                            <Building size={12} /> {t('enquiry.form.company', 'Company / Farm Name')}
+                            <Building size={12} /> {t('enquiry.form.company')}
                           </label>
                           <input
                             type="text"
@@ -272,7 +272,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             value={formData.company}
                             onChange={handleChange}
                             className="form-input"
-                            placeholder={t('enquiry.form.company_placeholder', 'e.g. Green Valley Farms')}
+                            placeholder={t('enquiry.form.company_placeholder')}
                           />
                         </div>
                       </div>
@@ -281,7 +281,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                         <div className="form-group">
                           <label className="form-label">
-                            <Mail size={12} /> {t('enquiry.form.email', 'Email Address')} *
+                            <Mail size={12} /> {t('enquiry.form.email')} *
                           </label>
                           <input
                             type="email"
@@ -290,12 +290,12 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             value={formData.email}
                             onChange={handleChange}
                             className="form-input"
-                            placeholder={t('enquiry.form.email_placeholder', 'yourname@example.com')}
+                            placeholder={t('enquiry.form.email_placeholder')}
                           />
                         </div>
                         <div className="form-group">
                           <label className="form-label">
-                            <Phone size={12} /> {t('enquiry.form.phone', 'Phone Number')} *
+                            <Phone size={12} /> {t('enquiry.form.phone')} *
                           </label>
                           <input
                             type="tel"
@@ -304,7 +304,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             value={formData.phone}
                             onChange={handleChange}
                             className="form-input"
-                            placeholder={t('enquiry.form.phone_placeholder', 'e.g. +91 98765 43210')}
+                            placeholder={t('enquiry.form.phone_placeholder')}
                           />
                         </div>
                       </div>
@@ -312,7 +312,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       {/* Location */}
                       <div className="form-group">
                         <label className="form-label">
-                          <MapPin size={12} /> {t('enquiry.form.location', 'Location (City & State)')} *
+                          <MapPin size={12} /> {t('enquiry.form.location')} *
                         </label>
                         <input
                           type="text"
@@ -321,7 +321,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                           value={formData.location}
                           onChange={handleChange}
                           className="form-input"
-                          placeholder={t('enquiry.form.location_placeholder', 'e.g. Valsad, Gujarat')}
+                          placeholder={t('enquiry.form.location_placeholder')}
                         />
                       </div>
 
@@ -329,7 +329,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                         <div className="form-group">
                           <label className="form-label">
-                            <Package size={12} /> {t('enquiry.form.pack_size', 'Preferred Pack Size')} *
+                            <Package size={12} /> {t('enquiry.form.pack_size')} *
                           </label>
                           <select
                             name="packSize"
@@ -347,7 +347,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                         </div>
                         <div className="form-group">
                           <label className="form-label">
-                            <Activity size={12} /> {t('enquiry.form.quantity', 'Required Volume')} ({currentUnit}) *
+                            <Activity size={12} /> {t('enquiry.form.quantity')} ({currentUnit}) *
                           </label>
                           <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
                             <input
@@ -369,7 +369,7 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                       <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                         <div className="form-group">
                           <label className="form-label">
-                            <Leaf size={12} /> {t('enquiry.form.crop', 'Target Crops / Application')}
+                            <Leaf size={12} /> {t('enquiry.form.crop')}
                           </label>
                           <input
                             type="text"
@@ -377,12 +377,12 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             value={formData.crop}
                             onChange={handleChange}
                             className="form-input"
-                            placeholder={t('enquiry.form.crop_placeholder', 'e.g. Cotton, Chillies')}
+                            placeholder={t('enquiry.form.crop_placeholder')}
                           />
                         </div>
                         <div className="form-group">
                           <label className="form-label">
-                            <ShieldCheck size={12} /> {t('enquiry.form.inquiry_type', 'Type of Inquiry')} *
+                            <ShieldCheck size={12} /> {t('enquiry.form.inquiry_type')} *
                           </label>
                           <select
                             name="inquiryType"
@@ -391,24 +391,24 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                             onChange={handleChange}
                             className="form-select"
                           >
-                            <option value="bulk">{t('enquiry.options.bulk', 'Bulk Farm Purchase')}</option>
-                            <option value="distributor">{t('enquiry.options.distributor', 'Dealership / Distribution')}</option>
-                            <option value="oem">{t('enquiry.options.oem', 'OEM / Private Labeling')}</option>
-                            <option value="consultancy">{t('enquiry.options.consultancy', 'Technical Consultation')}</option>
+                            <option value="bulk">{t('enquiry.options.bulk')}</option>
+                            <option value="distributor">{t('enquiry.options.distributor')}</option>
+                            <option value="oem">{t('enquiry.options.oem')}</option>
+                            <option value="consultancy">{t('enquiry.options.consultancy')}</option>
                           </select>
                         </div>
                       </div>
 
                       {/* Message */}
                       <div className="form-group">
-                        <label className="form-label">{t('enquiry.form.message', 'Specific Requirements / Message')}</label>
+                        <label className="form-label">{t('enquiry.form.message')}</label>
                         <textarea
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
                           className="form-textarea"
                           rows="4"
-                          placeholder={t('enquiry.form.message_placeholder', 'Provide any extra requirements or delivery schedule queries...')}
+                          placeholder={t('enquiry.form.message_placeholder')}
                         ></textarea>
                       </div>
 
@@ -419,10 +419,10 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
                         style={{ width: '100%', marginTop: 'var(--sp-2)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--sp-2)' }}
                       >
                         {loading ? (
-                          t('enquiry.form.submitting', 'Processing Quote...')
+                          t('enquiry.form.submitting')
                         ) : (
                           <>
-                            {t('enquiry.form.submit', 'Submit Quote Request')} <Send size={16} />
+                            {t('enquiry.form.submit')} <Send size={16} />
                           </>
                         )}
                       </button>

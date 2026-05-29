@@ -42,12 +42,12 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
   };
 
   const specs = [];
-  if (product.microbes) specs.push({ label: t('products.fields.microbial_content') || 'Microbial content', value: t(`${pKey}.microbes`, product.microbes) });
-  if (product.contents) specs.push({ label: t('products.fields.active_ingredients') || 'Active ingredients', value: t(`${pKey}.contents`, product.contents) });
-  if (product.specifications) specs.push({ label: t('products.fields.specifications') || 'Specifications', value: t(`${pKey}.specifications`, product.specifications) });
-  if (product.application) specs.push({ label: t('products.fields.application') || 'Application', value: t(`${pKey}.application`, translateValue(product.application)) });
-  if (product.dosage) specs.push({ label: t('products.fields.dosage') || 'Dosage', value: t(`${pKey}.dosage`, translateValue(product.dosage)) });
-  if (product.crops && product.crops.length > 0) specs.push({ label: t('products.fields.recommended') || 'Recommended crop', value: t(`${pKey}.recommended`, translateValue(product.crops[0])) });
+  if (product.microbes) specs.push({ label: t('products.fields.microbial_content'), value: t(`${pKey}.microbes`, product.microbes) });
+  if (product.contents) specs.push({ label: t('products.fields.active_ingredients'), value: t(`${pKey}.contents`, product.contents) });
+  if (product.specifications) specs.push({ label: t('products.fields.specifications'), value: t(`${pKey}.specifications`, product.specifications) });
+  if (product.application) specs.push({ label: t('products.fields.application'), value: t(`${pKey}.application`, translateValue(product.application)) });
+  if (product.dosage) specs.push({ label: t('products.fields.dosage'), value: t(`${pKey}.dosage`, translateValue(product.dosage)) });
+  if (product.crops && product.crops.length > 0) specs.push({ label: t('products.fields.recommended'), value: t(`${pKey}.recommended`, translateValue(product.crops[0])) });
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -55,7 +55,7 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
 
   const breadcrumbs = isFromGrowthSystem
     ? [
-        { label: t('pages.growth_system', 'Growth System'), path: '/growth-system' },
+        { label: t('pages.growth_system'), path: '/growth-system' },
         { label: t(`${pKey}.name`, product.name) }
       ]
     : [
@@ -95,13 +95,13 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
                 </div>
                 <div className="robusta-detail-facts">
                   <div className="robusta-fact">
-                    <Droplets size={16} /> {product.dosage ? t(`${pKey}.dosage`, translateValue(product.dosage)) : t('products.detail.default_organic', '100% Organic')}
+                    <Droplets size={16} /> {product.dosage ? t(`${pKey}.dosage`, translateValue(product.dosage)) : t('products.detail.default_organic')}
                   </div>
                   <div className="robusta-fact">
-                    <Sprout size={16} /> {product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.default_bio_active', 'Bio-active')}
+                    <Sprout size={16} /> {product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.default_bio_active')}
                   </div>
                   <div className="robusta-fact">
-                    <Package size={16} /> {product.packSizes && product.packSizes[0] ? t(`${pKey}.packSizes.0`, translateValue(product.packSizes[0])) : t('products.detail.default_premium_pack', 'Premium Pack')}
+                    <Package size={16} /> {product.packSizes && product.packSizes[0] ? t(`${pKey}.packSizes.0`, translateValue(product.packSizes[0])) : t('products.detail.default_premium_pack')}
                   </div>
                 </div>
               </div>
@@ -115,9 +115,9 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
                 <p className="robusta-detail-description">{t(`${pKey}.description`, product.description)}</p>
 
                 <div className="robusta-detail-badges">
-                  <span className="robusta-detail-badge">{product.slug.includes('kit') ? t('products.detail.premium_kit', 'Premium Kit') : t('products.detail.bio_formulation', 'Bio-Formulation')}</span>
-                  <span className="robusta-detail-badge">{product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.easy_to_apply', 'Easy to Apply')}</span>
-                  <span className="robusta-detail-badge">{t('products.detail.eco_friendly_safe', 'Eco-Friendly & Safe')}</span>
+                  <span className="robusta-detail-badge">{product.slug.includes('kit') ? t('products.detail.premium_kit') : t('products.detail.bio_formulation')}</span>
+                  <span className="robusta-detail-badge">{product.application ? t(`${pKey}.application`, translateValue(product.application)) : t('products.detail.easy_to_apply')}</span>
+                  <span className="robusta-detail-badge">{t('products.detail.eco_friendly_safe')}</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -127,22 +127,22 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
             <AnimatedSection delay={180}>
               <section className="robusta-panel robusta-panel--main">
                 <div className="robusta-panel__header">
-                  <h3>{t('products.fields.key_benefits') || 'Key Benefits'}</h3>
-                  <p>{t('products.detail.benefits_intro', 'Scientifically formulated for maximum effectiveness and sustainable crop performance.')}</p>
+                  <h3>{t('products.fields.key_benefits')}</h3>
+                  <p>{t('products.detail.benefits_intro')}</p>
                 </div>
                 <div className="robusta-benefit-grid">
                   {product.benefits.map((benefit, index) => {
                     const getSubDesc = (idx) => {
                       if (product.slug === 'at-orgo-robusta-pro-nc-kit') {
-                        return idx === 0 ? t('products.detail.nc_subdesc_0', 'Supports rapid uptake through the carrier-based format.') : 
-                               idx === 1 ? t('products.detail.nc_subdesc_1', 'Designed for smooth handling and consistent field use.') : 
-                               idx === 2 ? t('products.detail.nc_subdesc_2', 'Improves delivery of active material in the root zone.') : 
-                               t('products.detail.nc_subdesc_3', 'Built for straightforward, practical application.');
+                           return idx === 0 ? t('products.detail.nc_subdesc_0') : 
+                             idx === 1 ? t('products.detail.nc_subdesc_1') : 
+                             idx === 2 ? t('products.detail.nc_subdesc_2') : 
+                             t('products.detail.nc_subdesc_3');
                       }
-                      return idx === 0 ? t('products.detail.benefit_subdesc_0', 'Enhances crop development and optimizes nutrient efficiency.') :
-                             idx === 1 ? t('products.detail.benefit_subdesc_1', 'Strengthens root structure and improves soil vitality.') :
-                             idx === 2 ? t('products.detail.benefit_subdesc_2', 'Boosts natural crop resistance against environmental stress.') :
-                             t('products.detail.benefit_subdesc_3', 'Promotes sustainable practices and premium yield quality.');
+                         return idx === 0 ? t('products.detail.benefit_subdesc_0') :
+                           idx === 1 ? t('products.detail.benefit_subdesc_1') :
+                           idx === 2 ? t('products.detail.benefit_subdesc_2') :
+                           t('products.detail.benefit_subdesc_3');
                     };
                     return (
                       <div key={index} className="robusta-benefit-card">
@@ -161,8 +161,8 @@ export default function ProductDetail({ category: categoryProp, slug: slugProp }
             <AnimatedSection delay={260}>
               <section className="robusta-panel robusta-panel--full">
                 <div className="robusta-panel__header">
-                  <h3>{t('products.detail.quick_specs_title', 'Quick specs')}</h3>
-                  <p>{t('products.detail.quick_specs_desc', 'Everything a distributor or farmer needs at a glance.')}</p>
+                  <h3>{t('products.detail.quick_specs_title')}</h3>
+                  <p>{t('products.detail.quick_specs_desc')}</p>
                 </div>
 
                 <div className="robusta-spec-list">

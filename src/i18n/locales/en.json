@@ -7,7 +7,9 @@
     "research": "Research",
     "farmer_zone": "Farmer Zone",
     "contact": "Contact",
+    "contact_us": "Contact Us",
     "become_partner": "Become a Partner",
+    "select_language": "Select Language",
     "tagline": "Innovating Agriculture, Nurturing Growth",
     "sections": {
       "company": "Company",
@@ -34,6 +36,7 @@
       "all_products": "All Products",
       "bio_insecticides": "Bio Insecticides",
       "bio_pesticides": "Bio Pesticides",
+      "bio_fertilizers": "Bio Fertilizers",
       "biostimulants": "Biostimulants",
       "organic_nutrients": "Organic Nutrients",
       "specialty_products": "Specialty Products",
@@ -63,6 +66,7 @@
       "growth_enhancement": "Maximize crop potential",
       "all_products": "Browse our full catalog",
       "bio_insecticides": "11 products",
+      "bio_fertilizers": "12 products",
       "biostimulants": "10 products",
       "organic_nutrients": "3 products",
       "specialty_products": "2 products",
@@ -106,7 +110,16 @@
     "send_another": "Send Another",
     "select": "Select a topic",
     "phone": "Phone",
-    "email": "Email"
+    "email": "Email",
+    "home": "Home",
+    "yes": "Yes",
+    "no": "No"
+    ,"cancel": "Cancel"
+  },
+  "chatbot": {
+    "online": "Online",
+    "offline": "Offline",
+    "typing": "Typing..."
   },
   "products": {
     "fields": {
@@ -157,6 +170,27 @@
       "1_0_lit": "1.0 Liter",
       "1_0_kg": "1.0 kg",
       "ideal_for_degraded_soils": "Ideal for degraded soils"
+    },
+    "detail": {
+      "bio_formulation": "Bio formulation",
+      "premium_kit": "Premium kit",
+      "eco_friendly_safe": "Eco-friendly and safe",
+      "key_benefits": "Key Benefits",
+      "benefits_intro": "Scientifically formulated for maximum effectiveness and sustainable crop performance.",
+      "quick_specs_title": "Quick Specs",
+      "quick_specs_desc": "Everything a dealer or farmer needs at a glance.",
+      "benefit_subdesc_0": "Improves crop development and optimizes nutrient efficiency.",
+      "benefit_subdesc_1": "Strengthens root structure and improves soil vitality.",
+      "benefit_subdesc_2": "Builds natural resistance against environmental stress.",
+      "benefit_subdesc_3": "Supports sustainable farming practices and delivers high-quality yields.",
+      "nc_subdesc_0": "Promotes fast absorption through a carrier-based format.",
+      "nc_subdesc_1": "Designed for convenient handling and consistent field use.",
+      "nc_subdesc_2": "Improves delivery of the active material to the root zone.",
+      "nc_subdesc_3": "Built for direct, practical application.",
+      "default_organic": "100% Organic",
+      "default_bio_active": "Bio-active",
+      "default_premium_pack": "Premium pack",
+      "easy_to_apply": "Easy to apply"
     },
     "categories": {
       "bio_insecticides": {
@@ -609,7 +643,18 @@
     "copyright": "© 2026 Jay Agritech. All rights reserved.",
     "terms": "Terms of Use",
     "privacy": "Privacy Policy",
-    "follow_us": "Follow Us"
+    "follow_us": "Follow Us",
+    "knowledge_hub": "Knowledge Hub",
+    "growth_system": "Growth System",
+    "contact_address": "Valsad, Gujarat 396001, India",
+    "newsletter_title": "Subscribe for updates",
+    "newsletter_placeholder": "Your email",
+    "subscribe": "Subscribe",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "made_with_care": "Made with care for Indian agriculture",
+    "description": "Leading biological and organic agri-solutions for sustainable farming.",
+    "careers": "Careers"
   },
   "contact": {
     "form_name": "Your Name",
@@ -1006,7 +1051,57 @@
           "description": "Ensure every batch of our biological inputs meets the highest standards of potency and purity."
         }
       },
-      "no_role_text": "Don't see a role that fits? We're always looking for talented individuals."
+      "no_role_text": "Don't see a role that fits? We're always looking for talented individuals.",
+      "form": {
+        "personal_details_title": "Personal Details",
+        "name_label": "Full Name",
+        "name_placeholder": "Your full name",
+        "email_label": "Email Address",
+        "email_placeholder": "e.g. yourname@gmail.com",
+        "phone_label": "Phone Number",
+        "phone_placeholder": "e.g. +91 98765 43210",
+        "professional_resume_title": "Professional Resume",
+        "resume_section": "Resume / CV",
+        "upload_pdf": "Upload PDF",
+        "paste_link": "Drive/Dropbox Link",
+        "upload_click": "Click to upload PDF resume",
+        "pdf_only": "PDF format only (Max 5MB)",
+        "drive_placeholder": "https://drive.google.com/... (must be shared/accessible)",
+        "submitting": "Processing application...",
+        "submit_application": "Submit Application",
+        "cancel": "Cancel",
+        "remove": "Remove",
+        "sales_screening_title": "Role-Specific Questionnaire",
+        "sales_exp_label": "Years of Agrochemical/Seed B2B sales experience *",
+        "sales_exp_option1": "Less than 2 years",
+        "sales_exp_option2": "2 to 5 years",
+        "sales_exp_option3": "More than 5 years",
+        "sales_travel_label": "Are you willing to travel extensively to rural territories in Gujarat? *",
+        "sales_achievement_label": "Describe your most successful dealer onboarding or sales campaign *",
+        "sales_achievement_ph": "e.g. Onboarded 15 new distributors, increasing sales by 30%...",
+        "micro_screening_title": "Role-Specific Questionnaire",
+        "micro_degree_label": "Highest academic qualification in Microbiology/Biotech *",
+        "micro_degree_bsc": "B.Sc. / B.Tech",
+        "micro_degree_msc": "M.Sc. / M.Tech",
+        "micro_degree_phd": "Ph.D.",
+        "micro_degree_postdoc": "Post-Doc",
+        "micro_inoc_label": "Do you have hands-on experience with biological inoculants? *",
+        "micro_tech_label": "Outline your experience with microbial strain isolation and fermentation *",
+        "micro_tech_ph": "Detail laboratory techniques and bioreactor scale experience...",
+        "mktg_screening_title": "Role-Specific Questionnaire",
+        "mktg_platforms_label": "Which digital ad platforms have you managed, and what was your budget? *",
+        "mktg_platforms_ph": "e.g. Meta Ads, Google Ads, average monthly budget of 50k INR...",
+        "mktg_strategy_label": "Briefly outline a digital marketing concept to engage progressive farmers *",
+        "mktg_strategy_ph": "Explain content format, channels, and language compatibility approach...",
+        "mktg_portfolio_label": "Link to your marketing portfolio or past visual design assets (Optional)",
+        "mktg_portfolio_ph": "https://behance.net/yourprofile or Google Drive link",
+        "qa_screening_title": "Role-Specific Questionnaire",
+        "qa_iso_label": "Have you worked in an ISO, GLP, or NABL certified laboratory? *",
+        "qa_methods_label": "What analytical methods are you most experienced with? *",
+        "qa_methods_ph": "List equipment (HPLC, purity, shelf-life) and analysis protocols...",
+        "qa_dev_label": "Explain how you would handle a quality control deviation or contamination *",
+        "qa_dev_ph": "Outline standard isolation, testing, and report procedures..."
+      }
     },
     "legal": {
       "privacy": {
@@ -1141,8 +1236,11 @@
       "company": "Registered Company Name",
       "company_placeholder": "Registered legal entity name",
       "email": "Business Email",
+      "email_placeholder": "partner@yourcompany.com",
       "phone": "Mobile / Whatsapp",
+      "phone_placeholder": "e.g. +91 98765 43210",
       "location": "Location (City, State / Country)",
+      "location_placeholder": "e.g. Valsad, Gujarat, India",
       "message": "Briefly outline your B2B proposal details",
       "message_placeholder": "Provide any details regarding customization requirements, required certifications, or target pricing...",
       "submitting": "Processing B2B Request...",

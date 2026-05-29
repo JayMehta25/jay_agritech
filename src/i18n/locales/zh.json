@@ -7,7 +7,9 @@
     "research": "研发",
     "farmer_zone": "农民区",
     "contact": "联系我们",
+    "contact_us": "联系我们",
     "become_partner": "成为合作伙伴",
+    "select_language": "选择语言",
     "tagline": "创新农业，培育增长",
     "sections": {
       "company": "公司",
@@ -940,9 +942,10 @@
         ]
       },
       "bf-012": {
-        "name": "AT ORGO RESCUE PRO",
+        "name": "AT ORGO 复苏宝",
         "tagline": "解磷菌（高端款）",
         "description": "高性能芽孢杆菌 (Bacillus Spp.)，能够迅速释放磷酸盐，帮助作物从逆境和营养缺乏中恢复。",
+        "microbes": "芽孢杆菌 Bacillus Spp. 2 x 10¹¹ CFU/ml",
         "application": "土壤施用",
         "dosage": "1 升/英亩",
         "recommended": "所有作物",
@@ -1044,7 +1047,16 @@
     "send_another": "发送另一条",
     "select": "选择主题",
     "phone": "电话",
-    "email": "电子邮件"
+    "email": "电子邮件",
+    "home": "首页",
+    "yes": "是",
+    "no": "否",
+    "cancel": "取消"
+  },
+  "chatbot": {
+    "online": "在线",
+    "offline": "离线",
+    "typing": "正在输入..."
   },
   "hero": {
     "badge": "50 多年的工业遗产",
@@ -1585,7 +1597,57 @@
           "description": "确保每一批生物投入品都符合效力和纯度的最高标准。"
         }
       },
-      "no_role_text": "没看到合适的职位？我们一直在寻找优秀的人才。"
+      "no_role_text": "没看到合适的职位？我们一直在寻找优秀的人才。",
+      "form": {
+        "personal_details_title": "个人信息",
+        "name_label": "完整姓名",
+        "name_placeholder": "请输入您的完整姓名",
+        "email_label": "电子邮箱",
+        "email_placeholder": "例如 yourname@gmail.com",
+        "phone_label": "联系电话",
+        "phone_placeholder": "例如 +91 98765 43210",
+        "professional_resume_title": "专业简历",
+        "resume_section": "个人简历 / CV",
+        "upload_pdf": "上传 PDF 简历",
+        "paste_link": "云盘/网盘链接",
+        "upload_click": "点击上传 PDF 格式简历",
+        "pdf_only": "仅限 PDF 格式 (最大 5MB)",
+        "drive_placeholder": "https://drive.google.com/... (链接必须设置为公开可读)",
+        "submitting": "正在提交申请...",
+        "submit_application": "提交申请",
+        "cancel": "取消",
+        "remove": "移除",
+        "sales_screening_title": "职位专属问卷",
+        "sales_exp_label": "农化/种子 B2B 销售经验年限 *",
+        "sales_exp_option1": "少于 2 年",
+        "sales_exp_option2": "2 至 5 年",
+        "sales_exp_option3": "5 年以上",
+        "sales_travel_label": "您是否愿意经常前往古吉拉特邦的农村地区出差？ *",
+        "sales_achievement_label": "请描述您最成功的一次经销商开发或销售战役 *",
+        "sales_achievement_ph": "例如 开发了 15 家新分销商，使销量提升了 30%...",
+        "micro_screening_title": "职位专属问卷",
+        "micro_degree_label": "微生物学/生物技术最高学历 *",
+        "micro_degree_bsc": "学士 / 工学学士 (B.Sc. / B.Tech)",
+        "micro_degree_msc": "硕士 / 工学硕士 (M.Sc. / M.Tech)",
+        "micro_degree_phd": "博士 (Ph.D.)",
+        "micro_degree_postdoc": "博士后 (Post-Doc)",
+        "micro_inoc_label": "您是否有生物接种剂方面的实际操作经验？ *",
+        "micro_tech_label": "请简述您在微生物菌株分离和发酵方面的经验 *",
+        "micro_tech_ph": "详细说明实验室技术及反应器规模经验...",
+        "mktg_screening_title": "职位专属问卷",
+        "mktg_platforms_label": "您管理过哪些数字广告平台？平均月预算是多少？ *",
+        "mktg_platforms_ph": "例如 Meta广告、谷歌广告，平均月预算5万卢比...",
+        "mktg_strategy_label": "请简要规划一个吸引前瞻性农民的数字营销概念 *",
+        "mktg_strategy_ph": "说明内容形式、渠道和语言兼容性策略...",
+        "mktg_portfolio_label": "您的营销作品集或过往视觉设计作品链接 (选填)",
+        "mktg_portfolio_ph": "https://behance.net/yourprofile 或谷歌云盘链接",
+        "qa_screening_title": "职位专属问卷",
+        "qa_iso_label": "您是否曾在通过 ISO、GLP 或 NABL 认证的实验室工作过？ *",
+        "qa_methods_label": "您最熟悉哪些分析方法？ *",
+        "qa_methods_ph": "列出使用的仪器 (HPLC、纯度检测、保质期测试) 和分析规程...",
+        "qa_dev_label": "请阐述您将如何处理质量控制偏差或污染事件 *",
+        "qa_dev_ph": "简述标准隔离、检测和报告程序..."
+      }
     },
     "solutions": {
       "items": {

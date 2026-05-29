@@ -94,29 +94,29 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <div className="grid-3 bsc-custom-fields" style={{ gap: 'var(--sp-4)', marginTop: 'var(--sp-2)' }}>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.cm_formulation', 'Formulation Type')}</label>
+              <label className="form-label">{t('b2b.form.cm_formulation')}</label>
               <select name="formulation" value={c.formulation} onChange={handleCustomChange} className="form-select">
-                <option value="liquid">{t('b2b.cm.liquid', 'Liquid Formulation')}</option>
-                <option value="wp">{t('b2b.cm.wp', 'Wettable Powder (WP)')}</option>
-                <option value="sp">{t('b2b.cm.sp', 'Soluble Powder (SP)')}</option>
-                <option value="granules">{t('b2b.cm.granules', 'Bio Granules')}</option>
-                <option value="custom">{t('b2b.cm.custom', 'Custom Biotech')}</option>
+                <option value="liquid">{t('b2b.cm.liquid')}</option>
+                <option value="wp">{t('b2b.cm.wp')}</option>
+                <option value="sp">{t('b2b.cm.sp')}</option>
+                <option value="granules">{t('b2b.cm.granules')}</option>
+                <option value="custom">{t('b2b.cm.custom')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.cm_volume', 'Expected Annual Volume')}</label>
+              <label className="form-label">{t('b2b.form.cm_volume')}</label>
               <select name="volume" value={c.volume} onChange={handleCustomChange} className="form-select">
-                <option value="pilot">{t('b2b.cm.pilot', 'Pilot Trial (<1k L/Kg)')}</option>
-                <option value="small">{t('b2b.cm.small', 'Medium Batch (1k-5k L/Kg)')}</option>
-                <option value="commercial">{t('b2b.cm.commercial', 'Commercial Scale (>5k L/Kg)')}</option>
+                <option value="pilot">{t('b2b.cm.pilot')}</option>
+                <option value="small">{t('b2b.cm.small')}</option>
+                <option value="commercial">{t('b2b.cm.commercial')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.cm_packaging', 'Packaging Format')}</label>
+              <label className="form-label">{t('b2b.form.cm_packaging')}</label>
               <select name="packaging" value={c.packaging} onChange={handleCustomChange} className="form-select">
-                <option value="bulk">{t('b2b.cm.bulk', 'Bulk Containers')}</option>
-                <option value="retail">{t('b2b.cm.retail', 'Retail Branding')}</option>
-                <option value="custom_oem">{t('b2b.cm.oem', 'Custom OEM Packets')}</option>
+                <option value="bulk">{t('b2b.cm.bulk')}</option>
+                <option value="retail">{t('b2b.cm.retail')}</option>
+                <option value="custom_oem">{t('b2b.cm.oem')}</option>
               </select>
             </div>
           </div>
@@ -125,24 +125,24 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <div className="grid-3 bsc-custom-fields" style={{ gap: 'var(--sp-4)', marginTop: 'var(--sp-2)' }}>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.res_focus', 'R&D Focus')}</label>
+              <label className="form-label">{t('b2b.form.res_focus')}</label>
               <select name="focus" value={c.focus} onChange={handleCustomChange} className="form-select">
-                <option value="strain">{t('b2b.res.strain', 'Strain Screening')}</option>
-                <option value="fermentation">{t('b2b.res.ferment', 'Fermentation Opt.')}</option>
-                <option value="stability">{t('b2b.res.stability', 'Stability Testing')}</option>
-                <option value="field">{t('b2b.res.field', 'Field Trial Prep')}</option>
+                <option value="strain">{t('b2b.res.strain')}</option>
+                <option value="fermentation">{t('b2b.res.ferment')}</option>
+                <option value="stability">{t('b2b.res.stability')}</option>
+                <option value="field">{t('b2b.res.field')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.res_timeline', 'Collaboration Timeline')}</label>
+              <label className="form-label">{t('b2b.form.res_timeline')}</label>
               <select name="timeline" value={c.timeline} onChange={handleCustomChange} className="form-select">
-                <option value="short">{t('b2b.res.short', 'Short Term (<3 Months)')}</option>
-                <option value="mid">{t('b2b.res.mid', 'Mid Term (3-9 Months)')}</option>
-                <option value="long">{t('b2b.res.long', 'Long Term / Perpetual')}</option>
+                <option value="short">{t('b2b.res.short')}</option>
+                <option value="mid">{t('b2b.res.mid')}</option>
+                <option value="long">{t('b2b.res.long')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.res_crops', 'Target Crops / Pathogens')}</label>
+              <label className="form-label">{t('b2b.form.res_crops')}</label>
               <input
                 type="text"
                 name="crops"
@@ -150,7 +150,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                 onChange={handleCustomChange}
                 className="form-input"
                 required
-                placeholder={t('b2b.form.res_crops_placeholder', 'e.g. Cotton Wilt, Rice')}
+                placeholder={t('b2b.form.res_crops_placeholder')}
               />
             </div>
           </div>
@@ -159,28 +159,28 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <div className="grid-3 bsc-custom-fields" style={{ gap: 'var(--sp-4)', marginTop: 'var(--sp-2)' }}>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.wl_category', 'Product Category')}</label>
+              <label className="form-label">{t('b2b.form.wl_category')}</label>
               <select name="category" value={c.category} onChange={handleCustomChange} className="form-select">
-                <option value="bioinsecticides">{t('b2b.wl.insecticides', 'Bio Insecticides')}</option>
-                <option value="biofertilizers">{t('b2b.wl.fertilizers', 'Bio Fertilizers')}</option>
-                <option value="biostimulants">{t('b2b.wl.biostimulants', 'Biostimulants')}</option>
-                <option value="organicnutrients">{t('b2b.wl.nutrients', 'Organic Nutrients')}</option>
-                <option value="micronutrients">{t('b2b.wl.micronutrients', 'Micronutrients')}</option>
+                <option value="bioinsecticides">{t('b2b.wl.insecticides')}</option>
+                <option value="biofertilizers">{t('b2b.wl.fertilizers')}</option>
+                <option value="biostimulants">{t('b2b.wl.biostimulants')}</option>
+                <option value="organicnutrients">{t('b2b.wl.nutrients')}</option>
+                <option value="micronutrients">{t('b2b.wl.micronutrients')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.wl_batch', 'Initial Launch Batch')}</label>
+              <label className="form-label">{t('b2b.form.wl_batch')}</label>
               <select name="batch" value={c.batch} onChange={handleCustomChange} className="form-select">
-                <option value="test">{t('b2b.wl.test', 'Test Market Volume')}</option>
-                <option value="regional">{t('b2b.wl.regional', 'Regional Volume')}</option>
-                <option value="commercial">{t('b2b.wl.commercial', 'National Rollout')}</option>
+                <option value="test">{t('b2b.wl.test')}</option>
+                <option value="regional">{t('b2b.wl.regional')}</option>
+                <option value="commercial">{t('b2b.wl.commercial')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.wl_design', 'Design Services Needed?')}</label>
+              <label className="form-label">{t('b2b.form.wl_design')}</label>
               <select name="design" value={c.design} onChange={handleCustomChange} className="form-select">
-                <option value="yes">{t('b2b.wl.design_yes', 'Yes - Label Designing')}</option>
-                <option value="no">{t('b2b.wl.design_no', 'No - Custom Branding ready')}</option>
+                <option value="yes">{t('b2b.wl.design_yes')}</option>
+                <option value="no">{t('b2b.wl.design_no')}</option>
               </select>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <div className="grid-3 bsc-custom-fields" style={{ gap: 'var(--sp-4)', marginTop: 'var(--sp-2)' }}>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.exp_country', 'Target Market / Country')}</label>
+              <label className="form-label">{t('b2b.form.exp_country')}</label>
               <input
                 type="text"
                 name="country"
@@ -197,23 +197,23 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                 onChange={handleCustomChange}
                 className="form-input"
                 required
-                placeholder={t('b2b.form.exp_country_placeholder', 'e.g. Kenya, Vietnam')}
+                placeholder={t('b2b.form.exp_country_placeholder')}
               />
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.exp_type', 'Partnership Model')}</label>
+              <label className="form-label">{t('b2b.form.exp_type')}</label>
               <select name="type" value={c.type} onChange={handleCustomChange} className="form-select">
-                <option value="exclusive">{t('b2b.exp.exclusive', 'Exclusive Distributor')}</option>
-                <option value="distributor">{t('b2b.exp.distributor', 'Franchise Partner')}</option>
-                <option value="buyer">{t('b2b.exp.buyer', 'Pure Export Buyer')}</option>
+                <option value="exclusive">{t('b2b.exp.exclusive')}</option>
+                <option value="distributor">{t('b2b.exp.distributor')}</option>
+                <option value="buyer">{t('b2b.exp.buyer')}</option>
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">{t('b2b.form.exp_license', 'Import License Status')}</label>
+              <label className="form-label">{t('b2b.form.exp_license')}</label>
               <select name="license" value={c.license} onChange={handleCustomChange} className="form-select">
-                <option value="yes">{t('b2b.exp.license_yes', 'Registered & Active')}</option>
-                <option value="in_progress">{t('b2b.exp.license_progress', 'Application in Progress')}</option>
-                <option value="no">{t('b2b.exp.license_no', 'Not Applied Yet')}</option>
+                <option value="yes">{t('b2b.exp.license_yes')}</option>
+                <option value="in_progress">{t('b2b.exp.license_progress')}</option>
+                <option value="no">{t('b2b.exp.license_no')}</option>
               </select>
             </div>
           </div>
@@ -231,12 +231,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.cm_formulation', 'Formulation Type')}:</span>
-              <strong className="receipt-val">{t(`b2b.cm.${c.formulation}`, c.formulation.toUpperCase())}</strong>
+              <span className="receipt-label">{t('b2b.form.cm_formulation')}:</span>
+              <strong className="receipt-val">{t(`b2b.cm.${c.formulation}`)}</strong>
             </div>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.cm_volume', 'Expected Annual Volume')}:</span>
-              <strong className="receipt-val">{t(`b2b.cm.${c.volume}`, c.volume)}</strong>
+              <span className="receipt-label">{t('b2b.form.cm_volume')}:</span>
+              <strong className="receipt-val">{t(`b2b.cm.${c.volume}`)}</strong>
             </div>
           </>
         );
@@ -244,11 +244,11 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.res_focus', 'R&D Focus')}:</span>
-              <strong className="receipt-val">{t(`b2b.res.${c.focus}`, c.focus)}</strong>
+              <span className="receipt-label">{t('b2b.form.res_focus')}:</span>
+              <strong className="receipt-val">{t(`b2b.res.${c.focus}`)}</strong>
             </div>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.res_crops', 'Target Crops')}:</span>
+              <span className="receipt-label">{t('b2b.form.res_crops')}:</span>
               <strong className="receipt-val">{c.crops}</strong>
             </div>
           </>
@@ -257,12 +257,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.wl_category', 'Product Category')}:</span>
-              <strong className="receipt-val">{t(`b2b.wl.${c.category}`, c.category)}</strong>
+              <span className="receipt-label">{t('b2b.form.wl_category')}:</span>
+              <strong className="receipt-val">{t(`b2b.wl.${c.category}`)}</strong>
             </div>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.wl_design', 'Label Design Needed')}:</span>
-              <strong className="receipt-val">{c.design === 'yes' ? 'Yes' : 'No'}</strong>
+              <span className="receipt-label">{t('b2b.form.wl_design')}:</span>
+              <strong className="receipt-val">{c.design === 'yes' ? t('common.yes') : t('common.no')}</strong>
             </div>
           </>
         );
@@ -270,12 +270,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
         return (
           <>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.exp_country', 'Target Market')}:</span>
+              <span className="receipt-label">{t('b2b.form.exp_country')}:</span>
               <strong className="receipt-val">{c.country}</strong>
             </div>
             <div className="receipt-row">
-              <span className="receipt-label">{t('b2b.form.exp_type', 'Partnership Model')}:</span>
-              <strong className="receipt-val">{t(`b2b.exp.${c.type}`, c.type)}</strong>
+              <span className="receipt-label">{t('b2b.form.exp_type')}:</span>
+              <strong className="receipt-val">{t(`b2b.exp.${c.type}`)}</strong>
             </div>
           </>
         );
@@ -296,9 +296,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
 
   return (
     <div className="b2b-modal-overlay" onClick={handleBackdropClick}>
-      <div className="b2b-modal-card animate-scale-up" style={{ borderTop: `6px solid ${activeSvc.color}` }}>
+      <div
+        className="b2b-modal-card animate-scale-up"
+        style={{ borderTop: `6px solid ${activeSvc.color}`, width: '820px', maxWidth: '96vw', boxSizing: 'border-box' }}
+      >
         {/* Close Button */}
-        <button className="b2b-modal-close" onClick={onClose} aria-label={t('common.close', 'Close')}>
+        <button className="b2b-modal-close" onClick={onClose} aria-label={t('common.close')}>
           <X size={20} />
         </button>
 
@@ -309,34 +312,34 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               <CheckCircle size={36} style={{ color: activeSvc.color }} />
             </div>
 
-            <h3 className="enquiry-success-title" style={{ fontSize: 'var(--fs-h3)' }}>{t('b2b.success.title', 'B2B Inquiry Registered!')}</h3>
+            <h3 className="enquiry-success-title" style={{ fontSize: 'var(--fs-h3)' }}>{t('b2b.success.title')}</h3>
             <p className="enquiry-success-text" style={{ fontSize: 'var(--fs-body-sm)', marginBottom: 'var(--sp-4)' }}>
-              {t('b2b.success.intro', 'Thank you for choosing Jay Agritech. We have generated a custom B2B inquiry ticket with the details listed below:')}
+              {t('b2b.success.intro')}
             </p>
 
             <div className="enquiry-receipt-card" style={{ maxWidth: '460px', border: `1px dashed ${activeSvc.color}40`, background: `${activeSvc.color}04` }}>
               <div className="receipt-row">
-                <span className="receipt-label">{t('b2b.form.service', 'B2B Category')}:</span>
+                <span className="receipt-label">{t('b2b.form.service')}:</span>
                 <strong className="receipt-val" style={{ color: activeSvc.color }}>{activeSvc.title}</strong>
               </div>
               <div className="receipt-row">
-                <span className="receipt-label">{t('b2b.form.name', 'Contact Name')}:</span>
+                <span className="receipt-label">{t('b2b.form.name')}:</span>
                 <strong className="receipt-val">{formData.name}</strong>
               </div>
               <div className="receipt-row">
-                <span className="receipt-label">{t('b2b.form.company', 'Company')}:</span>
+                <span className="receipt-label">{t('b2b.form.company')}:</span>
                 <strong className="receipt-val">{formData.company}</strong>
               </div>
               {renderReceiptCustoms()}
             </div>
 
             <p className="enquiry-success-footer" style={{ fontSize: 'var(--fs-caption)', maxWidth: '440px' }}>
-              {t('b2b.success.footer_msg', 'Our commercial account managers or B2B technical consultants will analyze these requirements and connect directly within 24 business hours.')}
+              {t('b2b.success.footer_msg')}
             </p>
 
             <div style={{ marginTop: 'var(--sp-6)' }}>
               <button className="btn btn-primary" onClick={onClose} style={{ background: activeSvc.color, borderColor: activeSvc.color }}>
-                {t('b2b.success.done_btn', 'Finish & Close')}
+                {t('b2b.success.done_btn')}
               </button>
             </div>
           </div>
@@ -351,7 +354,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               <div>
                 <h3 className="b2b-modal-title" style={{ fontSize: 'var(--fs-h3)', margin: 0 }}>{activeSvc.title}</h3>
                 <span style={{ fontSize: 'var(--fs-caption)', color: 'var(--clr-text-muted)', display: 'block', marginTop: 2 }}>
-                  {t('b2b.modal.subtitle', 'B2B Custom Proposal Enquiry')}
+                  {t('b2b.modal.subtitle')}
                 </span>
               </div>
             </div>
@@ -361,7 +364,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               {/* Dynamic Service-Specific Morphing Fields */}
               <div className="b2b-custom-fields-wrapper" style={{ padding: 'var(--sp-4)', background: 'var(--clr-primary-surface)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--clr-primary-lighter)' }}>
                 <h4 style={{ fontSize: 'var(--fs-body-sm)', fontWeight: 'bold', margin: '0 0 var(--sp-2) 0', color: activeSvc.color }}>
-                  🛡️ {t('b2b.form.custom_specs', 'Custom Proposal Specifications')}
+                  🛡️ {t('b2b.form.custom_specs')}
                 </h4>
                 {renderCustomFields()}
               </div>
@@ -370,7 +373,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                 <div className="form-group">
                   <label className="form-label">
-                    <User size={12} /> {t('b2b.form.name', 'Contact Person')} *
+                    <User size={12} /> {t('b2b.form.name')} *
                   </label>
                   <input
                     type="text"
@@ -379,12 +382,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                     value={formData.name}
                     onChange={handleTextChange}
                     className="form-input"
-                    placeholder={t('b2b.form.name_placeholder', 'Your full name')}
+                    placeholder={t('b2b.form.name_placeholder')}
                   />
                 </div>
                 <div className="form-group">
                   <label className="form-label">
-                    <Building size={12} /> {t('b2b.form.company', 'Registered Company Name')} *
+                    <Building size={12} /> {t('b2b.form.company')} *
                   </label>
                   <input
                     type="text"
@@ -393,7 +396,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                     value={formData.company}
                     onChange={handleTextChange}
                     className="form-input"
-                    placeholder={t('b2b.form.company_placeholder', 'Registered legal entity name')}
+                    placeholder={t('b2b.form.company_placeholder')}
                   />
                 </div>
               </div>
@@ -402,7 +405,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               <div className="grid-2" style={{ gap: 'var(--sp-4)' }}>
                 <div className="form-group">
                   <label className="form-label">
-                    <Mail size={12} /> {t('b2b.form.email', 'Business Email')} *
+                    <Mail size={12} /> {t('b2b.form.email')} *
                   </label>
                   <input
                     type="email"
@@ -411,12 +414,12 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                     value={formData.email}
                     onChange={handleTextChange}
                     className="form-input"
-                    placeholder="partner@yourcompany.com"
+                    placeholder={t('b2b.form.email_placeholder')}
                   />
                 </div>
                 <div className="form-group">
                   <label className="form-label">
-                    <Phone size={12} /> {t('b2b.form.phone', 'Mobile / Whatsapp')} *
+                    <Phone size={12} /> {t('b2b.form.phone')} *
                   </label>
                   <input
                     type="tel"
@@ -425,7 +428,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                     value={formData.phone}
                     onChange={handleTextChange}
                     className="form-input"
-                    placeholder="e.g. +91 98765 43210"
+                    placeholder={t('b2b.form.phone_placeholder')}
                   />
                 </div>
               </div>
@@ -433,7 +436,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
               {/* Location */}
               <div className="form-group">
                 <label className="form-label">
-                  <MapPin size={12} /> {t('b2b.form.location', 'Location (City, State / Country)')} *
+                  <MapPin size={12} /> {t('b2b.form.location')} *
                 </label>
                 <input
                   type="text"
@@ -442,20 +445,20 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                   value={formData.location}
                   onChange={handleTextChange}
                   className="form-input"
-                  placeholder="e.g. Valsad, Gujarat, India"
+                  placeholder={t('b2b.form.location_placeholder')}
                 />
               </div>
 
               {/* Custom Message */}
               <div className="form-group">
-                <label className="form-label">{t('b2b.form.message', 'Briefly outline your B2B proposal details')}</label>
+                <label className="form-label">{t('b2b.form.message')}</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleTextChange}
                   className="form-textarea"
                   rows="3"
-                  placeholder={t('b2b.form.message_placeholder', 'Provide any details regarding customization requirements, required certifications, or target pricing...')}
+                  placeholder={t('b2b.form.message_placeholder')}
                 ></textarea>
               </div>
 
@@ -467,7 +470,7 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                   className="btn btn-secondary"
                   style={{ flex: 1, padding: 'var(--sp-3.5)' }}
                 >
-                  {t('common.cancel', 'Cancel')}
+                  {t('common.cancel')}
                 </button>
                 <button
                   type="submit"
@@ -476,10 +479,10 @@ export default function B2BEnquiryModal({ activeSvc, onClose }) {
                   style={{ flex: 2, padding: 'var(--sp-3.5)', background: activeSvc.color, borderColor: activeSvc.color, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--sp-2)' }}
                 >
                   {loading ? (
-                    t('b2b.form.submitting', 'Processing B2B Request...')
+                    t('b2b.form.submitting')
                   ) : (
                     <>
-                      {t('b2b.form.submit', 'Submit B2B Inquiry')} <Send size={14} />
+                      {t('b2b.form.submit')} <Send size={14} />
                     </>
                   )}
                 </button>
