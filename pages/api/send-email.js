@@ -244,10 +244,13 @@ ${JSON.stringify(cleanFields, null, 2)}
     console.log(logMessage);
     
     try {
-      const logPath = path.join(process.cwd(), 'mock-emails.log');
+      // Vercel serverless runs in read-only mode, but '/tmp' is writeable
+      const isVercel = process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME;
+      const logDir = isVercel ? '/tmp' : process.cwd();
+      const logPath = path.join(logDir, 'mock-emails.log');
       fs.appendFileSync(logPath, logMessage);
     } catch (e) {
-      console.error('Failed to write mock email to disk:', e);
+      console.log('Skipping file write (Console log fallback is active):', e.message);
     }
 
     return res.status(200).json({ 
