@@ -16,6 +16,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        type: 'contact',
+        data: formData
+      })
+    }).catch(err => console.error('Error sending contact email:', err));
+
     setSubmitted(true);
   };
 

@@ -66,6 +66,21 @@ export default function Partners() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        type: 'become_partner',
+        data: {
+          program: activeModal,
+          ...formData
+        }
+      })
+    }).catch(err => console.error('Error sending partner email:', err));
+
     // Simulate API request
     setTimeout(() => {
       setFormSubmitted(true);

@@ -87,6 +87,21 @@ export default function ProductEnquiry({ category: categoryProp, slug: slugProp 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        type: 'product_enquiry',
+        data: {
+          productName: product.name,
+          ...formData
+        }
+      })
+    }).catch(err => console.error('Error sending enquiry email:', err));
+
     // Simulate API request
     setTimeout(() => {
       setLoading(false);

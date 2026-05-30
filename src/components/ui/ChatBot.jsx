@@ -1,11 +1,44 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { X, User, HelpCircle } from 'lucide-react';
+import { X, User, HelpCircle, Send, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { assetSrc } from '../../utils/assetSrc';
 import logoImgAsset from '../../assets/new_title.png';
+import { products } from '../../data/siteData';
 
 const logoImg = assetSrc(logoImgAsset);
+
+const INDIAN_STATES = [
+  "andhra pradesh", "arunachal pradesh", "assam", "bihar", "chhattisgarh", "goa", "gujarat", "haryana",
+  "himachal pradesh", "jharkhand", "karnataka", "kerala", "madhya pradesh", "maharashtra", "manipur",
+  "meghalaya", "mizoram", "nagaland", "odisha", "punjab", "rajasthan", "sikkim", "tamil nadu",
+  "telangana", "tripura", "uttar pradesh", "uttarakhand", "west bengal", "delhi", "jammu and kashmir",
+  "ladakh", "puducherry", "chandigarh", "andaman and nicobar", "lakshadweep", "dadra and nagar haveli",
+  "daman and diu"
+];
+
+const MAJOR_INDIAN_CITIES = [
+  "mumbai", "delhi", "bangalore", "hyderabad", "ahmedabad", "chennai", "kolkata", "surat", "pune",
+  "jaipur", "lucknow", "kanpur", "nagpur", "indore", "thane", "bhopal", "visakhapatnam", "patna",
+  "vadodara", "ghaziabad", "ludhiana", "agra", "nashik", "faridabad", "meerut", "rajkot", "varanasi",
+  "srinagar", "aurangabad", "dhanbad", "amritsar", "navi mumbai", "allahabad", "ranchi", "howrah",
+  "coimbatore", "jabalpur", "gwalior", "vijayawada", "jodhpur", "madurai", "raipur", "kota",
+  "guwahati", "solapur", "hubli", "dharwad", "bareilly", "moradabad", "mysore", "gurgaon", "aligarh",
+  "jalandhar", "tiruchirappalli", "bhubaneswar", "salem", "mira bhayandar", "trivandrum", "bhiwandi",
+  "saharanpur", "gorakhpur", "guntur", "bikaner", "amravati", "noida", "jamshedpur", "bhilai", "cuttack",
+  "firozabad", "kochi", "nellore", "bhavnagar", "dehradun", "durgapur", "asansol", "rourkela", "nanded",
+  "kolhapur", "ajmer", "akola", "gulbarga", "jamnagar", "ujjain", "loni", "siliguri", "jhansi", "ulhasnagar",
+  "jammu", "sangli", "mangalore", "erode", "belgaum", "tirunelveli", "malegaon", "gaya", "jalgaon", "udaipur",
+  "davanagere", "kozikode", "kurnool", "rajahmundry", "bokaro", "bellary", "patiala", "agartala", "bhagalpur",
+  "muzaffarnagar", "latur", "dhule", "tiruppur", "rohtak", "korba", "bhilwara", "muzaffarpur", "ahmednagar",
+  "mathura", "kollam", "avadi", "kadapa", "bilaspur", "satara", "bijapur", "rampur", "shimoga", "chandrapur",
+  "junagadh", "thrissur", "alwar", "kakinada", "nizamabad", "parbhani", "tumkur", "khammam", "panipat",
+  "darbhanga", "aizawl", "dewas", "ichalkaranji", "karnal", "bathinda", "jalna", "eluru", "barasat", "purnia",
+  "satna", "mau", "sonipat", "farrukhabad", "sagar", "durg", "imphal", "ratlam", "hapur", "anantapur", "arrah",
+  "karimnagar", "ramagundam", "etawah", "ambernath", "bharatpur", "begusarai", "new delhi", "gandhidham",
+  "pali", "valsad", "vapi", "navsari", "anand", "nadiad", "mehsana", "morbi", "porbandar", "veraval",
+  "surendranagar", "gandhinagar", "bharuch", "godhra", "dahod", "bhuj"
+];
 
 // Self-contained Markdown-Lite Parser for Chat Bubbles
 function formatText(text) {
@@ -107,7 +140,7 @@ function TypewriterText({ text, onComplete }) {
         clearInterval(timer);
         if (onComplete) onComplete();
       }
-    }, 12); // Slightly faster 12ms character speed for dynamic rendering
+    }, 10); // Swift 10ms typing speed
     
     return () => clearInterval(timer);
   }, [text]);
@@ -173,6 +206,311 @@ const getDynamicPopupText = (pathname, lang) => {
   return set[lang] || set.en;
 };
 
+// 🤖 CO-PILOT AGENT TASK WORKFLOW CONFIGURATION
+const AGENT_WORKFLOWS = {
+  product_enquiry: [
+    {
+      step: 0,
+      question: "Which product category are you interested in?",
+      type: "buttons",
+      options: [
+        { label: "Bio Fertilizers 🦠", value: "bio-fertilizers" },
+        { label: "Biostimulants ✨", value: "biostimulants" },
+        { label: "Bio Insecticides 🛡️", value: "bio-insecticides" },
+        { label: "Organic Nutrients 🍃", value: "organic-nutrients" },
+        { label: "Micronutrients 💎", value: "micronutrients" }
+      ],
+      next: (val) => ({
+        category: val
+      })
+    },
+    {
+      step: 1,
+      question: "Great choice! Which specific product would you like to inquire about?",
+      type: "buttons",
+      options: (data) => {
+        const cat = products.categories.find(c => c.slug === data.category);
+        return cat ? cat.products.map(p => ({ label: p.name, value: p.slug })) : [];
+      },
+      next: (val, data) => {
+        const cat = products.categories.find(c => c.slug === data.category);
+        const prod = cat ? cat.products.find(p => p.slug === val) : null;
+        return {
+          productSlug: val,
+          productName: prod ? prod.name : val
+        };
+      }
+    },
+    {
+      step: 2,
+      question: (data) => `I have set up the inquiry dossier for **${data.productName || 'your product'}**! Let's gather the details. What is your **Full Name**?`,
+      type: "text",
+      field: "name",
+      labelMatch: "name",
+      validate: (val) => (!val || val.trim().length < 2 || /\d/.test(val)) ? "⚠️ Please enter a valid name (at least 2 characters, without numbers)." : null
+    },
+    {
+      step: 3,
+      question: "Excellent. What is your **Email Address**?",
+      type: "text",
+      field: "email",
+      labelMatch: "email",
+      validate: (val) => (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())) ? "⚠️ That doesn't look like a valid email address. Please try again (e.g., name@example.com)." : null
+    },
+    {
+      step: 4,
+      question: "Got it. What is your **Phone Number**?",
+      type: "text",
+      field: "phone",
+      labelMatch: "phone",
+      validate: (val) => {
+        const digits = val.replace(/[^0-9]/g, '');
+        return (digits.length < 10) ? "⚠️ Please enter a valid phone number (at least 10 digits)." : null;
+      }
+    },
+    {
+      step: 5,
+      question: "Thanks! What is your **Location (City, State)**?",
+      type: "text",
+      field: "location",
+      labelMatch: "location",
+      validate: (val) => {
+        if (!val) return "⚠️ Please enter a valid location (e.g., Valsad, Gujarat).";
+        const clean = val.toLowerCase().replace(/[^a-z0-9\s,]/g, '');
+        const parts = clean.split(/[\s,]+/).map(p => p.trim()).filter(Boolean);
+        const hasValidCity = parts.some(part => MAJOR_INDIAN_CITIES.includes(part)) || MAJOR_INDIAN_CITIES.includes(clean.trim());
+        const hasValidState = parts.some(part => INDIAN_STATES.includes(part)) || INDIAN_STATES.includes(clean.trim());
+        return (!hasValidCity && !hasValidState) ? "⚠️ Please enter a valid Indian city or state (e.g., Valsad, Gujarat)." : null;
+      }
+    },
+    {
+      step: 6,
+      question: "Perfect. What is your **Company / Farm Name**? (Or type 'Individual' to skip)",
+      type: "text",
+      field: "company",
+      labelMatch: "company",
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please enter a valid company/farm name, or type 'Individual' to skip." : null
+    },
+    {
+      step: 7,
+      question: "How many units do you need? (e.g., 100)",
+      type: "text",
+      field: "quantity",
+      labelMatch: "quantity",
+      validate: (val) => {
+        const num = Number(val.trim());
+        return (isNaN(num) || num <= 0 || !Number.isInteger(num)) ? "⚠️ Please enter a valid positive quantity number (integer)." : null;
+      }
+    },
+    {
+      step: 8,
+      question: "Almost done! Do you have any **special requirements or crop details**? (Type 'None' to skip)",
+      type: "text",
+      field: "message",
+      labelMatch: "message",
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please specify requirements, or type 'None' to skip." : null
+    },
+    {
+      step: 9,
+      question: "I have gathered all the details! Would you like me to submit the Product Inquiry directly in the background, or do you want to review the filled form on our page first?",
+      type: "buttons",
+      options: [
+        { label: "🚀 Submit in background!", value: "submit" },
+        { label: "✏️ Review filled form on page", value: "manual" }
+      ]
+    }
+  ],
+  become_partner: [
+    {
+      step: 0,
+      question: "Let's start your Partner Application! Which program would you like to apply for?",
+      type: "buttons",
+      options: [
+        { label: "Dealer Program 🤝", value: "dealer" },
+        { label: "Distributor Program 🚚", value: "distributor" },
+        { label: "Export Program 🌐", value: "export" }
+      ],
+      next: (val) => ({
+        program: val
+      })
+    },
+    {
+      step: 1,
+      question: "Perfect! Let's gather the details. What is your **Full Name**?",
+      type: "text",
+      field: "fullName",
+      labelMatch: "full name",
+      validate: (val) => (!val || val.trim().length < 2 || /\d/.test(val)) ? "⚠️ Please enter a valid name (at least 2 characters, without numbers)." : null
+    },
+    {
+      step: 2,
+      question: (data) => data.program === 'dealer' ? "What is your **Shop Name**?" : "What is your **Company Name**?",
+      type: "text",
+      field: (data) => data.program === 'dealer' ? "shopName" : "companyName",
+      labelMatch: (data) => data.program === 'dealer' ? "shop name" : "company name",
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please enter a valid name (at least 2 characters)." : null
+    },
+    {
+      step: 3,
+      question: "What is your **Phone Number**?",
+      type: "text",
+      field: "phone",
+      labelMatch: "phone",
+      validate: (val) => {
+        const digits = val.replace(/[^0-9]/g, '');
+        return (digits.length < 10) ? "⚠️ Please enter a valid phone number (at least 10 digits)." : null;
+      }
+    },
+    {
+      step: 4,
+      question: "What is your **Email Address**?",
+      type: "text",
+      field: "email",
+      labelMatch: "email",
+      validate: (val) => (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())) ? "⚠️ That doesn't look like a valid email address. Please try again (e.g., name@example.com)." : null
+    },
+    {
+      step: 5,
+      question: "What is your **Full Address**?",
+      type: "text",
+      field: "address",
+      labelMatch: "address",
+      validate: (val) => (!val || val.trim().length < 6) ? "⚠️ Please enter a valid full address (at least 6 characters)." : null
+    },
+    {
+      step: 6,
+      question: "What is your **City**?",
+      type: "text",
+      field: "city",
+      labelMatch: "city",
+      validate: (val) => {
+        if (!val) return "⚠️ Please enter a valid city name.";
+        const clean = val.trim().toLowerCase();
+        const hasValidCity = MAJOR_INDIAN_CITIES.includes(clean);
+        return !hasValidCity ? "⚠️ Please enter a valid Indian city (e.g., Valsad, Mumbai)." : null;
+      }
+    },
+    {
+      step: 7,
+      question: "What is your **State / Country**?",
+      type: "text",
+      field: (data) => data.program === 'export' ? "country" : "state",
+      labelMatch: (data) => data.program === 'export' ? "country" : "state",
+      validate: (val, data) => {
+        if (data && data.program === 'export') {
+          return (!val || val.trim().length < 2 || /\d/.test(val)) ? "⚠️ Please enter a valid country name." : null;
+        }
+        if (!val) return "⚠️ Please enter a valid state name.";
+        const clean = val.trim().toLowerCase();
+        const hasValidState = INDIAN_STATES.includes(clean);
+        return !hasValidState ? "⚠️ Please enter a valid Indian state (e.g., Gujarat, Maharashtra)." : null;
+      }
+    },
+    {
+      step: 8,
+      question: (data) => {
+        if (data.program === 'dealer') return "Which products do you currently sell? (Seeds, Fertilizers, All, None)";
+        if (data.program === 'distributor') return "What is your annual **Business Turnover**? (e.g., 50 Lakhs)";
+        return "Which product categories are you interested in importing?";
+      },
+      type: "text",
+      field: (data) => {
+        if (data.program === 'dealer') return "currentProducts";
+        if (data.program === 'distributor') return "turnover";
+        return "productsOfInterest";
+      },
+      labelMatch: (data) => {
+        if (data.program === 'dealer') return "products sold";
+        if (data.program === 'distributor') return "turnover";
+        return "products";
+      },
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please enter valid details response." : null
+    },
+    {
+      step: 9,
+      question: "Excellent. Any comments or messages for our partnership board?",
+      type: "text",
+      field: "message",
+      labelMatch: "message",
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please enter comments, or type 'None' to skip." : null
+    },
+    {
+      step: 10,
+      question: "I have gathered all the partnership details! Would you like me to submit the application in the background, or do you want to review the filled form on our page first?",
+      type: "buttons",
+      options: [
+        { label: "🚀 Submit in background!", value: "submit" },
+        { label: "✏️ Review filled form on page", value: "manual" }
+      ]
+    }
+  ],
+  contact: [
+    {
+      step: 0,
+      question: "Let's gather the details for our General Contact Form! Ready to start?",
+      type: "buttons",
+      options: [
+        { label: "🚀 Yes, let's start!", value: "start" }
+      ],
+      next: () => ({})
+    },
+    {
+      step: 1,
+      question: "Great! What is your **Full Name**?",
+      type: "text",
+      field: "name",
+      labelMatch: "name",
+      validate: (val) => (!val || val.trim().length < 2 || /\d/.test(val)) ? "⚠️ Please enter a valid name (at least 2 characters, without numbers)." : null
+    },
+    {
+      step: 2,
+      question: "What is your **Email Address**?",
+      type: "text",
+      field: "email",
+      labelMatch: "email",
+      validate: (val) => (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())) ? "⚠️ That doesn't look like a valid email address. Please try again (e.g., name@example.com)." : null
+    },
+    {
+      step: 3,
+      question: "What is your **Phone Number**? (Optional, type 'None' to skip)",
+      type: "text",
+      field: "phone",
+      labelMatch: "phone",
+      validate: (val) => {
+        const trimmed = val.trim().toLowerCase();
+        if (trimmed === 'none' || trimmed === 'skip' || trimmed === '') return null;
+        const digits = trimmed.replace(/[^0-9]/g, '');
+        return (digits.length < 10) ? "⚠️ Please enter a valid phone number (at least 10 digits) or type 'None' to skip." : null;
+      }
+    },
+    {
+      step: 4,
+      question: "What is the topic of your inquiry? (Product, Partnership, Bulk, Technical, Other)",
+      type: "text",
+      field: "subject",
+      labelMatch: "subject",
+      validate: (val) => (!val || val.trim().length < 2) ? "⚠️ Please enter a valid subject topic." : null
+    },
+    {
+      step: 5,
+      question: "What is your **Message** for us?",
+      type: "text",
+      field: "message",
+      labelMatch: "message",
+      validate: (val) => (!val || val.trim().length < 5) ? "⚠️ Please enter a more detailed message (at least 5 characters)." : null
+    },
+    {
+      step: 6,
+      question: "I have gathered all your contact details! Would you like me to submit it in the background, or do you want to review the filled form on our page first?",
+      type: "buttons",
+      options: [
+        { label: "🚀 Submit in background!", value: "submit" },
+        { label: "✏️ Review filled form on page", value: "manual" }
+      ]
+    }
+  ]
+};
+
 export default function ChatBot() {
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -186,6 +524,142 @@ export default function ChatBot() {
   const [activeAnimatingId, setActiveAnimatingId] = useState(null);
   const messagesEndRef = useRef(null);
 
+  // 🤖 CO-PILOT AGENT STATES
+  const [agentMode, setAgentMode] = useState(false);
+  const [agentTask, setAgentTask] = useState(null); // 'product_enquiry' | 'become_partner' | 'contact'
+  const [agentStep, setAgentStep] = useState(0);
+  const [agentData, setAgentData] = useState({});
+  const [userInput, setUserInput] = useState('');
+
+  // 🎥 AUTOPILOT SIMULATION FEED STATES
+  const [showSimulatorClip, setShowSimulatorClip] = useState(false);
+  const [simulatorStep, setSimulatorStep] = useState(0); // 0: Idle, 1: Name, 2: Email, 3: Details, 4: Hover Submit, 5: Sending, 6: Success
+  const [simulatorLogs, setSimulatorLogs] = useState([]);
+  const [simulatedFields, setSimulatedFields] = useState({});
+  const [onSimulatorCompleteAction, setOnSimulatorCompleteAction] = useState(null);
+
+  const getSimulatorFields = () => {
+    if (agentTask === 'product_enquiry') {
+      return [
+        { label: 'Full Name', value: agentData.name || 'Jay Mehta', key: 'name' },
+        { label: 'Email Address', value: agentData.email || 'customer@example.com', key: 'email' },
+        { label: 'Phone Number', value: agentData.phone || '98251 42359', key: 'phone' },
+        { label: 'Quantity Needed', value: agentData.quantity || '100', key: 'quantity' }
+      ];
+    } else if (agentTask === 'become_partner') {
+      return [
+        { label: 'Full Name', value: agentData.fullName || 'Jay Mehta', key: 'fullName' },
+        { label: 'Email Address', value: agentData.email || 'customer@example.com', key: 'email' },
+        { label: 'Phone Number', value: agentData.phone || '98251 42359', key: 'phone' },
+        { label: 'Full Address', value: agentData.address || 'Valsad, Gujarat', key: 'address' }
+      ];
+    } else {
+      return [
+        { label: 'Full Name', value: agentData.name || 'Jay Mehta', key: 'name' },
+        { label: 'Email Address', value: agentData.email || 'customer@example.com', key: 'email' },
+        { label: 'Phone Number', value: agentData.phone || '98251 42359', key: 'phone' },
+        { label: 'Message Text', value: agentData.message || 'Hello, Jay Agritech!', key: 'message' }
+      ];
+    }
+  };
+
+  useEffect(() => {
+    if (!showSimulatorClip) return;
+
+    setSimulatorStep(0);
+    setSimulatorLogs([`> INIT AUTOPILOT SIMULATION GATEWAY...`]);
+    setSimulatedFields({});
+
+    const fields = getSimulatorFields();
+
+    const timeline = [
+      {
+        delay: 500,
+        action: () => {
+          setSimulatorStep(1);
+          setSimulatorLogs(prev => [...prev, `> TARGET ELEMENT FOUND: input#name`]);
+        }
+      },
+      {
+        delay: 1400,
+        action: () => {
+          setSimulatedFields(prev => ({ ...prev, [fields[0].key]: fields[0].value }));
+          setSimulatorLogs(prev => [...prev, `> INJECTED: name = "${fields[0].value}"`]);
+          setSimulatorStep(2);
+        }
+      },
+      {
+        delay: 2200,
+        action: () => {
+          setSimulatorLogs(prev => [...prev, `> TARGET ELEMENT FOUND: input#email`]);
+        }
+      },
+      {
+        delay: 3100,
+        action: () => {
+          setSimulatedFields(prev => ({ ...prev, [fields[1].key]: fields[1].value }));
+          setSimulatorLogs(prev => [...prev, `> INJECTED: email = "${fields[1].value}"`]);
+          setSimulatorStep(3);
+        }
+      },
+      {
+        delay: 3900,
+        action: () => {
+          setSimulatorLogs(prev => [...prev, `> TARGET ELEMENT FOUND: input#details`]);
+        }
+      },
+      {
+        delay: 4800,
+        action: () => {
+          setSimulatedFields(prev => ({ 
+            ...prev, 
+            [fields[2].key]: fields[2].value,
+            [fields[3].key]: fields[3].value
+          }));
+          setSimulatorLogs(prev => [...prev, `> INJECTED: details = "${fields[3].value}"`]);
+          setSimulatorStep(4);
+        }
+      },
+      {
+        delay: 5600,
+        action: () => {
+          setSimulatorLogs(prev => [...prev, `> LOCATING SUBMIT TRIGGER...`]);
+        }
+      },
+      {
+        delay: 6400,
+        action: () => {
+          setSimulatorStep(5);
+          setSimulatorLogs(prev => [
+            ...prev, 
+            `> BUBBLED CLICK TRIGGERED!`,
+            `> OUTBOX ROUTE: jayjmehta251203@gmail.com`,
+            `> DISPATCHING SECURE GMAIL GATEWAY...`
+          ]);
+        }
+      },
+      {
+        delay: 7900,
+        action: () => {
+          setSimulatorStep(6);
+          setSimulatorLogs(prev => [...prev, `> CONFIRMED! Delivered to jayjmehta251203@gmail.com`]);
+        }
+      },
+      {
+        delay: 9400,
+        action: () => {
+          setShowSimulatorClip(false);
+          if (onSimulatorCompleteAction) {
+            onSimulatorCompleteAction();
+          }
+        }
+      }
+    ];
+
+    const timers = timeline.map(t => setTimeout(t.action, t.delay));
+    return () => timers.forEach(clearTimeout);
+  }, [showSimulatorClip, onSimulatorCompleteAction]);
+
   const activeLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
 
   const scrollToBottom = () => {
@@ -196,7 +670,6 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  // Synchronize greeting popup visibility with chat window state after intro is finished
   useEffect(() => {
     if (!introFinished) return;
     if (!isOpen) {
@@ -206,7 +679,6 @@ export default function ChatBot() {
     }
   }, [isOpen, introFinished]);
 
-  // Re-trigger/update greeting popup when navigating to a new page
   useEffect(() => {
     if (!introFinished) return;
     if (!isOpen) {
@@ -214,7 +686,149 @@ export default function ChatBot() {
     }
   }, [currentPath, isOpen, introFinished]);
 
-  // Formatted FAQ Q&A Database (8 high-relevance biological and partnership questions)
+  // Robust field filler helper for React controlled forms
+  const fillFieldOnPage = (fieldName, labelText, value) => {
+    if (typeof window === 'undefined') return false;
+
+    let element = null;
+
+    // 1. Language-independent index matching for partners modals
+    const modalBody = document.querySelector('.modal-form-body');
+    if (modalBody) {
+      const PARTNER_FIELD_INDEX = {
+        dealer: {
+          fullName: 0,
+          shopName: 1,
+          phone: 2,
+          email: 3,
+          address: 4,
+          state: 5,
+          city: 6,
+          currentProducts: 7,
+          volume: 8,
+          message: 9
+        },
+        distributor: {
+          fullName: 0,
+          companyName: 1,
+          phone: 2,
+          email: 3,
+          gstNo: 4,
+          turnover: 5,
+          territory: 6,
+          warehouse: 7,
+          experience: 8,
+          address: 9,
+          message: 10
+        },
+        export: {
+          fullName: 0,
+          companyName: 1,
+          phone: 2,
+          email: 3,
+          country: 4,
+          targetCountries: 5,
+          productsOfInterest: 6,
+          volume: 7,
+          regulatorySupport: 8,
+          message: 9
+        }
+      };
+
+      // Determine active program by checking modal text or program data
+      let activeProgram = 'dealer';
+      const modalHeader = document.querySelector('.modal-form-header h3');
+      if (modalHeader) {
+        const text = modalHeader.textContent.toLowerCase();
+        if (text.includes('distributor') || text.includes('वितरक') || text.includes('分销')) {
+          activeProgram = 'distributor';
+        } else if (text.includes('export') || text.includes('निर्यात') || text.includes('出口')) {
+          activeProgram = 'export';
+        }
+      }
+
+      const indexMap = PARTNER_FIELD_INDEX[activeProgram];
+      if (indexMap && indexMap[fieldName] !== undefined) {
+        const fields = Array.from(modalBody.querySelectorAll('input, select, textarea'));
+        const targetIndex = indexMap[fieldName];
+        if (fields[targetIndex]) {
+          element = fields[targetIndex];
+        }
+      }
+    }
+
+    // 2. Try finding by name attribute (ProductEnquiry, Contact)
+    if (!element) {
+      element = document.querySelector(`input[name="${fieldName}"], select[name="${fieldName}"], textarea[name="${fieldName}"]`);
+    }
+
+    // 3. Fallback: label matching
+    if (!element && labelText) {
+      const labels = Array.from(document.querySelectorAll('label'));
+      const label = labels.find(l => l.textContent.toLowerCase().replace(/[^a-z0-9]/g, '').includes(labelText.toLowerCase().replace(/[^a-z0-9]/g, '')));
+      if (label) {
+        element = label.nextElementSibling;
+        if (!element || !(element.tagName === 'INPUT' || element.tagName === 'SELECT' || element.tagName === 'TEXTAREA')) {
+          element = label.parentElement.querySelector('input, select, textarea');
+        }
+      }
+    }
+
+    if (element) {
+      // Set value using React-compatible native setter to bypass controlled component lock
+      try {
+        const valueSetter = Object.getOwnPropertyDescriptor(element.constructor.prototype, "value")?.set;
+        const prototype = Object.getPrototypeOf(element);
+        const prototypeValueSetter = Object.getOwnPropertyDescriptor(prototype, "value")?.set;
+        
+        if (valueSetter && valueSetter !== prototypeValueSetter) {
+          prototypeValueSetter.call(element, value);
+        } else if (valueSetter) {
+          valueSetter.call(element, value);
+        } else {
+          element.value = value;
+        }
+      } catch (e) {
+        element.value = value;
+      }
+
+      // Dispatch bubbling input & change events
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+      element.dispatchEvent(new Event('change', { bubbles: true }));
+
+      // Synchronize value tracker metadata
+      const tracker = element._valueTracker;
+      if (tracker) {
+        tracker.setValue(value);
+      }
+      return true;
+    }
+    return false;
+  };
+
+  // Safe form submit helper
+  const submitFormOnPage = (selector) => {
+    if (typeof window === 'undefined') return false;
+
+    const form = document.querySelector(selector);
+    if (form) {
+      if (typeof form.requestSubmit === 'function') {
+        form.requestSubmit();
+      } else {
+        form.submit();
+      }
+      return true;
+    }
+
+    // Fallback: Click the submit button inside the modal/form
+    const submitBtn = document.querySelector('button[type="submit"], input[type="submit"], .modal-form-body button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.click();
+      return true;
+    }
+    return false;
+  };
+
   const qaData = {
     en: [
       {
@@ -321,9 +935,9 @@ export default function ChatBot() {
   };
 
   const greetings = {
-    en: "Hi there! 👋 Welcome to Jay Agritech. Click any of the frequently asked questions below to learn more about us and our biological solutions!",
-    hi: "नमस्ते! 👋 जय एग्रीटेक में आपका स्वागत है। हमारे और हमारे जैविक समाधानों के बारे में अधिक जानने के लिए नीचे दिए गए अक्सर पूछे जाने वाले प्रश्नों पर क्लिक करें!",
-    zh: "您好！👋 欢迎来到 Jay Agritech。点击下方常见问题，了解更多关于我们及生物解决方案的信息！"
+    en: "Hi there! 👋 Welcome to Jay Agritech. Click any of the frequently asked questions below to learn more, or launch our **Agent Co-Pilot** to auto-fill forms on our pages!",
+    hi: "नमस्ते! 👋 जय एग्रीटेक में आपका स्वागत है। हमारे बारे में जानने के लिए नीचे दिए गए प्रश्नों पर क्लिक करें, या हमारे **एजेंट को-पायलट** को चालू करें जो आपके लिए फॉर्म भर सकता है!",
+    zh: "您好！👋 欢迎来到 Jay Agritech。点击下方常见问题了解更多，或者启动我们的 **智能表单助手** 来帮您自动填写页面上的表单！"
   };
 
   const popupTexts = {
@@ -332,7 +946,6 @@ export default function ChatBot() {
     zh: "您好！今天我能为您做些什么？ 👋"
   };
 
-  // Initial greeting setup (delayed to align with floating button spring entrance pop animation)
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessages([
@@ -354,7 +967,6 @@ export default function ChatBot() {
     setIsOpen(!isOpen);
   };
 
-  // Prevent background page from scrolling when chatbot is open
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (isOpen) {
@@ -370,16 +982,7 @@ export default function ChatBot() {
     };
   }, [isOpen]);
 
-  const getActiveQuestions = () => {
-    const questions = qaData[activeLang] || qaData.en;
-    const total = questions.length;
-    const items = [];
-    for (let i = 0; i < Math.min(3, total); i++) {
-      items.push(questions[(startIndex + i) % total]);
-    }
-    return items;
-  };
-
+  // Standard FAQ selection
   const handleSelectQuestion = (q) => {
     if (isTyping || activeAnimatingId) return;
 
@@ -392,8 +995,6 @@ export default function ChatBot() {
 
     setMessages(prev => [...prev, userMessage]);
     setIsTyping(true);
-
-    // Rotate to the next set of questions
     setStartIndex(prev => prev + 3);
 
     setTimeout(() => {
@@ -418,8 +1019,391 @@ export default function ChatBot() {
     setActiveAnimatingId(null);
   };
 
+  // 🤖 CO-PILOT AGENT TASK SELECTION AND WORKFLOW PROGRESS LOGIC
+  const startAgentMode = () => {
+    setAgentMode(true);
+    setAgentTask(null);
+    setAgentStep(0);
+    setAgentData({});
+
+    const botMessage = {
+      id: Date.now(),
+      text: "### ✨ Agent Co-Pilot: Activated!\nI am your automated agent. I can guide you through our platform, redirect pages, and auto-fill forms for you in real-time.\n\nWhich task would you like me to assist you with today?",
+      sender: 'bot',
+      isAnimating: true,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    // Show a brand new clean chat box for the Agent Co-Pilot
+    setMessages([botMessage]);
+  };
+
+  const exitAgentMode = () => {
+    setAgentMode(false);
+    setAgentTask(null);
+    setAgentStep(0);
+    setAgentData({});
+    setUserInput('');
+
+    // If modal is open on partners page, close it for clean UX
+    const closeBtn = document.querySelector('.modal-form-header button');
+    if (closeBtn) closeBtn.click();
+
+    const initialFaqMessage = { 
+      id: Date.now(), 
+      text: greetings[activeLang], 
+      sender: 'bot',
+      isAnimating: false,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    // Clear Co-Pilot history and restore standard Assistant FAQ greeting
+    setMessages([initialFaqMessage]);
+  };
+
+  const startAgentTask = (taskType) => {
+    setAgentTask(taskType);
+    setAgentStep(0);
+    setAgentData({});
+
+    const workflow = AGENT_WORKFLOWS[taskType];
+    const firstStep = workflow[0];
+
+    // Log user choice
+    const userChoiceText = taskType === 'product_enquiry' 
+      ? "📝 Auto-Fill Product Inquiry Form" 
+      : taskType === 'become_partner' 
+        ? "🤝 Auto-Fill Partner Application" 
+        : "📞 Auto-Fill General Contact Form";
+
+    const userMsg = {
+      id: Date.now(),
+      text: userChoiceText,
+      sender: 'user',
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    setMessages(prev => [...prev, userMsg]);
+    setIsTyping(true);
+
+    setTimeout(() => {
+      setIsTyping(false);
+      const botMsg = {
+        id: Date.now() + 1,
+        text: firstStep.question,
+        sender: 'bot',
+        isAnimating: true,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, botMsg]);
+    }, 700);
+  };
+
+  const triggerReviewAction = (data) => {
+    if (typeof window === 'undefined') return;
+
+    // 1. Determine target redirect URL
+    let targetUrl = '';
+    let openModalAction = null;
+
+    if (agentTask === 'product_enquiry') {
+      targetUrl = `/products/${data.category}/${data.productSlug}/enquiry`;
+    } else if (agentTask === 'become_partner') {
+      targetUrl = '/partners';
+      openModalAction = () => {
+        setTimeout(() => {
+          const cards = document.querySelectorAll('.card');
+          if (data.program === 'dealer' && cards[0]) cards[0].click();
+          else if (data.program === 'distributor' && cards[1]) cards[1].click();
+          else if (data.program === 'export' && cards[2]) cards[2].click();
+        }, 600);
+      };
+    } else if (agentTask === 'contact') {
+      targetUrl = '/contact';
+    }
+
+    // 2. Perform bulk auto-fill, glowing highlights, and scrolling once page renders
+    const performAutoFillAndHighlight = () => {
+      setTimeout(() => {
+        // Run open modal if applicable
+        if (openModalAction) openModalAction();
+
+        // Polling auto-filler: Run 4 times over 2 seconds to capture elements once React mounts
+        let attempts = 0;
+        const intervalId = setInterval(() => {
+          attempts++;
+          let allFilled = true;
+          Object.keys(data).forEach(key => {
+            if (['category', 'productSlug', 'productName', 'program', 'redirect', 'action'].includes(key)) return;
+            
+            let labelMatch = key;
+            if (key === 'fullName') labelMatch = 'full name';
+            if (key === 'shopName') labelMatch = 'shop';
+            if (key === 'companyName') labelMatch = 'company';
+            if (key === 'currentProducts') labelMatch = 'products sold';
+            
+            const filled = fillFieldOnPage(key, labelMatch, data[key]);
+            if (!filled) allFilled = false;
+          });
+
+          // Once all found or after 4 attempts, clean up and run highlighting
+          if (allFilled || attempts >= 4) {
+            clearInterval(intervalId);
+            
+            setTimeout(() => {
+              // Highlight the filled fields in gold neon glow to visually wow the user
+              const inputs = document.querySelectorAll('.form-input, .form-field-input, .form-field-select, .form-field-textarea, .form-select, .form-textarea');
+              inputs.forEach(el => {
+                if (el.value) {
+                  el.style.borderColor = '#D4AF37';
+                  el.style.boxShadow = '0 0 14px rgba(212, 175, 55, 0.7)';
+                  el.style.transition = 'all 0.3s ease';
+                  setTimeout(() => {
+                    el.style.borderColor = '';
+                    el.style.boxShadow = '';
+                  }, 3500);
+                }
+              });
+
+              // Smooth scroll the form container into view
+              const formEl = document.querySelector('.modal-form-body, .enquiry-form-card, form');
+              if (formEl) {
+                formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }, 200);
+          }
+        }, 500); // Poll every 500ms
+      }, 500); // Wait for page component to mount
+    };
+
+    // 3. Conditional Page Routing Check
+    if (targetUrl && router.pathname !== targetUrl.split('?')[0]) {
+      router.push(targetUrl);
+      const handleRouteChange = () => {
+        performAutoFillAndHighlight();
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+      router.events.on('routeChangeComplete', handleRouteChange);
+    } else {
+      performAutoFillAndHighlight();
+    }
+  };
+
+  const handleAgentStep = (value, label = '') => {
+    const workflow = AGENT_WORKFLOWS[agentTask];
+    const currentStepConfig = workflow[agentStep];
+
+    // Perform Q&A Validation directly inside the chat interview
+    if (currentStepConfig.validate) {
+      const errorMsgText = currentStepConfig.validate(value, agentData);
+      if (errorMsgText) {
+        // Print user's typed value in user message bubble
+        const userMsg = {
+          id: Date.now(),
+          text: label || value,
+          sender: 'user',
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        setMessages(prev => [...prev, userMsg]);
+        setUserInput('');
+        setIsTyping(true);
+
+        setTimeout(() => {
+          setIsTyping(false);
+          const errorMsg = {
+            id: Date.now() + 1,
+            text: errorMsgText,
+            sender: 'bot',
+            isAnimating: true,
+            time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+          };
+          setMessages(prev => [...prev, errorMsg]);
+        }, 600);
+        return; // Halt transition to next step
+      }
+    }
+
+    // Log the user's choice in chat bubbles
+    const userMsg = {
+      id: Date.now(),
+      text: label || value,
+      sender: 'user',
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    setMessages(prev => [...prev, userMsg]);
+    setUserInput('');
+    setIsTyping(true);
+
+    // Save field state & apply DOM auto-fill if config has it
+    const updatedData = { ...agentData };
+    
+    if (currentStepConfig.field) {
+      const fieldName = typeof currentStepConfig.field === 'function' ? currentStepConfig.field(updatedData) : currentStepConfig.field;
+      const labelMatch = typeof currentStepConfig.labelMatch === 'function' ? currentStepConfig.labelMatch(updatedData) : currentStepConfig.labelMatch;
+      
+      updatedData[fieldName] = value;
+      setAgentData(updatedData);
+
+      // Perform DOM Form Injection
+      setTimeout(() => {
+        fillFieldOnPage(fieldName, labelMatch, value);
+      }, 100);
+    }
+
+    // Handle next step transitions & routing actions
+    let nextStepIndex = agentStep + 1;
+    let redirectUrl = null;
+    let customAction = null;
+
+    if (currentStepConfig.next) {
+      const transition = currentStepConfig.next(value, updatedData);
+      if (transition.redirect) redirectUrl = transition.redirect;
+      if (transition.action) customAction = transition.action;
+      
+      // Save any transition properties
+      Object.assign(updatedData, transition);
+      setAgentData(updatedData);
+    }
+
+    setTimeout(() => {
+      setIsTyping(false);
+
+      if (redirectUrl) {
+        router.push(redirectUrl);
+      }
+      if (customAction) {
+        customAction();
+      }
+
+      // Check if task is finished
+      if (nextStepIndex >= workflow.length) {
+        const triggerFinalAction = () => {
+          if (value === 'submit') {
+            triggerReviewAction(updatedData);
+
+            // POST to /api/send-email for autopilot background submission
+            fetch('/api/send-email', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                type: agentTask,
+                data: {
+                  ...updatedData,
+                  recipient: 'jayjmehta251203@gmail.com'
+                }
+              })
+            }).catch(err => console.error('Error sending autopilot email:', err));
+
+            setIsTyping(true);
+            setTimeout(() => {
+              setIsTyping(false);
+              
+              let submitSuccess = false;
+              if (agentTask === 'product_enquiry') {
+                submitSuccess = submitFormOnPage('.enquiry-actual-form');
+              } else if (agentTask === 'become_partner') {
+                submitSuccess = submitFormOnPage('.modal-form-body');
+              } else if (agentTask === 'contact') {
+                submitSuccess = submitFormOnPage('form');
+              }
+
+              const successMsg = {
+                id: Date.now() + 2,
+                text: "🎉 **Autopilot Form Submission Successful!**\n\nI have successfully submitted the form on your behalf. All submission data has been dispatched and delivered via Gmail to **jayjmehta251203@gmail.com**.\n\nExiting Co-Pilot mode now! Feel free to ask more questions.",
+                sender: 'bot',
+                isAnimating: true,
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+              };
+              
+              // Clean up state
+              setAgentMode(false);
+              setAgentTask(null);
+              setAgentStep(0);
+              setAgentData({});
+              setMessages([successMsg]);
+            }, 1500);
+          } else {
+            // Manual review chosen
+            triggerReviewAction(updatedData);
+
+            const finishMsg = {
+              id: Date.now() + 2,
+              text: "✏️ **Form Auto-Fill Completed & Ready for Review!**\n\nI have automatically opened the form, filled out all the fields with your answers, and highlighted them in glowing gold on the page so you can review them.\n\nPlease double check the fields, and once you are satisfied, click the **Submit** button on the screen to finalize your application!\n\nExiting Co-Pilot mode now. Let me know if you need another task!",
+              sender: 'bot',
+              isAnimating: true,
+              time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            
+            setAgentMode(false);
+            setAgentTask(null);
+            setAgentStep(0);
+            setAgentData({});
+            setMessages([finishMsg]);
+          }
+        };
+
+        // Open beautiful visual autopilot simulation clip overlay first!
+        setOnSimulatorCompleteAction(() => triggerFinalAction);
+        setShowSimulatorClip(true);
+      } else {
+        // Trigger next question
+        setAgentStep(nextStepIndex);
+        const nextStepConfig = workflow[nextStepIndex];
+        
+        let questionText = typeof nextStepConfig.question === 'function' 
+          ? nextStepConfig.question(updatedData) 
+          : nextStepConfig.question;
+
+        // Custom visuals for co-pilot redirects
+        let actionBadge = null;
+        if (redirectUrl) {
+          questionText += `\n\n*(Co-Pilot Action: Redirected to ${redirectUrl})*`;
+        }
+
+        const nextMsg = {
+          id: Date.now() + 2,
+          text: questionText,
+          sender: 'bot',
+          isAnimating: true,
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        setMessages(prev => [...prev, nextMsg]);
+      }
+    }, 900);
+  };
+
+  const handleSendText = (e) => {
+    e.preventDefault();
+    if (!userInput.trim() || isTyping) return;
+    
+    // Pass user typed text to the active agent step
+    handleAgentStep(userInput.trim());
+  };
+
+  const getActiveQuestions = () => {
+    const questions = qaData[activeLang] || qaData.en;
+    const total = questions.length;
+    const items = [];
+    for (let i = 0; i < Math.min(3, total); i++) {
+      items.push(questions[(startIndex + i) % total]);
+    }
+    return items;
+  };
+
+  // Helper for dynamic input placeholders
+  const getInputPlaceholder = () => {
+    if (!agentTask) return "Type a message...";
+    const workflow = AGENT_WORKFLOWS[agentTask];
+    const currentConfig = workflow[agentStep];
+    if (currentConfig && currentConfig.type === 'text') {
+      const field = typeof currentConfig.field === 'function' ? currentConfig.field(agentData) : currentConfig.field;
+      return `Enter your ${field}...`;
+    }
+    return "Click a button option above...";
+  };
+
   return (
-    <div className="chatbot-wrapper">
+    <div className={`chatbot-wrapper ${agentMode ? 'agent-active' : ''}`}>
       {/* Greeting Popup */}
       {!isOpen && showGreetingPopup && (
         <div className="chatbot-greeting-popup" onClick={handleToggle}>
@@ -428,8 +1412,8 @@ export default function ChatBot() {
         </div>
       )}
 
-      {/* Floating Button with Wrap for Bobbing Animation */}
-      <div className={`chatbot-toggle-wrap ${isOpen ? 'active' : ''}`}>
+      {/* Floating Toggle Button */}
+      <div className={`chatbot-toggle-wrap ${isOpen ? 'active' : ''} ${agentMode ? 'agent-active' : ''}`}>
         <button 
           className={`chatbot-toggle ${isOpen ? 'active' : ''}`}
           onClick={handleToggle}
@@ -442,22 +1426,116 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="chatbot-window">
+        <div className={`chatbot-window ${agentMode ? 'agent-active' : ''}`}>
           {/* Header */}
           <div className="chatbot-header">
             <div className="chatbot-header-info">
-              <div className="chatbot-avatar">
+              <div className={`chatbot-avatar ${agentMode ? 'agent-active' : ''}`}>
                 <img src={logoImg} alt="Jay Assistant" className="chatbot-avatar-img" />
               </div>
               <div>
-                <h4>Jay Assistant</h4>
-                <span className="chatbot-status">{t('chatbot.online')}</span>
+                <h4>
+                  {agentMode && <Sparkles size={14} style={{ color: 'var(--clr-accent-gold, #D4AF37)' }} />}
+                  {agentMode ? "Jay Co-Pilot Agent" : "Jay Assistant"}
+                </h4>
+                <span className="chatbot-status">
+                  {agentMode ? "Autopilot Active" : t('chatbot.online')}
+                </span>
               </div>
             </div>
             <button className="chatbot-close" onClick={() => setIsOpen(false)}><X size={18} /></button>
           </div>
 
-          {/* Messages */}
+          {/* Agent Banner Status Indicator */}
+          {agentMode && (
+            <div className="chatbot-agent-banner animate-scale-up">
+              <div className="chatbot-agent-banner-status">
+                <span className="chatbot-agent-banner-dot"></span>
+                <span>
+                  {agentTask 
+                    ? `Task: ${agentTask.replace('_', ' ')} (Step ${agentStep + 1})` 
+                    : "Co-Pilot Task Selection"}
+                </span>
+              </div>
+              <button className="chatbot-agent-exit-btn" onClick={exitAgentMode}>
+                Exit Co-Pilot
+              </button>
+            </div>
+          )}
+
+          {/* Autopilot Simulator Clip Overlay */}
+          {showSimulatorClip && (
+            <div className="copilot-sim-overlay">
+              <div className="sim-header-feed">
+                <div className="sim-feed-status">
+                  <span className="sim-feed-dot"></span>
+                  <span>LIVE AUTOPILOT ACTION FEED</span>
+                </div>
+                <span>co-pilot://feed/auto-submit</span>
+              </div>
+              
+              <div className="sim-browser-viewport">
+                {/* Simulated Cursor */}
+                <div 
+                  className="sim-virtual-cursor" 
+                  style={{
+                    top: simulatorStep <= 1 ? '50px' : 
+                         simulatorStep === 2 ? '100px' : 
+                         simulatorStep === 3 ? '150px' : 
+                         simulatorStep === 4 ? '200px' : '230px',
+                    left: simulatorStep <= 3 ? '120px' : '150px'
+                  }}
+                >
+                  <Send size={18} style={{ transform: 'rotate(-45deg)' }} />
+                </div>
+
+                <div className="sim-form-container">
+                  <span style={{ fontSize: '11px', fontWeight: 'bold', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '4px', marginBottom: '6px', color: '#D4AF37' }}>
+                    {agentTask === 'product_enquiry' ? 'Product Enquiry Form' :
+                     agentTask === 'become_partner' ? 'Partnership Application' : 'General Contact Form'}
+                  </span>
+                  
+                  {getSimulatorFields().map((f, i) => (
+                    <div key={f.key} className="sim-field-row">
+                      <span className="sim-field-label">{f.label}</span>
+                      <div className={`sim-field-input ${simulatorStep === (i + 1) ? 'active' : ''}`}>
+                        {simulatedFields[f.key] || ''}
+                      </div>
+                    </div>
+                  ))}
+
+                  <div className={`sim-submit-btn ${simulatorStep === 4 ? 'active' : ''} ${simulatorStep === 5 ? 'sending' : ''}`}>
+                    {simulatorStep < 5 ? 'Submit Application' : 'Sending securely...'}
+                  </div>
+                </div>
+
+                {/* Envelope Floating success seal */}
+                {simulatorStep === 6 && (
+                  <div className="sim-envelope-animation">
+                    <div className="sim-success-seal">
+                      <div className="sim-success-checkmark">
+                        <Send size={24} style={{ color: 'white' }} />
+                      </div>
+                      <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#64dd17' }}>DISPATCH SUCCESS</span>
+                      <p style={{ fontSize: '11px', margin: 0, opacity: 0.8, color: 'white' }}>
+                        Routed and delivered to:<br />
+                        <strong style={{ color: '#D4AF37', wordBreak: 'break-all' }}>jayjmehta251203@gmail.com</strong>
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Console logs */}
+              <div className="sim-terminal-log">
+                {simulatorLogs.map((log, idx) => (
+                  <div key={idx}>{log}</div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Messages Logs Area */}
           <div className="chatbot-messages">
             {messages.map((msg) => (
               <div key={msg.id} className={`chatbot-message ${msg.sender}`}>
@@ -477,6 +1555,15 @@ export default function ChatBot() {
                   ) : (
                     formatText(msg.text)
                   )}
+                  
+                  {/* Visual card badge for co-pilot actions */}
+                  {agentMode && msg.sender === 'bot' && msg.text.includes('Redirected') && (
+                    <div className="copilot-action-card">
+                      <Sparkles size={12} />
+                      <span>Co-Pilot executed browser redirection.</span>
+                    </div>
+                  )}
+
                   <span className="chatbot-message-time">{msg.time}</span>
                 </div>
               </div>
@@ -495,32 +1582,129 @@ export default function ChatBot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* suggested Questions Container */}
+          {/* Input & Suggested Quick Choices Stage */}
           <div className="chatbot-input" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 'var(--sp-2)' }}>
-            <div className="chatbot-quick-questions">
-              <span className="cqq-title">
-                {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : '💡 Suggested Questions:'}
-              </span>
-              <div className="cqq-list">
-                {getActiveQuestions().map((q, idx) => (
-                  <div key={idx} className="cqq-item">
-                    <button 
-                      onClick={() => handleSelectQuestion(q)} 
-                      className="cqq-btn"
-                      disabled={isTyping || activeAnimatingId !== null}
-                      style={{
-                        opacity: (isTyping || activeAnimatingId !== null) ? 0.6 : 1,
-                        cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
-                      }}
-                    >
-                      <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
-                      {q.question}
+            
+            {/* 1. AGENT CHAT QUESTIONS SELECTION FLOW */}
+            {agentMode && !agentTask && (
+              <div className="chatbot-quick-questions">
+                <span className="cqq-title">✨ Select a Co-Pilot Autopilot Task:</span>
+                <div className="cqq-list">
+                  <div className="cqq-item">
+                    <button className="cqq-btn" onClick={() => startAgentTask('product_enquiry')}>
+                      <Sparkles size={14} style={{ marginRight: '6px', color: '#D4AF37' }} />
+                      📝 Auto-Fill Product Inquiry Form
                     </button>
                   </div>
-                ))}
+                  <div className="cqq-item">
+                    <button className="cqq-btn" onClick={() => startAgentTask('become_partner')}>
+                      <Sparkles size={14} style={{ marginRight: '6px', color: '#D4AF37' }} />
+                      🤝 Auto-Fill Partner Application
+                    </button>
+                  </div>
+                  <div className="cqq-item">
+                    <button className="cqq-btn" onClick={() => startAgentTask('contact')}>
+                      <Sparkles size={14} style={{ marginRight: '6px', color: '#D4AF37' }} />
+                      📞 Auto-Fill General Contact Form
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
+
+            {/* 2. ACTIVE TASK STEP OPTIONS (BUTTON CHOICES) */}
+            {agentMode && agentTask && AGENT_WORKFLOWS[agentTask][agentStep].type === 'buttons' && (
+              <div className="chatbot-quick-questions">
+                <span className="cqq-title">💡 Choose an Option:</span>
+                <div className="cqq-list">
+                  {(typeof AGENT_WORKFLOWS[agentTask][agentStep].options === 'function'
+                    ? AGENT_WORKFLOWS[agentTask][agentStep].options(agentData)
+                    : AGENT_WORKFLOWS[agentTask][agentStep].options
+                  ).map((opt, idx) => (
+                    <div key={idx} className="cqq-item">
+                      <button 
+                        className="cqq-btn" 
+                        onClick={() => handleAgentStep(opt.value, opt.label)}
+                        disabled={isTyping}
+                      >
+                        {opt.label}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 3. STANDARD NORMAL FAQ MODE QUESTIONS */}
+            {!agentMode && (
+              <div className="chatbot-quick-questions">
+                {/* Autopilot Co-Pilot Entrance Trigger */}
+                <div className="cqq-item" style={{ marginBottom: '8px' }}>
+                  <button 
+                    className="cqq-btn" 
+                    onClick={startAgentMode}
+                    style={{
+                      background: 'linear-gradient(135deg, #113416 0%, #1c4d23 100%)',
+                      color: '#D4AF37',
+                      borderColor: '#D4AF37',
+                      fontWeight: 'bold',
+                      borderRadius: 'var(--radius-md)'
+                    }}
+                  >
+                    <Sparkles size={14} style={{ marginRight: '6px', color: '#D4AF37' }} />
+                    Launch Agent Co-Pilot (Autopilot)
+                  </button>
+                </div>
+
+                <span className="cqq-title">
+                  {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : '💡 Suggested Questions:'}
+                </span>
+                <div className="cqq-list">
+                  {getActiveQuestions().map((q, idx) => (
+                    <div key={idx} className="cqq-item">
+                      <button 
+                        onClick={() => handleSelectQuestion(q)} 
+                        className="cqq-btn"
+                        disabled={isTyping || activeAnimatingId !== null}
+                        style={{
+                          opacity: (isTyping || activeAnimatingId !== null) ? 0.6 : 1,
+                          cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
+                        }}
+                      >
+                        <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
+                        {q.question}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
+
+          {/* 4. ACTIVE TASK INTERVIEW FREE-FORM TEXT TYPING BAR */}
+          {agentMode && agentTask && AGENT_WORKFLOWS[agentTask][agentStep].type === 'text' && (
+            <form onSubmit={handleSendText} className="chatbot-input-form animate-slide-up">
+              <div className="chatbot-input-wrapper">
+                <input
+                  type="text"
+                  className="chatbot-input-text"
+                  placeholder={getInputPlaceholder()}
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  disabled={isTyping}
+                  autoFocus
+                />
+              </div>
+              <button 
+                type="submit" 
+                className="chatbot-send-btn" 
+                disabled={!userInput.trim() || isTyping}
+                title="Send answer"
+              >
+                <Send size={16} />
+              </button>
+            </form>
+          )}
         </div>
       )}
     </div>
