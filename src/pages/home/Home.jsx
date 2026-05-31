@@ -216,9 +216,8 @@ export default function Home() {
               >
                 {t('hero.view_catalogue')} <FileText size={18} />
               </button>
-              <Link to="/aboutus" className="btn btn-hero-outline btn-lg">
-                {t('hero.story_btn')} <ChevronRight size={18} />
-              </Link>
+              {/* Hero Try Co-Pilot removed per request */}
+              {/* hero Co-Pilot CTA removed per request */}
             </div>
           </div>
         </div>

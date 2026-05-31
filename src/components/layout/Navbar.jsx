@@ -190,9 +190,6 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="navbar-actions">
-            <button type="button" className="btn btn-secondary btn-sm" id="nav-copilot-cta" onClick={openCopilot}>
-              Try Co-Pilot <Sparkles size={14} />
-            </button>
             <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
               {t('nav.contact_us')}
             </Link>

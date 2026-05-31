@@ -444,6 +444,8 @@
   margin-left: auto;
 }
 
+/* header Co-Pilot handled as textual CTA */
+
 /* ── Mobile Toggle ── */
 .navbar-toggle {
   display: none;

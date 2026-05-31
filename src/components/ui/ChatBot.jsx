@@ -978,6 +978,49 @@ export default function ChatBot() {
     zh: "您好！今天我能为您做些什么？ 👋"
   };
 
+  const popupAlternatives = {
+    en: [
+      "Hi! How can I help you today? 👋",
+      "Try our Co‑Pilot now — auto-fill forms and request quotes!"
+    ],
+    hi: [
+      "नमस्ते! मैं आज आपकी क्या सहायता कर सकता हूँ? 👋",
+      "हमारा Co‑Pilot आज ही आज़माएँ — फॉर्म स्वचालित रूप से भरें और कोटेशन माँगे!"
+    ],
+    zh: [
+      "您好！今天我能为您做些什么？ 👋",
+      "试试我们的 Co‑Pilot — 自动填写表单并请求报价！"
+    ]
+  };
+
+  const [popupIdx, setPopupIdx] = useState(0);
+
+  useEffect(() => {
+    if (isOpen) return; // don't cycle when chat is open
+
+    const alts = popupAlternatives[activeLang] || [popupTexts[activeLang]];
+    let hideTimer = null;
+    let showTimer = null;
+
+    if (showGreetingPopup) {
+      // currently visible: hide after a short period
+      hideTimer = setTimeout(() => {
+        setShowGreetingPopup(false);
+      }, 2600);
+    } else {
+      // currently hidden: after a brief pause, advance text index and show popup again
+      showTimer = setTimeout(() => {
+        setPopupIdx(prev => (prev + 1) % alts.length);
+        setShowGreetingPopup(true);
+      }, 800);
+    }
+
+    return () => {
+      if (hideTimer) clearTimeout(hideTimer);
+      if (showTimer) clearTimeout(showTimer);
+    };
+  }, [showGreetingPopup, isOpen, activeLang]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessages([
@@ -996,7 +1039,17 @@ export default function ChatBot() {
   }, [activeLang]);
 
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    const willOpen = !isOpen;
+    setIsOpen(willOpen);
+    if (willOpen) {
+      // When opened via the chat toggle, always show the Assistant (not the Agent)
+      setAgentMode(false);
+      setAgentTask(null);
+      setAgentStep(0);
+      setAgentData({});
+      setUserInput('');
+      setShowGreetingPopup(false);
+    }
   };
 
   useEffect(() => {
@@ -1437,10 +1490,13 @@ export default function ChatBot() {
   return (
     <div className={`chatbot-wrapper ${agentMode ? 'agent-active' : ''}`}>
       {/* Greeting Popup */}
-      {!isOpen && showGreetingPopup && (
-        <div className="chatbot-greeting-popup" onClick={handleToggle}>
+      {!isOpen && (
+        <div
+          className={`chatbot-greeting-popup ${showGreetingPopup ? 'visible' : 'hidden'}`}
+          onClick={handleToggle}
+        >
           <div className="chatbot-greeting-close" onClick={(e) => { e.stopPropagation(); setShowGreetingPopup(false); }}><X size={14} /></div>
-          <p>{popupTexts[activeLang]}</p>
+          <p>{(popupAlternatives[activeLang] || [popupTexts[activeLang]])[popupIdx]}</p>
         </div>
       )}
 
