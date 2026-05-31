@@ -420,9 +420,6 @@
     width: min(420px, calc(100vw - 48px));
     max-height: calc(100vh - 140px);
   }
-  .chatbot-quick-questions {
-    max-height: min(28vh, 220px);
-  }
   .chatbot-greeting-popup {
     right: calc(100% + 12px);
     width: 200px;
@@ -468,9 +465,6 @@
   .chatbot-input {
     padding: var(--sp-2) var(--sp-3);
   }
-  .chatbot-quick-questions {
-    max-height: min(24vh, 180px);
-  }
   .chatbot-greeting-popup {
     display: none; /* Hide greeting on very small devices to maintain clean UI */
   }
@@ -482,10 +476,10 @@
   flex-direction: column;
   gap: var(--sp-2);
   width: 100%;
-  max-height: min(32vh, 240px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding-right: 2px;
+  max-height: none;
+  overflow: visible;
+  overscroll-behavior: auto;
+  padding-right: 0;
 }
 
 .cqq-title {
@@ -503,20 +497,11 @@
   flex-direction: column;
   padding: 0;
   overflow: visible;
+  width: 100%;
 }
 
 .cqq-item {
   padding: 0;
-}
-
-.cqq-item:not(:first-child) {
-  margin-top: -1px;
-}
-
-.cqq-item:hover,
-.cqq-item:focus-within {
-  position: relative;
-  z-index: 1;
 }
 
 .cqq-item:hover .cqq-btn:not(:disabled),
@@ -545,7 +530,10 @@
   display: inline-flex;
   align-items: center;
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .cqq-item:first-child .cqq-btn {
