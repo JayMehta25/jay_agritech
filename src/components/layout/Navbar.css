@@ -130,7 +130,7 @@
 /* ── Main Navbar ── */
 .navbar {
   position: fixed;
-  top: 12px;
+  top: 28px;
   left: 0;
   right: 0;
   height: var(--navbar-height);
@@ -141,7 +141,7 @@
 
 @media (max-width: 480px) {
   .navbar {
-    top: 8px;
+    top: 24px;
   }
   .navbar-hidden {
     transform: translateY(0);
@@ -193,8 +193,8 @@
 }
 
 .logo-icon-img {
-  width: 60px;
-  height: 60px;
+  width: 84px;
+  height: 84px;
   object-fit: contain;
   transition: transform var(--duration-normal) var(--ease-spring);
   animation: yellowGlowPulse 2s infinite ease-in-out;
@@ -206,11 +206,28 @@
 }
 
 .logo-title-img {
-  height: 52px;
+  height: 72px;
   width: auto;
-  max-width: 130px;
+  max-width: 180px;
   object-fit: contain;
   transition: filter var(--duration-normal) var(--ease-out);
+}
+
+@media (max-width: 480px) {
+  .logo-icon-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo-title-img {
+    height: 44px;
+    max-width: 140px;
+  }
+
+  .navbar-inner {
+    padding-left: var(--sp-3);
+    padding-right: var(--sp-3);
+  }
 }
 
 /* On transparent navbar (homepage), make it white/bright to pop on green */
@@ -637,6 +654,16 @@
   .navbar-inner {
     padding-right: var(--sp-2); /* Push hamburger toggle menu totally towards the right edge */
   }
+
+  .logo-icon-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .logo-title-img {
+    height: 42px;
+    max-width: 112px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -666,5 +693,15 @@
 
   .navbar {
     margin-top: 0;
+  }
+
+  .logo-icon-img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logo-title-img {
+    height: 36px;
+    max-width: 96px;
   }
 }

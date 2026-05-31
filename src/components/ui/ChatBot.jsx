@@ -315,8 +315,8 @@ const AGENT_WORKFLOWS = {
       question: "I have gathered all the details! Would you like me to submit the Product Inquiry directly in the background, or do you want to review the filled form on our page first?",
       type: "buttons",
       options: [
-        { label: "🚀 Submit in background!", value: "submit" },
-        { label: "✏️ Review filled form on page", value: "manual" }
+        { label: "Submit", value: "submit" },
+        { label: "Review filled form on page", value: "manual" }
       ]
     }
   ],
@@ -439,8 +439,8 @@ const AGENT_WORKFLOWS = {
       question: "I have gathered all the partnership details! Would you like me to submit the application in the background, or do you want to review the filled form on our page first?",
       type: "buttons",
       options: [
-        { label: "🚀 Submit in background!", value: "submit" },
-        { label: "✏️ Review filled form on page", value: "manual" }
+        { label: "Submit", value: "submit" },
+        { label: "Review filled form on page", value: "manual" }
       ]
     }
   ],
@@ -450,7 +450,7 @@ const AGENT_WORKFLOWS = {
       question: "Let's gather the details for our General Contact Form! Ready to start?",
       type: "buttons",
       options: [
-        { label: "🚀 Yes, let's start!", value: "start" }
+        { label: "Yes, let's start", value: "start" }
       ],
       next: () => ({})
     },
@@ -504,8 +504,8 @@ const AGENT_WORKFLOWS = {
       question: "I have gathered all your contact details! Would you like me to submit it in the background, or do you want to review the filled form on our page first?",
       type: "buttons",
       options: [
-        { label: "🚀 Submit in background!", value: "submit" },
-        { label: "✏️ Review filled form on page", value: "manual" }
+        { label: "Submit", value: "submit" },
+        { label: "Review filled form on page", value: "manual" }
       ]
     }
   ]
@@ -702,6 +702,21 @@ export default function ChatBot() {
       setShowGreetingPopup(true);
     }
   }, [currentPath, isOpen, introFinished]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleOpenCopilot = (event) => {
+      setIsOpen(true);
+      setShowGreetingPopup(false);
+      if (event?.detail?.mode === 'agent') {
+        startAgentMode();
+      }
+    };
+
+    window.addEventListener('jay:open-copilot', handleOpenCopilot);
+    return () => window.removeEventListener('jay:open-copilot', handleOpenCopilot);
+  }, []);
 
   // Robust field filler helper for React controlled forms
   const fillFieldOnPage = (fieldName, labelText, value) => {
@@ -1086,10 +1101,10 @@ export default function ChatBot() {
 
     // Log user choice
     const userChoiceText = taskType === 'product_enquiry' 
-      ? "📝 Auto-Fill Product Inquiry Form" 
+      ? "Auto-Fill Product Inquiry Form" 
       : taskType === 'become_partner' 
-        ? "🤝 Auto-Fill Partner Application" 
-        : "📞 Auto-Fill General Contact Form";
+        ? "Auto-Fill Partner Application" 
+        : "Auto-Fill General Contact Form";
 
     const userMsg = {
       id: Date.now(),
@@ -1668,8 +1683,7 @@ export default function ChatBot() {
                       borderRadius: 'var(--radius-md)'
                     }}
                   >
-                    <Sparkles size={14} style={{ marginRight: '6px', color: '#D4AF37' }} />
-                    Launch Agent Co-Pilot (Autopilot)
+                    Launch Agent Co-Pilot
                   </button>
                 </div>
 
@@ -1688,7 +1702,6 @@ export default function ChatBot() {
                           cursor: (isTyping || activeAnimatingId !== null) ? 'not-allowed' : 'pointer'
                         }}
                       >
-                        <HelpCircle size={14} style={{ marginRight: '6px', flexShrink: 0 }} />
                         {q.question}
                       </button>
                     </div>

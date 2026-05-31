@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, startTransition } from 'react';
 import { Link, useLocation } from '../RouterBridge';
-import { Menu, X, ChevronDown, Search, Globe, Phone, Mail } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, Globe, Phone, Mail, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { navLinks } from '../../data/siteData';
 import { assetSrc } from '../../utils/assetSrc';
@@ -112,6 +112,11 @@ export default function Navbar() {
     setActiveMenu(label);
   };
 
+  const openCopilot = () => {
+    if (typeof window === 'undefined') return;
+    window.dispatchEvent(new CustomEvent('jay:open-copilot', { detail: { mode: 'agent' } }));
+  };
+
   const isHomePage = location.pathname === '/';
   const navbarClass = `navbar ${isScrolled || !isHomePage ? 'navbar-solid' : 'navbar-transparent'} ${hideOnScroll ? 'navbar-hidden' : ''}`;
 
@@ -185,6 +190,9 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="navbar-actions">
+            <button type="button" className="btn btn-secondary btn-sm" id="nav-copilot-cta" onClick={openCopilot}>
+              Try Co-Pilot <Sparkles size={14} />
+            </button>
             <Link to="/contact" className="btn btn-secondary btn-sm" id="nav-contact-cta">
               {t('nav.contact_us')}
             </Link>
@@ -280,6 +288,12 @@ export default function Navbar() {
                       )}
                     </div>
                   )}
+                  {item.label === 'Contact' && (
+                    <div className="mobile-contact mobile-contact-inline">
+                      <a href="tel:+919825142359"><Phone size={16} /> +91 98251 42359</a>
+                      <a href="mailto:info@jayagritech.com"><Mail size={16} /> info@jayagritech.com</a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -291,10 +305,6 @@ export default function Navbar() {
               <Link to="/contact" className="btn btn-secondary btn-lg" style={{ width: '100%', marginBottom: 'var(--sp-4)', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
                 {t('nav.contact_us')}
               </Link>
-              <div className="mobile-contact">
-                <a href="tel:+919825142359"><Phone size={16} /> +91 98251 42359</a>
-                <a href="mailto:info@jayagritech.com"><Mail size={16} /> info@jayagritech.com</a>
-              </div>
             </div>
           </div>
         </div>
