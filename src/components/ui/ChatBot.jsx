@@ -523,6 +523,7 @@ export default function ChatBot() {
   const [isTyping, setIsTyping] = useState(false);
   const [activeAnimatingId, setActiveAnimatingId] = useState(null);
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
   // 🤖 CO-PILOT AGENT STATES
   const [agentMode, setAgentMode] = useState(false);
@@ -669,6 +670,22 @@ export default function ChatBot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    if (!agentMode || !agentTask) return;
+    if (isTyping) return;
+
+    const workflow = AGENT_WORKFLOWS[agentTask];
+    const currentConfig = workflow?.[agentStep];
+    if (!currentConfig || currentConfig.type !== 'text') return;
+
+    const timer = window.setTimeout(() => {
+      inputRef.current?.focus();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [isOpen, agentMode, agentTask, agentStep, isTyping]);
 
   useEffect(() => {
     if (!introFinished) return;
@@ -1687,12 +1704,12 @@ export default function ChatBot() {
               <div className="chatbot-input-wrapper">
                 <input
                   type="text"
+                  ref={inputRef}
                   className="chatbot-input-text"
                   placeholder={getInputPlaceholder()}
                   value={userInput}
                   onChange={(e) => setUserInput(e.target.value)}
                   disabled={isTyping}
-                  autoFocus
                 />
               </div>
               <button 

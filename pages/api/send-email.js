@@ -198,16 +198,16 @@ export default async function handler(req, res) {
 
   // Check if real GMAIL credentials are provided in env
   const gmailUser = process.env.GMAIL_USER;
-  let gmailPass = process.env.GMAIL_PASS ? process.env.GMAIL_PASS.replace(/[^a-zA-Z]/g, '').toLowerCase() : '';
-  
-  if (gmailPass.length > 16) {
-    // Gmail App Passwords are exactly 16 alphabetical letters.
-    // This dynamically discards any trailing copy-pasted comments or questions.
-    gmailPass = gmailPass.substring(0, 16);
-  }
+  // Preserve the full app-password as provided (only strip accidental whitespace)
+  const gmailPass = process.env.GMAIL_PASS ? process.env.GMAIL_PASS.replace(/\s/g, '') : '';
 
-  // Safeguard: check if variables are placeholders
-  const hasRealCredentials = gmailUser && gmailPass && !gmailPass.includes('xxxx') && !gmailPass.includes('your-16-character');
+  // Safeguard: check if variables are placeholders or obviously invalid
+  const hasRealCredentials = Boolean(
+    gmailUser &&
+    gmailPass &&
+    gmailPass.length >= 16 &&
+    !/xxxx|your-16-character/i.test(gmailPass)
+  );
 
   if (hasRealCredentials) {
     try {
