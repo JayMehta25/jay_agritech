@@ -486,7 +486,8 @@
     padding: var(--sp-2) var(--sp-3);
   }
   .chatbot-greeting-popup {
-    display: none; /* Hide greeting on very small devices to maintain clean UI */
+    display: block;
+    bottom: 10px;
   }
 }
 

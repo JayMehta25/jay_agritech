@@ -688,22 +688,6 @@ export default function ChatBot() {
   }, [isOpen, agentMode, agentTask, agentStep, isTyping]);
 
   useEffect(() => {
-    if (!introFinished) return;
-    if (!isOpen) {
-      setShowGreetingPopup(true);
-    } else {
-      setShowGreetingPopup(false);
-    }
-  }, [isOpen, introFinished]);
-
-  useEffect(() => {
-    if (!introFinished) return;
-    if (!isOpen) {
-      setShowGreetingPopup(true);
-    }
-  }, [currentPath, isOpen, introFinished]);
-
-  useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const handleOpenCopilot = (event) => {
@@ -1008,7 +992,7 @@ export default function ChatBot() {
         setShowGreetingPopup(false);
       }, 2600);
     } else {
-      // currently hidden: after a brief pause, advance text index and show popup again
+      // currently hidden: advance text, then show next prompt
       showTimer = setTimeout(() => {
         setPopupIdx(prev => (prev + 1) % alts.length);
         setShowGreetingPopup(true);
@@ -1020,6 +1004,14 @@ export default function ChatBot() {
       if (showTimer) clearTimeout(showTimer);
     };
   }, [showGreetingPopup, isOpen, activeLang]);
+
+  useEffect(() => {
+    if (!introFinished) return;
+    if (!isOpen) {
+      setPopupIdx(0);
+      setShowGreetingPopup(false);
+    }
+  }, [currentPath, activeLang, isOpen, introFinished]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
