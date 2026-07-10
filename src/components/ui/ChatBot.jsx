@@ -517,6 +517,7 @@ export default function ChatBot() {
   const currentPath = router ? router.asPath : '';
   const [isOpen, setIsOpen] = useState(false);
   const [showGreetingPopup, setShowGreetingPopup] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   const [messages, setMessages] = useState([]);
@@ -661,7 +662,7 @@ export default function ChatBot() {
     return () => timers.forEach(clearTimeout);
   }, [showSimulatorClip, onSimulatorCompleteAction]);
 
-  const activeLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : 'en';
+  const activeLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : i18n.language?.startsWith('mr') ? 'mr' : 'en';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -914,6 +915,40 @@ export default function ChatBot() {
         answer: "### उत्पाद नमूना अनुरोध\nहाँ! हम फील्ड परीक्षणों और व्यावसायिक परीक्षणों का समर्थन करते हैं:\n- **कौन आवेदन कर सकता है:** पंजीकृत डीलर, बड़े किसान और संस्थान।\n- **परीक्षण सहायता:** हमारी कृषि टीम खुराक और निगरानी पर आपका मार्गदर्शन करेगी।\n- **अनुरोध कैसे करें:** स्थानीय बिक्री प्रबंधक से संपर्क करें या **Contact Us** फॉर्म के माध्यम से अनुरोध भेजें।"
       }
     ],
+    mr: [
+      {
+        question: "जय ॲग्रीटेक काय आहे?",
+        answer: "### जय ॲग्रीटेक प्रायव्हेट लिमिटेड\nआम्ही वलसाड, गुजरात येथील एक अग्रगण्य **ॲग्री-बायोटेक कंपनी** आहोत, ज्याची स्थापना **२०२५** मध्ये झाली आहे.\n\nआमचे मुख्य ध्येय **शाश्वत विकास (Nurturing Growth)** साधणे आहे:\n- जमिनीचे आरोग्य सुधारण्यासाठी **उच्च कार्यक्षम जैविक खते**\n- जमिनीतील सेंद्रिय कर्ब वाढवण्यासाठी **OMRI-प्रमाणित सेंद्रिय खते**\n- रासायनिक मुक्त कीड नियंत्रणासाठी **पर्यावरणपूरक जैविक कीटकनाशके**"
+      },
+      {
+        question: "तुम्ही कोणती उत्पादने ऑफर करता?",
+        answer: "### आमची उत्पादने\nआम्ही ५ श्रेणींमध्ये **६०+ पेक्षा जास्त प्रीमियम कृषी उत्पादने** तयार करतो:\n- **जैким खते:** NB, PB, KB, ZB आणि मायकोरुटी (VAM)\n- **बायोस्टिम्युलंट्स:** मुळे आणि पिकांचे वाढ उद्दीपक (धरा मॅक्स, फ्लोरल)\n- **सेंद्रिय पोषक घटक:** OMRI-प्रमाणित भूमिरिच आणि क्रॉपचार्ज सेंद्रिय खत\n- **जैविक कीटकनाशके:** जैविक कीड नियंत्रण (ऑर्गो मेटा, ऑर्गो नीम)\n- **सूक्ष्म अन्नद्रव्ये:** संतुलित खनिज अन्नद्रव्ये (मायक्रोज़ेस्ट)"
+      },
+      {
+        question: "मी डीलर किंवा वितरक कसा बनू शकतो?",
+        answer: "### आमच्या पार्टनर नेटवर्कमध्ये सामील व्हा\nआम्ही संपूर्ण **भारतात** आमचे डीलर आणि वितरक नेटवर्क वेगाने विस्तारत आहोत!\n\n**अर्ज कसा करावा:**\n- **पायरी १:** आमच्या मेनूमध्ये **'Become a Partner'** (भागीदार व्हा) या पर्यायावर जा.\n- **पायरी २:** डीलर किंवा वितरक अर्ज फॉर्म भरा.\n- **पायरी ३:** आमची विक्री विकास टीम **२४ तासांच्या आत** तुमच्याशी संपर्क साधेल!\n\nतुम्ही थेट **sales@jayagritech.com** वर देखील ईमेल पाठवू शकता."
+      },
+      {
+        question: "तुम्ही प्रायव्हेट लेबलिंग किंवा कंत्राटी उत्पादन ऑफर करता का?",
+        answer: "### सानुकूल B2B सोल्यूशन्स\nहोय! आम्ही **कंत्राटी उत्पादन (Contract Manufacturing)** आणि **OEM प्रायव्हेट लेबलिंग** साठी एक विश्वासू भागीदार आहोत.\n\n**आमची B2B क्षमता:\n- अत्याधुनिक सूक्ष्मजीवशास्त्र आणि फॉर्म्युलेशन **R&D प्रयोगशाळा**\n- सानुकूल द्रव, पावडर आणि दाणेदार उत्पादनांचे मिश्रण\n- **ISO 9001:2015 आणि FCO** मानकांचे पूर्ण पालन\n- बाजारात जलद लाँच करण्यासाठी सज्ज व्हाइट लेबल पर्याय"
+      },
+      {
+        question: "तुमची कंपनी कुठे आहे?",
+        answer: "### आमचे स्थान\nआम्चे कॉर्पोरेट मुख्यालय आणि प्रगत उत्पादन प्रकल्प **वलसाड, गुजरात, भारत** येथे स्थित आहेत.\n\n- **वलसाड** हा पश्चिम भारतातील उत्तम लॉजिस्टिक कनेक्टिव्हिटी असलेला एक प्रमुख औद्योगिक पट्टा आहे.\n- आपण आमच्या **Contact (संपर्क)** पृष्ठावर आमचा **नकाशा आणि अचूक पत्ता** पाहू शकता."
+      },
+      {
+        question: "तुमच्या उत्पादनांकडे कोणती प्रमाणपत्रे आहेत?",
+        answer: "### प्रमाणित सेंद्रिय आणि दर्जेदार चाचणी\nआम्ही उत्पादने कडक गुणवत्ता नियंत्रणांतर्गत तयार केली जातात आणि त्यांना अनेक राष्ट्रीय व आंतरराष्ट्रीय प्रमाणपत्रे मिळाली आहेत:\n- प्रमाणित सेंद्रिय उत्पादनासाठी **OMRI सूचीबद्ध**.\n- **ISO 9001:2015** प्रमाणित उत्पादन आणि R&D प्रयोगशाळा.\n- **FCO (खत नियंत्रण आदेश)** सुसंगत फॉर्म्युलेशन्स.\n- **NPOP (सेंद्रिय उत्पादनासाठी राष्ट्रीय कार्यक्रम)** प्रमाणित सेंद्रिय खत."
+      },
+      {
+        question: "जैविक खते जमिनीचे आरोग्य कसे सुधारतात?",
+        answer: "### जमिनीच्या आरोग्याचे पुनरुज्जीवन\nजैविक खतांमध्ये जिवंत सूक्ष्मजीव असतात जे मातीचे आरोग्य नैसर्गिकरित्या सुधारतात:\n- **नत्र स्थिरीकरण:** हवेतील नायट्रोजन शोषून तो पिकाला उपलब्ध करून देणे.\n- **अन्नद्रव्ये विरघळवणे:** जमिनीतील न विरघळणारे फॉस्फरस, पोटॅश आणि जस्त विरघळवून पिकांना मिळवून देणे.\n- **मायक्रोबायोम संवर्धन:** जमिनीतील सेंद्रिय कर्ब आणि उपयुक्त जिवाणूंची संख्या वाढवणे."
+      },
+      {
+        question: "आम्ही प्रात्याक्षिकांसाठी उत्पादनांचे सॅम्पल मागू शकतो का?",
+        answer: "### उत्पादन सॅम्पल विनंती\nहोय! आम्ही शेतातील चाचण्या आणि प्रात्याक्षिकांसाठी पाठबळ देतो:\n- **कोण अर्ज करू शकते:** नोंदणीकृत डीलर, व्यावसायिक शेतकरी आणि संस्थात्मक खरेदीदार.\n- **चाचणी समर्थन:** आमचे कृषी तज्ज्ञ तुम्हाला डोस आणि वापराचे मार्गदर्शन करतील.\n- **सॅम्पल कसे मिळवावे:** तुमच्या स्थानिक विक्री व्यवस्थापकाशी संपर्क साधा किंवा आमच्या **Contact Us** फॉर्मद्वारे विनंती पाठवा."
+      }
+    ],
     gu: [
       {
         question: "જય એગ્રીટેક શું છે?",
@@ -988,6 +1023,7 @@ export default function ChatBot() {
     en: "Hi there! 👋 Welcome to Jay Agritech. Click any of the frequently asked questions below to learn more, or launch our **Agent Co-Pilot** to auto-fill forms on our pages!",
     hi: "नमस्ते! 👋 जय एग्रीटेक में आपका स्वागत है। हमारे बारे में जानने के लिए नीचे दिए गए प्रश्नों पर क्लिक करें, या हमारे **एजेंट को-पायलट** को चालू करें जो आपके लिए फॉर्म भर सकता है!",
     gu: "નમસ્તે! 👋 જય એગ્રીટેકમાં તમારું સ્વાગત છે. અમારા વિશે વધુ જાણવા માટે નીચે આપેલા પ્રશ્નો પર ક્લિક કરો, અથવા અમારા પાના પરના ફોર્મ્સને આપમેળે ભરવા માટે **એજન્ટ કો-પાયલોટ** ચાલુ કરો!",
+    mr: "नमस्कार! 👋 जय ॲग्रीटेक मध्ये आपले स्वागत आहे. अधिक माहिती मिळवण्यासाठी खाली दिलेल्या नेहमी विचारल्या जाणाऱ्या प्रश्नांवर क्लिक करा, किंवा आमच्या पानावरील फॉर्म स्वयंचलितपणे भरण्यासाठी **Co-Pilot Agent** सुरू करा!",
     zh: "您好！👋 欢迎来到 Jay Agritech。点击下方常见问题了解更多，或者启动我们的 **智能表单助手** 来帮您自动填写页面上的表单！"
   };
 
@@ -995,6 +1031,7 @@ export default function ChatBot() {
     en: "Hi! How can I help you today? 👋",
     hi: "नमस्ते! मैं आज आपकी क्या सहायता कर सकता हूँ? 👋",
     gu: "નમસ્તે! હું આજે તમારી શું મદદ કરી શકું? 👋",
+    mr: "नमस्कार! मी आज तुम्हाला काय मदत करू शकतो? 👋",
     zh: "您好！今天我能为您做些什么？ 👋"
   };
 
@@ -1011,6 +1048,10 @@ export default function ChatBot() {
       "નમસ્તે! હું આજે તમારી શું મદદ કરી શકું? 👋",
       "અમારા Co‑Pilot નો અત્યારે જ ઉપયોગ કરો — ફોર્મ ઓટો-ફિલ કરો અને ક્વોટેશન મેળવો!"
     ],
+    mr: [
+      "नमस्कार! मी आज तुम्हाला काय मदत करू शकतो? 👋",
+      "आमचे Co-Pilot आत्ताच वापरून पहा — फॉर्म स्वयंचलितपणे भरा आणि कोटेशन मिळवा!"
+    ],
     zh: [
       "您好！今天我能为您做些什么？ 👋",
       "试试我们的 Co‑Pilot — 自动填写表单并请求报价！"
@@ -1020,7 +1061,7 @@ export default function ChatBot() {
   const [popupIdx, setPopupIdx] = useState(0);
 
   useEffect(() => {
-    if (isOpen) return; // don't cycle when chat is open
+    if (isOpen || isDismissed) return; // don't cycle when chat is open or dismissed
 
     const alts = popupAlternatives[activeLang] || [popupTexts[activeLang]];
     let hideTimer = null;
@@ -1043,7 +1084,7 @@ export default function ChatBot() {
       if (hideTimer) clearTimeout(hideTimer);
       if (showTimer) clearTimeout(showTimer);
     };
-  }, [showGreetingPopup, isOpen, activeLang]);
+  }, [showGreetingPopup, isOpen, activeLang, isDismissed]);
 
   useEffect(() => {
     if (!introFinished) return;
@@ -1064,11 +1105,11 @@ export default function ChatBot() {
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
       ]);
-      setShowGreetingPopup(true);
+      if (!isDismissed) setShowGreetingPopup(true);
       setIntroFinished(true);
     }, 3800);
     return () => clearTimeout(timer);
-  }, [activeLang]);
+  }, [activeLang, isDismissed]);
 
   const handleToggle = () => {
     const willOpen = !isOpen;
@@ -1525,10 +1566,22 @@ export default function ChatBot() {
       {!isOpen && (
         <div
           className={`chatbot-greeting-popup ${showGreetingPopup ? 'visible' : 'hidden'}`}
-          onClick={handleToggle}
+          style={{ display: showGreetingPopup && !isDismissed ? 'block' : 'none' }}
         >
-          <div className="chatbot-greeting-close" onClick={(e) => { e.stopPropagation(); setShowGreetingPopup(false); }}><X size={14} /></div>
-          <p>{(popupAlternatives[activeLang] || [popupTexts[activeLang]])[popupIdx]}</p>
+          <div 
+            className="chatbot-greeting-close" 
+            onClick={(e) => { 
+              console.log('[DEBUG-CHATBOT] Close button clicked!');
+              e.stopPropagation(); 
+              setShowGreetingPopup(false); 
+              setIsDismissed(true); 
+            }}
+          >
+            <X size={14} />
+          </div>
+          <div onClick={handleToggle} className="chatbot-greeting-text" style={{ cursor: 'pointer' }}>
+            <p>{(popupAlternatives[activeLang] || [popupTexts[activeLang]])[popupIdx]}</p>
+          </div>
         </div>
       )}
 
@@ -1776,7 +1829,7 @@ export default function ChatBot() {
                 </div>
 
                 <span className="cqq-title">
-                  {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : '💡 Suggested Questions:'}
+                  {activeLang === 'zh' ? '💡 推荐问题：' : activeLang === 'hi' ? '💡 सुझाये गए प्रश्न:' : activeLang === 'gu' ? '💡 સૂચવેલા પ્રશ્નો:' : activeLang === 'mr' ? '💡 सुचवलेले प्रश्न:' : '💡 Suggested Questions:'}
                 </span>
                 <div className="cqq-list">
                   {getActiveQuestions().map((q, idx) => (

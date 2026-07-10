@@ -43,14 +43,22 @@ export default function Partners() {
       ? 'hi'
       : activeLanguage.startsWith('gu')
         ? 'gu'
-        : 'en';
+        : activeLanguage.startsWith('mr')
+          ? 'mr'
+          : 'en';
   const savedLang = hydrated && typeof window !== 'undefined' ? (localStorage.getItem('i18nextLng') || '') : '';
   const forceHindi = savedLang.startsWith('hi') || currentLang === 'hi';
   const forceGujarati = savedLang.startsWith('gu') || currentLang === 'gu';
+  const forceMarathi = savedLang.startsWith('mr') || currentLang === 'mr';
   const localeBundle = i18n.getResourceBundle(currentLang, 'translation') || {};
   const hiBundle = i18n.getResourceBundle('hi', 'translation') || {};
   const guBundle = i18n.getResourceBundle('gu', 'translation') || {};
-  const effectiveBundle = forceHindi ? hiBundle : (forceGujarati ? guBundle : localeBundle);
+  const mrBundle = i18n.getResourceBundle('mr', 'translation') || {};
+  const effectiveBundle = forceHindi 
+    ? hiBundle 
+    : (forceGujarati 
+        ? guBundle 
+        : (forceMarathi ? mrBundle : localeBundle));
   const partnerPage = effectiveBundle.pages?.partners || {};
   const partnerDetails = effectiveBundle.pages_details?.partners || {};
   const partnerReasons = partnerDetails.reasons || {};

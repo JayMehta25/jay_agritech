@@ -61,7 +61,7 @@ export default function Blog() {
   const slugArray = params.slug;
   const currentSlug = Array.isArray(slugArray) ? slugArray[0] : slugArray;
 
-  const locale = i18n.language?.startsWith('hi') ? 'hi-IN' : i18n.language?.startsWith('gu') ? 'gu-IN' : 'en-IN';
+  const locale = i18n.language?.startsWith('hi') ? 'hi-IN' : i18n.language?.startsWith('gu') ? 'gu-IN' : i18n.language?.startsWith('mr') ? 'mr-IN' : 'en-IN';
 
   // If a slug is specified in the URL, render the Detail View
   if (currentSlug) {

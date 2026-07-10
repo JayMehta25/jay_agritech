@@ -26,6 +26,7 @@ export default function Navbar() {
     { code: 'en', label: 'English', nativeChar: 'A' },
     { code: 'hi', label: 'Hindi', nativeChar: 'अ' },
     { code: 'gu', label: 'Gujarati', nativeChar: 'ગુ' },
+    { code: 'mr', label: 'Marathi', nativeChar: 'म' },
     { code: 'zh', label: 'Mandarin', nativeChar: '文' }
   ];
 
