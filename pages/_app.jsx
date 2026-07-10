@@ -36,6 +36,12 @@ const seoConfig = {
     ogTitle: "जय एग्रीटेक प्राइवेट लिमिटेड | कृषि नवाचार, सतत विकास",
     ogDescription: "फसल की पैदावार बढ़ाने और मिट्टी की उर्वरता बहाल करने के लिए विज्ञान समर्थित जैविक कृषि समाधान।"
   },
+  gu: {
+    description: "જય એગ્રીટેક પ્રાઇવેટ લિમિટેડ ટકાઉ ખેતી માટે ૬૦+ જૈવિક ખાતરો, ઓર્ગેનિક ખાતરો, જૈવિક જંતુનાશકો અને સૂક્ષ્મ પોષકતત્વો પ્રદાન કરતી ભારતની અગ્રણી એગ્રી-બાયોટેક કંપની છે.",
+    keywords: "જય એગ્રીટેક, જૈવિક ખાતરો, ઓર્ગેનિક ખાતરો, જૈવિક જંતુનાશકો, ટકાઉ ખેતી, એગ્રી-બાયોટેક, ભારત, વલસાડ, ગુજરાત",
+    ogTitle: "જય એગ્રીટેક પ્રાઇવેટ લિમિટેડ | કૃષિ નવીનતા, વિકાસની સગવડ",
+    ogDescription: "પાકની ઊંચી ઉપજ અને જમીનની ફળદ્રુપતા પુનઃસ્થાપિત કરવા માટે વિજ્ઞાન આધારિત જૈવિક અને ઓર્ગેનિક કૃષિ ઉકેલો."
+  },
   zh: {
     description: "杰亚农科 (Jay Agritech Pvt. Ltd.) 是印度领先的农业生物技术公司，提供60多种高效生物肥料、有机肥料、生物杀虫剂及微量元素，助力可持续农业发展。",
     keywords: "Jay Agritech, 杰亚农科, 生物肥料, 有机肥料, 生物杀虫剂, 农业生物技术, 印度, 瓦尔萨德, 古吉拉特邦, 可持续农业",
@@ -75,6 +81,11 @@ const getFaqSchema = (lang) => {
       { q: "जय एग्रीटेक क्या है?", a: "जय एग्रीटेक प्राइवेट लिमिटेड वलसाड, गुजरात में स्थित एक अग्रणी कृषि-बायोटेक कंपनी है जो जैविक उर्वरक, प्राकृतिक खाद, जैव-कीटनाशक और सूक्ष्म पोषक तत्व प्रदान करती है।" },
       { q: "आप कौन से उत्पाद प्रदान करते हैं?", a: "हम जैविक उर्वरक, बायोसिटमुलेंट्स, प्राकृतिक पोषक तत्व, जैविक कीटनाशक और सूक्ष्म पोषक तत्वों सहित 60+ प्रीमियम कृषि समाधान प्रदान करते हैं।" },
       { q: "आपकी कंपनी कहाँ स्थित है?", a: "हमारा मुख्यालय और उन्नत विनिर्माण संयंत्र वलसाड, गुजरात, भारत में स्थित हैं।" }
+    ],
+    gu: [
+      { q: "જય એગ્રીટેક શું છે?", a: "જય એગ્રીટેક પ્રાઇવેટ લિમિટેડ વલસાડ, ગુજરાત, ભારતમાં આવેલી એક અગ્રણી એગ્રી-બાયોટેક કંપની છે. અમે જૈવિક ખાતરો, ઓર્ગેનિક ખાતરો, જૈવિક જંતુનાશકો અને સૂક્ષ્મ પોષકતત્વોનું ઉત્પાદન કરીએ છીએ." },
+      { q: "તમે કયા ઉત્પાદનો ઓફર કરો છો?", a: "અમે ૫ શ્રેણીઓમાં ૬૦+ પ્રીમિયમ કૃષિ ઉકેલો ઓફર કરીએ છીએ: જૈવિક ખાતરો, બાયોસ્ટિમ્યુલેન્ટ્સ, ઓર્ગેનિક પોષક તત્વો, જૈવિક કીટનાશકો અને સૂક્ષ્મ પોષકતત્વો." },
+      { q: "તમારી કંપની ક્યાં આવેલી છે?", a: "અમારું મુખ્ય મથક અને અદ્યતન ઉત્પાદન પ્લાન્ટ વલસાડ, ગુજરાત, ભારતમાં આવેલ છે." }
     ],
     zh: [
       { q: "什么是 Jay Agritech？", a: "杰亚农科 (Jay Agritech Pvt. Ltd.) 是印度领先的农业生物技术公司，提供60多种高效生物肥料、有机肥料、生物杀虫剂及微量元素，助力可持续农业发展。" },
@@ -141,9 +152,9 @@ export default function MyApp({ Component, pageProps }) {
     const savedLang = localStorage.getItem('i18nextLng');
     const browserLang = navigator.language || navigator.userLanguage;
     const shortLang = browserLang?.split('-')[0];
-    const langToUse = savedLang && ['en', 'hi', 'zh'].includes(savedLang)
+    const langToUse = savedLang && ['en', 'hi', 'zh', 'gu'].includes(savedLang)
       ? savedLang
-      : ['en', 'hi', 'zh'].includes(shortLang)
+      : ['en', 'hi', 'zh', 'gu'].includes(shortLang)
         ? shortLang
         : 'en';
 
@@ -156,11 +167,12 @@ export default function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
+      const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : 'en';
       document.documentElement.lang = currentLang;
       const titles = {
         en: 'Jay Agritech | Innovating Agriculture',
         hi: 'जय एग्रीटेक | कृषि नवाचार',
+        gu: 'જય એગ્રીટેક | કૃષિ નવીનતા',
         zh: 'Jay Agritech | 创新农业'
       };
       document.title = titles[currentLang] || titles.en;
@@ -204,7 +216,7 @@ export default function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
+  const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : 'en';
   const seo = seoConfig[currentLang] || seoConfig.en;
 
   return (

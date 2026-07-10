@@ -25,6 +25,7 @@ export default function Navbar() {
   const languages = [
     { code: 'en', label: 'English', nativeChar: 'A' },
     { code: 'hi', label: 'Hindi', nativeChar: 'अ' },
+    { code: 'gu', label: 'Gujarati', nativeChar: 'ગુ' },
     { code: 'zh', label: 'Mandarin', nativeChar: '文' }
   ];
 

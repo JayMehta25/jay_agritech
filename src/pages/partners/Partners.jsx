@@ -41,12 +41,16 @@ export default function Partners() {
     ? 'zh'
     : activeLanguage.startsWith('hi')
       ? 'hi'
-      : 'en';
+      : activeLanguage.startsWith('gu')
+        ? 'gu'
+        : 'en';
   const savedLang = hydrated && typeof window !== 'undefined' ? (localStorage.getItem('i18nextLng') || '') : '';
   const forceHindi = savedLang.startsWith('hi') || currentLang === 'hi';
+  const forceGujarati = savedLang.startsWith('gu') || currentLang === 'gu';
   const localeBundle = i18n.getResourceBundle(currentLang, 'translation') || {};
   const hiBundle = i18n.getResourceBundle('hi', 'translation') || {};
-  const effectiveBundle = forceHindi ? hiBundle : localeBundle;
+  const guBundle = i18n.getResourceBundle('gu', 'translation') || {};
+  const effectiveBundle = forceHindi ? hiBundle : (forceGujarati ? guBundle : localeBundle);
   const partnerPage = effectiveBundle.pages?.partners || {};
   const partnerDetails = effectiveBundle.pages_details?.partners || {};
   const partnerReasons = partnerDetails.reasons || {};

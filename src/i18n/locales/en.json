@@ -618,6 +618,51 @@
     "partner_p1": "Join our expanding network of dealers, distributors, and export partners. Access premium products, marketing support, and competitive margins.",
     "values_title": "Our Values",
     "values_h2": "What We Stand For",
+    "solutions_seo_suffix": "Sustainable Agriculture Solutions by Jay Agritech",
+    "products_overline": "Product Portfolio",
+    "products_h2": "60+ Innovative Products",
+    "products_subtitle": "Across 5 core categories — Bio Insecticides, Biostimulants, Bio Fertilizers, Organic Nutrients, and Micronutrients",
+    "products_card_overline": "Agtech Excellence",
+    "products_card_title": "Sustainable Agriculture Starts Here",
+    "products_desc_simplified": "Advanced organic inputs and bio-solutions engineered to maximize crop yields, strengthen stress tolerance, and restore soil vitality.",
+    "products_cta_simplified": "Explore Full Range",
+    "products": {
+      "feat_science": "Scientific Labs",
+      "feat_science_desc": "Engineered for high biological stability and long shelf-life.",
+      "feat_eco": "100% Bio-Safe",
+      "feat_eco_desc": "Organic formulas that enrich the soil's natural microbiome.",
+      "feat_yield": "Proven Yields",
+      "feat_yield_desc": "Ensures robust plant growth, stress resistance, and crop quality.",
+      "metric_products": "Products",
+      "metric_categories": "Categories",
+      "metric_biological": "Bio-Safe"
+    },
+    "solutions": {
+      "soil_health": {
+        "title": "Soil Health",
+        "desc": "Restore and maintain soil vitality with microbial solutions that rebuild your soil's natural fertility."
+      },
+      "nutrient_management": {
+        "title": "Nutrient Management",
+        "desc": "Balanced, bio-available nutrition through organic and microbial nutrient delivery systems."
+      },
+      "pest_disease": {
+        "title": "Pest & Disease",
+        "desc": "Eco-friendly biological pest management — effective protection without harmful residues."
+      },
+      "growth_enhancement": {
+        "title": "Growth Enhancement",
+        "desc": "Maximize crop potential with science-backed growth regulators and bio-stimulants."
+      }
+    },
+    "partner_types": {
+      "dealer_title": "Become a Dealer",
+      "dealer": "Retail-level partnership",
+      "distributor_title": "Become a Distributor",
+      "distributor": "District/region-level partnership",
+      "export_title": "Export Partnership",
+      "export": "International business opportunities"
+    },
     "blog_posts": {
       "role_of_biofertilizers_sustainable_agriculture_africa_india": {
         "title": "The Role of Biofertilizers in Sustainable Agriculture in Africa and India",

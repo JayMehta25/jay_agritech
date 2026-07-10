@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import enTranslations from './locales/en.json';
 import hiTranslations from './locales/hi.json';
 import zhTranslations from './locales/zh.json';
+import guTranslations from './locales/gu.json';
 
 i18n
   .use(initReactI18next)
@@ -11,9 +12,10 @@ i18n
     resources: {
       en: { translation: enTranslations },
       hi: { translation: hiTranslations },
-      zh: { translation: zhTranslations }
+      zh: { translation: zhTranslations },
+      gu: { translation: guTranslations }
     },
-    supportedLngs: ['en', 'hi', 'zh'],
+    supportedLngs: ['en', 'hi', 'zh', 'gu'],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     lng: 'en', // Force English initially on both server and client to prevent hydration mismatches
@@ -34,17 +36,17 @@ i18n
   i18n.t = (key, options) => {
     try {
       const lang = i18n.language || '';
-      const isHi = lang.startsWith('hi');
+      const isHiOrGu = lang.startsWith('hi') || lang.startsWith('gu');
 
       // If options is a plain string (common developer pattern), treat it as defaultValue
       if (typeof options === 'string') {
-        if (isHi) return _origT(key, { defaultValue: '' });
+        if (isHiOrGu) return _origT(key, { defaultValue: '' });
         return _origT(key, { defaultValue: options });
       }
 
-      // If options is an object that contains defaultValue, and we're on Hindi, strip it
+      // If options is an object that contains defaultValue, and we're on Hindi or Gujarati, strip it
       if (options && typeof options === 'object' && Object.prototype.hasOwnProperty.call(options, 'defaultValue')) {
-        if (isHi) {
+        if (isHiOrGu) {
           const cloned = { ...options, defaultValue: '' };
           return _origT(key, cloned);
         }
