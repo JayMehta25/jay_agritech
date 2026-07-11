@@ -45,20 +45,26 @@ export default function Partners() {
         ? 'gu'
         : activeLanguage.startsWith('mr')
           ? 'mr'
-          : 'en';
+          : activeLanguage.startsWith('kn')
+            ? 'kn'
+            : 'en';
   const savedLang = hydrated && typeof window !== 'undefined' ? (localStorage.getItem('i18nextLng') || '') : '';
   const forceHindi = savedLang.startsWith('hi') || currentLang === 'hi';
   const forceGujarati = savedLang.startsWith('gu') || currentLang === 'gu';
   const forceMarathi = savedLang.startsWith('mr') || currentLang === 'mr';
+  const forceKannada = savedLang.startsWith('kn') || currentLang === 'kn';
   const localeBundle = i18n.getResourceBundle(currentLang, 'translation') || {};
   const hiBundle = i18n.getResourceBundle('hi', 'translation') || {};
   const guBundle = i18n.getResourceBundle('gu', 'translation') || {};
   const mrBundle = i18n.getResourceBundle('mr', 'translation') || {};
+  const knBundle = i18n.getResourceBundle('kn', 'translation') || {};
   const effectiveBundle = forceHindi 
     ? hiBundle 
     : (forceGujarati 
         ? guBundle 
-        : (forceMarathi ? mrBundle : localeBundle));
+        : (forceMarathi 
+            ? mrBundle 
+            : (forceKannada ? knBundle : localeBundle)));
   const partnerPage = effectiveBundle.pages?.partners || {};
   const partnerDetails = effectiveBundle.pages_details?.partners || {};
   const partnerReasons = partnerDetails.reasons || {};

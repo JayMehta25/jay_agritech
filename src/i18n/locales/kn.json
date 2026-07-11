@@ -1,0 +1,1345 @@
+{
+  "nav": {
+    "about": "ನಮ್ಮ ಬಗ್ಗೆ",
+    "solutions": "ಪರಿಹಾರಗಳು",
+    "products": "ಉತ್ಪನ್ನಗಳು",
+    "business": "ವ್ಯವಹಾರ",
+    "research": "ಸಂಶೋಧನೆ",
+    "farmer_zone": "ರೈತ ವಲಯ",
+    "contact": "ಸಂಪರ್ಕ",
+    "contact_us": "ಸಂಪರ್ಕಿಸಿ",
+    "become_partner": "ಪಾಲುದಾರರಾಗಿ",
+    "select_language": "ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ",
+    "tagline": "ಕೃಷಿಯಲ್ಲಿ ನಾವೀನ್ಯತೆ, ಬೆಳವಣಿಗೆಯ ಪೋಷಣೆ",
+    "sections": {
+      "company": "ಕಂಪನಿ",
+      "operations": "ಕಾರ್ಯಾಚರಣೆಗಳು",
+      "crop_solutions": "ಬೆಳೆ ಪರಿಹಾರಗಳು",
+      "product_categories": "ಉತ್ಪನ್ನ ವರ್ಗಗಳು",
+      "b2b_solutions": "B2B ಪರಿಹಾರಗಳು",
+      "resources": "ಸಂಪನ್ಮೂಲಗಳು"
+    },
+    "links": {
+      "company_overview": "ಕಂಪನಿಯ ಅವಲೋಕನ",
+      "our_journey": "ನಮ್ಮ ಪ್ರಯಾಣ",
+      "vision_&_mission": "ದೂರದೃಷ್ಟಿ ಮತ್ತು ಧ್ಯೇಯ",
+      "leadership_team": "ನಾಯಕತ್ವ ತಂಡ",
+      "manufacturing": "ಉತ್ಪಾದನೆ",
+      "certifications": "ಪ್ರಮಾಣೀಕರಣಗಳು",
+      "sustainability": "ಸುಸ್ಥಿರತೆ",
+      "milestones": "ಮೈಲಿಗಲ್ಲುಗಳು",
+      "solutions_overview": "ಪರಿಹಾರಗಳ ಅವಲೋಕನ",
+      "soil_health": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ",
+      "nutrient_management": "ಪೋಷಕಾಂಶಗಳ ನಿರ್ವಹಣೆ",
+      "pest_&_disease": "ಕೀಟ ಮತ್ತು ರೋಗ ನಿರ್ವಹಣೆ",
+      "growth_enhancement": "ಬೆಳವಣಿಗೆ ವರ್ಧನೆ",
+      "all_products": "ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳು",
+      "bio_insecticides": "ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು",
+      "bio_pesticides": "ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು",
+      "bio_fertilizers": "ಜೈವಿಕ ಗೊಬ್ಬರಗಳು",
+      "biostimulants": "ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್",
+      "organic_nutrients": "ಸಾವಯವ ಪೋಷಕಾಂಶಗಳು",
+      "specialty_products": "ವಿಶೇಷ ಉತ್ಪನ್ನಗಳು",
+      "micronutrients": "ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳು",
+      "business_overview": "ವ್ಯವಹಾರ ಅವಲೋಕನ",
+      "contract_manufacturing": "ಗುತ್ತಿಗೆ ಉತ್ಪಾದನೆ",
+      "research_services": "ಸಂಶೋಧನಾ ಸೇವೆಗಳು",
+      "white/private_label": "ವೈಟ್/ಪ್ರೈವೇಟ್ ಲೇಬಲ್",
+      "exports_&_franchise": "ರಫ್ತು ಮತ್ತು ಫ್ರಾಂಚೈಸಿ",
+      "crop-wise_solutions": "ಬೆಳೆವಾರು ಪರಿಹಾರಗಳು",
+      "problem_guide": "ಸಮಸ್ಯೆ ಮಾರ್ಗದರ್ಶಿ",
+      "seasonal_advisory": "ಋತುಮಾನದ ಸಲಹೆ"
+    },
+    "desc": {
+      "company_overview": "ನಮ್ಮ ಕಥೆ, ದೃಷ್ಟಿ ಮತ್ತು ಮೌಲ್ಯಗಳು",
+      "our_journey": "ಸ್ಥಾಪನೆಯಿಂದ ಇಂದಿನವರೆಗೆ",
+      "vision_&_mission": "ನಮ್ಮನ್ನು ಪ್ರೇರೇಪಿಸುವ ಧ್ಯೇಯ",
+      "leadership_team": "ನಮ್ಮ ತಂಡವನ್ನು ಭೇಟಿ ಮಾಡಿ",
+      "manufacturing": "ನಮ್ಮ ಸುಧಾರಿತ ಉತ್ಪಾದನಾ ಘಟಕಗಳು",
+      "certifications": "ಗುಣಮಟ್ಟದ ಮಾನದಂಡಗಳು ಮತ್ತು ಅನುಮೋದನೆಗಳು",
+      "sustainability": "ಪರಿಸರ ಸ್ನೇಹಿ ಸುಸ್ಥಿರ ಕೃಷಿಗೆ ನಮ್ಮ ಬದ್ಧತೆ",
+      "milestones": "ಪ್ರಮುಖ ಸಾಧನೆಗಳು",
+      "solutions_overview": "ನಮ್ಮ ಸಂಪೂರ್ಣ ಬೆಳೆ ಪರಿಹಾರಗಳು",
+      "soil_health": "ಮಣ್ಣಿನ ಫಲವತ್ತತೆ ಮತ್ತು ಆರೋಗ್ಯದ ಮರುಸ್ಥಾಪನೆ",
+      "nutrient_management": "ಬೆಳೆಗಳಿಗೆ ಸಮತೋಲಿತ ಪೋಷಣೆ",
+      "pest_&_disease": "ಪರಿಸರ ಸ್ನೇಹಿ ಬೆಳೆ ರಕ್ಷಣೆ",
+      "growth_enhancement": "ಬೆಳೆಯ ಉತ್ಪಾದಕತೆ ಹೆಚ್ಚಿಸಿ",
+      "all_products": "ನಮ್ಮ ಉತ್ಪನ್ನಗಳ ಕ್ಯಾಟಲಾಗ್ ವೀಕ್ಷಿಸಿ",
+      "bio_insecticides": "೧೧ ಉತ್ಪನ್ನಗಳು",
+      "bio_fertilizers": "೧೨ ಉತ್ಪನ್ನಗಳು",
+      "biostimulants": "೧೦ ಉತ್ಪನ್ನಗಳು",
+      "organic_nutrients": "೩ ಉತ್ಪನ್ನಗಳು",
+      "specialty_products": "೨ ಉತ್ಪನ್ನಗಳು",
+      "micronutrients": "೬ ಉತ್ಪನ್ನಗಳು",
+      "business_overview": "ನಮ್ಮೊಂದಿಗೆ ಪಾಲುದಾರರಾಗುವ ಅವಕಾಶಗಳು",
+      "contract_manufacturing": "OEM ಮತ್ತು ಕಸ್ಟಮ್ ಫಾರ್ಮುಲೇಶನ್",
+      "research_services": "R&D ಸಹಯೋಗಗಳು",
+      "white/private_label": "ನಿಮ್ಮ ಬ್ರ್ಯಾಂಡ್, ನಮ್ಮ ಗುಣಮಟ್ಟ",
+      "exports_&_franchise": "ಜಾಗತಿಕ ರಫ್ತು ಅವಕಾಶಗಳು",
+      "farmer_zone": "ರೈತರಿಗಾಗಿ ಮಾಹಿತಿ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ",
+      "crop-wise_solutions": "ಬೆಳೆಗಳಿಗೆ ಸೂಕ್ತವಾದ ಪರಿಹಾರಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಿ",
+      "problem_guide": "ರೋಗ ಮತ್ತು ಕೀಟಗಳನ್ನು ಗುರುತಿಸಿ ಹಾಗೂ ನಿಯಂತ್ರಿಸಿ",
+      "seasonal_advisory": "ಋತುಮಾನಕ್ಕೆ ಅನುಗುಣವಾಗಿ ತಜ್ಞರ ಸಲಹೆ"
+    }
+  },
+  "hero": {
+    "title_part1": "ಕೃಷಿಯಲ್ಲಿ",
+    "title_part2": "ನಾವೀನ್ಯತೆ",
+    "title_part3": "",
+    "title_part4": "",
+    "subtitle": "ಆಧುನಿಕ ಕೃಷಿಗಾಗಿ ಸುಸ್ಥಿರ ಕೃಷಿ-ಜೈವಿಕ ತಂತ್ರಜ್ಞಾನದ ಭವಿಷ್ಯ. ಗುಜರಾತ್‌ನ ವಲ್ಸಾಡ್‌ನಲ್ಲಿದೆ.",
+    "explore_btn": "ಉತ್ಪನ್ನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+    "story_btn": "ನಮ್ಮ ಕಥೆ",
+    "view_catalogue": "ಕ್ಯಾಟಲಾಗ್ ವೀಕ್ಷಿಸಿ",
+    "badge": "೫೦+ ವರ್ಷಗಳ ಕೈಗಾರಿಕಾ ಪರಂಪರೆ"
+  },
+  "common": {
+    "learn_more": "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
+    "view_all": "ಎಲ್ಲವನ್ನೂ ವೀಕ್ಷಿಸಿ",
+    "read_more": "ಇನ್ನಷ್ಟು ಓದಿ",
+    "view_details": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+    "read_article": "ಲೇಖನ ಓದಿ",
+    "get_in_touch": "ಸಂಪರ್ಕದಲ್ಲಿರಿ",
+    "view": "ವೀಕ್ಷಿಸಿ",
+    "enquire_now": "ಈಗಲೇ ವಿಚಾರಿಸಿ",
+    "whatsapp_order": "ವಾಟ್ಸಾಪ್ ಆರ್ಡರ್",
+    "whatsapp_message": "ನಮಸ್ಕಾರ, ನನಗೆ {{name}} ನಲ್ಲಿ ಆಸಕ್ತಿ ಇದೆ",
+    "not_found": "ಕಂಡುಬಂದಿಲ್ಲ",
+    "message_sent": "ಸಂದೇಶ ಕಳುಹಿಸಲಾಗಿದೆ!",
+    "message_received": "ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ನಮ್ಮ ತಂಡವು ೨೪ ಗಂಟೆಗಳ ಒಳಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+    "send_another": "ಮತ್ತೊಂದು ಕಳುಹಿಸಿ",
+    "select": "ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "phone": "ದೂರವಾಣಿ",
+    "email": "ಇಮೇಲ್",
+    "home": "ಮುಖಪುಟ",
+    "yes": "ಹೌದು",
+    "no": "ಇಲ್ಲ",
+    "cancel": "ರದ್ದುಮಾಡಿ"
+  },
+  "chatbot": {
+    "online": "ಆನ್‌ಲೈನ್",
+    "offline": "ಆಫ್‌ಲೈನ್",
+    "typing": "ಟೈಪ್ ಮಾಡುತ್ತಿದೆ..."
+  },
+  "products": {
+    "fields": {
+      "application": "ಬಳಕೆಯ ವಿಧಾನ",
+      "dosage": "ಪ್ರಮಾಣ / ಡೋಸೇಜ್",
+      "recommended": "ಶಿಫಾರಸು ಮಾಡಿದ",
+      "key_benefits": "ಪ್ರಮುಖ ಪ್ರಯೋಜನಗಳು",
+      "recommended_crops": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು",
+      "pack_sizes": "ಲಭ್ಯವಿರುವ ಪ್ಯಾಕ್ ಗಾತ್ರಗಳು",
+      "microbial_content": "ಸೂಕ್ಷ್ಮಜೀವಿಗಳ ಪ್ರಮಾಣ",
+      "active_ingredients": "ಸಕ್ರಿಯ ಪದಾರ್ಥಗಳು",
+      "specifications": "ವಿಶೇಷಣಗಳು"
+    },
+    "common_values": {
+      "soil_application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+      "foliar_application": "ಎಲೆ ಸಿಂಪಡಣೆ",
+      "foliar_spray": "ಎಲೆ ಸಿಂಪಡಣೆ",
+      "foliar_spray_3_5ml_l_water_repeat_every_7_10_days": "ಎಲೆ ಸಿಂಪಡಣೆ: ೩-೫ ಮಿಲಿ/ಲೀಟರ್ ನೀರು. ಪ್ರತಿ ೭-೧೦ ದಿನಗಳಿಗೊಮ್ಮೆ ಪುನರಾವರ್ತಿಸಿ.",
+      "soil_2l_acre_through_drip_flood_foliar_2ml_l": "ಮಣ್ಣು: ೨ ಲೀಟರ್/ಎಕರೆ ಹನಿ ನೀರಾವರಿ/ಹರಿ ನೀರು ಮೂಲಕ. ಎಲೆ ಸಿಂಪಡಣೆ: ೨ ಮಿಲಿ/ಲೀಟರ್.",
+      "seed_treatment_5g_kg_soil_1kg_acre_with_fym": "ಬೀಜೋಪಚಾರ: ೫ ಗ್ರಾಂ/ಕೆಜಿ. ಮಣ್ಣು: ೧ ಕೆಜಿ/ಎಕರೆ ಸಾವಯವ ಗೊಬ್ಬರದೊಂದಿಗೆ.",
+      "foliar_spray_2g_l_water_at_early_larval_stage": "ಎಲೆ ಸಿಂಪಡಣೆ: ೨ ಗ್ರಾಂ/ಲೀಟರ್ ನೀರು ಲಾರ್ವಾ ಹಂತದ ಆರಂಭದಲ್ಲಿ.",
+      "apply_5kg_acre_before_sowing_mix_with_organic_manure_for_best_results": "ಬಿತ್ತನೆಗೆ ಮುನ್ನ ೫ ಕೆಜಿ/ಎಕರೆ ಬಳಸಿ. ಉತ್ತಮ ಫಲಿತಾಂಶಕ್ಕಾಗಿ ಸಾವಯವ ಗೊಬ್ಬರದೊಂದಿಗೆ ಮಿಶ್ರಣ ಮಾಡಿ.",
+      "all_crops": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+      "1_liter_acre": "೧ ಲೀಟರ್/ಎಕರೆ",
+      "100_ml_acre": "೧೦೦ ಮಿಲಿ/ಎಕರೆ",
+      "400_ml_acre": "೪೦೦ ಮಿಲಿ/ಎಕರೆ",
+      "500_ml_acre": "೫೦೦ ಮಿಲಿ/ಎಕರೆ",
+      "600_ml_acre": "೬೦೦ ಮಿಲಿ/ಎಕರೆ",
+      "4_kg_acre": "೪ ಕೆಜಿ/ಎಕರೆ",
+      "2_liter_acre": "೨ ಲೀಟರ್/ಎಕರೆ",
+      "4_liter_acre": "೪ ಲೀಟರ್/ಎಕರೆ",
+      "1_kit_acre": "೧ ಕಿಟ್/ಎಕರೆ",
+      "long_duration_crops": "ದೀರ್ಘಾವಧಿಯ ಬೆಳೆಗಳು",
+      "short_duration_crops": "ಅಲ್ಪಾವಧಿಯ ಬೆಳೆಗಳು",
+      "cotton": "ಹತ್ತಿ",
+      "vegetables": "ತರಕಾರಿಗಳು",
+      "fruits": "ಹಣ್ಣುಗಳು",
+      "pulses": "ದ್ವಿದಳ ಧಾನ್ಯಗಳು",
+      "cereals": "ಧಾನ್ಯಗಳು",
+      "tomato": "ಟೊಮೆಟೊ",
+      "chilli": "ಮೆಣಸಿನಕಾಯಿ",
+      "brinjal": "ಬದನೆಕಾಯಿ",
+      "cucumber": "ಸೌತೆಕಾಯಿ",
+      "maize": "ಮೆಕ್ಕೆಜೋಳ",
+      "rice": "ಭತ್ತ",
+      "flowers": "ಹೂವುಗಳು",
+      "spices": "ಮಸಾಲೆ ಬೆಳೆಗಳು",
+      "1_0_lit": "೧.೦ ಲೀಟರ್",
+      "1_0_kg": "೧.೦ ಕೆಜಿ",
+      "ideal_for_degraded_soils": "ಫಲವತ್ತತೆ ಕಳೆದುಕೊಂಡ ಮಣ್ಣಿಗೆ ಸೂಕ್ತವಾಗಿದೆ"
+    },
+    "detail": {
+      "bio_formulation": "ಜೈವಿಕ ಫಾರ್ಮುಲೇಶನ್",
+      "premium_kit": "ಪ್ರೀಮಿಯಂ ಕಿಟ್",
+      "eco_friendly_safe": "ಪರಿಸರ ಸ್ನೇಹಿ ಮತ್ತು ಸುರಕ್ಷಿತ",
+      "key_benefits": "ಪ್ರಮುಖ ಪ್ರಯೋಜನಗಳು",
+      "benefits_intro": "ವೈಜ್ಞಾನಿಕವಾಗಿ ಬೆಳೆಗಳ ಉತ್ಪಾದಕತೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಸುಸ್ಥಿರ ಕೃಷಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.",
+      "quick_specs_title": "ತ್ವರಿತ ವಿಶೇಷಣಗಳು",
+      "quick_specs_desc": "ಡೀಲರ್ ಅಥವಾ ರೈತರಿಗೆ ಅಗತ್ಯವಿರುವ ಮಾಹಿತಿ ಒಂದು ನೋಟದಲ್ಲಿ.",
+      "benefit_subdesc_0": "ಬೆಳೆಯ ಬೆಳವಣಿಗೆಯನ್ನು ಸುಧಾರಿಸುತ್ತದೆ ಮತ್ತು ಪೋಷಕಾಂಶಗಳ ದಕ್ಷತೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ.",
+      "benefit_subdesc_1": "ಬೇರುಗಳ ರಚನೆಯನ್ನು ಬಲಪಡಿಸುತ್ತದೆ ಮತ್ತು ಮಣ್ಣಿನ ಆರೋಗ್ಯವನ್ನು ಸುಧಾರಿಸುತ್ತದೆ.",
+      "benefit_subdesc_2": "ಪ್ರತಿಕೂಲ ಹವಾಮಾನದ ವಿರುದ್ಧ ನೈಸರ್ಗಿಕ ರೋಗನಿರೋಧಕ ಶಕ್ತಿಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ.",
+      "benefit_subdesc_3": "ಸುಸ್ಥಿರ ಕೃಷಿ ಪದ್ಧತಿಗಳಿಗೆ ಬೆಂಬಲ ನೀಡುತ್ತದೆ ಮತ್ತು ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಇಳುವರಿ ನೀಡುತ್ತದೆ.",
+      "nc_subdesc_0": "ಕ್ಯಾರಿಯರ್-ಆಧಾರಿತ ರೂಪದಲ್ಲಿ ವೇಗವಾಗಿ ಹೀರಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+      "nc_subdesc_1": "ಸುಲಭವಾಗಿ ಬಳಸಲು ಮತ್ತು ಹೊಲಗಳಲ್ಲಿ ಅನ್ವಯಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.",
+      "nc_subdesc_2": "ಬೇರುಗಳ ವಲಯಕ್ಕೆ ಸಕ್ರಿಯ ಬ್ಯಾಕ್ಟೀರಿಯಾಗಳನ್ನು ತಲುಪಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+      "nc_subdesc_3": "ನೇರ ಮತ್ತು ಪ್ರಾಯೋಗಿಕ ಬಳಕೆಗೆ ಸಿದ್ಧವಾಗಿದೆ.",
+      "default_organic": "೧೦೦% ಸಾವಯವ",
+      "default_bio_active": "ಜೈವಿಕ-ಸಕ್ರಿಯ",
+      "default_premium_pack": "ಪ್ರೀಮಿಯಂ ಪ್ಯಾಕ್",
+      "easy_to_apply": "ಬಳಸಲು ಸುಲಭ"
+    },
+    "categories": {
+      "bio_insecticides": {
+        "name": "ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು",
+        "desc": "ಪರಿಸರ ಸ್ನೇಹಿ ಕೀಟ ಮತ್ತು ರೋಗ ನಿಯಂತ್ರಣಕ್ಕಾಗಿ ಸುಧಾರಿತ ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಹಾಗೂ ಶಿಲೀಂಧ್ರನಾಶಕಗಳು."
+      },
+      "bio_pesticides": {
+        "name": "ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು",
+        "desc": "ನೈಸರ್ಗಿಕ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಮತ್ತು ಸಸ್ಯಗಳ ಸಾರದಿಂದ ತಯಾರಿಸಿದ ಪರಿಸರ ಸ್ನೇಹಿ ಕೀಟ ನಿಯಂತ್ರಣ ಪರಿಹಾರಗಳು."
+      },
+      "biostimulants": {
+        "name": "ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್",
+        "desc": "ಬೆಳೆಗಳ ಉತ್ತಮ ಬೆಳವಣಿಗೆಗಾಗಿ ಸಾವಯವ ಮೂಲಗಳಿಂದ ತಯಾರಿಸಿದ ನೈಸರ್ಗಿಕ ಬೆಳೆ ಬೆಳವಣಿಗೆ ವರ್ಧಕಗಳು ಮತ್ತು ರೂಟ್ ಆಕ್ಟಿವೇಟರ್‌ಗಳು."
+      },
+      "organic_nutrients": {
+        "name": "ಸಾವಯವ ಪೋಷಕಾಂಶಗಳು",
+        "desc": "ಸುಸ್ಥಿರ ಕೃಷಿ ಮತ್ತು ಗುಣಮಟ್ಟದ ಇಳುವರಿಗಾಗಿ OMRI-ಪ್ರಮಾಣೀಕೃತ ಸಾವಯವ ಪೋಷಕಾಂಶಗಳ ಪರಿಹಾರಗಳು."
+      },
+      "specialty_products": {
+        "name": "ವಿಶೇಷ ಉತ್ಪನ್ನಗಳು",
+        "desc": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ, ನೀರು ನಿರ್ವಹಣೆ ಮತ್ತು ಕೊಯ್ಲಿನ ನಂತರದ ಸವಾಲುಗಳಿಗೆ ನವೀನ ಪರಿಹಾರಗಳು."
+      },
+      "micronutrients": {
+        "name": "ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳು",
+        "desc": "ಬೆಳೆಗಳ ಆರೋಗ್ಯ ಮತ್ತು ಹೆಚ್ಚಿನ ಇಳುವರಿಗಾಗಿ ಅಗತ್ಯವಿರುವ ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳ (Fe, Mn, Zn, Cu, B) ಸಮತೋಲಿತ ಮಿಶ್ರಣ."
+      },
+      "bio_fertilizers": {
+        "name": "ಜೈವಿಕ ಗೊಬ್ಬರಗಳು",
+        "desc": "ನೈಸರ್ಗಿಕ ಸಾರಜನಕ ಸ್ಥಿರೀಕರಣ, ರಂಜಕ ಕರಗಿಸುವಿಕೆ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಸಜ್ಜುಗೊಳಿಸುವಿಕೆಗೆ ಹೆಚ್ಚಿನ ದಕ್ಷತೆಯ ಸೂಕ್ಷ್ಮಜೀವಿ ಫಾರ್ಮುಲೇಶನ್‌ಗಳು."
+      }
+    },
+    "title": "ನಮ್ಮ ಉತ್ಪನ್ನಗಳು",
+    "subtitle": "೫ ಪ್ರಮುಖ ವರ್ಗಗಳಲ್ಲಿ ೬೦+ ನವೀನ ಜೈವಿಕ ಮತ್ತು ಸಾವಯವ ಕೃಷಿ ಪರಿಹಾರಗಳು.",
+    "search_placeholder": "ಉತ್ಪನ್ನ ವರ್ಗವನ್ನು ಹುಡುಕಿ (ಉದಾ. ಜೈವಿಕ ಗೊಬ್ಬರಗಳು)...",
+    "search_in": "{{category}} ನಲ್ಲಿ ಹುಡುಕಿ...",
+    "showing_count": "{{filtered}} ಉತ್ಪನ್ನಗಳಲ್ಲಿ {{total}} ಉತ್ಪನ್ನಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
+    "product_count": "{{count}} ಉತ್ಪನ್ನಗಳು",
+    "no_match": "\"{{query}}\" ಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಯಾವುದೇ ಉತ್ಪನ್ನ ಕಂಡುಬಂದಿಲ್ಲ",
+    "no_cat_match": "\"{{query}}\" ಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಯಾವುದೇ ವರ್ಗ ಕಂಡುಬಂದಿಲ್ಲ",
+    "clear_search": "ಹುಡುಕಾಟವನ್ನು ತೆರವುಗೊಳಿಸಿ",
+    "items": {
+      "bf-001": {
+        "name": "AT ORGO NB",
+        "tagline": "ಸಾರಜನಕ ಸ್ಥಿರೀಕರಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ (Azotobacter spp.)",
+        "description": "High-potency ಸಾರಜನಕ ಸ್ಥಿರೀಕರಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ (Azotobacter spp.) that provides atmospheric nitrogen directly to plants. Also available with Acetobacter spp., Azospirillum spp. and Rhizobium spp.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "ವಾತಾವರಣದ ಸಾರಜನಕವನ್ನು ಸ್ಥಿರೀಕರಿಸುತ್ತದೆ",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "ಉತ್ತೇಜಿಸುತ್ತದೆ plant growth",
+          "ಕಡಿಮೆ ಮಾಡುತ್ತದೆ nitrogenous fertilizer cost"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      },
+      "bf-002": {
+        "name": "AT ORGO PB",
+        "tagline": "ರಂಜಕ ಕರಗಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ (Bacillus megaterium)",
+        "description": "Contains Bacillus megaterium which solubilizes insoluble phosphate in the soil and makes it available to the plant.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Solubilizes fixed phosphorus",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "ಹೆಚ್ಚಿಸುತ್ತದೆ ಬೇರುಗಳ ಬೆಳವಣಿಗೆ",
+          "ಸುಧಾರಿಸುತ್ತದೆ crop yield"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      },
+      "bf-003": {
+        "name": "AT ORGO KB",
+        "tagline": "ಪೊಟ್ಯಾಶ್ ಸಜ್ಜುಗೊಳಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ (Frateuria aurena)",
+        "description": "Contains Frateuria aurena which mobilizes potash from the soil and provides it to the plant, improving fruit quality and stress resistance.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Mobilizes potash for better uptake",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "ಸುಧಾರಿಸುತ್ತದೆ fruit size and quality",
+          "ಹೆಚ್ಚಿಸುತ್ತದೆ drought resistance"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      },
+      "bf-004": {
+        "name": "AT ORGO ZB",
+        "tagline": "Zinc Solubilising ಬ್ಯಾಕ್ಟೀರಿಯಾ (Pseudomonas Spp.)",
+        "description": "Contains Pseudomonas Spp. which solubilizes zinc from the soil and makes it available to the plant, correcting zinc deficiency.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Solubilizes fixed zinc in soil",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Corrects zinc deficiency",
+          "ಹೆಚ್ಚಿಸುತ್ತದೆ enzymatic activities"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      },
+      "bf-005": {
+        "name": "AT ORGO MYCOROOT E (VAM)",
+        "tagline": "Vesicular Arbuscular Mycorrhiza",
+        "description": "A symbiotic ಶಿಲೀಂಧ್ರ that colonizes the root system, helping in nutrient transfer (especially phosphorus) and improving water absorption.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "250 gram/Acre",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "ಸುಧಾರಿಸುತ್ತದೆ phosphorus & nutrient uptake",
+          "Minimum 1000 Spores per gram",
+          "ಹೆಚ್ಚಿಸುತ್ತದೆ root surface area",
+          "Better water absorption"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "100 gram",
+          "250 gram"
+        ]
+      },
+      "bf-006": {
+        "name": "AT ORGO PRO MAX",
+        "tagline": "NPK ಜೈವಿಕ ಗೊಬ್ಬರ Consortium",
+        "description": "A powerful combination of ಸಾರಜನಕ ಸ್ಥಿರೀಕರಿಸುವ (Azotobacter), ರಂಜಕ ಕರಗಿಸುವ, and ಪೊಟ್ಯಾಶ್ ಸಜ್ಜುಗೊಳಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ for complete nutrition.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Complete NPK bio-solution",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳ ಮೇಲಿನ ಅವಲಂಬನೆಯನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ",
+          "Balanced ಸೂಕ್ಷ್ಮಜೀವಿ nutrition"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೧ ಲೀಟರ್",
+          "5 Liter"
+        ]
+      },
+      "bf-007": {
+        "name": "AT ORGO ROBUSTA PRO-LDC KIT",
+        "tagline": "Nutritional Kit for Long Duration Crops",
+        "description": "A comprehensive nutritional kit designed for long duration crops, containing a balanced mix of NB, PB, KB, ZB, and Mycorrhiza.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಕಿಟ್/ಎಕರೆ",
+        "recommended": "Long Duration Crops",
+        "benefits": [
+          "Full nutritional support",
+          "High ಸೂಕ್ಷ್ಮಜೀವಿ potency",
+          "Sustained growth for long-cycle crops",
+          "Contains 6L liquid + 500g powder"
+        ],
+        "crops": [
+          "Sugarcane",
+          "Fruit Crops",
+          "Cotton"
+        ],
+        "packSizes": [
+          "೧ ಕಿಟ್ (6.5 kg)"
+        ]
+      },
+      "bf-008": {
+        "name": "AT ORGO ROBUSTA PRO-SDC KIT",
+        "tagline": "Nutritional Kit for Short Duration Crops",
+        "description": "Specially formulated for short duration crops to ensure rapid growth and high productivity within a shorter crop cycle.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಕಿಟ್/ಎಕರೆ",
+        "recommended": "Short Duration Crops",
+        "benefits": [
+          "Rapid nutrient availability",
+          "Optimized for short cycles",
+          "Complete ಸೂಕ್ಷ್ಮಜೀವಿ coverage",
+          "Contains 1.5L liquid + 500g powder"
+        ],
+        "crops": [
+          "Vegetables",
+          "Pulses",
+          "Cereals"
+        ],
+        "packSizes": [
+          "೧ ಕಿಟ್ (2.0 kg)"
+        ]
+      },
+      "bf-009": {
+        "name": "AT ORGO ROBUSTA PRO-AC KIT",
+        "tagline": "Universal Nutritional Kit for ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "description": "A versatile kit providing essential NP, PK, ZB, and Mycorrhiza for all types of agricultural and horticultural crops.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಕಿಟ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Balanced nutrient profile",
+          "Universal application",
+          "ಸುಧಾರಿಸುತ್ತದೆ soil biology",
+          "Contains 1.5L liquid + 200g powder"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೧ ಕಿಟ್ (1.7 kg)"
+        ]
+      },
+      "bf-010": {
+        "name": "AT ORGO ROBUSTA PRO-NC KIT",
+        "tagline": "Water Soluble Carrier Based Kit",
+        "description": "100% water soluble carrier based nutritional kit containing Orgo Pro Max and Mycorrhiza for easy application and rapid absorption.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ / Fertigation",
+        "dosage": "೫೦೦ ಗ್ರಾಂm/Acre",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "100% water soluble",
+          "Carrier based formulation",
+          "High bioavailability",
+          "Easy to apply through drip"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೫೦೦ ಗ್ರಾಂram"
+        ]
+      },
+      "bf-011": {
+        "name": "AT ORGO SHIELDER PRO",
+        "tagline": "Zinc Solubilising ಬ್ಯಾಕ್ಟೀರಿಯಾ (Premium)",
+        "description": "Premium Pseudomonas Spp. formulation with high cell count for effective zinc solubilization and plant defense.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Premium zinc solubilizer",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "ಸುಧಾರಿಸುತ್ತದೆ plant immunity",
+          "Robust growth support"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      },
+      "bf-012": {
+        "name": "AT ORGO RESCUE PRO",
+        "tagline": "ರಂಜಕ ಕರಗಿಸುವ ಬ್ಯಾಕ್ಟೀರಿಯಾ (Premium)",
+        "description": "High-performance Bacillus Spp. that rapidly solubilizes phosphate, helping crops recover from stress and nutrient deficiency.",
+        "application": "ಮಣ್ಣಿನಲ್ಲಿ ಬಳಕೆ",
+        "dosage": "೧ ಲೀಟರ್/ಎಕರೆ",
+        "recommended": "ಎಲ್ಲಾ ಬೆಳೆಗಳು",
+        "benefits": [
+          "Rapid phosphate solubilization",
+          "CFU minimum 2 x 10¹¹ cells/ml",
+          "Stress recovery support",
+          "ಸುಧಾರಿಸುತ್ತದೆ nutritional status"
+        ],
+        "crops": [
+          "ಎಲ್ಲಾ ಬೆಳೆಗಳು"
+        ],
+        "packSizes": [
+          "೨೫೦ ಮಿಲಿ",
+          "೧ ಲೀಟರ್"
+        ]
+      }
+    }
+  },
+  "company": {
+    "about_us_title": "ನಮ್ಮ ಬಗ್ಗೆ",
+    "about_us_p1": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್‌ನಲ್ಲಿ ನಾವು ಆಧುನಿಕ ಕೃಷಿಗಾಗಿ ನವೀನ, ಸುಸ್ಥಿರ ಮತ್ತು ಉತ್ತಮ-ಗುಣಮಟ್ಟದ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ.",
+    "about_us_p2": "ನಮ್ಮ ಪ್ರವರ್ತಕರು ರಾಸಾಯನಿಕ ಮತ್ತು ಸಂಬಂಧಿತ ಕೈಗಾರಿಕೆಗಳಲ್ಲಿ ೪೫-೫೦ ವರ್ಷಗಳ ಶ್ರೀಮಂತ ಅನುಭವವನ್ನು ಹೊಂದಿದ್ದಾರೆ — ಇದು ಆಳವಾದ ತಾಂತ್ರಿಕ ಜ್ಞಾನ, ಬಲವಾದ ವ್ಯವಹಾರ ನೀತಿ ಮತ್ತು ಗುಣಮಟ್ಟ, ನಾವೀನ್ಯತೆ ಹಾಗೂ ವಿಶ್ವಾಸಾರ್ಹತೆಯ ಮೇಲೆ ಆಧಾರಿತವಾಗಿದೆ.",
+    "about_us_p3": "ನಮ್ಮ ೧೫-೩೦ ವರ್ಷಗಳ ಪ್ರತ್ಯಕ್ಷ ಅನುಭವ ಹೊಂದಿರುವ ಯುವ ಮತ್ತು ಕ್ರಿಯಾತ್ಮಕ ತಂಡವು ರೈತರು, ವಿತರಕರು ಮತ್ತು ಪಾಲುದಾರರ ಅಗತ್ಯಗಳನ್ನು ಪೂರೈಸುವ ಪರಿಣಾಮಕಾರಿ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ನಿರಂತರವಾಗಿ ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿದೆ.",
+    "about_us_p4": "ನಮ್ಮ ಸಾಮರ್ಥ್ಯ: ಸುಸ್ಥಿರ ಕೃಷಿ ಮತ್ತು ದೀರ್ಘಕಾಲೀನ ಬೆಳವಣಿಗೆಯನ್ನು ಉತ್ತೇಜಿಸಲು ತಾಂತ್ರಿಕ ಪರಿಣತಿ, ಅತ್ಯುತ್ತಮ ಕೆಲಸದ ಪದ್ಧತಿಗಳು ಮತ್ತು ಮಾರುಕಟ್ಟೆಯ ಆಳವಾದ ತಿಳುವಳಿಕೆಯನ್ನು ಒಟ್ಟುಗೂಡಿಸುವುದು.",
+    "about_us_beliefs_title": "ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನಲ್ಲಿ, ನಾವು ನಂಬುತ್ತೇವೆ:",
+    "about_us_beliefs": [
+      "ಗುಣಮಟ್ಟ-ಕೇಂದ್ರಿತ ಉತ್ಪಾದನೆ",
+      "ಸಂಶೋಧನೆ ಮತ್ತು ನಾವೀನ್ಯತೆ ಆಧಾರಿತ ಅಭಿವೃದ್ಧಿ",
+      "ಗ್ರಾಹಕರೊಂದಿಗೆ ಬಲವಾದ ಬಾಂಧವ್ಯ",
+      "ನೈತಿಕ ಮತ್ತು ಪಾರದರ್ಶಕ ವ್ಯವಹಾರ ಪದ್ಧತಿಗಳು",
+      "ಸುಸ್ಥಿರ ಕೃಷಿ ಅಭಿವೃದ್ಧಿ"
+    ],
+    "about_us_closing": "ಕೃಷಿ ಕ್ಷೇತ್ರದಲ್ಲಿ ಅತ್ಯಂತ ನಂಬಿಕಸ್ಥ ಬ್ರ್ಯಾಂಡ್ ಆಗುವ ಗುರಿಯೊಂದಿಗೆ, ನಾವು ನಮ್ಮ ಸಾಮರ್ಥ್ಯಗಳನ್ನು ವಿಸ್ತರಿಸುತ್ತಿದ್ದೇವೆ ಮತ್ತು ಎಲ್ಲಾ ಪಾಲುದಾರರಿಗೆ ಮೌಲ್ಯ ಸೃಷ್ಟಿಸಲು ಬದ್ಧರಾಗಿದ್ದೇವೆ.",
+    "vision": "ಭವಿತವ್ಯದ ಪೀಳಿಗೆಗೆ ರಾಸಾಯನಿಕ ಮುಕ್ತ, ಸುರಕ್ಷಿತ ಆಹಾರ ಪೂರೈಕೆಯನ್ನು ಖಚಿತಪಡಿಸುವುದು ಮತ್ತು ಮಣ್ಣಿನ ಫಲವತ್ತತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸುವ ಮೂಲಕ ಜೈವಿಕ ಕೃಷಿಯತ್ತ ಜಾಗತಿಕ ಪರಿವರ್ತನೆಯನ್ನು ಮುನ್ನಡೆಸುವುದು.",
+    "mission": "ರೈತರನ್ನು ಅತ್ಯಾಧುನಿಕ ಜೈವಿಕ ಉತ್ಪನ್ನಗಳು ಮತ್ತು R&D ಆಧಾರಿತ ಪರಿಹಾರಗಳೊಂದಿಗೆ ಸಬಲೀಕರಣಗೊಳಿಸುವುದು, ಇದರಿಂದ ಬೆಳೆಗಳ ಇಳುವರಿ ಹೆಚ್ಚುತ್ತದೆ, ಲಾಭ ಹೆಚ್ಚುತ್ತದೆ ಮತ್ತು ಪರಿಸರವು ರಕ್ಷಿಸಲ್ಪಡುತ್ತದೆ.",
+    "stats": {
+      "products": "ಉತ್ಪನ್ನಗಳು",
+      "categories": "ಉತ್ಪನ್ನ ವರ್ಗಗಳು",
+      "states": "ರಾಜ್ಯಗಳು",
+      "dealers": "ಡೀಲರ್ ನೆಟ್‌ವರ್ಕ್"
+    },
+    "leadership": {
+      "subtitle": "ನಮ್ಮ ಧ್ಯೇಯದ ಹಿಂದಿನ ದಾರಿದೀಪಗಳನ್ನು ಭೇಟಿ ಮಾಡಿ.",
+      "people": {
+        "director_1": {
+          "name": "ಬಾಬುಲಾಲ್ ಮೆಹ್ತಾ",
+          "role": "ವ್ಯವಸ್ಥಾಪಕ ನಿರ್ದೇಶಕರು",
+          "bio": "ಆಶಾ ಗ್ರೂಪ್ ಮತ್ತು ರಾಸಾಯನಿಕ ಕೈಗಾರಿಕೆಗಳಲ್ಲಿ ೪೫ ವರ್ಷಗಳಿಗಿಂತಲೂ ಹೆಚ್ಚಿನ ಉತ್ಕೃಷ್ಟ ಅನುಭವದೊಂದಿಗೆ, ನಮ್ಮ ವ್ಯವಸ್ಥಾಪಕ ನಿರ್ದೇಶಕರು ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನ ನವೀನ ಮತ್ತು ನೈತಿಕ ಬೆಳವಣಿಗೆಗೆ ದೂರದರ್ಶಿ ನಾಯಕತ್ವವನ್ನು ನೀಡುತ್ತಿದ್ದಾರೆ."
+        },
+        "jinesh_mehta": {
+          "name": "ಜಿನೇಶ್ ಮೆಹ್ತಾ",
+          "role": "ನಿರ್ದೇಶಕರು",
+          "bio": "ಆಶಾ ಗ್ರೂಪ್‌ನಲ್ಲಿ ನಾಯಕತ್ವ ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಯ ನಿರ್ವಹಣೆಯಲ್ಲಿ ೨೦ ವರ್ಷಗಳಿಗಿಂತಲೂ ಹೆಚ್ಚು ಶ್ರೀಮಂತ ಅನುಭವ ಹೊಂದಿರುವ ಜಿನೇಶ್ ಅವರು ಕಂಪನಿಯ ವಿಸ್ತರಣೆ ಮತ್ತು ಎಲ್ಲಾ ವ್ಯವಹಾರ ವಿಭಾಗಗಳಲ್ಲಿ ಅತ್ಯುನ್ನತ ಗುಣಮಟ್ಟದ ಮಾನದಂಡಗಳನ್ನು ಖಚಿತಪಡಿಸುತ್ತಾರೆ."
+        },
+        "kaushal_doshi": {
+          "name": "ಕೌಶಲ್ ದೋಷಿ",
+          "role": "CMO (ಮುಖ್ಯ ಮಾರುಕಟ್ಟೆ ಅಧಿಕಾರಿ)",
+          "bio": "ಕೃಷಿ-ಇನ್‌ಪುಟ್ ವಲಯದ ತಜ್ಞ ಮಾರುಕಟ್ಟೆ ತಂತ್ರಜ್ಞರು. ಕೌಶಲ್ ಅವರು ಭಾರತದಾದ್ಯಂತ ನಮ್ಮ ಮಾರಾಟ ಚಟುವಟಿಕೆಗಳು, ಬ್ರ್ಯಾಂಡ್ ತಂತ್ರಗಳು ಮತ್ತು ಡೀಲರ್ ನೆಟ್‌ವರ್ಕ್ ವಿಸ್ತರಣೆಯ ನೇತೃತ್ವ ವಹಿಸಿದ್ದಾರೆ."
+        },
+        "kishor_gavde": {
+          "name": "ಕಿಶೋರ್ ಗಾವಡೆ",
+          "role": "R&D ಮುಖ್ಯಸ್ಥರು",
+          "bio": "ಮೈಕ್ರೋಬಯಾಲಜಿ ಮತ್ತು ಬಯೋ-ಫಾರ್ಮುಲೇಶನ್‌ಗಳಲ್ಲಿ ಆಳವಾದ ಪರಿಣತಿ ಹೊಂದಿರುವ ಕೃಷಿ ವಿಜ್ಞಾನಿ. ಕಿಶೋರ್ ಅವರು ನಮ್ಮ ವೈಜ್ಞಾನಿಕ ಸಂಶೋಧನೆ, ಉತ್ಪನ್ನ ನಾವೀನ್ಯತೆ ಮತ್ತು ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣ ಪ್ರೋಟೋಕಾಲ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸುತ್ತಾರೆ."
+        },
+        "rajesh_mehta": {
+          "name": "ರಾಜೇಶ್ ಮೆಹ್ತಾ",
+          "role": "ಮುಖ್ಯ ಕಾರ್ಯನಿರ್ವಾಹಕ ಅಧಿಕಾರಿ",
+          "bio": "ಕೃಷಿ-ಇನ್‌ಪುಟ್ ಪೂರೈಕೆ ಸರಪಳಿ ನಿರ್ವಹಣೆಯಲ್ಲಿ ೧೫ ವರ್ಷಗಳ ಅನುಭವ ಹೊಂದಿರುವ MBA ಪದವೀಧರರು. ಗ್ರಾಮೀಣ ಭಾರತದಲ್ಲಿ ಸಮರ್ಥ ವಿತರಣಾ ಜಾಲವನ್ನು ನಿರ್ಮಿಸುವಲ್ಲಿ ಪರಿಣಿತರು."
+        },
+        "anil_kumar": {
+          "name": "ಡಾ. ಅನಿಲ್ ಕುಮಾರ್",
+          "role": "ಗುಣಮಟ್ಟ ಭರವಸೆ ನಿರ್ದೇಶಕರು",
+          "bio": "ಬಯೋಕೆಮಿಸ್ಟ್ರಿಯಲ್ಲಿ MSc ಪದವೀಧರರು. ಜೈವಿಕ ಉತ್ಪನ್ನಗಳ ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣ ಪ್ರೋಟೋಕಾಲ್‌ಗಳಲ್ಲಿ ಪರಿಣಿತರು. ಪ್ರತಿಯೊಂದು ಬ್ಯಾಚ್ ಅತ್ಯುನ್ನತ ಗುಣಮಟ್ಟವನ್ನು ತಲುಪುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತಾರೆ."
+        }
+      }
+    },
+    "milestones_list": {
+      "q1_2026": {
+        "year": "ಜುಲೈ ೨೦೨೫",
+        "title": "ಕಂಪನಿ ಸ್ಥಾಪನೆ",
+        "description": "ಭಾರತೀಯ ಕೃಷಿಯಲ್ಲಿ ಕ್ರಾಂತಿ ತರುವ ಧ್ಯೇಯದೊಂದಿಗೆ ಗುಜರಾತ್‌ನ ವಲ್ಸಾಡ್‌ನಲ್ಲಿ ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ ಸ್ಥಾಪನೆಯಾಯಿತು."
+      },
+      "q2_2026": {
+        "year": "೨೦೨೬ Q೨",
+        "title": "R&D ಪ್ರಯೋಗಾಲಯದ ಸ್ಥಾಪನೆ",
+        "description": "ಸುಧಾರಿತ ಪರೀಕ್ಷಾ ಸಾಧನಗಳೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಮೈಕ್ರೋಬಯಾಲಜಿ ಮತ್ತು ಫಾರ್ಮುಲೇಶನ್ ಪ್ರಯೋಗಾಲಯವನ್ನು ಸ್ಥಾಪಿಸಲಾಯಿತು."
+      },
+      "q3_2026": {
+        "year": "ಆಗಸ್ಟ್ ೨೦೨೬",
+        "title": "ವಾಣಿಜ್ಯ ಉತ್ಪಾದನೆಯ ಆರಂಭ",
+        "description": "ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮತ್ತು ಸಾವಯವ ಉತ್ಪನ್ನಗಳ ತಯಾರಿಕೆಗಾಗಿ ನಮ್ಮ ಅತ್ಯಾಧುನಿಕ ಮತ್ತು ಪರಿಸರ ಸ್ನೇಹಿ ಉತ್ಪಾದನಾ ಘಟಕದ ಕೆಲಸ ಪ್ರಾರಂಭವಾಯಿತು."
+      },
+      "q4_2026": {
+        "year": "೨೦೨೬ Q೪",
+        "title": "ಡೀಲರ್ ನೆಟ್‌ವರ್ಕ್ ವಿಸ್ತರಣೆ",
+        "description": "ರೈತ ಬಾಂಧವರನ್ನು ತಲುಪಲು ಗುಜರಾತ್, ಮಹಾರಾಷ್ಟ್ರ ಮತ್ತು ಕರ್ನಾಟಕದಲ್ಲಿ ೧೦೦+ ಪಾಲುದಾರರೊಂದಿಗೆ ನಮ್ಮ ಡೀಲರ್ ಜಾಲವನ್ನು ವಿಸ್ತರಿಸಲಾಗುತ್ತಿದೆ."
+      }
+    },
+    "certifications_list": {
+      "iso_9001": "ISO 9001:2015 ಪ್ರಮಾಣೀಕೃತ",
+      "fco_approved": "FCO ಅನುಮೋದಿತ ಫಾರ್ಮುಲೇಶನ್‌ಗಳು",
+      "cib_rc": "CIB & RC ನೋಂದಾಯಿತ",
+      "npop": "NPOP ಸಾವಯವ ಪ್ರಮಾಣೀಕೃತ",
+      "bis": "BIS ಮಾನದಂಡ ಅನುಸರಣೆ",
+      "glp": "GLP ಪರೀಕ್ಷಾ ಮಾನದಂಡಗಳು"
+    },
+    "values": {
+      "quality_driven_manufacturing": {
+        "title": "ಗುಣಮಟ್ಟ-ಕೇಂದ್ರಿತ ಉತ್ಪಾದನೆ",
+        "desc": "ನಾವು ತಯಾರಿಸುವ ಪ್ರತಿಯೊಂದು ಉತ್ಪನ್ನದಲ್ಲೂ ಸ್ಥಿರವಾದ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಬೆಳೆ ಸುರಕ್ಷತೆಯನ್ನು ಖಚಿತಪಡಿಸುವುದು."
+      },
+      "innovation_and_research_focused_development": {
+        "title": "ಸಂಶೋಧನೆ ಮತ್ತು ನಾವೀನ್ಯತೆ ಆಧಾರಿತ ಅಭಿವೃದ್ಧಿ",
+        "desc": "ಸುಧಾರಿತ ಜೈವಿಕ R&D ಯೊಂದಿಗೆ ಕೃಷಿ-ವಿಜ್ಞಾನದ ಮಿತಿಗಳನ್ನು ವಿಸ್ತರಿಸುವುದು."
+      },
+      "strong_customer_relationships": {
+        "title": "ಗ್ರಾಹಕರೊಂದಿಗೆ ಬಲವಾದ ಬಾಂಧವ್ಯ",
+        "desc": "ವಿಶ್ವಾಸ ಮತ್ತು ಜಂಟಿ ಯಶಸ್ಸಿನ ಮೂಲಕ ನಮ್ಮ ರೈತರು ಹಾಗೂ ಪಾಲುದಾರರೊಂದಿಗೆ ಒಟ್ಟಾಗಿ ಬೆಳೆಯುವುದು."
+      },
+      "ethical_and_transparent_business_practices": {
+        "title": "ನೈತಿಕ ಮತ್ತು ಪಾರದರ್ಶಕ ವ್ಯವಹಾರ ಪದ್ಧತಿಗಳು",
+        "desc": "ಪ್ರತಿಯೊಂದು ವ್ಯವಹಾರ ಮತ್ತು ಉತ್ಪನ್ನದ ಹಕ್ಕುಗಳಲ್ಲಿ ಪ್ರಾಮಾಣಿಕತೆ ಹಾಗೂ ಪಾರದರ್ಶಕತೆಯನ್ನು ಕಾಯ್ದುಕೊಳ್ಳುವುದು."
+      }
+    }
+  },
+  "home": {
+    "about_title": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಬಗ್ಗೆ",
+    "about_h2": "ಗುಜರಾತ್‌ನಿಂದ ಇಡೀ ಭಾರತಕ್ಕೆ ಸುಸ್ಥಿರ ಕೃಷಿಯ ಮುನ್ನಡೆ",
+    "about_lead": "ಜುಲೈ ೨೦೨೫ ರಲ್ಲಿ ಗುಜರಾತ್‌ನ ವಲ್ಸಾಡ್‌ನಲ್ಲಿ ಸ್ಥಾಪನೆಯಾದ ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್, ನವೀನ ಜೈವಿಕ ಪರಿಹಾರಗಳ ಮೂಲಕ ಭಾರತೀಯ ಕೃಷಿಯಲ್ಲಿ ಕ್ರಾಂತಿ ತರುವ ಧ್ಯೇಯದಲ್ಲಿದೆ.",
+    "about_p1": "ನಾವು ಅತ್ಯಾಧುನಿಕ ಸೂಕ್ಷ್ಮಜೀವಿ ತಂತ್ರಜ್ಞಾನ ಮತ್ತು ಆಳವಾದ ಕೃಷಿ ಪರಿಣತಿಯನ್ನು ಒಟ್ಟುಗೂಡಿಸಿ ರೈತರು, ಬೆಳೆಗಳು ಮತ್ತು ಪರಿಸರ — ಈ ಮೂರಕ್ಕೂ ಪ್ರಯೋಜನಕಾರಿಯಾದ ಉತ್ಪನ್ನಗಳನ್ನು ತಯಾರಿಸುತ್ತೇವೆ.",
+    "solutions_title": "ನಮ್ಮ ಪರಿಹಾರಗಳು",
+    "solutions_h2": "ಸಮಗ್ರ ಬೆಳೆ ಪರಿಹಾರಗಳು",
+    "solutions_subtitle": "ಮಣ್ಣಿನಿಂದ ಕೊಯ್ಲಿನವರೆಗೆ — ಬೆಳೆಯ ಬೆಳವಣಿಗೆಯ ಪ್ರತಿ ಹಂತಕ್ಕೂ ಸಮಗ್ರ ಜೈವಿಕ ಪರಿಹಾರಗಳು",
+    "why_title": "ಏಕೆ ಜಯ್ ಅಗ್ರಿಟೆಕ್?",
+    "why_h2": "ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನ ಅನುಕೂಲಗಳು",
+    "why_subtitle": "ಕೃಷಿ ನಾವೀನ್ಯತೆಯ ಜಗತ್ತಿನಲ್ಲಿ ನಮ್ಮನ್ನು ಪ್ರತ್ಯೇಕಿಸುವುದು ಯಾವುದು",
+    "growth_title": "ನಮ್ಮದೇ ಆದ ಪದ್ಧತಿ",
+    "growth_h2": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಗ್ರೋತ್ ಸಿಸ್ಟಮ್™",
+    "growth_p1": "ಕೃಷಿಯನ್ನು ಪರಿವರ್ತಿಸಲು ನಮ್ಮ ಸಮಗ್ರ ೪-ಹಂತದ ವಿಧಾನ — ಮಣ್ಣಿನ ವಿಜ್ಞಾನ, ಜೈವಿಕ ಪೋಷಣೆ, ಪರಿಸರ ಸ್ನೇಹಿ ರಕ್ಷಣೆ ಮತ್ತು ಬೆಳವಣಿಗೆ ವರ್ಧನೆಯನ್ನು ಒಂದೇ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಸಂಯೋಜಿಸುತ್ತದೆ.",
+    "success_title": "ಯಶೋಗಾಥೆಗಳು",
+    "success_h2": "ನೈಜ ಫಲಿತಾಂಶಗಳು, ನೈಜ ರೈತರು",
+    "success_subtitle": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಉತ್ಪನ್ನಗಳು ಭಾರತೀಯ ಹೊಲಗಳಲ್ಲಿ ಹೇಗೆ ದೊಡ್ಡ ಬದಲಾವಣೆ ತರುತ್ತಿವೆ ಎಂಬುದನ್ನು ನೋಡಿ",
+    "knowledge_title": "ಜ್ಞಾನ ಕೇಂದ್ರ",
+    "knowledge_h2": "ಕೃಷಿ ಮಾಹಿತಿ ಮತ್ತು ಸಲಹೆಗಳು",
+    "knowledge_subtitle": "ಆಧುನಿಕ ರೈತರಿಗಾಗಿ ತಜ್ಞರ ಲೇಖನಗಳು, ಮಾರ್ಗದರ್ಶಿಗಳು ಮತ್ತು ಕಾಲೋಚಿತ ಸಲಹೆಗಳು",
+    "partner_title": "ನಮ್ಮೊಂದಿಗೆ ಪಾಲುದಾರರಾಗಿ",
+    "partner_h2": "ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನೊಂದಿಗೆ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+    "partner_p1": "ನಮ್ಮ ವೇಗವಾಗಿ ಬೆಳೆಯುತ್ತಿರುವ ಡೀಲರ್‌ಗಳು, ವಿತರಕರು ಮತ್ತು ರಫ್ತು ಪಾಲುದಾರರ ಜಾಲಕ್ಕೆ ಸೇರಿಕೊಳ್ಳಿ. ಪ್ರೀಮಿಯಂ ಉತ್ಪನ್ನಗಳು, ಮಾರುಕಟ್ಟೆ ಬೆಂಬಲ ಮತ್ತು ಉತ್ತಮ ಲಾಭದ ಪ್ರಯೋಜನಗಳನ್ನು ಪಡೆದುಕೊಳ್ಳಿ.",
+    "values_title": "ನಮ್ಮ ಮೌಲ್ಯಗಳು",
+    "values_h2": "ನಾವು ಯಾವುದಕ್ಕಾಗಿ ಬದ್ಧರಾಗಿದ್ದೇವೆ",
+    "solutions_seo_suffix": "ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನಿಂದ ಸುಸ್ಥಿರ ಕೃಷಿ ಪರಿಹಾರಗಳು",
+    "products_overline": "ಉತ್ಪನ್ನಗಳ ಪೋರ್ಟ್‌ಫೋಲಿಯೋ",
+    "products_h2": "೬೦+ ನವೀನ ಉತ್ಪನ್ನಗಳು",
+    "products_subtitle": "೫ ಪ್ರಮುಖ ವರ್ಗಗಳಲ್ಲಿ — ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು, ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್, ಜೈವಿಕ ಗೊಬ್ಬರಗಳು, ಸಾವಯವ ಪೋಷಕಾಂಶಗಳು ಮತ್ತು ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳು",
+    "products_card_overline": "ಕೃಷಿ-ತಂತ್ರಜ್ಞಾನದ ಶ್ರೇಷ್ಠತೆ",
+    "products_card_title": "ಸುಸ್ಥಿರ ಕೃಷಿ ಇಲ್ಲಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ",
+    "products_desc_simplified": "ಬೆಳೆಗಳ ಇಳುವರಿಯನ್ನು ಹೆಚ್ಚಿಸಲು, ಒತ್ತಡ ನಿರೋಧಕ ಶಕ್ತಿಯನ್ನು ಬಲಪಡಿಸಲು ಮತ್ತು ಮಣ್ಣಿನ ಫಲವತ್ತತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ಸುಧಾರಿತ ಜೈವಿಕ ಹಾಗೂ ಸಾವಯವ ಒಳಸುರಿಗಳು.",
+    "products_cta_simplified": "ಸಂಪೂರ್ಣ ಶ್ರೇಣಿಯನ್ನು ಅನ್ವೇಷಿಸಿ",
+    "products": {
+      "feat_science": "ವೈಜ್ಞಾನಿಕ ಪ್ರಯೋಗಾಲಯಗಳು",
+      "feat_science_desc": "ಹೆಚ್ಚಿನ ಜೈವಿಕ ಸ್ಥಿರತೆ ಮತ್ತು ದೀರ್ಘಾವಧಿಯ ಶೆಲ್ಫ್-ಲೈಫ್‌ಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.",
+      "feat_eco": "೧೦೦% ಜೈವಿಕ-ಸುರಕ್ಷಿತ",
+      "feat_eco_desc": "ಮಣ್ಣಿನ ನೈಸರ್ಗಿಕ ಮೈಕ್ರೋಬಯೋಮ್ ಅನ್ನು ಶ್ರೀಮಂತಗೊಳಿಸುವ ಸಾವಯವ ಸೂತ್ರಗಳು.",
+      "feat_yield": "ಖಚಿತ ಇಳುವರಿ",
+      "feat_yield_desc": "ಬೆಳೆಯ ಬಲವಾದ ಬೆಳವಣಿಗೆ, ರೋಗ ನಿರೋಧಕ ಶಕ್ತಿ ಮತ್ತು ಗುಣಮಟ್ಟವನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ.",
+      "metric_products": "ಉತ್ಪನ್ನಗಳು",
+      "metric_categories": "ವರ್ಗಗಳು",
+      "metric_biological": "ಜೈವಿಕ-ಸುರಕ್ಷಿತ"
+    },
+    "solutions": {
+      "soil_health": {
+        "title": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ",
+        "desc": "ಮಣ್ಣಿನ ನೈಸರ್ಗಿಕ ಫಲವತ್ತತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸುವ ಸೂಕ್ಷ್ಮಜೀವಿ ಪರಿಹಾರಗಳೊಂದಿಗೆ ಮಣ್ಣಿನ ಆರೋಗ್ಯವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ."
+      },
+      "nutrient_management": {
+        "title": "ಪೋಷಕಾಂಶಗಳ ನಿರ್ವಹಣೆ",
+        "desc": "ಸಾವಯವ ಮತ್ತು ಸೂಕ್ಷ್ಮಜೀವಿ ಪೋಷಕಾಂಶಗಳ ಮೂಲಕ ಬೆಳೆಗಳಿಗೆ ಸಮತೋಲಿತ ಮತ್ತು ಸುಲಭವಾಗಿ ಲಭ್ಯವಿರುವ ಪೋಷಣೆಯನ್ನು ಒದಗಿಸುವುದು."
+      },
+      "pest_disease": {
+        "title": "ಕೀಟ ಮತ್ತು ರೋಗ",
+        "desc": "ಪರಿಸರ ಸ್ನೇಹಿ ಜೈವಿಕ ಕೀಟ ನಿರ್ವಹಣೆ — ಬೆಳೆಗಳ ಮೇಲೆ ಯಾವುದೇ ಹಾನಿಕಾರಕ ರಾಸಾಯನಿಕ ಉಳಿಕೆಗಳನ್ನು ಬಿಡದೆ ಪರಿಣಾಮಕಾರಿ ರಕ್ಷಣೆ."
+      },
+      "growth_enhancement": {
+        "title": "ಬೆಳವಣಿಗೆ ವರ್ಧನೆ",
+        "desc": "ವೈಜ್ಞಾನಿಕವಾಗಿ ಸಾಬೀತಾಗಿರುವ ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್ ಮತ್ತು ಬೆಳವಣಿಗೆ ವೇಗವರ್ಧಕಗಳೊಂದಿಗೆ ಬೆಳೆಗಳ ಪೂರ್ಣ ಸಾಮರ್ಥ್ಯವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದು."
+      }
+    },
+    "partner_types": {
+      "dealer_title": "ಡೀಲರ್ ಆಗಿ",
+      "dealer": "ಚಿಲ್ಲರೆ ಮಾರಾಟದ ಪಾಲುದಾರಿಕೆ",
+      "distributor_title": "ವಿತರಕರಾಗಿ",
+      "distributor": "ಜಿಲ್ಲಾ/ಪ್ರಾದೇಶಿಕ ಮಟ್ಟದ ವಿತರಣಾ ಪಾಲುದಾರಿಕೆ",
+      "export_title": "ರಫ್ತು ಪಾಲುದಾರಿಕೆ",
+      "export": "ಅಂತರರಾಷ್ಟ್ರೀಯ ವ್ಯವಹಾರ ಮತ್ತು ರಫ್ತು ಅವಕಾಶಗಳು"
+    },
+    "blog_posts": {
+      "role_of_biofertilizers_sustainable_agriculture_africa_india": {
+        "title": "ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತದಲ್ಲಿ ಸುಸ್ಥಿರ ಕೃಷಿಯಲ್ಲಿ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಪಾತ್ರ",
+        "category": "ಸುಸ್ಥಿರ ಕೃಷಿ",
+        "excerpt": "ಸಾಂಪ್ರದಾಯಿಕ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಗೆ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಹೇಗೆ ಪರಿಸರ ಸ್ನೇಹಿ ಮತ್ತು ಆರ್ಥಿಕವಾಗಿ ಲಾಭದಾಯಕ ಪರ್ಯಾಯಗಳಾಗಿವೆ, ಇದರಿಂದ ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತದ ಸಣ್ಣ ರೈತರು ಸಬಲರಾಗುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಸುಧಾರಿಸುತ್ತಿದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ.",
+        "content": "ಸುಸ್ಥಿರ ಕೃಷಿಯತ್ತ ಸಾಗುತ್ತಿರುವ ಹಾದಿಯಲ್ಲಿ, ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತ ಎರಡೂ ದೇಶಗಳಲ್ಲಿ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಸಾಂಪ್ರದಾಯಿಕ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಗೆ ಅತ್ಯುತ್ತಮ ಮತ್ತು ಪರಿಸರ ಸ್ನೇಹಿ ಪರ್ಯಾಯವಾಗಿ ಹೊರಹೊಮ್ಮುತ್ತಿವೆ. ಸಾವಯವ ಮೂಲಗಳಿಂದ ತಯಾರಿಸಿದ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮಣ್ಣಿನ ಫಲವತ್ತತೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ, ಬೆಳೆಗಳ ರೋಗ ನಿರೋಧಕ ಶಕ್ತಿಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ ಮತ್ತು ಪರಿಸರದ ಮೇಲಿನ ದುಷ್ಪರಿಣಾಮಗಳನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತವೆ. ಈ ಬ್ಲಾಗ್ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಪ್ರಯೋಜನಗಳು, ಅವು ಸುಸ್ಥಿರ ಕೃಷಿ ಪದ್ಧತಿಗಳಿಗೆ ಹೇಗೆ ಬೆಂಬಲ ನೀಡುತ್ತವೆ ಮತ್ತು ಆಫ್ರಿಕಾ ಹಾಗೂ ಭಾರತದಲ್ಲಿ ಸಣ್ಣ ರೈತರಲ್ಲಿ ಅವುಗಳ ಬಳಕೆಯನ್ನು ಹೆಚ್ಚಿಸುವ ತಂತ್ರಗಳ ಬಗ್ಗೆ ಬೆಳಕು ಚೆಲ್ಲುತ್ತದೆ.\n\n## ೧. ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮತ್ತು ಅವುಗಳ ಪ್ರಯೋಜನಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು\n\nಜೈವಿಕ ಗೊಬ್ಬರಗಳು ನೈಸರ್ಗಿಕ ಸೂಕ್ಷ್ಮಜೀವಿಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತವೆ, ಇವು ಬೆಳೆಗಳು ಪೋಷಕಾಂಶಗಳನ್ನು ಹೀರಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ, ಇದರಿಂದ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಲ್ಲದೆ ಮಣ್ಣಿನ ಫಲವತ್ತತೆ ಹೆಚ್ಚುತ್ತದೆ. ಈ ವಿಧಾನವು ಮಣ್ಣಿನ ಪರಿಸರ ವ್ಯವಸ್ಥೆಯನ್ನು ಪೋಷಿಸುತ್ತದೆ ಮತ್ತು ರೈತರಿಗೆ ದೀರ್ಘಾವಧಿಯ ಪ್ರಯೋಜನಗಳನ್ನು ನೀಡುತ್ತದೆ.\n\n- **ಮಣ್ಣಿನ ಆರೋಗ್ಯದಲ್ಲಿ ಸುಧಾರಣೆ**: ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮಣ್ಣಿನಲ್ಲಿ ಜೈವಿಕ ವೈವಿಧ್ಯತೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ, ಇದರಿಂದ ಪೋಷಕಾಂಶಗಳ ಚಕ್ರ ಮತ್ತು ಬೆಳೆಗಳ ಬೆಳವಣಿಗೆ ಸುಧಾರಿಸುತ್ತದೆ. ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ನಿಯಮಿತ ಬಳಕೆಯು ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತದಲ್ಲಿ ಪೋಷಕಾಂಶಗಳ ಕೊರತೆಯಿರುವ ಮಣ್ಣನ್ನು ಮತ್ತೆ ಫಲವತ್ತಾಗಿಸುತ್ತದೆ.\n\n- **ಬೆಳೆಗಳ ಉತ್ತಮ ಇಳುವರಿ ಮತ್ತು ರೋಗನಿರೋಧಕ ಶಕ್ತಿ**: ಸಾರಜನಕ ಸ್ಥಿರೀಕರಣ ಮಾಡುವ ಮತ್ತು ರಂಜಕವನ್ನು ಕರಗಿಸುವ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು ಬೆಳೆಗಳಿಗೆ ಅಗತ್ಯವಾದ ಪೋಷಕಾಂಶಗಳನ್ನು ಹೀರಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ, ಇದರಿಂದ ಬೆಳೆ ಆರೋಗ್ಯಕರವಾಗಿ ಬೆಳೆಯುತ್ತದೆ.\n\n- **ಪರಿಸರದ ಮೇಲಿನ ದುಷ್ಪರಿಣಾಮಗಳನ್ನು ಕಡಿಮೆ ಮಾಡುವುದು**: ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಗಿಂತ ಭಿನ್ನವಾಗಿ, ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಅಂತರ್ಜಲ, ನದಿ ಅಥವಾ ಕೆರೆಗಳನ್ನು ಕಲುಷಿತಗೊಳಿಸುವುದಿಲ್ಲ, ಇದರಿಂದ ಅವು ಪರಿಸರ ಸೂಕ್ಷ್ಮ ಪ್ರದೇಶಗಳಿಗೆ ಅತ್ಯುತ್ತಮ ಸುಸ್ಥಿರ ಆಯ್ಕೆಯಾಗಿವೆ.\n\n## ೨. ಆಫ್ರಿಕನ್ ಮತ್ತು ಭಾರತೀಯ ಕೃಷಿಗೆ ಪ್ರಮುಖ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು\n\nವಿವಿಧ ರೀತಿಯ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮಣ್ಣನ್ನು ಫಲವತ್ತಾಗಿಸುವಲ್ಲಿ ಮತ್ತು ಬೆಳೆಗಳ ಬೆಳವಣಿಗೆಗೆ ಸಹಾಯ ಮಾಡುವಲ್ಲಿ ಪ್ರಮುಖ ಪಾತ್ರ ವಹಿಸುತ್ತವೆ. ರೈತರು ಮಣ್ಣಿನ ಅಗತ್ಯತೆ ಮತ್ತು ಬೆಳೆಯ ಪ್ರಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ಸೂಕ್ತ ಉತ್ಪನ್ನಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳಬಹುದು.\n\n- **ಸಾರಜನಕ ಸ್ಥಿರೀಕರಣ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು**: ರೈಜೋಬಿಯಂ ಮತ್ತು ಅಜೋಸ್ಪಿರಿಲಮ್ ಬ್ಯಾಕ್ಟೀರಿಯಾಗಳು, ಇವು ಗಾಳಿಯಲ್ಲಿನ ಸಾರಜನಕವನ್ನು ಬೆಳೆಗಳು ಹೀರಿಕೊಳ್ಳುವ ರೂಪಕ್ಕೆ ಪರಿವರ್ತಿಸುತ್ತವೆ. ಇವು ದ್ವಿದಳ ಧಾನ್ಯಗಳು ಮತ್ತು ಧಾನ್ಯ ಬೆಳೆಗಳಿಗೆ ಹೆಚ್ಚು ಪ್ರಯೋಜನಕಾರಿ.\n\n- **ರಂಜಕ ಕರಗಿಸುವ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು**: ಸೂಡೊಮೊನಾಸ್ ಮತ್ತು ಬ್ಯಾಸಿಲಸ್ ನಂತಹ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು ಮಣ್ಣಿನಲ್ಲಿ ಕರಗದ ರೂಪದಲ್ಲಿರುವ ರಂಜಕವನ್ನು ಕರಗಿಸಿ ಬೆಳೆಗಳಿಗೆ ಲಭ್ಯವಾಗುವಂತೆ ಮಾಡುತ್ತವೆ, ಇದು ಬೇರುಗಳ ಬೆಳವಣಿಗೆಗೆ ಅತ್ಯಗತ್ಯ.\n\n- **ಮೈಕೋರೈಜಾ ಶಿಲೀಂಧ್ರ (Mycorrhizal Fungi)**: ಮೈಕೋರೈಜಾ ಬೇರುಗಳೊಂದಿಗೆ ಸಹಬಾಳ್ವೆ ನಡೆಸಿ, ನೀರು ಮತ್ತು ಪೋಷಕಾಂಶಗಳ ಹೀರಿಕೊಳ್ಳುವಿಕೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ. ಇದು ನೀರಿನ ಕೊರತೆಯಿರುವ ಒಣ ಪ್ರದೇಶಗಳ ಬೆಳೆಗಳಿಗೆ ಹೆಚ್ಚು ಉಪಯುಕ್ತ.\n\n## ೩. ಸಣ್ಣ ರೈತರಲ್ಲಿ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಬಳಕೆಯನ್ನು ಉತ್ತೇಜಿಸುವ ತಂತ್ರಗಳು\n\nಸಣ್ಣ ರೈತರು ಜೈವಿಕ ಗೊಬ್ಬರಗಳನ್ನು ಬಳಸುವಂತೆ ಮಾಡಲು ಜಾಗೃತಿ, ಸುಲಭ ಲಭ್ಯತೆ ಮತ್ತು ಸರಿಯಾದ ಬಳಕೆಯ ಬಗ್ಗೆ ಶಿಕ್ಷಣ ಅಗತ್ಯವಾಗಿದೆ. ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತದಲ್ಲಿ ಈ ಕೆಳಗಿನ ತಂತ್ರಗಳ ಮೂಲಕ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಬಳಕೆಯನ್ನು ಹೆಚ್ಚಿಸಬಹುದು:\n\n- **ಜಾಗೃತಿ ಅಭಿಯಾನಗಳು ಮತ್ತು ತರಬೇತಿ ಕಾರ್ಯಕ್ರಮಗಳು**: ಸ್ಥಳೀಯ ಸರ್ಕಾರಗಳು, ಸ್ವಯಂ ಸೇವಾ ಸಂಸ್ಥೆಗಳು (NGOs) ಮತ್ತು ಕೃಷಿ ಸಹಕಾರ ಸಂಘಗಳು ಜಾಗೃತಿ ಅಭಿಯಾನಗಳ ಮೂಲಕ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಆರ್ಥಿಕ ಮತ್ತು ಪರಿಸರ ಪ್ರಯೋಜನಗಳ ಮಾಹಿತಿಯನ್ನು ನೀಡಬಹುದು.\n\n- **ಸ್ಥಳೀಯ ಉತ್ಪಾದನೆ ಮತ್ತು ವಿತರಣೆ**: ಜೈವಿಕ ಗೊಬ್ಬರಗಳನ್ನು ಸ್ಥಳೀಯ ಮಟ್ಟದಲ್ಲಿ ಉತ್ಪಾದಿಸುವುದರಿಂದ ವೆಚ್ಚ ಕಡಿಮೆಯಾಗುತ್ತದೆ ಮತ್ತು ಗ್ರಾಮೀಣ ಭಾಗದ ರೈತರಿಗೆ ಅವು ಸುಲಭವಾಗಿ ಲಭ್ಯವಾಗುತ್ತವೆ.\n\n- **ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಬಳಕೆಗೆ ಪ್ರೋತ್ಸಾಹಕಗಳು ಮತ್ತು ಸಬ್ಸಿಡಿಗಳು**: ಸಬ್ಸಿಡಿಗಳು ರೈತರನ್ನು ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಂದ ಜೈವಿಕ ಗೊಬ್ಬರಗಳತ್ತ ಸೆಳೆಯಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.\n\n## ೪. ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಲಭ್ಯತೆ ಹೆಚ್ಚಿಸಲು ಸಾರ್ವಜನಿಕ-ಖಾಸಗಿ ಸಹಭಾಗಿತ್ವ (PPPs)\n\nಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಉತ್ಪಾದನೆ, ವಿತರಣೆ ಮತ್ತು ಬಳಕೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ಸಾರ್ವಜನಿಕ-ಖಾಸಗಿ ಸಹಭಾಗಿತ್ವ ಅತ್ಯಂತ ಪ್ರಮುಖವಾಗಿದೆ. ಸಂಶೋಧನಾ ಸಂಸ್ಥೆಗಳು, ಖಾಸಗಿ ವಲಯ ಮತ್ತು ಸ್ಥಳೀಯ ಸರ್ಕಾರಗಳ ಜಂಟಿ ಪ್ರಯತ್ನಗಳಿಂದ ಇದನ್ನು ಸಾಧಿಸಬಹುದು:\n\n- **ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಹೂಡಿಕೆ**: ಆಫ್ರಿಕನ್ ಮತ್ತು ಭಾರತೀಯ ಮಣ್ಣಿನ ಅಗತ್ಯಗಳಿಗೆ ತಕ್ಕಂತೆ ಹೊಸ ಜೈವಿಕ ಉತ್ಪನ್ನಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಲು R&D ಸಹಭಾಗಿತ್ವ ಉಪಯುಕ್ತ.\n\n- **ಮಾರುಕಟ್ಟೆ ಅಭಿವೃದ್ಧಿ ಉಪಕ್ರಮಗಳು**: ಖಾಸಗಿ ಕಂಪನಿಗಳ ಸಹಭಾಗಿತ್ವವು ವಿತರಣಾ ಜಾಲವನ್ನು ಬಲಪಡಿಸುತ್ತದೆ, ಇದರಿಂದ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಸುಲಭವಾಗಿ ಸಿಗುತ್ತವೆ.\n\n- **ಅಗ್ರಿ-ಬಯೋಟೆಕ್ ಸ್ಟಾರ್ಟ್‌ಅಪ್‌ಗಳಿಗೆ ಬೆಂಬಲ**: ಸ್ಟಾರ್ಟ್‌ಅಪ್‌ಗಳಿಗೆ ಧನಸಹಾಯ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದರಿಂದ ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಹೊಸ ಪೂರೈಕೆ ಸರಪಳಿ ನಿರ್ಮಾಣವಾಗುತ್ತದೆ.\n\n## ೫. ಸುಸ್ಥಿರ ಕೃಷಿ ಮತ್ತು ಗ್ರಾಮೀಣ ಅಭಿವೃದ್ಧಿಗೆ ಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಪ್ರಯೋಜನಗಳು\n\nಜೈವಿಕ ಗೊಬ್ಬರಗಳ ಪ್ರಯೋಜನಗಳು ಕೇವಲ ಹೊಲಗಳಿಗಷ್ಟೇ ಸೀಮಿತವಾಗಿರದೆ ದೇಶದ ಆರ್ಥಿಕ ಮತ್ತು ಗ್ರಾಮೀಣ ಅಭಿವೃದ್ಧಿಗೂ ಕೊಡುಗೆ ನೀಡುತ್ತವೆ:\n\n- **ಉತ್ಪಾದಕತೆ ಮತ್ತು ಮಣ್ಣಿನ ಫಲವತ್ತತೆ ಹೆಚ್ಚಳ**: ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಸುಧಾರಿಸುವುದರಿಂದ ಬೆಳೆಗಳ ಇಳುವರಿ ಹೆಚ್ಚುತ್ತದೆ, ಇದು ಆಹಾರ ಭದ್ರತೆಯನ್ನು ಬಲಪಡಿಸುತ್ತದೆ.\n\n- **ಹವಾಮಾನ ಬದಲಾವಣೆಗೆ ಹೊಂದಿಕೊಳ್ಳುವ ಸಾಮರ್ಥ್ಯ**: ಜೈವಿಕ ಗೊಬ್ಬರಗಳಿಂದ ಬೆಳೆಗಳು ಪ್ರತಿಕೂಲ ಹವಾಮಾನ ಮತ್ತು ರೋಗಗಳನ್ನು ಉತ್ತಮವಾಗಿ ಎದುರಿಸಬಲ್ಲವು, ಇದರಿಂದ ಬೆಳೆ ಹಾನಿ ತಪ್ಪುತ್ತದೆ.\n\n- **ಗ್ರಾಮೀಣ ಉದ್ಯೋಗ ಸೃಷ್ಟಿ**: ಸ್ಥಳೀಯ ಉತ್ಪಾದನೆಯಿಂದ ಗ್ರಾಮೀಣ ಭಾಗದಲ್ಲಿ ಉದ್ಯೋಗಾವಕಾಶಗಳು ಸೃಷ್ಟಿಯಾಗುತ್ತವೆ ಮತ್ತು ಕೃಷಿ ವೆಚ್ಚ ಕಡಿಮೆಯಾಗುವುದರಿಂದ ರೈತರ ಲಾಭ ಹೆಚ್ಚುತ್ತದೆ.\n\n## ತೀರ್ಮಾನ\n\nಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಆಫ್ರಿಕಾ ಮತ್ತು ಭಾರತದ ರೈತರಿಗೆ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳಿಗೆ ಒಂದು ಸುಸ್ಥಿರ ಹಾಗೂ ಆರ್ಥಿಕ ಪರ್ಯಾಯವಾಗಿದೆ. ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಸುಧಾರಿಸುವುದು, ಬೆಳೆಗಳ ಬೆಳವಣಿಗೆ ಹೆಚ್ಚಿಸುವುದು ಮತ್ತು ಪರಿಸರ ರಕ್ಷಿಸುವ ಮೂಲಕ ಸುಸ್ಥಿರ ಕೃಷಿ ಅಭಿವೃದ್ಧಿಗೆ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಅತ್ಯಗತ್ಯ. ಜಾಗೃತಿ, ಸ್ಥಳೀಯ ಉತ್ಪಾದನೆ ಮತ್ತು ಸರಿಯಾದ ಸಹಭಾಗಿತ್ವದ ಮೂಲಕ ಇವುಗಳ ಬಳಕೆಯನ್ನು ಹೆಚ್ಚಿಸಿ ಮುಂದಿನ ಪೀಳಿಗೆಗೆ ಫಲವತ್ತಾದ ಕೃಷಿ ವ್ಯವಸ್ಥೆಯನ್ನು ನಿರ್ಮಿಸಬಹುದಾಗಿದೆ."
+      }
+    }
+  },
+  "footer": {
+    "cta_title": "Ready to Transform Your Agriculture?",
+    "cta_desc": "Join 500+ partners growing with Jay Agritech's innovative biological solutions.",
+    "get_in_touch": "Get in Touch",
+    "quick_links": "Quick Links",
+    "products": "Products",
+    "solutions": "Solutions",
+    "company": "Company",
+    "resources": "Resources",
+    "contact_us": "Contact Us",
+    "address": "Valsad, Gujarat — Map View",
+    "phone": "+91 98251 42359",
+    "email": "info@jayagritech.com",
+    "copyright": "© 2026 Jay Agritech. All rights reserved.",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "follow_us": "Follow Us",
+    "knowledge_hub": "Knowledge Hub",
+    "growth_system": "Growth System",
+    "contact_address": "Valsad, Gujarat 396001, India",
+    "newsletter_title": "Subscribe for updates",
+    "newsletter_placeholder": "Your email",
+    "subscribe": "Subscribe",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "made_with_care": "Made with care for Indian agriculture",
+    "description": "Leading biological and organic agri-solutions for sustainable farming.",
+    "careers": "Careers"
+  },
+  "contact": {
+    "form_name": "Your Name",
+    "form_email": "Your Email",
+    "form_phone": "Phone Number",
+    "form_message": "Your Message",
+    "form_subject": "Subject",
+    "send_message": "Send Message",
+    "location": "Our Location",
+    "working_hours": "Working Hours",
+    "get_in_touch_now": "Get in Touch Now"
+  },
+  "pages": {
+    "solutions": {
+      "title": "Crop Solutions",
+      "subtitle": "Comprehensive biological solutions for every stage of crop growth — from soil preparation to harvest.",
+      "view_related_products": "View Related Products"
+    },
+    "business": {
+      "title": "Business Solutions",
+      "subtitle": "Partner with Jay Agritech for contract manufacturing, white-label solutions, research collaborations, and global expansion.",
+      "overline": "B2B Services",
+      "inquire_now": "Inquire Now"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Have questions about our products, partnerships, or services? We'd love to hear from you."
+    },
+    "blog": {
+      "title": "Knowledge Hub",
+      "subtitle": "Expert articles, guides, and seasonal advisories to help you make informed farming decisions.",
+      "featured_articles": "Featured Articles",
+      "all_articles": "All Articles"
+    },
+    "partners": {
+      "title": "Become a Partner",
+      "subtitle": "Join India's fastest-growing agri-biotech network. We're looking for passionate partners to help us deliver sustainable solutions to every corner of the country.",
+      "overline": "Partnership Opportunities",
+      "why_partner": "Why Partner with Jay Agritech?",
+      "apply_now": "Apply Now",
+      "form": {
+        "mandatory_notice": "Please fill out the form below. Fields marked with an asterisk (*) are mandatory.",
+        "submit_btn": "Submit Application",
+        "cancel_btn": "Cancel",
+        "close_btn": "Close",
+        "success_title": "Application Submitted!",
+        "success_desc": "Thank you for your interest in partnering with Jay Agritech. Our partnership development team will review your application details and get in touch with you within 24 business hours.",
+        "dealer": {
+          "program_name": "Dealer Program",
+          "modal_title": "Become a Dealer",
+          "sec_contact": "1. Contact & Shop Details",
+          "sec_location": "2. Store Location & Address",
+          "sec_profile": "3. Business Profile & Interest",
+          "lbl_fullname": "Full Name",
+          "lbl_shopname": "Shop/Retail Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_address": "Shop Address",
+          "lbl_state": "State",
+          "lbl_city": "City",
+          "lbl_products_sold": "Current Products Sold",
+          "lbl_volume": "Estimated Monthly Sales Volume",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "John Doe",
+          "ph_shopname": "e.g. Agritech Seeds & Fertilizers",
+          "ph_phone": "+91 XXXXX XXXXX",
+          "ph_email": "john@example.com",
+          "ph_address": "123 Main Street",
+          "ph_state": "e.g. Gujarat",
+          "ph_city": "e.g. Valsad",
+          "ph_volume": "e.g. INR 50,000 - 1,00,000",
+          "ph_message": "Tell us more about your shop and interest...",
+          "opt_select_business": "Select current line of business",
+          "opt_seeds": "Seeds Only",
+          "opt_fertilizers": "Fertilizers & Pesticides",
+          "opt_all": "Seeds, Fertilizers, & Pesticides",
+          "opt_none": "New Retail Outlet (None)"
+        },
+        "distributor": {
+          "program_name": "Distributor Network",
+          "modal_title": "Become a Distributor",
+          "sec_contact": "1. Company & Contact Details",
+          "sec_statutory": "2. Statutory & Financial Information",
+          "sec_infrastructure": "3. Infrastructure & Territory Info",
+          "lbl_fullname": "Full Name",
+          "lbl_companyname": "Company/Firm Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_gst": "GST / Tax ID",
+          "lbl_turnover": "Annual Turnover",
+          "lbl_territory": "Proposed Territory for Distribution",
+          "lbl_warehouse": "Warehouse Capacity (Sq Ft)",
+          "lbl_experience": "Experience in Agri-Inputs (Years)",
+          "lbl_address": "Office/Warehouse Address",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "John Doe",
+          "ph_companyname": "e.g. Apex Agri Distributors",
+          "ph_phone": "+91 XXXXX XXXXX",
+          "ph_email": "distributor@example.com",
+          "ph_gst": "e.g. 24ABCDE1234F1Z5",
+          "ph_turnover": "e.g. INR 25 Lakhs - 50 Lakhs",
+          "ph_territory": "e.g. South Gujarat Districts (Valsad, Navsari, Surat)",
+          "ph_warehouse": "e.g. 1,500 Sq Ft",
+          "ph_experience": "e.g. 5",
+          "ph_address": "Complete commercial address",
+          "ph_message": "Tell us more about your current dealership network and fleet..."
+        },
+        "export": {
+          "program_name": "Global Export",
+          "modal_title": "Export Partner",
+          "sec_profile": "1. International Business Profile",
+          "sec_markets": "2. Target Markets & Requirements",
+          "sec_order": "3. Order & Regulatory Support",
+          "lbl_fullname": "Contact Person Name",
+          "lbl_companyname": "Trading Company Name",
+          "lbl_phone": "Phone Number",
+          "lbl_email": "Email Address",
+          "lbl_country": "Headquarters Country",
+          "lbl_target": "Target Countries for Export",
+          "lbl_products": "Specific Products of Interest",
+          "lbl_volume": "Estimated Annual Import Volume",
+          "lbl_regulatory": "Is Regulatory Support Needed?",
+          "lbl_message": "Message / Additional Comments",
+          "ph_fullname": "Jane Smith",
+          "ph_companyname": "e.g. Global Agri Solutions LLC",
+          "ph_phone": "Include Country Code (e.g. +1...)",
+          "ph_email": "export@company.com",
+          "ph_country": "e.g. Kenya",
+          "ph_target": "e.g. East Africa (Kenya, Uganda, Tanzania)",
+          "ph_volume": "e.g. 50 Tons",
+          "ph_message": "Describe your overseas network and how we can collaborate...",
+          "opt_select_category": "Select a product category",
+          "opt_bio_fertilizers": "Bio Fertilizers",
+          "opt_bio_insecticides": "Bio Insecticides",
+          "opt_biostimulants": "Biostimulants",
+          "opt_micronutrients": "Micronutrients",
+          "opt_custom": "Custom Formulations / B2B OEM",
+          "opt_select_regulatory": "Select option",
+          "opt_reg_yes": "Yes, import registrations required",
+          "opt_reg_no": "No, we manage local registrations",
+          "opt_reg_maybe": "Unsure / Need advice"
+        }
+      }
+    },
+    "careers": {
+      "title": "Careers",
+      "subtitle": "Join us in our mission to innovate agriculture and nurture growth across India.",
+      "overline": "Join Our Team",
+      "current_openings": "Current Openings",
+      "apply": "Apply Now",
+      "email_resume": "Email Your Resume"
+    },
+    "legal": {
+      "privacy_title": "Privacy Policy",
+      "privacy_subtitle": "How we collect, use, and protect your information.",
+      "terms_title": "Terms & Conditions",
+      "terms_subtitle": "The terms governing the use of our website and services.",
+      "updated": "Last updated: April 2026",
+      "terms_updated": "Last updated: April 2026"
+    }
+  },
+  "pages_details": {
+    "solutions": {
+      "items": {
+        "soil_health": {
+          "title": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ ನಿರ್ವಹಣೆ",
+          "desc": "ಫಲವತ್ತಾದ ಮಣ್ಣು ಯಶಸ್ವಿ ಕೃಷಿಗೆ ಅಡಿಪಾಯವಾಗಿದೆ. ನಮ್ಮ ಸೂಕ್ಷ್ಮಜೀವಿ ಪರಿಹಾರಗಳು ಮಣ್ಣಿನಲ್ಲಿ ಉಪಯುಕ್ತ ಬ್ಯಾಕ್ಟೀರಿಯಾಗಳ ಸಂಖ್ಯೆಯನ್ನು ಹೆಚ್ಚಿಸಿ, ಮಣ್ಣಿನ ರಚನೆಯನ್ನು ಸುಧಾರಿಸುವ ಮೂಲಕ ನೈಸರ್ಗಿಕವಾಗಿ ಪೋಷಕಾಂಶಗಳ ಲಭ್ಯತೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ.",
+          "features": [
+            "ಸೂಕ್ಷ್ಮಜೀವಿಗಳ ಮೂಲಕ ಮಣ್ಣಿನ ಮರುಜೀವನ",
+            "ಸಾವಯವ ಇಂಗಾಲದ (Organic Carbon) ವೃದ್ಧಿ",
+            "pH ಸಮತೋಲನ ಮತ್ತು ಮಣ್ಣಿನ ರಚನೆಯ ಸುಧಾರಣೆ",
+            "ಉಪಯುಕ್ತ ಬ್ಯಾಕ್ಟೀರಿಯಾಗಳ ಬೆಳವಣಿಗೆ"
+          ]
+        },
+        "nutrient_management": {
+          "title": "ಪೋಷಕಾಂಶಗಳ ನಿರ್ವಹಣೆ",
+          "desc": "ಸಮತೋಲಿತ ಪೋಷಣೆಯು ಬೆಳೆಯ ಉತ್ತಮ ಬೆಳವಣಿಗೆಗೆ ಅತ್ಯಗತ್ಯ. ನಮ್ಮ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಮತ್ತು ಸಾವಯವ ಪೋಷಕಾಂಶಗಳು ಬೆಳೆಗಳಿಗೆ ನೈಸರ್ಗಿಕವಾಗಿ ಅಗತ್ಯವಿರುವ ಮುಖ್ಯ ಹಾಗೂ ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳನ್ನು ಒದಗಿಸುತ್ತವೆ, ಇದರಿಂದ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳ ಮೇಲಿನ ಅವಲಂಬನೆ ಕಡಿಮೆಯಾಗುತ್ತದೆ.",
+          "features": [
+            "ಜೈವಿಕ ಸಾರಜನಕ ಸ್ಥಿರೀಕರಣ (Nitrogen Fixation)",
+            "ರಂಜಕವನ್ನು ಕರಗಿಸುವುದು (Phosphate Solubilization)",
+            "ಪೊಟ್ಯಾಶ್ ಸಜ್ಜುಗೊಳಿಸುವಿಕೆ (Potash Mobilization)",
+            "ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳ ಸಮರ್ಪಕ ಪೂರೈಕೆ"
+          ]
+        },
+        "pest_disease": {
+          "title": "ಕೀಟ ಮತ್ತು ರೋಗ ನಿಯಂತ್ರಣ",
+          "desc": "ಪರಿಸರ ಸ್ನೇಹಿ ಜೈವಿಕ ಕೀಟ ನಿರ್ವಹಣೆಯೊಂದಿಗೆ ನಿಮ್ಮ ಬೆಳೆಗಳನ್ನು ರಕ್ಷಿಸಿ. ನಮ್ಮ ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಶಿಲೀಂಧ್ರನಾಶಕಗಳು ಬೆಳೆಗಳ ಮೇಲೆ ಯಾವುದೇ ಹಾನಿಕಾರಕ ರಾಸಾಯನಿಕ ಉಳಿಕೆಗಳನ್ನು ಬಿಡದೆ ವಿವಿಧ ರೀತಿಯ ಕೀಟ ಮತ್ತು ರೋಗಗಳಿಂದ ಪರಿಣಾಮಕಾರಿ ರಕ್ಷಣೆ ನೀಡುತ್ತವೆ.",
+          "features": [
+            "ಜೈವಿಕ ಶಿಲೀಂಧ್ರ ರೋಗ ನಿಯಂತ್ರಣ",
+            "ಸೂತ್ರಕೃಮಿ (Nematode) ನಿರ್ವಹಣೆ",
+            "ಕೀಟಗಳ ಜೈವಿಕ ನಿಯಂತ್ರಣ",
+            "ಬೇವಿನ ಆಧಾರಿತ ಸಮಗ್ರ ಕೀಟ ನಿಯಂತ್ರಣ (IPM) ಪರಿಹಾರಗಳು"
+          ]
+        },
+        "growth_enhancement": {
+          "title": "ಬೆಳವಣಿಗೆ ವರ್ಧನೆ",
+          "desc": "ನಮ್ಮ ಪ್ರೀಮಿಯಂ ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್ ಮತ್ತು ಬೆಳವಣಿಗೆ ವೇಗವರ್ಧಕಗಳ ಸಹಾಯದಿಂದ ಬೆಳೆಗಳ ಗರಿಷ್ಠ ಇಳುವರಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಿ. ಹೂ ಬಿಡುವುದನ್ನು ಹೆಚ್ಚಿಸುವುದರಿಂದ ಹಣ್ಣುಗಳ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸುವವರೆಗೆ, ನಮ್ಮ ಉತ್ಪನ್ನಗಳು ಇಳುವರಿಯನ್ನು ನೈಸರ್ಗಿಕವಾಗಿ ಹೆಚ್ಚಿಸುತ್ತವೆ.",
+          "features": [
+            "ಹೂ ಬಿಡುವುದು ಮತ್ತು ಕಾಯಿ ಕಟ್ಟುವುದು ಹೆಚ್ಚಳ",
+            "ಹಣ್ಣುಗಳ ಗಾತ್ರ, ತೂಕ ಮತ್ತು ಸಿಹಿ ಹೆಚ್ಚಳ",
+            "ಪ್ರತಿಕೂಲ ಹವಾಮಾನ ಎದುರಿಸುವ ಸಾಮರ್ಥ್ಯ",
+            "ಬೆಳೆಯ ಗರಿಷ್ಠ ಇಳುವರಿ"
+          ]
+        }
+      }
+    },
+    "business": {
+      "services": {
+        "contract_manufacturing": {
+          "title": "ಗುತ್ತಿಗೆ ಉತ್ಪಾದನೆ (Contract Manufacturing)",
+          "description": "ಕೃಷಿ-ಇನ್‌ಪುಟ್ ಕಂಪನಿಗಳಿಗಾಗಿ ಕಸ್ಟಮ್ ಫಾರ್ಮುಲೇಶನ್ ಮತ್ತು ಉತ್ಪಾದನಾ ಸೇವೆಗಳು.",
+          "features": [
+            "ಕಸ್ಟಮ್ ಫಾರ್ಮುಲೇಶನ್ ಅಭಿವೃದ್ಧಿ",
+            "ವಿಸ್ತರಿಸಬಹುದಾದ ಉತ್ಪಾದನಾ ಸಾಮರ್ಥ್ಯ",
+            "ಗುಣಮಟ್ಟ ಭರವಸೆ ಮತ್ತು ಪರೀಕ್ಷೆ",
+            "ನಿಯಂತ್ರಕ ಅನುಸರಣೆ ಬೆಂಬಲ"
+          ]
+        },
+        "research_formulations": {
+          "title": "ಸಂಶೋಧನೆ ಮತ್ತು ಫಾರ್ಮುಲೇಶನ್‌ಗಳು",
+          "description": "ಹೊಸ ಕೃಷಿ ಫಾರ್ಮುಲೇಶನ್‌ಗಳಿಗಾಗಿ ಜಂಟಿ R&D ಸೇವೆಗಳು.",
+          "features": [
+            "ಬ್ಯಾಕ್ಟೀರಿಯಾ ಸ್ಟ್ರೈನ್ ಐಸೊಲೇಷನ್ ಮತ್ತು ಸ್ಕ್ರೀನಿಂಗ್",
+            "ಫಾರ್ಮುಲೇಶನ್ ಆಪ್ಟಿಮೈಸೇಶನ್",
+            "ಸ್ಥಿರತೆಯ ಅಧ್ಯಯನಗಳು (Stability Studies)",
+            "ಕ್ಷೇತ್ರ ಪರೀಕ್ಷೆಗಳ ನಿರ್ವಹಣೆ"
+          ]
+        },
+        "white_label": {
+          "title": "ವೈಟ್ / ಪ್ರೈವೇಟ್ ಲೇಬಲ್",
+          "description": "ನಿಮ್ಮ ಸ್ವಂತ ಬ್ರ್ಯಾಂಡ್ ಅಡಿಯಲ್ಲಿ ಸಿದ್ಧ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಮಾರುಕಟ್ಟೆಗೆ ತನ್ನಿ.",
+          "features": [
+            "ಮಾರುಕಟ್ಟೆಗೆ ಸಿದ್ಧವಿರುವ ಫಾರ್ಮುಲೇಶನ್‌ಗಳು",
+            "ಕಸ್ಟಮ್ ಪ್ಯಾಕೇಜಿಂಗ್ ವಿನ್ಯಾಸ",
+            "ಕನಿಷ್ಠ ಆರ್ಡರ್ ಪ್ರಮಾಣದ ನಮ್ಯತೆ",
+            "ಮಾರುಕಟ್ಟೆ ಸಾಮಗ್ರಿಗಳ ಬೆಂಬಲ"
+          ]
+        },
+        "exports_franchise": {
+          "title": "ರಫ್ತು ಮತ್ತು ಫ್ರಾಂಚೈಸಿ",
+          "description": "ಅಂತರರಾಷ್ಟ್ರೀಯ ವಿಸ್ತರಣೆಗಾಗಿ ರಫ್ತು ಮತ್ತು ಫ್ರಾಂಚೈಸಿ ಪಾಲುದಾರಿಕೆಗಳು.",
+          "features": [
+            "ರಫ್ತು ಸ್ನೇಹಿ ಫಾರ್ಮುಲೇಶನ್‌ಗಳು",
+            "ಅಂತರರಾಷ್ಟ್ರೀಯ ನಿಯಂತ್ರಕ ಬೆಂಬಲ",
+            "ಲಭ್ಯವಿರುವ ಫ್ರಾಂಚೈಸಿ ಮಾದರಿಗಳು",
+            "ಮಾರುಕಟ್ಟೆಗೆ ತಕ್ಕಂತೆ ಕಸ್ಟಮೈಸೇಶನ್"
+          ]
+        }
+      }
+    },
+    "contact": {
+      "lets_talk": "ಬನ್ನಿ ಮಾತನಾಡೋಣ",
+      "description": "ನಿಮಗೆ ಉತ್ಪನ್ನಗಳ ಮಾಹಿತಿ ಬೇಕಿರಲಿ, ಪಾಲುದಾರಿಕೆಯ ಅವಕಾಶಗಳಿರಲಿ ಅಥವಾ ತಾಂತ್ರಿಕ ಪ್ರಶ್ನೆಗಳಿರಲಿ — ನಮ್ಮ ತಂಡವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ಸಿದ್ಧವಾಗಿದೆ.",
+      "location_label": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್\nವಲ್ಸಾಡ್, ಗುಜರಾತ್ ೩೯೬೦೦೧, ಭಾರತ",
+      "hours_label": "ಸೋಮವಾರ - ಶನಿವಾರ: ಬೆಳಗ್ಗೆ ೯:೦೦ ರಿಂದ ಸಂಜೆ ೬:೦೦\nಭಾನುವಾರ: ರಜೆ",
+      "message_sent_title": "ಸಂದೇಶ ಕಳುಹಿಸಲಾಗಿದೆ!",
+      "message_sent_desc": "ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ನಮ್ಮ ತಂಡವು ೨೪ ಗಂಟೆಗಳ ಒಳಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+      "form_options": {
+        "product": "ಉತ್ಪನ್ನದ ವಿಚಾರಣೆ",
+        "partnership": "ಪಾಲುದಾರಿಕೆ / ಡೀಲರ್‌ಶಿಪ್",
+        "bulk": "ಸಗಟು / ರಫ್ತು ಆರ್ಡರ್",
+        "technical": "ತಾಂತ್ರಿಕ ಬೆಂಬಲ",
+        "other": "ಇತರ"
+      }
+    },
+    "growth_system": {
+      "overline": "ನಮ್ಮದೇ ಆದ ಪದ್ಧತಿ",
+      "title": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಗ್ರೋತ್ ಸಿಸ್ಟಮ್™",
+      "subtitle": "ನಮ್ಮ ಸಮಗ್ರ ೪-ಹಂತದ ವಿಧಾನವು ಮಣ್ಣಿನ ವಿಜ್ಞಾನ, ಜೈವಿಕ ಪೋಷಣೆ, ಪರಿಸರ ಸ್ನೇಹಿ ರಕ್ಷಣೆ ಮತ್ತು ಬೆಳವಣಿಗೆ ವರ್ಧನೆಯನ್ನು ಸಂಯೋಜಿಸಿ ಬೆಳೆಯ ಗರಿಷ್ಠ ಬೆಳವಣಿಗೆ ಹಾಗೂ ಇಳುವರಿಯನ್ನು ನೀಡುತ್ತದೆ.",
+      "recommended_products": "ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನಗಳು",
+      "steps": {
+        "soil": {
+          "title": "ಮಣ್ಣಿನ ಅಡಿಪಾಯ",
+          "subtitle": "ಮಣ್ಣಿನ ಆರೋಗ್ಯವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ",
+          "desc": "ಫಲವತ್ತಾದ ಮಣ್ಣು ಸಮೃದ್ಧ ಕೃಷಿಗೆ ಆಧಾರವಾಗಿದೆ. ನಮ್ಮ ಮಣ್ಣಿನ ಅಡಿಪಾಯ ಉತ್ಪನ್ನಗಳು ಮಣ್ಣಿನಲ್ಲಿ ಉಪಯುಕ್ತ ಬ್ಯಾಕ್ಟೀರಿಯಾಗಳ ಸಂಖ್ಯೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ, ಮಣ್ಣಿನ ರಚನೆಯನ್ನು ಸುಧಾರಿಸುತ್ತವೆ, ನೀರು ಹಿಡಿದಿಟ್ಟುಕೊಳ್ಳುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಹೆಚ್ಚಿಸುತ್ತವೆ ಮತ್ತು ನೈಸರ್ಗಿಕ ಫಲವತ್ತತೆಯನ್ನು ಮರಳಿ ತರುತ್ತವೆ — ಇದರಿಂದ ಬೆಳೆಯ ಬಲವಾದ ಬೆಳವಣಿಗೆಗೆ ಸೂಕ್ತ ಪರಿಸರ ಸೃಷ್ಟಿಯಾಗುತ್ತದೆ."
+        },
+        "nutrition": {
+          "title": "ಜೈವಿಕ ಪೋಷಣೆ",
+          "subtitle": "ನೈಸರ್ಗಿಕ ಪೋಷಕಾಂಶಗಳ ಪೂರೈಕೆ",
+          "desc": "ನಮ್ಮ ಜೈವಿಕ ಪೋಷಕಾಂಶ ನಿರ್ವಹಣೆ ಪರಿಹಾರಗಳೊಂದಿಗೆ ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳ ಮೇಲಿನ ಅವಲಂಬನೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಿ. ನಮ್ಮ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು ಗಾಳಿಯಲ್ಲಿನ ಸಾರಜನಕವನ್ನು ಸ್ಥಿರೀಕರಿಸುತ್ತವೆ, ರಂಜಕವನ್ನು ಕರಗಿಸುತ್ತವೆ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಅನ್ನು ಸಜ್ಜುಗೊಳಿಸುತ್ತವೆ — ಇದರಿಂದ ಬೆಳೆಗಳಿಗೆ ಸಮತೋಲಿತ ಪೋಷಣೆ ಸಿಗುತ್ತದೆ."
+        },
+        "protection": {
+          "title": "ಪರಿಸರ ರಕ್ಷಣೆ",
+          "subtitle": "ಜೈವಿಕ ಕೀಟ ಮತ್ತು ರೋಗ ನಿಯಂತ್ರಣ",
+          "desc": "ಪರಿಸರಕ್ಕೆ ಹಾನಿ ಮಾಡದೆ ನಿಮ್ಮ ಬೆಳೆಗಳನ್ನು ರಕ್ಷಿಸಿ. ನಮ್ಮ ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಶಿಲೀಂಧ್ರನಾಶಕಗಳು ನೈಸರ್ಗಿಕ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು ಮತ್ತು ಸಸ್ಯಗಳ ಸಾರವನ್ನು ಬಳಸಿ ಕೀಟಗಳನ್ನು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ನಿಯಂತ್ರಿಸುತ್ತವೆ — ಬೆಳೆಗಳ ಮೇಲೆ ಯಾವುದೇ ವಿಷಕಾರಿ ರಾಸಾಯನಿಕ ಉಳಿಕೆಗಳನ್ನು ಬಿಡುವುದಿಲ್ಲ."
+        },
+        "growth": {
+          "title": "ಬೆಳವಣಿಗೆ ವರ್ಧನೆ",
+          "subtitle": "ಇಳುವರಿ ಮತ್ತು ಗುಣಮಟ್ಟವನ್ನು ಹೆಚ್ಚಿಸಿ",
+          "desc": "ನಮ್ಮ ಪ್ರೀಮಿಯಂ ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್ ಮತ್ತು ಬೆಳವಣಿಗೆ ವೇಗವರ್ಧಕಗಳೊಂದಿಗೆ ಬೆಳೆಯ ಪೂರ್ಣ ಸಾಮರ್ಥ್ಯವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ. ಹೂ ಬಿಡುವುದನ್ನು ಹೆಚ್ಚಿಸುವುದರಿಂದ ಹಿಡಿದು ಹಣ್ಣುಗಳ ಗಾತ್ರ, ತೂಕ ಮತ್ತು ಗುಣಮಟ್ಟವನ್ನು ಹೆಚ್ಚಿಸುವವರೆಗೆ — ನಮ್ಮ ಉತ್ಪನ್ನಗಳು ಒಟ್ಟಾರೆ ಇಳುವರಿಯಲ್ಲಿ ಗಮನಾರ್ಹ ಸುಧಾರಣೆ ತರುತ್ತವೆ."
+        }
+      },
+      "cta_title": "ನಿಮ್ಮ ಕೃಷಿ ಪದ್ಧತಿಯನ್ನು ಬದಲಾಯಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+      "cta_desc": "ನಿಮ್ಮ ಹೊಲದಲ್ಲಿ ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಗ್ರೋತ್ ಸಿಸ್ಟಮ್‌ನ ಪ್ರಯೋಜನಗಳನ್ನು ಅನುಭವಿಸಿ. ನಮ್ಮ ಕೃಷಿ ತಜ್ಞರು ನಿಮ್ಮ ಬೆಳೆ ಮತ್ತು ಮಣ್ಣಿನ ಸ್ಥಿತಿಗೆ ಸೂಕ್ತವಾದ ಉತ್ಪನ್ನಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತಾರೆ.",
+      "cta_custom_plan": "ಕಸ್ಟಮ್ ಯೋಜನೆಯನ್ನು ಪಡೆಯಿರಿ",
+      "cta_browse_products": "ಉತ್ಪನ್ನಗಳನ್ನು ವೀಕ್ಷಿಸಿ"
+    },
+    "partners": {
+      "reasons": {
+        "dealer": {
+          "title": "ಡೀಲರ್ ಆಗಿ",
+          "desc": "ಸ್ಥಳೀಯ ರೈತರಿಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಜೈವಿಕ ಉತ್ಪನ್ನಗಳನ್ನು ಒದಗಿಸಿ.",
+          "benefits": [
+            "ಕಡಿಮೆ ಹೂಡಿಕೆಯೊಂದಿಗೆ ಆರಂಭ",
+            "ಸ್ಥಳೀಯ ಮಾರುಕಟ್ಟೆ ಬೆಂಬಲ",
+            "ಉತ್ಪನ್ನಗಳ ಬಗ್ಗೆ ನಿಯಮಿತ ತರಬೇತಿ"
+          ]
+        },
+        "distributor": {
+          "title": "ವಿತರಕರಾಗಿ",
+          "desc": "ನಿಮ್ಮ ವ್ಯಾಪ್ತಿಯನ್ನು ವಿಸ್ತರಿಸಲು ಪ್ರಾದೇಶಿಕ ವಿತರಣೆಯನ್ನು ನಿರ್ವಹಿಸಿ.",
+          "benefits": [
+            "ಪ್ರಾದೇಶಿಕ ವಿಶೇಷ ಹಕ್ಕುಗಳು (Exclusivity)",
+            "ಸಗಟು ಖರೀದಿಯ ಮೇಲೆ ಆಕರ್ಷಕ ರಿಯಾಯಿತಿಗಳು",
+            "ವಿಶೇಷ ಗ್ರಾಹಕ ವ್ಯವಸ್ಥಾಪಕರ ಬೆಂಬಲ"
+          ]
+        },
+        "export": {
+          "title": "ರಫ್ತು ಪಾಲುದಾರರು",
+          "desc": "ನಮ್ಮ ಸುಸ್ಥಿರ ಕೃಷಿ ತಂತ್ರಜ್ಞಾನವನ್ನು ಜಾಗತಿಕ ಮಾರುಕಟ್ಟೆಗೆ ತಲುಪಿಸಲು ಪಾಲುದಾರರಾಗಿ.",
+          "benefits": [
+            "ರಫ್ತು ದಾಖಲಾತಿ ಬೆಂಬಲ",
+            "ನಿಯಂತ್ರಕ ಸಹಾಯಗಳು",
+            "ಅಂತರರಾಷ್ಟ್ರೀಯ ಪ್ಯಾಕೇಜಿಂಗ್ ಗುಣಮಟ್ಟ"
+          ]
+        },
+        "market": {
+          "title": "ಬೆಳೆಯುತ್ತಿರುವ ಮಾರುಕಟ್ಟೆ",
+          "desc": "ಭಾರತೀಯ ಜೈವಿಕ ಕೃಷಿ-ಇನ್‌ಪುಟ್ ಮಾರುಕಟ್ಟೆಯ ವಾರ್ಷಿಕ ೨೫%+ ವೇಗದ ಬೆಳವಣಿಗೆಯ ಲಾಭ ಪಡೆಯಿರಿ."
+        },
+        "quality": {
+          "title": "ಅತ್ಯುತ್ತಮ ಗುಣಮಟ್ಟ",
+          "desc": "CIB-RC ಮತ್ತು FCO ಅನುಮೋದಿತ ಉತ್ಪನ್ನಗಳು, ಇವು ಹೊಲದಲ್ಲಿ ಅತ್ಯುತ್ತಮ ಫಲಿತಾಂಶ ಮತ್ತು ಸ್ಥಿರ ಗುಣಮಟ್ಟವನ್ನು ನೀಡುತ್ತವೆ."
+        },
+        "support": {
+          "title": "ಅಪ್ರತಿಮ ಬೆಂಬಲ",
+          "desc": "ತಾಂತ್ರಿಕ ಮತ್ತು ಮಾರಾಟದ ಬೆಂಬಲಕ್ಕಾಗಿ ನಮ್ಮ ವಿಜ್ಞಾನಿಗಳು ಹಾಗೂ ಕ್ಷೇತ್ರ ತಜ್ಞರನ್ನು ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಿ."
+        },
+        "brand": {
+          "title": "ವಿಶ್ವಾಸಾರ್ಹ ಬ್ರ್ಯಾಂಡ್",
+          "desc": "ಸ್ಥಳೀಯ ವ್ಯವಹಾರವನ್ನು ಬೆಳೆಸಲು ನಮ್ಮ ವೈಜ್ಞಾನಿಕ ವಿಶ್ವಾಸಾರ್ಹತೆ ಮತ್ತು ರೈತರ ನಂಬಿಕೆಯನ್ನು ಬಳಸಿಕೊಳ್ಳಿ."
+        }
+      }
+    },
+    "careers": {
+      "why_join": {
+        "mission_driven": {
+          "title": "ಧ್ಯೇಯಾಧಾರಿತ ಕೆಲಸ",
+          "desc": "ಭಾರತೀಯ ರೈತರ ಪ್ರಮುಖ ಕೃಷಿ ಸವಾಲುಗಳನ್ನು ಪರಿಹರಿಸುವ ಕಂಪನಿಯ ಭಾಗವಾಗಿ."
+        },
+        "growth": {
+          "title": "ವೃತ್ತಿಪರ ಬೆಳವಣಿಗೆ",
+          "desc": "ಕೃಷಿ ಕ್ಷೇತ್ರದ ತಜ್ಞರ ಮಾರ್ಗದರ್ಶನದಲ್ಲಿ ವೇಗವಾಗಿ ಹೊಸ ಕೌಶಲ್ಯಗಳನ್ನು ಕಲಿಯಿರಿ."
+        },
+        "culture": {
+          "title": "ಸಮನ್ವಯ ಸಂಸ್ಕೃತಿ",
+          "desc": "ಪ್ರತಿಯೊಬ್ಬರ ಅಭಿಪ್ರಾಯಕ್ಕೆ ಗೌರವ ನೀಡುವ ಮತ್ತು ವೈಜ್ಞಾನಿಕ ಕುತೂಹಲವನ್ನು ಪ್ರೋತ್ಸಾಹಿಸುವ ಕೆಲಸದ ಸ್ಥಳ."
+        },
+        "impact": {
+          "title": "ನೈಜ ಫಲಿತಾಂಶಗಳು",
+          "desc": "ನಿಮ್ಮ ಕೆಲಸದ ಪ್ರತ್ಯಕ್ಷ ಫಲಿತಾಂಶಗಳನ್ನು ಹೊಲಗಳಲ್ಲಿ ಮತ್ತು ರೈತರ ಜೀವನದಲ್ಲಿ ನೋಡಿ."
+        }
+      },
+      "jobs": {
+        "field_sales": {
+          "department": "ಮಾರಾಟ ಮತ್ತು ಮಾರುಕಟ್ಟೆ",
+          "type": "ಪೂರ್ಣ ಅವಧಿ",
+          "title": "ತಾಂತ್ರಿಕ ಮಾರಾಟ ಅಧಿಕಾರಿ (Technical Sales Officer)",
+          "location": "ಕರ್ನಾಟಕ (ವಿವಿಧ ಜಿಲ್ಲೆಗಳು)",
+          "description": "ನೇರ ಕ್ಷೇತ್ರ ಪ್ರಾತ್ಯಕ್ಷಿಕೆಗಳನ್ನು ನೀಡುವುದರ ಮೂಲಕ ಮತ್ತು ಡೀಲರ್-ರೈತ ಜಾಲವನ್ನು ಬಲಪಡಿಸುವ ಮೂಲಕ ಉತ್ಪನ್ನಗಳ ಮಾರಾಟವನ್ನು ಹೆಚ್ಚಿಸಿ."
+        },
+        "research_microbiologist": {
+          "department": "ಸಂಶೋಧನೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿ (R&D)",
+          "type": "ಪೂರ್ಣ ಅವಧಿ",
+          "title": "ಕಿರಿಯ ಸಂಶೋಧನಾ ಸೂಕ್ಷ್ಮಜೀವಿವಿಜ್ಞಾನಿ (Junior Research Microbiologist)",
+          "location": "ವಲ್ಸಾಡ್, ಗುಜರಾತ್",
+          "description": "ನಮ್ಮ ಸುಧಾರಿತ ಪ್ರಯೋಗಾಲಯದಲ್ಲಿ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಸ್ಟ್ರೈನ್ ಐಸೊಲೇಷನ್, ಫರ್ಮೆಂಟೇಶನ್ ಆಪ್ಟಿಮೈಸೇಶನ್ ಮತ್ತು ಹೊಸ ಫಾರ್ಮುಲೇಶನ್‌ಗಳ ಅಭಿವೃದ್ಧಿಯ ಮೇಲೆ ಗಮನಹರಿಸಿ."
+        },
+        "digital_marketing": {
+          "department": "ಮಾರುಕಟ್ಟೆ (Marketing)",
+          "type": "ಪೂರ್ಣ ಅವಧಿ",
+          "title": "ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ತಜ್ಞರು",
+          "location": "ವಲ್ಸಾಡ್, ಗುಜರಾತ್",
+          "description": "ಸೋಷಿಯಲ್ ಮೀಡಿಯಾ ನಿರ್ವಹಣೆ, SEO ಮತ್ತು ರೈತ ಸಂಪರ್ಕ ಅಭಿಯಾನಗಳ ಮೂಲಕ ನಮ್ಮ ಡಿಜಿಟಲ್ ಉಪಸ್ಥಿತಿಯನ್ನು ಹೆಚ್ಚಿಸಿ."
+        },
+        "qa_analyst": {
+          "department": "ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣ",
+          "type": "ಪೂರ್ಣ ಅವಧಿ",
+          "title": "ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣ ವಿಶ್ಲೇಷಕರು",
+          "location": "ವಲ್ಸಾಡ್, ಗುಜರಾತ್",
+          "description": "ನಮ್ಮ ಜೈವಿಕ ಉತ್ಪನ್ನಗಳ ಪ್ರತಿಯೊಂದು ಬ್ಯಾಚ್ ಅತ್ಯುನ್ನತ ಗುಣಮಟ್ಟ ಮತ್ತು ಶುದ್ಧತೆಯನ್ನು ಹೊಂದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
+        }
+      },
+      "no_role_text": "ನಿಮಗೆ ಸೂಕ್ತವಾದ ಹುದ್ದೆ ಕಂಡುಬರುತ್ತಿಲ್ಲವೇ? ನಾವು ಯಾವಾಗಲೂ ಪ್ರತಿಭಾವಂತ ಅಭ್ಯರ್ಥಿಗಳ ಹುಡುಕಾಟದಲ್ಲಿರುತ್ತೇವೆ.",
+      "form": {
+        "personal_details_title": "ವೈಯಕ್ತಿಕ ವಿವರಗಳು",
+        "name_label": "ಪೂರ್ಣ ಹೆಸರು",
+        "name_placeholder": "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+        "email_label": "ಇಮೇಲ್ ವಿಳಾಸ",
+        "email_placeholder": "ಉದಾ. yourname@gmail.com",
+        "phone_label": "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
+        "phone_placeholder": "ಉದಾ. +91 98765 43210",
+        "professional_resume_title": "ವೃತ್ತಿಪರ ರೆಸ್ಯೂಮೆ (Resume)",
+        "resume_section": "ರೆಸ್ಯೂಮೆ / CV",
+        "upload_pdf": "PDF ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+        "paste_link": "Drive/Dropbox ಲಿಂಕ್",
+        "upload_click": "PDF ರೆಸ್ಯೂಮೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
+        "pdf_only": "ಕೇವಲ PDF ಫಾರ್ಮ್ಯಾಟ್ (ಗರಿಷ್ಠ ೫ MB)",
+        "drive_placeholder": "https://drive.google.com/... (ಲಿಂಕ್ ಎಲ್ಲರಿಗೂ ಲಭ್ಯವಿರಬೇಕು)",
+        "submitting": "ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ...",
+        "submit_application": "ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+        "cancel": "ರದ್ದುಮಾಡಿ",
+        "remove": "ತೆಗೆದುಹಾಕಿ",
+        "sales_screening_title": "ಹುದ್ದೆ-ನಿರ್ದಿಷ್ಟ ಪ್ರಶ್ನಾವಳಿ",
+        "sales_exp_label": "ಕೃಷಿ-ರಾಸಾಯನಿಕ/ಬೀಜ B2B ಮಾರಾಟದಲ್ಲಿ ಅನುಭವ (ವರ್ಷಗಳು) *",
+        "sales_exp_option1": "೨ ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ",
+        "sales_exp_option2": "೨ ರಿಂದ ೫ ವರ್ಷಗಳು",
+        "sales_exp_option3": "೫ ವರ್ಷಗಳಿಗಿಂತ ಹೆಚ್ಚು",
+        "sales_travel_label": "ನೀವು ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ವ್ಯಾಪಕ ಪ್ರವಾಸ ಮಾಡಲು ಸಿದ್ಧರಿದ್ದೀರಾ? *",
+        "sales_achievement_label": "ನಿಮ್ಮ ಅತ್ಯಂತ ಯಶಸ್ವಿ ಡೀಲರ್ ಆನ್‌ಬೋರ್ಡಿಂಗ್ ಅಥವಾ ಮಾರಾಟ ಅಭಿಯಾನವನ್ನು ವಿವರಿಸಿ *",
+        "sales_achievement_ph": "ಉದಾ. ೧೫ ಹೊಸ ವಿತರಕರನ್ನು ಸೇರಿಸಲಾಯಿತು, ಇದರಿಂದ ಮಾರಾಟದಲ್ಲಿ ೩೦% ಹೆಚ್ಚಳವಾಯಿತು...",
+        "micro_screening_title": "ಹುದ್ದೆ-ನಿರ್ದಿಷ್ಟ ಪ್ರಶ್ನಾವಳಿ",
+        "micro_degree_label": "ಮೈಕ್ರೋಬಯಾಲಜಿ/ಬಯೋಟೆಕ್ನಾಲಜಿಯಲ್ಲಿ ನಿಮ್ಮ ಅತ್ಯುನ್ನತ ಶೈಕ್ಷಣಿಕ ಅರ್ಹತೆ *",
+        "micro_degree_bsc": "B.Sc. / B.Tech",
+        "micro_degree_msc": "M.Sc. / M.Tech",
+        "micro_degree_phd": "Ph.D.",
+        "micro_degree_postdoc": "Post-Doc",
+        "micro_inoc_label": "ನಿಮಗೆ ಜೈವಿಕ ಇನಾಕ್ಯುಲಂಟ್‌ಗಳ ತಯಾರಿಕೆಯಲ್ಲಿ ಪ್ರಾಯೋಗಿಕ ಅನುಭವವಿದೆಯೇ? *",
+        "micro_tech_label": "ಸೂಕ್ಷ್ಮಜೀವಿಗಳ ಸ್ಟ್ರೈನ್ ಐಸೊಲೇಷನ್ ಮತ್ತು ಫರ್ಮೆಂಟೇಶನ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಅನುಭವವನ್ನು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ತಿಳಿಸಿ *",
+        "micro_tech_ph": "ಪ್ರಯೋಗಾಲಯದ ತಂತ್ರಜ್ಞಾನಗಳು ಮತ್ತು ಬಯೋರಿಯಾಕ್ಟರ್‌ಗಳ ಬಳಕೆಯ ಅನುಭವವನ್ನು ವಿವರಿಸಿ...",
+        "mktg_screening_title": "ಹುದ್ದೆ-ನಿರ್ದಿಷ್ಟ ಪ್ರಶ್ನಾವಳಿ",
+        "mktg_platforms_label": "ನೀವು ಯಾವ ಡಿಜಿಟಲ್ ಜಾಹೀರಾತು ವೇದಿಕೆಗಳನ್ನು ನಿರ್ವಹಿಸಿದ್ದೀರಿ ಮತ್ತು ಮಾಸಿಕ ಬಜೆಟ್ ಎಷ್ಟಿತ್ತು? *",
+        "mktg_platforms_ph": "ಉದಾ. Meta Ads, Google Ads, ಸರಾಸರಿ ಮಾಸಿಕ ಬಜೆಟ್ ೫೦,೦೦೦ INR...",
+        "mktg_strategy_label": "ಪ್ರಗತಿಪರ ರೈತರನ್ನು ತಲುಪಲು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ತಂತ್ರವನ್ನು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ವಿವರಿಸಿ *",
+        "mktg_strategy_ph": "ವಿಷಯದ ಸ್ವರೂಪ, ಬಳಸುವ ಮಾಧ್ಯಮಗಳು ಮತ್ತು ಪ್ರಾದೇಶಿಕ ಭಾಷೆಗಳ ಬಳಕೆಯ ವಿಧಾನವನ್ನು ತಿಳಿಸಿ...",
+        "mktg_portfolio_label": "ನಿಮ್ಮ ಮಾರ್ಕೆಟಿಂಗ್ ಪೋರ್ಟ್‌ಫೋಲಿಯೋ ಅಥವಾ ವಿನ್ಯಾಸಗಳ ಲಿಂಕ್ (ಐಚ್ಛಿಕ)",
+        "mktg_portfolio_ph": "https://behance.net/yourprofile ಅಥವಾ ಗೂಗಲ್ ಡ್ರೈವ್ ಲಿಂಕ್",
+        "qa_screening_title": "ಹುದ್ದೆ-ನಿರ್ದಿಷ್ಟ ಪ್ರಶ್ನಾವಳಿ",
+        "qa_iso_label": "ನೀವು ಎಂದಾದರೂ ISO, GLP, ಅಥವಾ NABL ಪ್ರಮಾಣೀಕೃತ ಪ್ರಯೋಗಾಲಯದಲ್ಲಿ ಕೆಲಸ ಮಾಡಿದ್ದೀರಾ? *",
+        "qa_methods_label": "ನಿಮಗೆ ಯಾವ ರೀತಿಯ ವಿಶ್ಲೇಷಣಾತ್ಮಕ ವಿಧಾನಗಳಲ್ಲಿ ಹೆಚ್ಚು ಅನುಭವವಿದೆ? *",
+        "qa_methods_ph": "ಬಳಸಿದ ಉಪಕರಣಗಳ ಹೆಸರುಗಳು (HPLC, ಶುದ್ಧತೆ ಪರೀಕ್ಷೆ, ಶೆಲ್ಫ್-ಲೈಫ್) ಮತ್ತು ವಿಧಾನಗಳನ್ನು ನಮೂದಿಸಿ...",
+        "qa_dev_label": "ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣದಲ್ಲಿ ಉಂಟಾಗುವ ವ್ಯತ್ಯಾಸಗಳು ಅಥವಾ ಮಾಲಿನ್ಯವನ್ನು (contamination) ಹೇಗೆ ನಿರ್ವಹಿಸುತ್ತೀರಿ? *",
+        "qa_dev_ph": "ಸಮಸ್ಯೆಯನ್ನು ಗುರುತಿಸುವುದು, ಪರೀಕ್ಷಿಸುವುದು ಮತ್ತು ವರದಿ ಮಾಡುವ ಹಂತಗಳನ್ನು ವಿವರಿಸಿ..."
+      }
+    },
+    "legal": {
+      "privacy": {
+        "title": "ಗೌಪ್ಯತಾ ನೀತಿ",
+        "subtitle": "ನಾವು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಹೇಗೆ ಸಂಗ್ರಹಿಸುತ್ತೇವೆ, ಬಳಸುತ್ತೇವೆ ಮತ್ತು ರಕ್ಷಿಸುತ್ತೇವೆ.",
+        "updated": "ಕೊನೆಯ ಅಪ್ಡೇಟ್: ಏಪ್ರಿಲ್ ೨೦೨೬",
+        "sections": {
+          "collect": {
+            "title": "ನಾವು ಸಂಗ್ರಹಿಸುವ ಮಾಹಿತಿ",
+            "body": "ನೀವು ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಫಾರ್ಮ್‌ಗಳನ್ನು ತುಂಬಿದಾಗ ಅಥವಾ ವಿಚಾರಣೆ ನಡೆಸಿದಾಗ ನೀವು ನೀಡುವ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ನಾವು ಸಂಗ್ರಹಿಸುತ್ತೇವೆ. ವೆಬ್‌ಸೈಟ್ ಅನುಭವವನ್ನು ಸುಧಾರಿಸಲು ನಾವು ಕುಕೀಸ್ ಮತ್ತು ಅನಾಲಿಟಿಕ್ಸ್ ಮೂಲಕ ಬಳಕೆಯ ಡೇಟಾವನ್ನು ಸಹ ಸಂಗ್ರಹಿಸಬಹುದು."
+          },
+          "use": {
+            "title": "ನಾವು ಮಾಹಿತಿಯನ್ನು ಹೇಗೆ ಬಳಸುತ್ತೇವೆ",
+            "body": "ನಿಮ್ಮ ವಿಚಾರಣೆಗಳಿಗೆ ಉತ್ತರಿಸಲು, ಪಾಲುದಾರಿಕೆಯ ವಿನಂತಿಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು, ಸಂಬಂಧಿತ ಅಪ್‌ಡೇಟ್‌ಗಳನ್ನು ಕಳುಹಿಸಲು, ವೆಬ್‌ಸೈಟ್ ಸುಧಾರಿಸಲು ಮತ್ತು ಕಾನೂನು ಬಾಧ್ಯತೆಗಳನ್ನು ಪೂರೈಸಲು ನಾವು ಮಾಹಿತಿಯನ್ನು ಬಳಸುತ್ತೇವೆ."
+          },
+          "protect": {
+            "title": "ಡೇಟಾ ಸುರಕ್ಷತೆ",
+            "body": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಸುರಕ್ಷತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಾವು ಸೂಕ್ತ ಕ್ರಮಗಳನ್ನು ಕೈಗೊಳ್ಳುತ್ತೇವೆ. ನಿಮ್ಮ ಒಪ್ಪಿಗೆಯಿಲ್ಲದೆ ಯಾವುದೇ ಮಾರ್ಕೆಟಿಂಗ್ ಉದ್ದೇಶಗಳಿಗಾಗಿ ನಾವು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಮೂರನೇ ವ್ಯಕ್ತಿಗಳಿಗೆ ಮಾರಾಟ ಮಾಡುವುದಿಲ್ಲ ಅಥವಾ ಹಂಚಿಕೊಳ್ಳುವುದಿಲ್ಲ."
+          },
+          "contact": {
+            "title": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+            "body": "ಗೌಪ್ಯತೆಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಶ್ನೆಗಳಿದ್ದಲ್ಲಿ, ದಯವಿಟ್ಟು privacy@jayagritech.com ಮೂಲಕ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ."
+          }
+        }
+      },
+      "terms": {
+        "title": "ನಿಯಮಗಳು ಮತ್ತು ನಿಬಂಧನೆಗಳು",
+        "subtitle": "ನಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಮತ್ತು ಸೇವೆಗಳ ಬಳಕೆಯನ್ನು ನಿಯಂತ್ರಿಸುವ ನಿಯಮಗಳು.",
+        "updated": "ಕೊನೆಯ ಅಪ್ಡೇಟ್: ಏಪ್ರಿಲ್ ೨೦೨೬",
+        "sections": {
+          "acceptance": {
+            "title": "ನಿಯಮಗಳ ಒಪ್ಪಿಗೆ",
+            "body": "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ವೆಬ್‌ಸೈಟ್ ಬಳಸುವ ಮೂಲಕ ನೀವು ಈ ನಿಯಮಗಳಿಗೆ ಒಪ್ಪಿಗೆ ನೀಡಿದ್ದೀರಿ. ನೀವು ಒಪ್ಪದಿದ್ದಲ್ಲಿ, ದಯವಿಟ್ಟು ವೆಬ್‌ಸೈಟ್ ಬಳಸಬೇಡಿ."
+          },
+          "product_info": {
+            "title": "ಉತ್ಪನ್ನ ಮಾಹಿತಿ",
+            "body": "ನಾವು ಮಾಹಿತಿಯ ನಿಖರತೆಗಾಗಿ ಶ್ರಮಿಸುತ್ತಿದ್ದರೂ, ಉತ್ಪನ್ನಗಳ ವಿವರಣೆಗಳು ಮತ್ತು ವಿಶೇಷಣಗಳು ಯಾವುದೇ ಮುನ್ಸೂಚನೆಯಿಲ್ಲದೆ ಬದಲಾಗಬಹುದು."
+          },
+          "ip": {
+            "title": "ಬೌದ್ಧಿಕ ಆಸ್ತಿ (Intellectual Property)",
+            "body": "ಈ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿರುವ ಎಲ್ಲಾ ವಿಷಯಗಳು — ಪಠ್ಯ, ಚಿತ್ರಗಳು, ಲೋಗೋಗಳು ಮತ್ತು ವಿನ್ಯಾಸಗಳು — ಜಯ್ ಅಗ್ರಿಟೆಕ್‌ನ ಮಾಲೀಕತ್ವಕ್ಕೆ ಒಳಪಟ್ಟಿವೆ. ಅನಧಿಕೃತ ಬಳಕೆಯನ್ನು ನಿಷೇಧಿಸಲಾಗಿದೆ."
+          },
+          "liability": {
+            "title": "ಹೊಣೆಗಾರಿಕೆಯ ಮಿತಿ",
+            "body": "ಈ ವೆಬ್‌ಸೈಟ್ ಅನ್ನು 'ಇದ್ದಂತೆಯೇ' ಲಭ್ಯವಾಗುವಂತೆ ಮಾಡಲಾಗಿದೆ ಮತ್ತು ಇದರ ನಿಖರತೆ ಅಥವಾ ಲಭ್ಯತೆಯ ಬಗ್ಗೆ ನಾವು ಯಾವುದೇ ರೀತಿಯ ಖಾತರಿ ನೀಡುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    }
+  },
+  "about": {
+    "journey_overline": "Our Journey",
+    "journey_title": "Pioneering Agricultural Innovation Since 2025",
+    "company_name": "Jay Agritech Pvt. Ltd.",
+    "journey_text_prefix": "At ",
+    "journey_text_body": ", we deliver innovative, sustainable, and high-quality agricultural solutions designed to maximize crop productivity and restore soil health. Our journey began with a single vision: to bridge the gap between advanced scientific research and practical, on-field farming applications. We understand that modern agriculture faces unprecedented challenges—from depleting soil fertility to evolving pest pressures—and we believe that biological innovation is the key to a sustainable future. Our promoters bring rich experience in the chemical and allied industries. This legacy provides us with deep technical knowledge, strong business ethics, and a culture built on quality and reliability. By leveraging this heritage, we ensure that every formulation we produce meets the highest standards of efficacy and safety. Our dynamic team combines this wisdom with hands-on expertise in modern agricultural inputs. We work closely with agronomists, researchers, and most importantly, the farmers themselves, to ensure that our solutions are not just scientifically sound but also practical and accessible for the Indian farming community. Innovation is at the heart of everything we do. Our state-of-the-art R&D laboratory in Valsad, Gujarat, serves as the nerve center for our product development, where we continuously screen for potent microbial strains and refine our bio-organic formulations to deliver maximum impact with minimum environmental footprint.",
+    "closing_quote": "With a vision to become a trusted name in the agriculture industry, we continue to expand our capabilities while maintaining our commitment to excellence and value creation for all stakeholders."
+  },
+  "enquiry": {
+    "page_title": "Product Enquiry",
+    "page_subtitle": "Request a Personalized Quote",
+    "breadcrumbs_label": "Enquiry",
+    "back_to_product": "Back to Product Details",
+    "why_choose": "Quick Specifications:",
+    "success": {
+      "title": "Enquiry Submitted Successfully!",
+      "intro": "Thank you for your interest! A personalized quote request for the following configuration has been generated:",
+      "individual": "Individual Farm",
+      "footer_msg": "Our regional sales manager or technical consultant will review these specific details and contact you at the provided email/phone within 24 hours.",
+      "return_btn": "Return to Details",
+      "new_inquiry_btn": "Submit Another"
+    },
+    "form": {
+      "get_quote": "Request a Personalized Quote",
+      "instructions": "Fill out the form below to receive a custom bulk pricing and application proposal from our specialists.",
+      "product": "Target Product",
+      "pack_size": "Preferred Pack Size",
+      "quantity": "Required Volume",
+      "company": "Company / Farm Name",
+      "name": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "company_placeholder": "e.g. Green Valley Farms",
+      "email": "Email Address",
+      "email_placeholder": "yourname@example.com",
+      "phone": "Phone Number",
+      "phone_placeholder": "e.g. +91 98765 43210",
+      "location": "Location (City & State)",
+      "location_placeholder": "e.g. Valsad, Gujarat",
+      "crop": "Target Crops / Application",
+      "crop_placeholder": "e.g. Cotton, Chillies",
+      "inquiry_type": "Type of Inquiry",
+      "message": "Specific Requirements / Message",
+      "message_placeholder": "Provide any extra requirements or delivery schedule queries...",
+      "submitting": "Processing Quote...",
+      "submit": "Submit Quote Request"
+    },
+    "units": {
+      "liters": "Liters",
+      "kilograms": "Kilograms",
+      "kits": "Kits"
+    },
+    "options": {
+      "bulk": "Bulk Farm Purchase",
+      "distributor": "Dealership / Distribution",
+      "oem": "OEM / Private Labeling",
+      "consultancy": "Technical Consultation"
+    }
+  },
+  "b2b": {
+    "modal": {
+      "subtitle": "B2B Proposal Inquiry"
+    },
+    "form": {
+      "custom_specs": "Custom Proposal Specifications",
+      "service": "B2B Category",
+      "cm_formulation": "Formulation Type",
+      "cm_volume": "Expected Annual Volume",
+      "cm_packaging": "Packaging Format",
+      "res_focus": "R&D Focus",
+      "res_timeline": "Collaboration Timeline",
+      "res_crops": "Target Crops / Pathogens",
+      "res_crops_placeholder": "e.g. Cotton Wilt, Rice Blast",
+      "wl_category": "Product Category",
+      "wl_batch": "Initial Launch Batch",
+      "wl_design": "Design Services Needed?",
+      "exp_country": "Target Market / Country",
+      "exp_country_placeholder": "e.g. Kenya, Vietnam",
+      "exp_type": "Partnership Model",
+      "exp_license": "Import License Status",
+      "name": "Contact Person",
+      "name_placeholder": "Your full name",
+      "company": "Registered Company Name",
+      "company_placeholder": "Registered legal entity name",
+      "email": "Business Email",
+      "email_placeholder": "partner@yourcompany.com",
+      "phone": "Mobile / Whatsapp",
+      "phone_placeholder": "e.g. +91 98765 43210",
+      "location": "Location (City, State / Country)",
+      "location_placeholder": "e.g. Valsad, Gujarat, India",
+      "message": "Briefly outline your B2B proposal details",
+      "message_placeholder": "Provide any details regarding customization requirements, required certifications, or target pricing...",
+      "submitting": "Processing B2B Request...",
+      "submit": "Submit B2B Inquiry"
+    },
+    "cm": {
+      "liquid": "Liquid Formulation",
+      "wp": "Wettable Powder (WP)",
+      "sp": "Soluble Powder (SP)",
+      "granules": "Bio Granules",
+      "custom": "Custom Biotech",
+      "pilot": "Pilot Trial (<1k L/Kg)",
+      "small": "Medium Batch (1k-5k L/Kg)",
+      "commercial": "Commercial Scale (>5k L/Kg)",
+      "bulk": "Bulk Containers",
+      "retail": "Retail Branding",
+      "oem": "Custom OEM Packets"
+    },
+    "res": {
+      "strain": "Strain Screening",
+      "ferment": "Fermentation Opt.",
+      "stability": "Stability Testing",
+      "field": "Field Trial Prep",
+      "short": "Short Term (<3 Months)",
+      "mid": "Mid Term (3-9 Months)",
+      "long": "Long Term / Perpetual"
+    },
+    "wl": {
+      "insecticides": "Bio Insecticides",
+      "fertilizers": "Bio Fertilizers",
+      "biostimulants": "Biostimulants",
+      "nutrients": "Organic Nutrients",
+      "micronutrients": "Micronutrients",
+      "test": "Test Market Volume",
+      "regional": "Regional Volume",
+      "commercial": "National Rollout",
+      "design_yes": "Yes - Label Designing",
+      "design_no": "No - Custom Branding ready"
+    },
+    "exp": {
+      "exclusive": "Exclusive Distributor",
+      "distributor": "Franchise Partner",
+      "buyer": "Pure Export Buyer",
+      "license_yes": "Registered & Active",
+      "license_progress": "Application in Progress",
+      "license_no": "Not Applied Yet"
+    },
+    "success": {
+      "title": "B2B Inquiry Registered!",
+      "intro": "Thank you for choosing Jay Agritech. We have generated a custom B2B inquiry ticket with the details listed below:",
+      "individual": "Individual Farm",
+      "footer_msg": "Our commercial account managers or B2B technical consultants will analyze these requirements and connect directly within 24 business hours.",
+      "done_btn": "Finish & Close"
+    }
+  },
+  "business": {
+    "detail_extension": "We support our partners with comprehensive end-to-end operational capacity, state-of-the-art biological laboratory testing, and robust regulatory compliance. Partnering with Jay Agritech ensures consistent quality, optimized formulations, and rapid scale-to-market.",
+    "core_capabilities": "Core Capabilities & Features"
+  }
+}

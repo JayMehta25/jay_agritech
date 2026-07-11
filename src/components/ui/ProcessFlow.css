@@ -88,10 +88,25 @@
 }
 
 /* Positioning Nodes Symmetrically */
-.node-tl { top: 8%; left: 4%; }
-.node-tr { top: 8%; right: 4%; }
-.node-br { bottom: 8%; right: 4%; }
-.node-bl { bottom: 8%; left: 4%; }
+.node-tl {
+  top: 8%;
+  left: 4%;
+}
+
+.node-tr {
+  top: 8%;
+  right: 4%;
+}
+
+.node-br {
+  bottom: 8%;
+  right: 4%;
+}
+
+.node-bl {
+  bottom: 8%;
+  left: 4%;
+}
 
 /* ── SVG Connection Layer ── */
 .flow-connections {
@@ -112,20 +127,32 @@
   stroke-width: 2.5;
   fill: none;
   /* Creates 3 evenly spaced pulses along the line (100 / 3) */
-  stroke-dasharray: 10, 23.33; 
+  stroke-dasharray: 10, 23.33;
   stroke-linecap: round;
   filter: drop-shadow(0 0 8px var(--clr-primary-light));
   animation: flowLoop 6s linear infinite;
 }
 
 @keyframes flowLoop {
-  from { stroke-dashoffset: 100; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes nodePulse {
-  0%, 100% { box-shadow: var(--shadow-lg); }
-  50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); }
+
+  0%,
+  100% {
+    box-shadow: var(--shadow-lg);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+  }
 }
 
 .node-pulse {
@@ -137,12 +164,29 @@
   .process-flow-container {
     height: 600px;
   }
+
   .flow-node {
     width: 140px;
     padding: var(--sp-3) var(--sp-4);
   }
-  .node-tl { top: 5%; left: 2%; }
-  .node-tr { top: 5%; right: 2%; }
-  .node-br { bottom: 5%; right: 2%; }
-  .node-bl { bottom: 5%; left: 2%; }
+
+  .node-tl {
+    top: 5%;
+    left: 2%;
+  }
+
+  .node-tr {
+    top: 5%;
+    right: 2%;
+  }
+
+  .node-br {
+    bottom: 5%;
+    right: 2%;
+  }
+
+  .node-bl {
+    bottom: 5%;
+    left: 2%;
+  }
 }

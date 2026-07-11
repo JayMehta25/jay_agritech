@@ -53,6 +53,12 @@ const seoConfig = {
     keywords: "Jay Agritech, 杰亚农科, 生物肥料, 有机肥料, 生物杀虫剂, 农业生物技术, 印度, 瓦尔萨德, 古吉拉特邦, 可持续农业",
     ogTitle: "杰亚农科 (Jay Agritech) | 创新农业，绿色增长",
     ogDescription: "提供科学支撑的生物与有机农业解决方案，助力农作物高产与土壤活力恢复。"
+  },
+  kn: {
+    description: "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ ಸುಸ್ಥಿರ ಕೃಷಿಗಾಗಿ ೬೦+ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು, ಸಾವಯವ ಗೊಬ್ಬರಗಳು, ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳನ್ನು ಒದಗಿಸುವ ಭಾರತದ ಪ್ರಮುಖ ಅಗ್ರಿ-ಬಯೋಟೆಕ್ ಕಂಪನಿಯಾಗಿದೆ.",
+    keywords: "ಜಯ್ ಅಗ್ರಿಟೆಕ್, ಜೈವಿಕ ಗೊಬ್ಬರಗಳು, ಸಾವಯವ ಗೊಬ್ಬರಗಳು, ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು, ಕೃಷಿ ಬಯೋಟೆಕ್, ಸುಸ್ಥಿರ ಕೃಷಿ, ಭಾರತ, ವಲ್ಸಾಡ್, ಗುಜರಾತ್",
+    ogTitle: "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ | ಕೃಷಿಯಲ್ಲಿ ನಾವೀನ್ಯತೆ, ಬೆಳವಣಿಗೆಯ ಪೋಷಣೆ",
+    ogDescription: "ಬೆಳೆಗಳ ಹೆಚ್ಚಿನ ಇಳುವರಿ ಮತ್ತು ಮಣ್ಣಿನ ಫಲವತ್ತತೆಯ ಮರುಸ್ಥಾಪನೆಗಾಗಿ ವಿಜ್ಞಾನ ಆಧಾರಿತ ಜೈವಿಕ ಮತ್ತು ಸಾವಯವ ಕೃಷಿ ಪರಿಹಾರಗಳು."
   }
 };
 
@@ -68,7 +74,7 @@ const schemaData = {
     "telephone": "+91-98251-42359",
     "contactType": "sales",
     "areaServed": "IN",
-    "availableLanguage": ["en", "hi", "gu", "mr"]
+    "availableLanguage": ["en", "hi", "gu", "mr", "kn"]
   },
   "sameAs": [
     "https://www.linkedin.com/company/jay-agritech",
@@ -102,6 +108,11 @@ const getFaqSchema = (lang) => {
       { q: "什么是 Jay Agritech？", a: "杰亚农科 (Jay Agritech Pvt. Ltd.) 是印度领先的农业生物技术公司，提供60多种高效生物肥料、有机肥料、生物杀虫剂及微量元素，助力可持续农业发展。" },
       { q: "你们提供哪些产品？", a: "我们生产5大类60余种优质农业解决方案：生物肥料、生物刺激素、有机营养物、生物杀虫剂以及微量元素。" },
       { q: "你们公司总部在哪里？", a: "我们的公司总部与现代化生态工厂均位于印度古吉拉特邦瓦尔萨德 (Valsad, Gujarat, India)。" }
+    ],
+    kn: [
+      { q: "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಎಂದರೇನು?", a: "ಜಯ್ ಅಗ್ರಿಟೆಕ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ ಭಾರತದ ಗುಜರಾತ್‌ನ ವಲ್ಸಾಡ್‌ನಲ್ಲಿರುವ ಪ್ರಮುಖ ಕೃಷಿ-ಜೈವಿಕ ತಂತ್ರಜ್ಞಾನ ಕಂಪನಿಯಾಗಿದೆ. ನಾವು ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಜೈವಿಕ ಗೊಬ್ಬರಗಳು, ಸಾವಯವ ಗೊಬ್ಬರಗಳು, ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳನ್ನು ತಯಾರಿಸುತ್ತೇವೆ." },
+      { q: "ನೀವು ಯಾವ ಉತ್ಪನ್ನಗಳನ್ನು ಒದಗಿಸುತ್ತೀರಿ?", a: "ನಾವು ೫ ಪ್ರಮುಖ ವರ್ಗಗಳಲ್ಲಿ ೬೦+ ಪ್ರೀಮಿಯಂ ಕೃಷಿ ಪರಿಹಾರಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ: ಜೈವಿಕ ಗೊಬ್ಬರಗಳು, ಬಯೋಸ್ಟಿಮ್ಯುಲಂಟ್ಸ್, ಸಾವಯವ ಪೋಷಕಾಂಶಗಳು, ಜೈವಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಸೂಕ್ಷ್ಮ ಪೋಷಕಾಂಶಗಳು." },
+      { q: "ನಿಮ್ಮ ಕಂಪನಿ ಎಲ್ಲಿದೆ?", a: "ನಮ್ಮ ಪ್ರಧಾನ ಕಚೇರಿ ಮತ್ತು ಸುಧಾರಿತ ಉತ್ಪಾದನಾ ಘಟಕಗಳು ಭಾರತದ ಗುಜರಾತ್‌ನ ವಲ್ಸಾಡ್‌ನಲ್ಲಿವೆ." }
     ]
   };
   const list = faqs[lang] || faqs.en;
@@ -163,9 +174,9 @@ export default function MyApp({ Component, pageProps }) {
     const savedLang = localStorage.getItem('i18nextLng');
     const browserLang = navigator.language || navigator.userLanguage;
     const shortLang = browserLang?.split('-')[0];
-    const langToUse = savedLang && ['en', 'hi', 'zh', 'gu', 'mr'].includes(savedLang)
+    const langToUse = savedLang && ['en', 'hi', 'zh', 'gu', 'mr', 'kn'].includes(savedLang)
       ? savedLang
-      : ['en', 'hi', 'zh', 'gu', 'mr'].includes(shortLang)
+      : ['en', 'hi', 'zh', 'gu', 'mr', 'kn'].includes(shortLang)
         ? shortLang
         : 'en';
 
@@ -178,13 +189,14 @@ export default function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : i18n.language?.startsWith('mr') ? 'mr' : 'en';
+      const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : i18n.language?.startsWith('mr') ? 'mr' : i18n.language?.startsWith('kn') ? 'kn' : 'en';
       document.documentElement.lang = currentLang;
       const titles = {
         en: 'Jay Agritech | Innovating Agriculture',
         hi: 'जय एग्रीटेक | कृषि नवाचार',
-        gu: 'જય એગ્રીટેક | કૃષિ નવીનતા',
+        gu: 'જય એગ્રીટેક | કૃષಿ નવીನતા',
         mr: 'जय एग्रीटेक | कृषी नवसंशोधन',
+        kn: 'ಜಯ್ ಅಗ್ರಿಟೆಕ್ | ಕೃಷಿಯಲ್ಲಿ ನಾವೀನ್ಯತೆ',
         zh: 'Jay Agritech | 创新农业'
       };
       document.title = titles[currentLang] || titles.en;
@@ -228,7 +240,7 @@ export default function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : i18n.language?.startsWith('mr') ? 'mr' : 'en';
+  const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : i18n.language?.startsWith('gu') ? 'gu' : i18n.language?.startsWith('mr') ? 'mr' : i18n.language?.startsWith('kn') ? 'kn' : 'en';
   const seo = seoConfig[currentLang] || seoConfig.en;
 
   return (
