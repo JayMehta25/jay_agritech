@@ -43,13 +43,26 @@ export default function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const currentLang = i18n.language?.startsWith('zh') ? 'zh' : i18n.language?.startsWith('hi') ? 'hi' : 'en';
+    const currentLang = i18n.language?.startsWith('zh')
+      ? 'zh'
+      : i18n.language?.startsWith('hi')
+        ? 'hi'
+        : i18n.language?.startsWith('gu')
+          ? 'gu'
+          : i18n.language?.startsWith('mr')
+            ? 'mr'
+            : i18n.language?.startsWith('kn')
+              ? 'kn'
+              : 'en';
     document.documentElement.lang = currentLang;
     // Update document title for SEO if needed
     const titles = {
       en: 'Jay Agritech | Innovating Agriculture',
       hi: 'जय एग्रीटेक | कृषि नवाचार',
-      zh: 'Jay Agritech | 创新农业'
+      zh: 'Jay Agritech | 创新农业',
+      gu: 'જય એગ્રીટેક | કૃષિમાં નવીનતા',
+      mr: 'जय ॲग्रीटेक | कृषीमध्ये नवसंशोधन',
+      kn: 'ಜಯ್ ಅಗ್ರಿಟೆಕ್ | ಕೃಷಿಯಲ್ಲಿ ನಾವೀನ್ಯತೆ'
     };
     document.title = titles[currentLang] || titles.en;
   }, [i18n.language]);

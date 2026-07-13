@@ -6,6 +6,7 @@ import hiTranslations from './locales/hi.json';
 import zhTranslations from './locales/zh.json';
 import guTranslations from './locales/gu.json';
 import mrTranslations from './locales/mr.json';
+import knTranslations from './locales/kn.json';
 
 i18n
   .use(initReactI18next)
@@ -15,9 +16,10 @@ i18n
       hi: { translation: hiTranslations },
       zh: { translation: zhTranslations },
       gu: { translation: guTranslations },
-      mr: { translation: mrTranslations }
+      mr: { translation: mrTranslations },
+      kn: { translation: knTranslations }
     },
-    supportedLngs: ['en', 'hi', 'zh', 'gu', 'mr'],
+    supportedLngs: ['en', 'hi', 'zh', 'gu', 'mr', 'kn'],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     lng: 'en', // Force English initially on both server and client to prevent hydration mismatches
@@ -38,17 +40,17 @@ const _origT = i18n.t.bind(i18n);
 i18n.t = (key, options) => {
   try {
     const lang = i18n.language || '';
-    const isHiOrGuOrMr = lang.startsWith('hi') || lang.startsWith('gu') || lang.startsWith('mr');
+    const isHiOrGuOrMrOrKn = lang.startsWith('hi') || lang.startsWith('gu') || lang.startsWith('mr') || lang.startsWith('kn');
 
     // If options is a plain string (common developer pattern), treat it as defaultValue
     if (typeof options === 'string') {
-      if (isHiOrGuOrMr) return _origT(key, { defaultValue: '' });
+      if (isHiOrGuOrMrOrKn) return _origT(key, { defaultValue: '' });
       return _origT(key, { defaultValue: options });
     }
 
     // If options is an object that contains defaultValue, and we're on Hindi, Gujarati, or Marathi, strip it
     if (options && typeof options === 'object' && Object.prototype.hasOwnProperty.call(options, 'defaultValue')) {
-      if (isHiOrGuOrMr) {
+      if (isHiOrGuOrMrOrKn) {
         const cloned = { ...options, defaultValue: '' };
         return _origT(key, cloned);
       }
